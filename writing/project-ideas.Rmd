@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 * Quantity and quality of remaining habitat is a critical determinant of species' risk of extinction, directly reflected in criterion B ('Geographic range') of the criteria used to list species on the IUCN Red List [@mace_quantification_2008; @iucn_iucn_2020]
   * __Under criterion B, 'Geographic range', a species is listed as Critically Endangered, Endangered or Vulnerable, if, for 5 years or more, they have an Area of Occupancy (AOO) smaller than 10, 500 and 2000 km^2, respectively__
 * Appropriately, habitat protection is the most commonly implemented conservation intervention, typically taking the form of Protected Areas that span a range of protection levels
-* Protected Areas, when well-managed, do work [@geldmann_effectiveness_2013;geldmann_global-level_2019]
+* Protected Areas, when well-managed, do work [@geldmann_effectiveness_2013; geldmann_global-level_2019]
   * Rates of habitat conversion/species loss/population declines lower than they would otherwise be
   * Many co-benefits e.g. carbon storage and sequestration, empowering and protecting indigenous communities, potential to buffer biodiversity from other threats, such as climate change and overexploitation
 * PA coverage has increased dramatically in recently years, particularly as a result of the Convention on Biological Diversity (CBD) target to protect 17% of terrestrial surface by 2020 [@hirsch_global_2010]
