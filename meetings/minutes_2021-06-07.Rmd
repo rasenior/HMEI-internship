@@ -1,0 +1,93 @@
+---
+title: "Meeting agenda"
+subtitle: "_Estimating the recovery potential of threatened species_"
+author: "Rebecca Senior, Sophia Richter"
+date: "7 June 2021"
+output: 
+    bookdown::html_document2:
+        toc: true
+link-citations: yes
+biblio-style: apalike
+bibliography: refs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Agenda
+
+## Communication
+
+* Very important that we stay in regular contact! 
+* Prof David Wilcove will join us sometimes, but I will be first point of contact
+    * If you have any issues that you do not feel comfortable discussing with me, you can alternatively contact David Wilcove (dwilcove@princeton.edu) or Emily Ahmetaj (eahmetaj@princeton.edu)
+* Minimum of one Zoom meeting per week between Rebecca & Sophia (can be more frequent, as needed)
+* Welcome to use email at any point (rsenior@princeton.edu), but I recommend trying Slack for most communication as it will be easier to organise and facilitates instant messaging
+    * My working hours are typically 9am-5pm BST, Monday to Friday, and I am unlikely to respond quickly outside of these times
+    * The HMEI internship scheme requires a similar time commitment from you (35 hours per week), but I am happy for you to work these hours however you want and, ultimately, I am more interested in outcomes than hours worked. Take breaks. Enjoy your summer!
+    * The one addendum to flexible working hours is that we both may have to compromise at times to ensure we can meet as needed, despite being in different time zones. We will try to minimise the impact of this as much as possible, and don't forget that David is based in Princeton so you will be in the same time zone and he will be on-hand to assist when I cannot.
+* Interested in meeting the wider 'Drongos' lab group?
+
+## Skills & knowledge
+
+* R (in RStudio)
+    * Data wrangling, preferably using `dplyr`, to read in data, explore it and format correctly for analysis
+    * Exploratory figures, using `ggplot2`, to explore data distribution and relationships between variables
+    * Analysis via linear and general linear models, using `lme4`
+    * Model validation
+    * Data visualisation using `ggplot2`
+    * Potentially writing and presentation using `rmarkdown`
+* Git and GitHub
+    * Aim to use Git and GitHub for version control, and to allow pain-free code collaboration
+* Background knowledge
+    * Get familiar with broad biodiversity and conservation literature - particularly the state of nature right now, and the drivers of biodiversity loss
+    * Get familiar with the IUCN Red List of Threatened Species - what is it? What information does it provide?
+    * Beneficial to know something about how habitat quality and quantity affects species' populations - how much habitat do species require? Does it matter how habitat is configured in space? Does it matter whether or not individuals can move freely between different patches of habitat? Key concepts here include:
+        * species-area relationship
+        * island biogeography
+        * habitat fragmentation and connectivity
+        * SLOSS ("Single Large or Several Small") debate
+        
+## Project overview
+
+Copying this from our email conversation, so we have it on record to refer back to:
+
+I envisage that we'll be focusing on bird species threatened by habitat loss. The dataset will basically comprise estimates of population size for each species, in each discrete patch of habitat that exists globally for that species. Using thresholds of 'minimum viable population size', you'll then identify, for each species, which habitat patches are currently too small to maintain a viable population. That will be a good start, enabling us to see how many patches are simply too small to be useful for the conservation of each species. 
+
+From there, we can then consider which kinds of species are particularly affected and where, and potentially think about what it would take to make those habitat patches big enough to be useful. For example, if a patch needs to be 10 km^2 bigger, could that be achieved by connecting it to another, nearby habitat patch, or would it require active habitat restoration in the surrounding area? If the latter, what is it that needs to be converted? E.g. cropland to forest?
+
+In terms of prep, it would be useful first of all for you to familiarise yourself with the topic of habitat loss as a driver of biodiversity loss. Something like the [WWF Living Planet Report](https://livingplanet.panda.org/en-gb/) [@wwf_living_2020] or the [IPBES report](https://ipbes.net/global-assessment) [@ipbes_summary_2019] provide a good overview (don't feel the need to read them in full - they're very long!).  You might find [this paper](https://science.sciencemag.org/content/366/6461/120) [@rosenberg_decline_2019] a useful intro to the decline of birds in N America, specifically. [This paper](https://www.nature.com/articles/nature14324/briefing/signup/?origin=Nature&originReferralPoint=EmailBanner) [@newbold_global_2015] will give you a global overview of how land-use change affects biodiversity. You may also need to interact with the Red List of Threatened Species https://www.iucnredlist.org/ so I'd recommend having a browse through that site to familiarise yourself with the species' profiles. And, if you have the chance, you can do some digging into what a 'minimum viable population size' is and the various ways in which that might be defined.
+
+## Project goals
+
+* _Note that this can change as the project is evolving!_
+* Main purpose of this internship is to give you opportunities and skills that enhance your career - we should regularly discuss what you want to achieve and whether we are making progress towards that
+* Additionally, we will ideally produce at least one paper, with you as an author (order depending on how much work each of us contributes to the final product, with David Wilcove as the PI i.e. last author)
+* June
+    * Get up to speed with skills & background knowledge required
+    * Data wrangling & exploratory analysis
+* July
+    * Analysis
+    * Data visualisation
+    * Begin write-up (Methods, some of Introduction)
+* August
+    * Finish draft write-up
+    * Discuss next steps - more analyses needed? More writing needed? Which journal? Write summary for policy-makers?
+
+# Action points
+
+<span style="color:red">Short term (days)</span> | <span style="color:slateblue">Medium term (weeks)</span> | 
+<span style="color:lightblue">Long term (months)</span> | <span style="color:plum">Ongoing</span>
+
+* <span style="color:red">
+Agree on internship goals [RAS, SR]
+</span>
+* <span style="color:slateblue">
+Get familiar and comfortable with the required skills, tools and background knowledge [SR]
+</span>
+* <span style="color:plum">
+Test out different tools for collaboration and communication [RAS, SR]
+</span>
+
+# References
