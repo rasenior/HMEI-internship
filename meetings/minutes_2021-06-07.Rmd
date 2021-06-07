@@ -1,7 +1,7 @@
 ---
 title: "Meeting agenda"
 subtitle: "_Estimating the recovery potential of threatened species_"
-author: "Rebecca Senior, Sophia Richter"
+author: "Rebecca Senior and Sophia Richter"
 date: "7 June 2021"
 output: 
     bookdown::html_document2:
