@@ -1,0 +1,215 @@
+---
+title: "IUCN_dat_intro"
+author: "Sophia Richter"
+date: "6/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning=F)
+knitr::opts_chunk$set(message=F)
+```
+
+
+```{r load, include=F}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(GGally)
+library(tidyr)
+```
+
+Read Data
+```{r}
+data = read_csv('iucn_dat.csv')
+
+# make data set smaller to just columns interested in
+imp_data = data %>% select(scientificName, redlistCategory, populationTrend, BodyMass)
+
+imp_data2 = data %>% select(redlistCategory, populationTrend, BodyMass, cat_change, cat_change_bi, systems, realm, kingdomName, phylumName, orderName, className)
+
+```
+
+## Data Set Basics
+ - there are 35451 total species in the data set
+ - there are 13400 species with body mass data
+ 
+How many species are in each distinct category? 
+```{r}
+imp_data %>% group_by(redlistCategory) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data %>% group_by(populationTrend) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(cat_change) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(cat_change_bi) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(systems) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(realm) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(kingdomName) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(phylumName) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(orderName) %>% summarize(Sum = n()) %>% arrange(-Sum)
+imp_data2 %>% group_by(className) %>% summarize(Sum = n()) %>% arrange(-Sum)
+```
+
+Number of species in each category of population trend for each category of red list
+```{r}
+list_pop = imp_data %>% group_by(populationTrend, redlistCategory) %>% summarize(Sum = n()) 
+df = as.data.frame(list_pop)
+
+df %>% pivot_wider(names_from=populationTrend, values_from=Sum)
+```
+
+Species in each category for each category of red list and class
+```{r}
+list_order = imp_data2 %>% group_by(redlistCategory, className) %>% summarize(Sum = n()) 
+df2 = as.data.frame(list_order)
+
+df3 = df2 %>% pivot_wider(names_from=redlistCategory, values_from=Sum)
+
+knitr::kable(df3)
+```
+
+
+# Redlist Categories
+```{r}
+
+# redlist distribution
+ggplot(imp_data, aes(x=redlistCategory)) + geom_bar() + theme(axis.text.x = element_text(angle = 90)) +ggtitle("Number of Species in Each Redlist Category")
+
+# filter data for high risk species
+vul_data = imp_data %>% filter(redlistCategory == 'Vulnerable' | redlistCategory == 'Near Threatened' | redlistCategory == 'Endangered' | redlistCategory == 'Critically Endangered')
+```
+
+# Compare populationTrend and redlistCategory
+```{r}
+pop = imp_data %>% filter(populationTrend != 'NA') %>% filter(redlistCategory != 'Data Deficient') %>% filter(redlistCategory != 'Extinct') %>%  filter(redlistCategory != 'Extinct in the Wild')
+
+ggplot(pop, aes(redlistCategory, populationTrend)) + geom_count() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Count of Population Trend and Vulnerable Categories")
+
+ggplot(pop, aes(x=populationTrend, fill=populationTrend)) + geom_bar() + facet_wrap(~redlistCategory) + theme(axis.text.x=element_blank()) + ggtitle("Comparison of Population Trend and Redlist Category")
+```
+
+The largest redlistCategory is Least Concern, of which the population trends are more stable or decreasing (unknown excluded). Of the other redlist categories, greater numbers have decreasing population trends than stable/increasing. 
+
+Of the populations decreasing, the categories affected in order are least concern, endangered, vulnerable, near threatened, and critically endangered. The majority of populations that are stable or increasing are in the least concern category. 
+
+# Comparison of redlistCategory and taxonomy
+```{r}
+# comparison with kingdom
+ggplot(imp_data2, aes(x=redlistCategory, fill=redlistCategory)) + geom_bar() + facet_wrap(~kingdomName) + theme(axis.text.x=element_blank()) + ggtitle("Red List Category and Kingdom")
+
+# comparison with phylum
+ggplot(imp_data2, aes(x=redlistCategory, fill=redlistCategory)) + geom_bar() + facet_wrap(~phylumName) + theme(axis.text.x=element_blank()) + ggtitle("Red List Category and Phylum")
+
+# comparison with classes that have over 1000 species in the dataset
+class_data = imp_data2 %>% filter(className != 'cephalopoda') %>% filter(className != 'gastropoda') %>% filter(className !='pinopsida') %>% filter(className != 'cycadopsida') %>% filter(className != 'reptilia') %>% filter(className != 'myxini')
+
+ggplot(class_data, aes(x=redlistCategory, fill=redlistCategory)) + geom_bar() + facet_wrap(~className) + theme(axis.text.x=element_blank()) + ggtitle("Red List Category and Class")
+```
+
+Amphibians (and mammals second) have the highest proportions with critically endangered, endangered, and vulnerable populations. Birds have high proportions of near threatened and vulnerable populations, but they also hav the highest count of species in the least concern category. 
+
+## Status Change variables
+```{r}
+# binary change (NA removed)
+change_bi = imp_data2 %>% filter(cat_change_bi != 'NA')
+
+ggplot(change_bi, aes(x=cat_change_bi, fill=cat_change_bi)) + geom_bar() + facet_wrap(~className) + theme(axis.text.x=element_blank()) + ggtitle("Class and Status Change")
+```
+
+For binary changes, more amphibian and ray-finned fish (actinopterygii) species improved than declined. More bird, mammal, conifer, cycad, and cartilaginous fish species declined than improved (in decreasing order). 
+
+```{r}
+# non-binary change
+change = imp_data2 %>% filter(cat_change != 'NA')
+
+ggplot(change, aes(x=cat_change)) + geom_histogram(binwidth=1) + ggtitle("Distribution of Status Change Across Species")
+
+ggplot(change, aes(x=className, y=cat_change)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Status Change Across Class")
+
+ggplot(change, aes(x=className, y=cat_change)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Status Change Across Class")
+
+```
+
+For nonbinary changes, the classes with the median cat_change below 0 are ray-finned fish, amphibians, and gastropoda. The remaining species have a median change above 0. However, it is notable that all species have an interquartile range that encompasses 0 except for cycadopsida and gastropoda. Birds, mammals, reptiles, and most plants have the median at the upper end of the IQR and above 0. 
+
+## Body Mass Calculations
+```{r}
+# average body mass of each red list category and overall
+mass = imp_data2 %>% filter(BodyMass != 'NA')
+mean(mass$BodyMass)
+
+mass_list = mass %>% group_by(redlistCategory) %>% summarize(AvgMass = mean(BodyMass), MedMass = median(BodyMass)) %>% arrange(-AvgMass)
+mass_list 
+
+# same but with population trend
+mass_pop = mass %>% group_by(populationTrend) %>% summarize(AvgMass = mean(BodyMass), MedMass = median(BodyMass)) %>% arrange(-AvgMass)
+mass_pop
+
+# body mass boxplot without outliers
+body_out = imp_data %>% filter(BodyMass != 'NA') %>% filter(redlistCategory != 'Data Deficient') %>% filter(redlistCategory != 'Extinct in the Wild')
+
+ggplot(body_out, aes(x=redlistCategory, y=BodyMass)) + geom_boxplot(outlier.shape = NA) + coord_cartesian(ylim = quantile(body_out$BodyMass, c(0.1, 0.93))) + ggtitle("Distribution of Body Mass Across Redlist Category (outliers excluded)")
+
+```
+
+The average body mass is generally higher for uplisted species on the red list. The average body mass is generally higher for species who have increasing population trends as compared to those with decreasing or stable trends (this may be in part due to differences in sample size). 
+
+The median body mass is lower for species of least concern and near threatened as compared to the median body mass of other categories. (when outliers are ignored)
+
+## Systems
+I thought this might be interesting, even though you didn't mention looking at it. 
+
+```{r}
+# filter out small, NA systems
+system = imp_data2 %>% filter(systems != '<NA>') %>% filter(systems != 'Marine|Marine') %>% filter(systems != 'Freshwater (=Inland waters)|Marine|Marine')
+
+# filter irrelevant categories
+system2 = system %>% filter(redlistCategory == 'Critically Endangered' | redlistCategory == 'Endangered' | redlistCategory == 'Least Concern' | redlistCategory == 'Near Threatened' | redlistCategory == 'Vulnerable')
+
+# compare system and redlistCategory
+ggplot(system2, aes(x=systems, fill=systems)) + geom_bar() + facet_wrap(~redlistCategory, labeller = labeller(redlistCategory = label_wrap_gen(10))) + theme(axis.text.x=element_blank()) + ggtitle("Comparison of Redlist Category and System")
+
+# compare system and populationTrend
+ggplot(system, aes(x=systems, fill=systems)) + geom_bar() + facet_wrap(~populationTrend) + theme(axis.text.x=element_blank()) + ggtitle("Comparison of Population Trend and System")
+
+ggplot(system, aes(x=populationTrend, fill=populationTrend)) + geom_bar() + facet_wrap(~systems, labeller = labeller(systems = label_wrap_gen(10))) + theme(axis.text.x=element_blank()) + ggtitle("Comparison of Population Trend and System")
+
+# compare system and cat_change_bi
+system_bi = system %>% filter(cat_change_bi != 'NA')
+
+ggplot(system_bi, aes(x=cat_change_bi, fill=cat_change_bi)) + geom_bar() + facet_wrap(~systems, labeller = labeller(systems = label_wrap_gen(10))) + theme(axis.text.x=element_blank()) + ggtitle("System and Status Change")
+
+# system and cat_change
+system_change = system %>% filter(cat_change != 'NA')
+
+ggplot(system_change, aes(x=systems, y=cat_change)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("System and Status Change")
+```
+The majority of systems are in the least concern category. However, of the categories that are not least concern, the systems with the most species are terrestrial and freshwater inland waters. A small portion of Near Threatened and Vulnerable are marine. 
+
+Similarly, terrestrial and freshwater inland water systems have the highest number of species with decreasing population trends. The systems with stable species are in decreasing order: terrestrial, terrestrial freshwater inland, marine, freshwater. Only terrestrial has a noticeable number of species that have increasing trends. 
+
+Within the binary change categories, terrestrial had the most change, with more species in decline than improving. Terrestrial freshwater inland had more improved than decline. Marine systems were relatively equal. 
+
+Within nonbinary change, the species with median negative -1 change were terrestrial inland freshwater. The remaining systems had a median positive +1 change. ALL IQRs were from -1 to 1 except for freshwater/marine and terrestrial/freshwater/marine, which both had IQRs above 0 cat_change. 
+
+
+## For fun
+```{r}
+# compare system and class, bodymass
+ggplot(system, aes(x=systems, y=BodyMass)) + geom_boxplot(outlier.shape = NA) + coord_cartesian(ylim = quantile(body_out$BodyMass, c(0.1, 0.999))) + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Body Mass and System")
+
+# average body mass of each system
+mass_system = mass %>% group_by(systems) %>% summarize(AvgMass = mean(BodyMass), MedMass = median(BodyMass)) %>% arrange(-AvgMass)
+mass_system
+# turns out marine is like wayyyyy bigger !!
+
+# class
+ggplot(imp_data2, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~systems, labeller = labeller(systems = label_wrap_gen(10))) + theme(axis.text.x=element_blank()) + ggtitle("System and Class")
+
+
+# education
+# it seems education is focused on more threatened species
+edu = data %>% filter(education == TRUE)
+ggplot(edu, aes(x=redlistCategory)) + geom_bar()
+ggplot(edu, aes(x=populationTrend)) + geom_bar()
+```
+
