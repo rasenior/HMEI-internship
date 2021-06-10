@@ -1,0 +1,120 @@
+---
+title: "IUCN and Habitat Data Merge"
+author: "Sophia Richter"
+date: "6/10/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning=F)
+knitr::opts_chunk$set(message=F)
+```
+
+Read Data (code and files obtained from Rebecca)
+
+```{r}
+library(dplyr)
+library(readr)
+
+# Get a vector of all the filenames
+files <- list.files(path = "aohareas_historic", 
+                    # Keep the full file path
+                    full.names = TRUE,
+                    # Limit to CSV files
+                    pattern = "\\.csv$")
+
+# Read each one in with lapply & bind all
+areadat <- 
+    lapply(files, function(file_i){
+        suppressMessages(read_csv(file_i))
+    }) %>% 
+    # Collapse list into dataframe
+    bind_rows()
+
+# test to make sure correct
+areadat %>% distinct(species)
+```
+
+Merge area data and IUCN data
+```{r}
+# read iucn data
+iucndat <- read_csv('iucn_dat.csv')
+
+merge_dat <- inner_join(areadat, iucndat, by=c('species'='scientificName'))
+```
+
+
+## For each year and each species, identify whether the species' AOH falls below any of the IUCN Red List category thresholds (10, 500 and 2000 km^2) 
+
+```{r}
+# look at data
+# 8834 year/species have 0 AOH
+merge_dat %>% group_by(areaAOH.x) %>% summarize(Sum = n()) %>% arrange(areaAOH.x)
+
+# add column for AOH in km^2
+merge_dat_km <- merge_dat %>% mutate(AOHkm = areaAOH.x/1000000) %>% mutate(PAkm = areaAOHinPA.x/1000000)
+
+# add column for whether AOH falls below 10 km
+merge_dat_km <- merge_dat_km %>% mutate(ten = AOHkm < 10)
+
+merge_dat_km %>% group_by(ten) %>% summarize(Sum = n()) %>% arrange(-Sum) %>% select(ten, Sum)
+
+# add column for whether AOH falls below 500
+merge_dat_km <- merge_dat_km %>% mutate(five_hundred = AOHkm < 500)
+
+merge_dat_km %>% group_by(five_hundred) %>% summarize(Sum = n()) %>% arrange(-Sum) %>% select(five_hundred, Sum)
+
+# add column for whether AOH falls below 2000
+merge_dat_km <- merge_dat_km %>% mutate(two_thousand = AOHkm < 2000)
+
+merge_dat_km %>% group_by(two_thousand) %>% summarize(Sum = n()) %>% arrange(-Sum) %>% select(two_thousand, Sum)
+```
+
+
+## Identify the lowest threshold that AOH falls under - this will define what the species' Red List category ought to be
+
+```{r}
+# column if ten is lowest threshold
+merge_dat_km_thresh <- merge_dat_km %>% mutate(ten_lowest = ten)
+
+# column if 500 is lowest threshold
+merge_dat_km_thresh <- merge_dat_km_thresh %>% mutate(five_lowest = xor(ten, five_hundred))
+
+merge_dat_km_thresh %>% select(ten, ten_lowest, five_hundred, five_lowest, two_thousand) 
+
+# column if 2000 is lowest threshold
+merge_dat_km_thresh <- merge_dat_km_thresh %>% mutate(two_lowest = xor(five_hundred, two_thousand))
+```
+
+
+## Record what the species' Red List category ought to be, and record whether this is the same as its actual Red List category
+
+```{r}
+# record what category should be
+merge_dat_cat <- merge_dat_km_thresh %>% mutate(Category = 'Not Threatened') 
+
+merge_dat_cat <- merge_dat_cat %>% mutate(Category = ifelse(ten_lowest == TRUE, "Critically Endangered", ifelse(five_lowest == TRUE, "Endangered", ifelse(two_lowest == TRUE, "Vulnerable", "Near Threatened"))))
+
+# record if category matches IUCN red list data
+merge_dat_match <- merge_dat_cat %>% mutate(Match = Category == redlistCategory)
+
+check <- merge_dat_match %>% select(redlistCategory, Category, Match)
+check
+```
+
+
+## For all species falling under a threshold, calculate the difference between AOH and the next highest threshold.
+
+```{r}
+merge_dat_diff <- merge_dat_match %>% mutate(Difference = ifelse(ten_lowest == TRUE, 10 - AOHkm, ifelse(five_lowest == TRUE, 500 - AOHkm, ifelse(two_lowest == TRUE, 2000 - AOHkm, NA))))
+
+check <- merge_dat_diff %>% select(AOHkm, Difference, ten_lowest, five_lowest, two_lowest)
+
+# there are a lot of species with only a small difference !
+check %>% arrange(Difference)
+
+```
+
