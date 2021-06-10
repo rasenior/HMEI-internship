@@ -2,7 +2,9 @@
 title: "IUCN_dat_intro"
 author: "Sophia Richter"
 date: "6/8/2021"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -129,7 +131,7 @@ ggplot(change, aes(x=className, y=cat_change)) + geom_violin() + theme(axis.text
 
 ```
 
-For nonbinary changes, the classes with the median cat_change below 0 are ray-finned fish, amphibians, and gastropoda. The remaining species have a median change above 0. However, it is notable that all species have an interquartile range that encompasses 0 except for cycadopsida and gastropoda. Birds, mammals, reptiles, and most plants have the median at the upper end of the IQR and above 0. 
+For nonbinary changes, the classes with the median cat_change below 0 (improve, downlisting) are ray-finned fish, amphibians, and gastropoda. The remaining species have a median change above 0. However, it is notable that all species have an interquartile range that encompasses 0 except for cycadopsida and gastropoda. Birds, mammals, reptiles, and most plants have the median at the upper end of the IQR and above 0 (decline, uplisting). 
 
 ## Body Mass Calculations
 ```{r}
@@ -213,3 +215,52 @@ ggplot(edu, aes(x=redlistCategory)) + geom_bar()
 ggplot(edu, aes(x=populationTrend)) + geom_bar()
 ```
 
+# Amphibian Study
+```{r}
+amphibian = data %>% filter(className == 'amphibia') %>% filter(cat_change_bi != 'NA')
+
+amphibian %>% group_by(familyName) %>% summarize(Sum = n()) %>% arrange(-Sum)
+
+amphibian %>% group_by(systems) %>% summarize(Sum = n()) %>% arrange(-Sum)
+
+amphibian %>% group_by(realm) %>% summarize(Sum = n()) %>% arrange(-Sum)
+
+# pull out population trend, cat_change, cat_change_bi, redlistCategory, bodymass, realm, systems, familyName
+amphibian_set = amphibian %>% select(populationTrend, cat_change, cat_change_bi, redlistCategory, BodyMass, realm, systems, familyName)
+
+ggpairs(amphibian_set, cardinality_threshold=80)
+
+ggplot(amphibian, aes(x=redlistCategory)) + geom_bar()
+
+
+# education and cat_change_bi
+education = data %>% filter(education == TRUE)
+ggplot(education, aes(x=className)) + geom_bar()
+
+ggplot(amphibian, aes(x=cat_change_bi, fill=cat_change_bi)) + geom_bar() + facet_wrap(~education) + theme(axis.text.x=element_blank())
+
+# protected area and cat_change_bi
+ggplot(amphibian, aes(x=cat_change_bi, fill=cat_change_bi)) + geom_bar() + facet_wrap(~aohPA_prop) + theme(axis.text.x=element_blank())
+
+# body mass and cat_change_bi
+# improving species have smaller body mass
+ggplot(amphibian, aes(x=cat_change_bi, y=BodyMass)) + geom_boxplot()
+
+# systems 
+# improving more in terrestrial - associated lands
+ggplot(amphibian, aes(x=cat_change_bi, fill=cat_change_bi)) + geom_bar() + facet_wrap(~systems) + theme(axis.text.x=element_blank())
+
+# realm
+# doesn't seem to have much of a correlation with realm, although indomalayan notably has a large difference
+ggplot(amphibian, aes(x=cat_change_bi, fill=cat_change_bi)) + geom_bar() + facet_wrap(~realm) + theme(axis.text.x=element_blank())
+
+# red list category
+# critically endangered and endangered are declining
+# up listed categories are improving
+ggplot(amphibian, aes(x=realm, fill=cat_change_bi)) + geom_bar() + facet_wrap(~redlistCategory) + theme(axis.text.x = element_text(angle = 90))
+
+# most endangered and critically endangered species are neotropical (which is improving!) and afrotropical (which is improving, but less so)
+# largest population in least concern is indomalayn (which are also improving) 
+```
+
+Largest factors affecting cat_change_bi seem to be body mass and redlistCategory. 
