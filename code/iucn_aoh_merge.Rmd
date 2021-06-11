@@ -3,8 +3,8 @@ title: "IUCN and Habitat Data Merge"
 author: "Sophia Richter"
 date: "6/10/2021"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -18,6 +18,8 @@ Read Data (code and files obtained from Rebecca)
 ```{r}
 library(dplyr)
 library(readr)
+library(GGally)
+library(ggplot2)
 
 # Get a vector of all the filenames
 files <- list.files(path = "aohareas_historic", 
@@ -118,3 +120,273 @@ check %>% arrange(Difference)
 
 ```
 
+
+
+# Difference in threshold - AOH Explored
+
+## Explore the values calculated above (i.e. how much additional habitat is needed) to see what their distribution is, whether there are any 'easy wins' where the difference is relatively small, and if there are any patterns in species taxonomy/geography/traits that correlate with the amount of additional habitat required
+
+Distribution of Differences
+```{r}
+# remove values with NA and extract the last year for each species
+merge_diff = merge_dat_diff %>% filter(`system:index` == 23) %>%  filter(Difference != "NA")
+
+ggplot(merge_diff, aes(x=Difference)) + geom_histogram(binwidth=50) + ggtitle("Distribution of Differences (km^2) to Next Threshold Value")
+
+```
+
+A large portion of the differences are near 0, and the majority are below 500 km^2. 
+
+
+## Easy Wins
+
+
+### Critically Endangered (< 10 km^2)
+```{r}
+# there are 701 species that have an AOH less than 10 km^2
+crit_diff <- merge_diff %>% filter(Category == "Critically Endangered")
+
+# Distribution
+ggplot(crit_diff, aes(x=Difference)) + geom_histogram(binwidth=1) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Critically Endangered Species")
+
+# Number of species in the lowest 5% of differences and that average
+701 * 0.05
+crit_diff %>% arrange(Difference) %>% slice(1:35) %>% select(species, Difference)
+
+crit_diff %>% arrange(Difference) %>% slice(1:35) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+# Number of species in the lowest 10% of differences and that average
+701*0.1
+
+crit_diff %>% arrange(Difference) %>% slice(1:70) %>% select(species, Difference)
+
+crit_diff %>% arrange(Difference) %>% slice(1:70) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+# Number of species in the lowest 25% of differences and that average
+701*0.25
+
+crit_diff %>% arrange(Difference) %>% slice(1:175) %>% select(species, Difference)
+
+crit_diff %>% arrange(Difference) %>% slice(1:175) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+```
+
+The distribution of the species that are Critically Endangered skews right, with a high proportion needing the full 10 km^2 restored. The mean and median of the bottom 5% difference is around 1. For 10% it is around 1.5, and for 25% it is around 4.  
+
+
+### Endangered
+
+```{r}
+# There are 1404 endangered species
+endan_diff <- merge_diff %>% filter(Category == "Endangered")
+
+# Distribution
+ggplot(endan_diff, aes(x=Difference)) + geom_histogram(binwidth=20) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Endangered Species")
+
+
+# Number of species in the lowest 5% of differences and that average
+1404 * 0.05
+
+endan_diff %>% arrange(Difference) %>% slice(1:70) %>% select(species, Difference)
+
+endan_diff %>% arrange(Difference) %>% slice(1:70) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+# Number of species in the lowest 10% of differences and that average
+1404 * 0.1
+
+endan_diff %>% arrange(Difference) %>% slice(1:140) %>% select(species, Difference)
+
+endan_diff %>% arrange(Difference) %>% slice(1:140) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+# Number of species in the lowest 25% of differences and that average
+1404 * 0.25
+
+endan_diff %>% arrange(Difference) %>% slice(1:351) %>% select(species, Difference)
+
+endan_diff %>% arrange(Difference) %>% slice(1:351) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+    
+```
+
+The distribution of the species that are Endangered skews right, with a left tail. For the 5% of the species with the lowest Difference, the mean and median is around 29 and 28 (respectively). For 10%, the mean and median is 59 and 60, and for 25% it is 138 and 142. 
+
+
+### Vulnerable
+
+```{r}
+# There are 753 endangered species
+vul_diff <- merge_diff %>% filter(Category == "Vulnerable")
+
+# Distribution
+ggplot(vul_diff, aes(x=Difference)) + geom_histogram(binwidth=75) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Vulnerable Species")
+
+
+# Number of species in the lowest 5% of differences and that average
+753 * 0.05
+
+vul_diff %>% arrange(Difference) %>% slice(1:37) %>% select(species, Difference)
+
+vul_diff %>% arrange(Difference) %>% slice(1:37) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+
+# Number of species in the lowest 10% of differences and that average
+753 * 0.1
+
+vul_diff %>% arrange(Difference) %>% slice(1:75) %>% select(species, Difference)
+
+vul_diff %>% arrange(Difference) %>% slice(1:75) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+
+
+# Number of species in the lowest 25% of differences and that average
+753 * 0.25
+
+vul_diff %>% arrange(Difference) %>% slice(1:188) %>% select(species, Difference)
+
+vul_diff %>% arrange(Difference) %>% slice(1:188) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+```
+
+For Vulnerable species, the distribution in difference is relatively flat and only a slight left tail. The mean and median for the bottom 5% is around 53. For 10%, it is 111, and for 25% the mean and median is 291 and 299. 
+
+
+## Patterns 
+taxonomy/geography/traits
+
+### Taxonomy
+
+order and class across all red list categories
+```{r}
+ggplot(merge_diff, aes(x=orderName, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order")
+
+ggplot(merge_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class")
+```
+
+Separated by Red List Category
+```{r}
+# Critically Endangered
+ggplot(crit_diff, aes(x=orderName, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Critically Endangered Species")
+
+ggplot(crit_diff, aes(x=className, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Critically Endangered Species")
+
+ggplot(crit_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Critically Endangered Species")
+
+
+# Endangered
+ggplot(endan_diff, aes(x=orderName, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Endangered Species")
+
+ggplot(endan_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Endangered Species")
+
+
+# Vulnerable
+ggplot(vul_diff, aes(x=orderName, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Vulnerable Species")
+
+ggplot(vul_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Vulnerable Species")
+
+```
+
+Across each of the red list categories and classes, birds have a consistently lower median (and often lower bound of IQR) for Difference. In addition, amphibians and mammals both have a larger proportion of species with a Difference skewed towards the upper values. 
+
+
+### Geography
+
+```{r}
+ggplot(merge_diff, aes(x=systems, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value for each System")
+
+ggplot(merge_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms")
+
+```
+
+There is little difference across system, but certain realms have a significantly higher median and IQR Difference (e.g. Indomalayn|Palearctic).
+
+
+Geography across Red List Category
+```{r}
+# Critically Endangered
+ggplot(crit_diff, aes(x=systems, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Critically Endangered Species")
+
+ggplot(crit_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Critically Endangered Species")
+
+
+# Endangered
+ggplot(endan_diff, aes(x=systems, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Endangered Species")
+
+ggplot(endan_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Endangered Species")
+
+
+# Vulnerable
+ggplot(vul_diff, aes(x=systems, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Vulnerable Species")
+
+ggplot(vul_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Vulnerable Species")
+
+```
+
+Critically Endangered: Terrestrial is more evenly distributed, whereas inland waters have a large proportion with a 10 km^2 difference. Of the realms,  afrotropical|palearctic, indomalayan|oceanian, indomalayan|palearctic have only a few species in this category. Afrotropical, australasion, and nearctic|neotropical (in particular) have lower medians for difference, and the rest have medians at 10 km^2. 
+
+Endangered: There is no significant difference between systems. Indomalayn|Palearctic has a significantly larger IQR but also the highest median. Afrotropical|Palearctic has a small and low IQR and median. 
+
+Vulnerable: There is no significant difference between systems. Oceanian has a lower median when compared to other realms, whereas nearctic and Nearctic|Neotropical have small IQRs and higher medians. 
+
+
+### Traits
+There was no significant correlation between difference and any of the following traits: body mass, congregatory, elevation, area restricted, fragmentation, population trend, or cat_change_bi. 
+
+Body Mass
+```{r}
+pair = merge_diff %>% select(BodyMass, Difference)
+
+ggpairs(pair)
+```
+
+There is no correlation between body mass and difference. 
+
+
+Congregatory
+```{r}
+ggplot(merge_diff, aes(x=Congregatory.value,  y=Difference)) + geom_boxplot() + ggtitle("Difference (km^2) to Next Threshold Value Across \n Congregatory Patterns")
+
+# Numbers
+merge_diff %>% group_by(Category, Congregatory.value) %>% summarize(Sum = n())
+```
+
+There is not a significant difference among congregatory patterns overall, also there is not enough data to really gather anything significant. 
+
+
+Elevation (lower and upper limit)
+```{r}
+elevation = merge_diff %>% select(ElevationLower.limit, ElevationUpper.limit, Difference)
+
+ggpairs(elevation)
+
+```
+
+There is no significant correlation between elevation and difference. Unsurprisingly, there is a strong correlation between lower and upper limit. 
+
+
+Area Restricted
+```{r}
+ggplot(merge_diff, aes(x=AreaRestricted.isRestricted, y=Difference)) + geom_boxplot() + ggtitle("Restricted Area v. Difference (km^2) to Next Threshold Value")
+```
+
+Between 'Yes' and 'No' for whether the area is restricted, the IQR and median for 'Yes' is a lower Difference than 'No'. However it does not seem to be significant. 
+
+
+Fragmentation
+```{r}
+ggplot(merge_diff, aes(x=SevereFragmentation.isFragmented, y=Difference)) + geom_boxplot() + ggtitle("Fragmented v. Difference (km^2) to Next Threshold Value")
+```
+
+There does not seem to be a significant correlation. 
+
+
+Population Trend
+```{r}
+ggplot(merge_diff, aes(x=populationTrend, y=Difference)) + geom_boxplot() + ggtitle("Population Trend v. Difference (km^2) to Next Threshold Value")
+```
+
+No significant difference. 
+
+
+cat_change_bi
+```{r}
+ggplot(merge_diff, aes(x=cat_change_bi, y=Difference)) + geom_boxplot() + ggtitle("Red List Category Change v. Difference (km^2) to \n Next Threshold Value")
+```
+
+No significance. 
