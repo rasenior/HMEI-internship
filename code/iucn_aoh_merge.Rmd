@@ -219,7 +219,7 @@ The distribution of the species that are Endangered skews right, with a left tai
 ### Vulnerable
 
 ```{r}
-# There are 753 endangered species
+# There are 753 vulnerable species
 vul_diff <- merge_diff %>% filter(Category == "Vulnerable")
 
 # Distribution
@@ -396,3 +396,10 @@ ggplot(merge_diff, aes(x=cat_change_bi, y=Difference)) + geom_boxplot() + ggtitl
 ```
 
 No significance. 
+
+
+
+
+
+### Internet Code Source
+Mutate column conditionally: https://stackoverflow.com/questions/22337394/dplyr-mutate-with-conditional-values
