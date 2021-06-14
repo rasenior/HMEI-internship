@@ -43,7 +43,11 @@ areadat %>% distinct(species)
 Merge area data and IUCN data
 ```{r}
 # read iucn data
-iucndat <- read_csv('iucn_dat.csv')
+iucndat <- read_csv('iucn_dat.csv') %>% 
+  # Rename the AOH variables to avoid confusion
+  # (Jung refers to the land cover map by Jung et al. 2020)
+  rename(areaAOH_jung = areaAOH,
+         areaAOHinPA_jung = areaAOHinPA)
 
 merge_dat <- inner_join(areadat, iucndat, by=c('species'='scientificName'))
 ```
@@ -54,10 +58,12 @@ merge_dat <- inner_join(areadat, iucndat, by=c('species'='scientificName'))
 ```{r}
 # look at data
 # 8834 year/species have 0 AOH
-merge_dat %>% group_by(areaAOH.x) %>% summarize(Sum = n()) %>% arrange(areaAOH.x)
+# We should remove these species because the reason they have 0 AOH will be some
+# artefact of the way AOH is calculated e.g. limitations of the land cover map
+merge_dat %>% group_by(areaAOH) %>% summarize(Sum = n()) %>% arrange(areaAOH)
 
 # add column for AOH in km^2
-merge_dat_km <- merge_dat %>% mutate(AOHkm = areaAOH.x/1000000) %>% mutate(PAkm = areaAOHinPA.x/1000000)
+merge_dat_km <- merge_dat %>% mutate(AOHkm = areaAOH/1000000) %>% mutate(PAkm = areaAOHinPA/1000000)
 
 # add column for whether AOH falls below 10 km
 merge_dat_km <- merge_dat_km %>% mutate(ten = AOHkm < 10)
