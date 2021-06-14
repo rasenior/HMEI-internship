@@ -3,8 +3,8 @@ title: "IUCN and Habitat Data Merge"
 author: "Sophia Richter"
 date: "6/10/2021"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -396,6 +396,469 @@ ggplot(merge_diff, aes(x=cat_change_bi, y=Difference)) + geom_boxplot() + ggtitl
 ```
 
 No significance. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Protected Habitat Analysis
+
+## For each year and each species, identify whether the species' AOHinPA falls below any of the IUCN Red List category thresholds (10, 500 and 2000 km^2) 
+```{r}
+# look at data
+# 1014 species had no AOH in protected areas in 2015
+merge_dat_km %>% filter(`system:index` == 23) %>% group_by(PAkm) %>% summarize(Sum = n()) %>% arrange(PAkm)
+
+
+# merge_dat_km includes column for AOHinPA in km
+
+
+# add column for whether AOHinPA falls below 10 km
+merge_dat_km_PA <- merge_dat_km %>% mutate(ten_PA = PAkm < 10)
+
+merge_dat_km_PA %>% group_by(ten_PA) %>% summarize(Sum = n()) %>% arrange(-Sum) %>% select(ten_PA, Sum)
+
+
+# add column for whether AOHinPA falls below 500
+merge_dat_km_PA <- merge_dat_km_PA %>% mutate(five_hundred_PA = PAkm < 500)
+
+merge_dat_km_PA %>% group_by(five_hundred_PA) %>% summarize(Sum = n()) %>% arrange(-Sum) %>% select(five_hundred_PA, Sum)
+
+
+# add column for whether AOHinPA falls below 2000
+merge_dat_km_PA <- merge_dat_km_PA %>% mutate(two_thousand_PA = PAkm < 2000)
+
+merge_dat_km_PA %>% group_by(two_thousand_PA) %>% summarize(Sum = n()) %>% arrange(-Sum) %>% select(two_thousand_PA, Sum)
+
+```
+
+
+## Identify the lowest threshold that AOH falls under - this will define what the species' Red List category ought to be
+
+```{r}
+# column if ten is lowest PA threshold
+merge_dat_km_thresh_PA <- merge_dat_km_PA %>% mutate(ten_lowest_PA = ten_PA)
+
+
+# column if 500 is lowest PA threshold
+merge_dat_km_thresh_PA <- merge_dat_km_thresh_PA %>% mutate(five_lowest_PA = xor(ten_PA, five_hundred_PA))
+
+
+# column if 2000 is lowest PA threshold
+merge_dat_km_thresh_PA <- merge_dat_km_thresh_PA %>% mutate(two_lowest_PA = xor(five_hundred_PA, two_thousand_PA))
+
+```
+
+
+## Record what the species' Red List category ought to be, and record whether this is the same as its actual Red List category
+
+```{r}
+# record what category should be if only protected land
+merge_dat_cat_PA <- merge_dat_km_thresh_PA %>% mutate(Category_PA = 'Not Threatened') 
+
+merge_dat_cat_PA <- merge_dat_cat_PA %>% mutate(Category_PA = ifelse(ten_lowest_PA == TRUE, "Critically Endangered", ifelse(five_lowest_PA == TRUE, "Endangered", ifelse(two_lowest_PA == TRUE, "Vulnerable", "Near Threatened"))))
+
+
+# numbers in each category for year 2015 if only protect area were habitat
+merge_dat_cat_PA %>% filter(`system:index` == 23) %>% group_by(Category_PA) %>% summarize(Sum = n()) %>% select(Category_PA, Sum)
+
+
+# record if category matches IUCN red list data
+merge_dat_match_PA <- merge_dat_cat_PA %>% mutate(Match_PA = Category_PA == redlistCategory)
+
+check_PA <- merge_dat_match_PA %>% select(redlistCategory, Category_PA, Match_PA)
+check_PA
+
+
+# see if category has changed between AOH calc and AOHinPA calc
+# 198 species change category with only AOH in protected areas
+merge_dat_match %>% filter(`system:index` == 23) %>% group_by(Match) %>% summarize(Sum = n()) %>% select(Match, Sum)
+
+merge_dat_match_PA %>% filter(`system:index` == 23) %>%group_by(Match_PA) %>% summarize(Sum = n()) %>% select(Match_PA, Sum)
+
+```
+
+
+## For all species falling under a threshold, calculate the difference between AOH and the next highest threshold.
+
+```{r}
+merge_dat_diff_PA <- merge_dat_match_PA %>% mutate(Difference_PA = ifelse(ten_lowest_PA == TRUE, 10 - PAkm, ifelse(five_lowest_PA == TRUE, 500 - PAkm, ifelse(two_lowest_PA == TRUE, 2000 - PAkm, NA))))
+
+check_PA <- merge_dat_diff_PA %>% select(PAkm, Difference_PA, ten_lowest_PA, five_lowest_PA, two_lowest_PA)
+
+check_PA %>% arrange(Difference_PA)
+```
+
+
+
+# Difference in threshold - AOHinPA Explored
+
+## Explore the values calculated above (i.e. how much additional habitat is needed) to see what their distribution is, whether there are any 'easy wins' where the difference is relatively small, and if there are any patterns in species taxonomy/geography/traits that correlate with the amount of additional habitat required
+
+Distribution of Differences
+```{r}
+# remove values with NA and extract the last year for each species
+merge_diff_PA = merge_dat_diff_PA %>% filter(`system:index` == 23) %>%  filter(Difference_PA != "NA")
+
+ggplot(merge_diff_PA, aes(x=Difference_PA)) + geom_histogram(binwidth=50) + ggtitle("Distribution of PA Differences (km^2) to Next \n Threshold Value")
+
+```
+
+A large portion of differences are around 0, and fewer are around 500 when compared to differences in the AOH (not PA) data. 
+
+## Easy Wins
+
+Critically Endangered
+```{r}
+# there are 1390 species that have an AOH less than 10 km^2
+crit_diff_PA <- merge_diff_PA %>% filter(Category_PA == "Critically Endangered")
+
+# Distribution
+# majority (1014) species would have 0 km^2
+ggplot(crit_diff_PA, aes(x=Difference_PA)) + geom_histogram(binwidth=1) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Critically Endangered Species")
+
+
+# Number of species in the lowest 5% of differences and that average
+1390 * 0.05
+crit_diff_PA %>% arrange(Difference_PA) %>% slice(1:70) %>% select(species, Difference_PA)
+
+crit_diff_PA %>% arrange(Difference_PA) %>% slice(1:70) %>% summarize(Mean_PA = mean(Difference_PA), Median_PA = median(Difference_PA))
+
+
+# Number of species in the lowest 10% of differences and that average
+1390*0.1
+crit_diff_PA %>% arrange(Difference_PA) %>% slice(1:139) %>% summarize(Mean_PA = mean(Difference_PA), Median_PA = median(Difference_PA))
+
+
+# Number of species in the lowest 25% of differences and that average
+1390*0.25
+crit_diff_PA %>% arrange(Difference_PA) %>% slice(1:348) %>% summarize(Mean_PA = mean(Difference_PA), Median_PA = median(Difference_PA))
+```
+Bottom 5% mean and median difference to the next threshold is about 2. For 10%, mean/median is around 3, and for 25%, mean is 5.6 and median is 6. 
+
+
+Endangered
+```{r}
+# There are 1579 endangered species with only protected habitat
+endan_diff_PA <- merge_diff_PA %>% filter(Category_PA == "Endangered")
+
+# Distribution
+ggplot(endan_diff_PA, aes(x=Difference_PA)) + geom_histogram(binwidth=20) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Endangered Species")
+
+
+# Number of species in the lowest 5% of differences and that average
+1579 * 0.05
+endan_diff_PA %>% arrange(Difference_PA) %>% slice(1:79) %>% select(species, Difference_PA)
+
+endan_diff_PA %>% arrange(Difference_PA) %>% slice(1:79) %>% summarize(Mean = mean(Difference_PA), Median = median(Difference_PA))
+
+
+# Number of species in the lowest 10% of differences and that average
+1579 * 0.1
+endan_diff_PA %>% arrange(Difference_PA) %>% slice(1:158) %>% summarize(Mean = mean(Difference_PA), Median = median(Difference_PA))
+
+# Number of species in the lowest 10% of differences and that average
+1579 * 0.25
+endan_diff_PA %>% arrange(Difference_PA) %>% slice(1:395) %>% summarize(Mean = mean(Difference_PA), Median = median(Difference_PA))
+
+```
+The distribution of the differences for endangered species has a left tail, but has a higher count of species needing 500 km^2 restored compared to just areaAOH. For the lowest 5% of difference, the mean is 37.5 and the median is 40. For the lowest 10%, the mean is 71 and the median is 70. For 25%, the mean is 151 and median is 165. 
+
+
+Vulnerable
+```{r}
+# There are 661 vulnerable species with only PA habitat
+vul_diff_PA <- merge_diff_PA %>% filter(Category_PA == "Vulnerable")
+
+# Distribution
+ggplot(vul_diff_PA, aes(x=Difference_PA)) + geom_histogram(binwidth=75) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Vulnerable Species")
+
+
+# Number of species in the lowest 5% of differences and that average
+661 * 0.05
+vul_diff_PA %>% arrange(Difference_PA) %>% slice(1:33) %>% select(species, Difference_PA)
+
+vul_diff_PA %>% arrange(Difference_PA) %>% slice(1:33) %>% summarize(Mean = mean(Difference_PA), Median = median(Difference_PA))
+
+
+# Number of species in the lowest 5% of differences and that average
+661 * 0.1
+vul_diff_PA %>% arrange(Difference_PA) %>% slice(1:66) %>% summarize(Mean = mean(Difference_PA), Median = median(Difference_PA))
+
+
+# Number of species in the lowest 5% of differences and that average
+661 * 0.25
+vul_diff_PA %>% arrange(Difference_PA) %>% slice(1:165) %>% summarize(Mean = mean(Difference_PA), Median = median(Difference_PA))
+```
+The distribution of areainPA is slightly more flat/even than areaAOH. For the lowest 5% differences, the mean is 75.3 and median is 70. For 10%, mean is 150 and median is 158. For 25%, mean is 323 and median is 338. 
+
+
+## Patterns 
+taxonomy/geography/traits
+
+### Taxonomy
+
+order and class across all red list categories
+```{r}
+ggplot(merge_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order for areainPA")
+
+ggplot(merge_diff_PA, aes(x=className, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class for areainPA")
+```
+There seems to be less variation across order for areainPA as compared to areaAOH. The monotremata class has a much higher median/IQR difference than other orders. Gruiformes and peramelemorphia have a high proportion of species with a small (~0 km^2) difference. 
+
+For areainPA, the median difference for amphibians is lower than the median difference for areaAOH for amphibians (and median of birds and mammals in areainPA). 
+
+
+Separated by Red List Category
+```{r}
+# Critically Endangered
+ggplot(crit_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Critically Endangered Species")
+
+ggplot(crit_diff_PA, aes(x=className, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Critically Endangered Species")
+
+
+# Endangered
+ggplot(endan_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Endangered Species")
+
+ggplot(endan_diff_PA, aes(x=className, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Endangered Species")
+
+
+# Vulnerable
+ggplot(vul_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Vulnerable Species")
+
+ggplot(vul_diff_PA, aes(x=className, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Vulnerable Species")
+
+```
+Critically endangered species are heavily skewed towards 10 km^2 difference regardless of taxonomy. Endangered species have more variety across class, although the median for all three classes is between 350 and 420. For vulnerable species, the orders columbiformes and galliformes have a high proportion with a large difference. The differences between classes for vulnerable species are similar to those of endangered. 
+
+
+### Geography
+
+```{r}
+ggplot(merge_diff_PA, aes(x=systems, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value for each System")
+
+ggplot(merge_diff_PA, aes(x=realm, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms")
+```
+There is no significant difference between systems. Among the realms, the majority of Afrotropical|Palearctic species have a difference around 250 km^2. Australasion|Oceanian, Oceanian|Palearctic, and Neotropical|Oceanian have the highest medians at around 750 km^2. Indomalayan|Oceanian and Palearctic both have medians around 0. 
+
+
+Geography across Red List Category
+```{r}
+# Critically Endangered
+ggplot(crit_diff_PA, aes(x=systems, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Critically Endangered Species")
+
+ggplot(crit_diff_PA, aes(x=realm, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Critically Endangered Species")
+
+
+# Endangered
+ggplot(endan_diff_PA, aes(x=systems, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Endangered Species")
+
+ggplot(endan_diff_PA, aes(x=realm, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Endangered Species")
+
+
+# Vulnerable
+ggplot(vul_diff_PA, aes(x=systems, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Vulnerable Species")
+
+ggplot(vul_diff_PA, aes(x=realm, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Vulnerable Species")
+
+```
+For Critically Endangered species, the Neotropical range has a higher proportion of species with a 10 km^2 than other realms. 
+
+For Endangered species, the Afrotropical|Palearctic realm has a low median/IQR. Both the Afrotropical|Palearctic and Nearctic|Neotropical realms have the majority of species with 200 - 500 km^2 difference, whereas the remaining realms bulge at 400-500 and have tails downward. 
+
+For vulnerable species, there is a slightly higher median/IQR for terrestrial/freshwater than terrestrial. The Nearctic|Neotropical realm has a large proportion of species with a difference > 500 km^2, whereas other realms are evenly distributed. 
+
+### Traits
+
+There was a notable difference between Area Restriction and Population Trend between variables and between areaAOH and areainPA. The other trait characteristics had no significance. 
+
+Body Mass
+```{r}
+pair_PA = merge_diff_PA %>% select(BodyMass, Difference_PA)
+
+ggpairs(pair_PA)
+```
+
+There is no correlation between body mass and difference. 
+
+Elevation (lower and upper limit)
+```{r}
+elevation_PA = merge_diff_PA %>% select(ElevationLower.limit, ElevationUpper.limit, Difference_PA)
+
+ggpairs(elevation_PA)
+
+```
+
+No significance. 
+
+Area Restricted
+```{r}
+ggplot(merge_diff_PA, aes(x=AreaRestricted.isRestricted, y=Difference_PA)) + geom_violin() + ggtitle("Restricted Area v. Difference (km^2) to Next Threshold Value")
+
+ggplot(merge_diff_PA, aes(x=AreaRestricted.isRestricted, y=Difference_PA)) + geom_boxplot() + ggtitle("Restricted Area v. Difference (km^2) to Next Threshold Value")
+```
+
+Species with a restricted area have a higher proportion of differences that are close to 0 than species with an area that is not restricted. It is much more significant than the differences in areainPA. 
+
+Fragmentation
+```{r}
+ggplot(merge_diff_PA, aes(x=SevereFragmentation.isFragmented, y=Difference_PA)) + geom_boxplot() + ggtitle("Fragmented v. Difference (km^2) to Next Threshold Value")
+```
+
+No significance. 
+
+Population Trend
+```{r}
+ggplot(merge_diff_PA, aes(x=populationTrend, y=Difference_PA)) + geom_boxplot() + ggtitle("Population Trend v. Difference (km^2) to Next Threshold Value")
+```
+
+Species with an increasing population trend have a median much closer to 0 km^2 than other population trends and compared to the increasing population trend difference of just areaAOH. 
+
+
+cat_change_bi
+```{r}
+ggplot(merge_diff_PA, aes(x=cat_change_bi, y=Difference_PA)) + geom_boxplot() + ggtitle("Red List Category Change v. Difference (km^2) to \n Next Threshold Value")
+```
+
+No significance. 
+
+
+
+
+
+
+
+
+# Other Explorations
+644 species have 0 km^2 of protected habitat in 2015 
+```{r}
+# (PAkm == 0) - (AOHkm == 0)
+1014 - 370
+```
+
+What types of species have no protected habitat? 
+```{r}
+no_PA <- merge_dat_diff %>% filter(PAkm == 0) %>% filter(AOHkm != 0)
+
+ggplot(no_PA, aes(x=className)) + geom_bar() + ggtitle("Classes of Species with no Protected Habitat")
+ggplot(merge_dat_cat, aes(x=className)) + geom_bar() + ggtitle("Classes of All Species")
+
+ggplot(no_PA, aes(x=redlistCategory)) + geom_bar() + ggtitle("Red list Categories for Species with 0 km^2 PA")
+ggplot(merge_dat_cat, aes(x=redlistCategory)) + geom_bar() + ggtitle("Red list Categories of All Species")
+
+ggplot(no_PA, aes(x=Category)) + geom_bar() + ggtitle("Red list Categories for Species with 0 km^2 PA")
+ggplot(merge_dat_cat, aes(x=Category)) + geom_bar() + ggtitle("Red list Categories of All Species")
+
+
+ggplot(no_PA, aes(x=SevereFragmentation.isFragmented)) + geom_bar()
+ggplot(merge_dat_cat, aes(x=SevereFragmentation.isFragmented)) + geom_bar()
+
+```
+A high proportion of endangered species have no protected habitat. A higher proportion of amphibians do not have protected habitat. 
+
+Alower proportion of area is restricted among the species with no protected habitat. 
+
+No significance for populationTrend, systems, BodyMass, elevation
+
+
+Realm
+```{r}
+ggplot(no_PA, aes(x=realm)) + geom_bar() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Distribution of Species with no protected habitat across realm")
+
+prop1 = merge_dat_km %>% group_by(realm) %>% summarize(Tot_Sum = n()) %>% arrange(-Tot_Sum)
+prop2 = no_PA %>% group_by(realm) %>% summarize(PA_Sum = n()) %>% arrange(-PA_Sum)
+prop3 = inner_join(prop2, prop1, by=c('realm'='realm'))
+prop3 = prop3 %>% mutate(Proportion = PA_Sum / Tot_Sum)
+
+ggplot(prop3, aes(x=realm, y=Proportion)) + geom_col() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Percent of species with no protected habitat for each realm")
+
+```
+Palearctice and Oceanin have the highest proportion of species with no protected habitat. Nearctic has the largest number of species without protected habitat. 
+
+
+Category drops
+```{r}
+# category drop from calculated category
+rename = merge_dat_diff_PA %>% rename(sciName = species)
+join = left_join(merge_dat_diff_PA, merge_dat_diff)
+
+cat_change_PA <- join %>% mutate(cat_change_PA = ifelse(Category == "Near Threatened" & Category_PA == "Vulnerable", 1, ifelse(Category == "Near Threatened" & Category_PA == "Endangered", 2, ifelse(Category == "Near Threatened" & Category_PA == "Critically Endangered", 3,
+ifelse(Category == "Vulnerable" & Category_PA == "Endangered", 1, ifelse(Category == "Vulnerable" & Category_PA == "Critically Endangered", 2,
+ifelse(Category == "Endangered" & Category_PA == "Critically Endangered", 1, 0))))))) 
+
+
+# from redlistCategory, not calculated category
+redcat_change_PA <- merge_dat_diff_PA %>% mutate(cat_change_PA = ifelse(redlistCategory == "Near Threatened" & Category_PA == "Vulnerable", 1, ifelse(redlistCategory == "Near Threatened" & Category_PA == "Endangered", 2, ifelse(redlistCategory == "Near Threatened" & Category_PA == "Critically Endangered", 3,
+ifelse(redlistCategory == "Vulnerable" & Category_PA == "Endangered", 1, ifelse(redlistCategory == "Vulnerable" & Category_PA == "Critically Endangered", 2,
+ifelse(redlistCategory == "Endangered" & Category_PA == "Critically Endangered", 1, 0)))))))                                                                                
+
+ggplot(cat_change_PA, aes(cat_change_PA)) + geom_bar()
+```
+
+
+### Explore Category Change
+Change from suggested current red listing to projected red listing
+```{r}
+change = cat_change_PA %>% filter(cat_change_PA != 0)
+
+ggplot(change, aes(x=realm, y=cat_change_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90))
+
+ggplot(cat_change_PA, aes(x=realm, y=cat_change_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90))
+
+ggplot(cat_change_PA, aes(x=populationTrend, y=cat_change_PA)) + geom_boxplot()
+
+ggplot(cat_change_PA, aes(x=SevereFragmentation.isFragmented, y=cat_change_PA)) + geom_boxplot()
+
+
+# continuous variables 
+pairing = cat_change_PA %>% select(ElevationLower.limit, ElevationUpper.limit, BodyMass, Difference_PA, Difference, cat_change, cat_change_PA)
+
+ggpairs(pairing)
+```
+For realms, Indomalayan|Palearctic, Oceanian|Palearctic, and Oceanian would have the greatest number of species become downlisted if only protected area remained (median 1, broader IQR range). 
+
+There might be a correlation between category change and difference between current category and next threshold (correlation coefficient = 0.565). 
+
+No significance for populationTrend (although increasing has much smaller/lower IQR), cat_change_bi, elevation, body mass, difference to next threshold of protected land, recent category change, congregatory, area restriction, fragmentation. 
+
+
+### Explore redlist Category change
+Change from current red listing to projected red listing
+```{r}
+redchange = redcat_change_PA %>% filter(cat_change_PA != 0)
+
+ggplot(redchange, aes(x=realm, y=cat_change_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90))
+
+ggplot(redcat_change_PA, aes(x=realm, y=cat_change_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90))
+
+ggplot(redcat_change_PA, aes(x=populationTrend, y=cat_change_PA)) + geom_boxplot()
+
+ggplot(redcat_change_PA, aes(x=cat_change_bi, y=cat_change_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90))
+
+```
+Among the realms, Palearctic, Oceanian|Palearctic, and Oceanian would have the greatest amount of species become downlisted if only protected area remained. 
+
+Species with a stable population trend will have a median of 1 for category change, while other trends are  0. 
+
+Species that have improved redlistCategory will have a median of 1 for category change if only protected habitat remains (and the 75% quartile at 2). A higher number of species that declined redlist Category will remain in the same category if only protected habitat remains. 
+
+No difference in class, systems, BodyMass, fragmentation, elevation, area restriction. 
+
+
+
+
+
 
 
 
