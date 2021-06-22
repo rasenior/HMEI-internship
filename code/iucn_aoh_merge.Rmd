@@ -65,6 +65,16 @@ merge_dat %>% group_by(areaAOH) %>% summarize(Sum = n()) %>% arrange(areaAOH)
 # add column for AOH in km^2
 merge_dat_km <- merge_dat %>% mutate(AOHkm = areaAOH/1000000) %>% mutate(PAkm = areaAOHinPA/1000000)
 
+# remove species with 0 AOH all 24 years 
+no_aoh <- merge_dat_km %>% filter(AOHkm == 0) %>% group_by(species) %>% summarize(Sum = n()) %>% filter(Sum == 24)
+removed <- anti_join(merge_dat_km, no_aoh)
+
+# remove species with 0 AOH in 2015
+no_aoh_year <- removed %>% filter(`system:index` == 23) %>% filter(AOHkm == 0) %>% select(species)
+merge_dat_km <- anti_join(removed, no_aoh_year)
+
+
+
 # add column for whether AOH falls below 10 km
 merge_dat_km <- merge_dat_km %>% mutate(ten = AOHkm < 10)
 
@@ -156,10 +166,10 @@ crit_diff <- merge_diff %>% filter(Category == "Critically Endangered")
 ggplot(crit_diff, aes(x=Difference)) + geom_histogram(binwidth=1) + ggtitle("Distribution of Difference (km^2) to Next Threshold Value \n for Critically Endangered Species")
 
 # Number of species in the lowest 5% of differences and that average
-701 * 0.05
-crit_diff %>% arrange(Difference) %>% slice(1:35) %>% select(species, Difference)
+331 * 0.05
+crit_diff %>% arrange(Difference) %>% slice(1:17) %>% select(species, Difference)
 
-crit_diff %>% arrange(Difference) %>% slice(1:35) %>% summarize(Mean = mean(Difference), Median = median(Difference))
+crit_diff %>% arrange(Difference) %>% slice(1:17) %>% summarize(Mean = mean(Difference), Median = median(Difference))
 
 # Number of species in the lowest 10% of differences and that average
 701*0.1
@@ -260,7 +270,7 @@ taxonomy/geography/traits
 
 order and class across all red list categories
 ```{r}
-ggplot(merge_diff, aes(x=orderName, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order")
+ggplot(merge_diff, aes(x=orderName, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order")
 
 ggplot(merge_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class")
 ```
@@ -314,7 +324,7 @@ ggplot(crit_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text
 # Endangered
 ggplot(endan_diff, aes(x=systems, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Endangered Species")
 
-ggplot(endan_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Endangered Species")
+ggplot(endan_diff, aes(x=realm, y=Difference)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Endangered Species")
 
 
 # Vulnerable
@@ -611,7 +621,7 @@ taxonomy/geography/traits
 
 order and class across all red list categories
 ```{r}
-ggplot(merge_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order for areainPA")
+ggplot(merge_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order for areainPA")
 
 ggplot(merge_diff_PA, aes(x=className, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class for areainPA")
 ```
@@ -623,7 +633,7 @@ For areainPA, the median difference for amphibians is lower than the median diff
 Separated by Red List Category
 ```{r}
 # Critically Endangered
-ggplot(crit_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Critically Endangered Species")
+ggplot(crit_diff_PA, aes(x=orderName, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Order \n for Critically Endangered Species")
 
 ggplot(crit_diff_PA, aes(x=className, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Critically Endangered Species")
 
@@ -650,7 +660,7 @@ ggplot(merge_diff_PA, aes(x=systems, y=Difference_PA)) + geom_boxplot() + theme(
 
 ggplot(merge_diff_PA, aes(x=realm, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms")
 ```
-There is no significant difference between systems. Among the realms, the majority of Afrotropical|Palearctic species have a difference around 250 km^2. Australasion|Oceanian, Oceanian|Palearctic, and Neotropical|Oceanian have the highest medians at around 750 km^2. Indomalayan|Oceanian and Palearctic both have medians around 0. 
+There is no significant difference between systems. Among the realms, the majority of Afrotropical|Palearctic species have a difference around 250 km^2. Australasion|Oceanian, Oceanian|Palearctic, and Neotropical|Oceanian have the highest medians at around 750 km^2. Indomalayan|Oceanian  have a median around 0. 
 
 
 Geography across Red List Category
@@ -658,19 +668,19 @@ Geography across Red List Category
 # Critically Endangered
 ggplot(crit_diff_PA, aes(x=systems, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Critically Endangered Species")
 
-ggplot(crit_diff_PA, aes(x=realm, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Critically Endangered Species")
+ggplot(crit_diff_PA, aes(x=realm, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Critically Endangered Species")
 
 
 # Endangered
 ggplot(endan_diff_PA, aes(x=systems, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Endangered Species")
 
-ggplot(endan_diff_PA, aes(x=realm, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Endangered Species")
+ggplot(endan_diff_PA, aes(x=realm, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Endangered Species")
 
 
 # Vulnerable
 ggplot(vul_diff_PA, aes(x=systems, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Systems \n for Vulnerable Species")
 
-ggplot(vul_diff_PA, aes(x=realm, y=Difference_PA)) + geom_violin() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Vulnerable Species")
+ggplot(vul_diff_PA, aes(x=realm, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms \n for Vulnerable Species")
 
 ```
 For Critically Endangered species, the Neotropical range has a higher proportion of species with a 10 km^2 than other realms. 
@@ -743,8 +753,7 @@ No significance.
 # Other Explorations
 644 species have 0 km^2 of protected habitat in 2015 
 ```{r}
-# (PAkm == 0) - (AOHkm == 0)
-1014 - 370
+merge_dat_diff_PA %>% filter(`system:index` == 23) %>% filter(PAkm == 0)
 ```
 
 What types of species have no protected habitat? 
@@ -760,16 +769,12 @@ ggplot(merge_dat_cat, aes(x=redlistCategory)) + geom_bar() + ggtitle("Red list C
 ggplot(no_PA, aes(x=Category)) + geom_bar() + ggtitle("Red list Categories for Species with 0 km^2 PA")
 ggplot(merge_dat_cat, aes(x=Category)) + geom_bar() + ggtitle("Red list Categories of All Species")
 
-
-ggplot(no_PA, aes(x=SevereFragmentation.isFragmented)) + geom_bar()
-ggplot(merge_dat_cat, aes(x=SevereFragmentation.isFragmented)) + geom_bar()
-
 ```
 A high proportion of endangered species have no protected habitat. A higher proportion of amphibians do not have protected habitat. 
 
 Alower proportion of area is restricted among the species with no protected habitat. 
 
-No significance for populationTrend, systems, BodyMass, elevation
+No significance for populationTrend, systems, BodyMass, elevation, fragmentation
 
 
 Realm
