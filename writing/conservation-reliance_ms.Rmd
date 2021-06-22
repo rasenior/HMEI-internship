@@ -1,0 +1,120 @@
+---
+title: "No exit: the conservation reliance of species with too little habitat"
+output:
+    bookdown::word_document2:
+        reference_docx: ms_general.docx
+        number_sections: false
+    bookdown::pdf_document2:
+        toc: no
+        latex_engine: xelatex
+        fig_caption: yes
+        keep_tex: yes
+link-citations: yes
+csl: conservation-letters.csl
+biblio-style: apalike
+bibliography: [refs.bib, funky-refs.bib, pckgs.bib]
+fontsize: 12pt
+geometry: margin=2.5cm
+mainfont: Calibri
+lang: en-GB
+papersize: a4
+documentclass: article
+header-includes:
+- \usepackage{hyperref}
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhf{}
+- \fancyfoot[CO,CE]{\thepage}
+- \usepackage{setspace}
+- \doublespacing
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALSE,
+                      dpi = 300, fig.path = "output/main/", fig.align = "center", 
+                      fig.width = 16.6/2.54, fig.height = 15/2.54)
+```
+
+_______________________________________________________________________________________
+
+Sophia Richter^1^ , Rebecca A. Senior^2^*, and David S. Wilcove^1,2^
+
+^1^Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA.
+
+^2^Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA.
+
+*__Corresponding author:__ rebecca.a.senior@gmail.com (R.A. Senior)
+
+__ORCID iDs:__ orcid.org/0000-0002-8208-736X (R.A. Senior)
+  
+__Authorship:__ R.A.S. and D.S.W. conceived the study. R.A.S. collated the data. S.R. carried out the analyses and wrote the first draft of the manuscript, with substantial contribution from R.A.S. and D.S.W. 
+
+__Funding:__ High Meadows Environmental Institute and High Meadows Foundation.
+
+__Key words:__ conservation; extinction; IUCN Red List; conservation planning; biodiversity; threatened species
+
+__Article type:__ Perspective
+
+__Number of words:__ 
+
+__Number of References:__ 
+
+__Number of Figures:__ ; __Number of Tables:__ 0 
+
+Conservation Letters formatting guidelines:
+
+Perspectives provide a forum for authors to discuss recent developments or ideas with broad and significant policy relevance to conservation. They should be forward looking and written with a view to informing non-specialist readers (thus should be presented using straightforward prose and avoiding jargon). Perspectives may be up to 3000 words in length and should contain no more than 5 figures and/or tables, and fewer than 30 references.
+
+# Abstract
+
+
+__/200 words__
+
+# Introduction
+
+* World is currently experiencing a biodiversity crisis
+* The biggest driver of biodiversity loss is habitat loss, driven in particular by agricultural expansion
+* Increasing demand for food as the human population continues to grow and develop, some of which will be met by improvements in efficiency (increasing yields per area, decreasing waste, shift away from meat-based diets in some cultures), but much of which will be met by further conversion of primary habitat - particularly in the tropics
+* Habitat loss, therefore, will continue to be a major concern in conservation
+* The IUCN Red List documents species' current risk of extinction, based on thorough assessments of the threats that species face
+* Of the five criteria under which a species can be listed as threatened, several are directly or indirectly related to the amount of existing habitat available to a given species
+* The conservation literature has discussed in detail in the issue of 'conservation reliance', in the context of species that are unlikely to persist without sustained conservation interventions, such as prescribed burning
+* However, a related but under-explored area of conservation reliance lies in the extent to which species are committed to their current Red List category (or worse), simply because they do not have enough habitat remaining for downlisting to ever be possible
+* Thanks to recent advances in the resolution and extent of fine-scale habitat maps, it is now possible to refine species' distribution data for all species with both spatial range data and information on habitat preferences, allowing us to quantify Area of Occurrence (AOO) at broad-scale, in a standardised way
+* Comparing current AOO to the IUCN Red List thresholds reveals the species that, at present, could never qualify for future downlisting
+* Regardless of the other interventions we take - including captive breeding, habitat protection, invasive species removal etc. - these species will never recover without either habitat restoration or translocation
+* For these species, informed decisions need to be made by the relevant local stakeholders on whetherit is possible and desirable to increase habitat area. If gains in habitat quantity cannot be achieved, we must then consider whether other conservation interventions are worthwhile purely as a means to maintain the status quo, or whether such interventions are a drain on limited conservation resources for species with no hope of recovery.
+
+# Methods
+
+## Area of Habitat
+
+## Statistical analyses
+
+# Results
+
+# Discussion
+
+
+## Data availability 
+
+The datasets used to support the findings of this study are available for download by request from their respective providers. Species assessments can be accessed from the IUCN Red List of Threatened Species website at https://www.iucnredlist.org, and range maps can be requested at https://www.iucnredlist.org/resources/spatial-data-download. Protected area maps can be requested from the World Database on Protected Areas, found at https://www.unep-wcmc.org/resources-and-data/analysis/main/wdpa. 
+
+## Code availability
+
+Custom Python code to calculate species Area of Habitat in Google Earth Engine will be published at a later date, and is available on request from R.A.S.
+
+## Acknowledgements
+
+Funding for this research was provided by the High Meadows Environmental Institute and High Meadows Foundation.
+
+## Author contributions
+
+R.A.S. and D.S.W. conceived the study. R.A.S. collated the data. S.R. carried out the analyses and wrote the first draft of the manuscript, with substantial contribution from R.A.S. and D.S.W. 
+
+## Competing interests
+
+The authors declare no competing interests.
+
+# References
