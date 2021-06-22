@@ -1,0 +1,194 @@
+---
+title: "Big Q Data Analysis"
+author: "Sophia Richter"
+date: "6/22/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning=F)
+knitr::opts_chunk$set(message=F)
+```
+
+
+Libraries and read data set. 
+```{r, include=F}
+library(dplyr)
+library(readr)
+library(GGally)
+library(ggplot2)
+
+data <- read_csv('iucn_aoh_data.csv')
+
+# add cat_change_PA
+data <- data %>% mutate(cat_change_PA = ifelse(Category == "Near Threatened" & Category_PA == "Vulnerable", 1, ifelse(Category == "Near Threatened" & Category_PA == "Endangered", 2, ifelse(Category == "Near Threatened" & Category_PA == "Critically Endangered", 3,
+ifelse(Category == "Vulnerable" & Category_PA == "Endangered", 1, ifelse(Category == "Vulnerable" & Category_PA == "Critically Endangered", 2,
+ifelse(Category == "Endangered" & Category_PA == "Critically Endangered", 1, 0))))))) 
+
+last_data <- data %>% filter(`system:index` == 23)
+```
+
+Restructure realm data so that a species can be in two realms
+```{r, include=F}
+neo = data %>% filter(realm == "Neotropical" | realm == "Nearctic|Neotropical" | realm == "Neotropical|Oceanian") %>% mutate(realm = "Neotropical")
+
+afro = data %>% filter(realm == "Afrotropical" | realm == "Afrotropical|Palearctic" | realm == "Afrotropical|Indomalayan|Palearctic") %>% mutate(realm = "Afrotropical")
+
+ocean = data %>% filter(realm == "Oceanian" | realm == "Neotropical|Oceanian" | realm == "Indomalayan|Oceanian" | realm == "Australasian|Oceanian" | realm == "Oceanian|Palearctic" | realm == "Indomalayan|Oceanian|Palearctic") %>% mutate(realm = "Oceanian")
+
+indo = data %>% filter(realm == "Indomalayan" | realm == "Indomalayan|Palearctic" | realm == "Afrotropical|Indomalayan|Palearctic" | realm == "Indomalayan|Nearctic|Palearctic" | realm == "Indomalayan|Oceanian" | realm == "Australasian|Indomalayan" | realm == "Indomalayan|Oceanian|Palearctic" | realm == "Australasian|Indomalayan|Palearctic") %>% mutate(realm = "Indomalayan")
+
+austra = data %>% filter(realm == "Australasian" | realm == "Australasian|Oceanian" | realm == "Australasian|Indomalayan" | realm == "Australasian|Indomalayan|Palearctic") %>% mutate(realm = "Australasian")
+
+palea = data %>% filter(realm == "Palearctic" | realm == "Afrotropical|Palearctic" | realm == "Indomalayan|Palearctic" | realm == "Afrotropical|Indomalayan|Palearctic" | realm == "Indomalayan|Nearctic|Palearctic" | realm == "Oceanian|Palearctic" | realm == "Australasian|Indomalayan|Palearctic" | realm == "Nearctic|Palearctic" | realm == "Indomalayan|Oceanian|Palearctic") %>% mutate(realm = "Palearctic")
+
+nea = data %>% filter(realm == "Nearctic" | realm == "Nearctic|Neotropical" | realm == "Indomalayan|Nearctic|Palearctic" | realm == "Nearctic|Palearctic") %>% mutate(realm = "Nearctic")
+
+# combine with duplicates
+realms = bind_rows(neo, afro)
+realms = bind_rows(realms, ocean)
+realms = bind_rows(realms, indo)
+realms = bind_rows(realms, austra)
+realms = bind_rows(realms, palea)
+realms = bind_rows(realms, nea)
+
+# checked to make sure species were divided correctly with a 'manual' count
+```
+
+
+# Which species require just a small increase in habitat protection to safeguard them from potential future uplisting? 
+
+Look for patterns that indicate a species would have a small PA difference to next threshold. 
+```{r, include=F}
+# remove values with NA and extract the last year for each species
+merge_diff_PA = data %>% filter(`system:index` == 23) %>%  filter(Difference_PA != "NA")
+
+# Boxplots of each category
+ggplot(merge_diff_PA, aes(x=className, y=Difference_PA)) + geom_boxplot() + ggtitle("PA Difference Across Class")
+
+ggplot(merge_diff_PA, aes(x=realm, y=Difference_PA)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("PA Difference Across Realm")
+
+ggplot(merge_diff_PA, aes(x=Category, y=Difference_PA)) + geom_boxplot() + ggtitle("PA Difference Across Category")
+```
+
+
+```{r, include=F}
+# Bottom 25% of each category
+# NOTE: I included species that met the same number as the 25% quantile, so there are actually more than 25% species. I can change this if needed. 
+crit_PA = merge_diff_PA %>% filter(Category == 'Critically Endangered') %>% filter(Difference_PA <= 8)
+
+endan_PA = merge_diff_PA %>% filter(Category == 'Endangered') %>% filter(Difference_PA <= 10)
+
+vul_PA = merge_diff_PA %>% filter(Category == 'Vulnerable') %>% filter(Difference_PA <= 164)
+
+near_PA = merge_diff_PA %>% filter(Category == 'Near Threatened') %>% filter(Difference_PA <= 204.4029)
+
+# also all combined
+bottom_PA = full_join(crit_PA, endan_PA)
+bottom_PA = full_join(bottom_PA, vul_PA)
+bottom_PA = full_join(bottom_PA, near_PA)
+
+# bottom 25% of all Differences
+all_bottom_PA = merge_diff_PA %>% filter(Difference_PA <= 10)
+
+```
+
+### Class
+```{r}
+ggplot(bottom_PA, aes(x=className)) + geom_bar() + ggtitle("Distribution of Bottom 25% (of each category) PA Differences")
+
+ggplot(bottom_PA, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Distribution of Bottom 25% PA Differences") + theme(axis.text.x = element_text(angle = 90))
+```
+
+
+### Realm
+```{r, include=F}
+merge_diff_realm = realms %>% filter(`system:index` == 23) %>%  filter(Difference_PA != "NA")
+
+crit_realms = merge_diff_realm %>% filter(Category == 'Critically Endangered') %>% filter(Difference_PA <= 8)
+
+endan_realms = merge_diff_realm %>% filter(Category == 'Endangered') %>% filter(Difference_PA <= 10)
+
+vul_realms = merge_diff_realm %>% filter(Category == 'Vulnerable') %>% filter(Difference_PA <= 164)
+
+near_realms = merge_diff_realm %>% filter(Category == 'Near Threatened') %>% filter(Difference_PA <= 204.4029)
+
+# also all combined
+bottom_realm = full_join(crit_realms, endan_realms)
+bottom_realm = full_join(bottom_realm, vul_realms)
+bottom_realm = full_join(bottom_realm, near_realms)
+```
+
+```{r}
+ggplot(bottom_realm, aes(x=realm)) + geom_bar() + ggtitle("Distribution of Bottom 25% (of each category) PA Differences Across Realm") + theme(axis.text.x = element_text(angle = 90))
+
+ggplot(bottom_realm, aes(x=realm, fill=realm)) + geom_bar() + facet_wrap(~Category) + ggtitle("Distribution of Bottom 25% PA Differences Across Realm") + theme(axis.text.x = element_text(angle = 90))
+
+# Proportion
+# NOTE: I could do proportion of all species or proportion of species with differences. I can also change it to bottom 25% of entire dataset
+last_realm <- realms %>% filter(`system:index` == 23)
+
+prop1 = last_realm %>% group_by(realm) %>% summarize(Tot_Sum = n()) %>% arrange(-Tot_Sum)
+prop2 = bottom_realm %>% group_by(realm) %>% summarize(PA_Sum = n()) %>% arrange(-PA_Sum)
+prop3 = inner_join(prop2, prop1, by=c('realm'='realm'))
+prop3 = prop3 %>% mutate(Proportion = PA_Sum / Tot_Sum)
+
+ggplot(prop3, aes(x=realm, y=Proportion)) + geom_col() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Proportion of species in bottom 25% across realm")
+
+prop3 %>% dplyr::select(realm, Proportion, Tot_Sum, PA_Sum) %>% arrange(-Proportion)
+```
+
+
+### Category
+```{r, eval=F}
+ggplot(bottom_PA, aes(x=Category, fill=Category)) + geom_bar() + ggtitle("Distribution of Bottom 25% (of each category) PA Differences") + theme(axis.text.x = element_text(angle = 90))
+
+# Distribution of bottom 25% of overall data
+ggplot(all_bottom_PA, aes(x=Category, fill=Category)) + geom_bar() + ggtitle("Distribution of Bottom 25% (of each category) PA Differences") + theme(axis.text.x = element_text(angle = 90))
+```
+
+
+# Which species require just a small increase in overall habitat to potentially qualify for downlisting? 
+
+Look for patterns that indicate a species would have a small AOH difference to next threshold. 
+```{r, eval=F}
+merge_diff = data %>% filter(`system:index` == 23) %>%  filter(Difference != "NA")
+crit_diff <- merge_diff %>% filter(Category == "Critically Endangered")
+endan_diff <- merge_diff %>% filter(Category == "Endangered")
+vul_diff <- merge_diff %>% filter(Category == "Vulnerable")
+
+# taxonomy (class)
+ggplot(crit_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Critically Endangered Species")
+
+ggplot(endan_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Endangered Species")
+
+# ggplot(vul_diff, aes(x=className, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Class \n for Vulnerable Species")
+
+
+# Geography
+ggplot(merge_diff, aes(x=realm, y=Difference)) + geom_boxplot() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Difference (km^2) to Next Threshold Value Across Realms")
+
+# Population trend
+ggplot(merge_diff, aes(x=populationTrend, y=Difference)) + geom_boxplot() + ggtitle("Population Trend v. Difference (km^2) to Next Threshold Value")
+```
+
+
+# Which species are somewhat doomed?
+i.e. very little overall habitat + very little protected habitat = very far from being able to help these species
+
+```{r, eval=F}
+no_PA <- last_data %>% filter(PAkm == 0)
+
+ggplot(last_data, aes(x=className, y=PAkm)) + geom_boxplot(outlier.shape = NA) + coord_cartesian(ylim = quantile(last_data$PAkm, c(0.1, 0.93))) + ggtitle("Distribution of Species across PAkm (outliers removed)")
+
+ggplot(no_PA, aes(x=className)) + geom_bar() + ggtitle("Classes of species with 0 km^2 PA")
+
+ggplot(last_data, aes(x=redlistCategory, y=PAkm)) + geom_boxplot(outlier.shape = NA) + coord_cartesian(ylim = quantile(last_data$PAkm, c(0.1, 0.87))) + ggtitle("Distribution of Red List Category across PAkm (outliers removed)")
+
+ggplot(last_data, aes(x=Category, y=PAkm)) + geom_boxplot(outlier.shape = NA) + coord_cartesian(ylim = quantile(last_data$PAkm, c(0.1, 0.89))) + ggtitle("Distribution of Habitat Category across PAkm (outliers removed)")
+```
+
+Amphibians have lowest PA habitat. Threatened categories have lowest PA habitat. 
