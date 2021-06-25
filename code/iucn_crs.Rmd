@@ -80,6 +80,7 @@ Negative value means Habitat Category is uplisted compared to redlistCategory, 0
 test %>% group_by(cat_red_change) %>% summarize(Sum = n())
 ```
 1322 species (50.6%) do not change category. 581 species (22.2%) have less habitat than redlistCategory (- value). 709 species (27.1%) have more habitat than redlistCategory (+ value).
+<!-- It is notable that so many species should probably be in a higher risk category! -->
 
 
 The largest category of species with AOH data is endangered, neotropical amphibians. The only species with AOH data are vulnerable, endangered, or critically endangered. Of all species that are in these three red list categories, the largest category is endangered neotropical amphibans.
@@ -110,6 +111,7 @@ test %>% group_by(Category) %>% summarize(Count = n()) %>% arrange(-Count)
 # graphs
 ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Category of CRS") + theme(axis.text.x = element_blank())
 ```
+<!-- Wow - it's pretty mad that there are as many CR birds & mammals as there are. Amphibians not so surprising, since their ranges are naturally much smaller -->
 
 Realm
 ```{r, include=F}
@@ -137,6 +139,23 @@ realms = bind_rows(realms, palea)
 realms = bind_rows(realms, nea)
 ```
 
+<!-- The code chunk below is a simpler way to identify which realms a species occurs in -->
+```{r, include = FALSE, eval = FALSE}
+# Figure out what the unique realms are
+sort(unique(unlist(strsplit(unique(test$realm), "[|]"))))
+
+# Use 'grepl' to see if string is contained in another string
+realms_v2 = 
+    mutate(test,
+           Afrotropical = grepl("Afrotropical", realm),
+           Australasian = grepl("Australasian", realm),
+           Indomalayan = grepl("Indomalayan", realm),
+           Nearctic = grepl("Nearctic", realm),
+           Neotropical = grepl("Neotropical", realm),
+           Oceanian = grepl("Oceanian", realm),
+           Palearctic = grepl("Palearctic", realm))
+```
+
 Realms of each Conservation Reliant Species
 ```{r}
 test %>% group_by(realm) %>% summarize(Count = n()) %>% arrange(-Count)
@@ -159,6 +178,10 @@ Class
 ```{r}
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class")
 
+# I'm adding this one below with free scales so we can see what's going on in
+# EN and VU without the distribution being squashed by CR
+ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class") +
+    facet_wrap(~ Category, scales = "free")
 
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_density() + ggtitle("Density of Differences to Next Threshold Across Class")
 
@@ -168,6 +191,7 @@ ggplot(test, aes(x=Difference)) + geom_histogram() + facet_wrap(~className) + gg
 
 ggplot(test, aes(x=Difference)) + geom_density() + facet_wrap(~className) + ggtitle("Density of Differences to Next Threshold Across Class")
 ```
+ <!-- Cool - looks like most things are close to the threshold -->
 
 Category
 ```{r}
