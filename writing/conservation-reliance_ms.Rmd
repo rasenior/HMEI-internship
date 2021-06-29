@@ -73,18 +73,18 @@ __/200 words__
 
 # Introduction
 
-* World is currently experiencing a biodiversity crisis
-* The biggest driver of biodiversity loss is habitat loss, driven in particular by agricultural expansion
-* Increasing demand for food as the human population continues to grow and develop, some of which will be met by improvements in efficiency (increasing yields per area, decreasing waste, shift away from meat-based diets in some cultures), but much of which will be met by further conversion of primary habitat - particularly in the tropics
+* World is currently experiencing a biodiversity crisis [@wwf_living_2020; @rosenberg_decline_2019]
+* The biggest driver of biodiversity loss is habitat loss, driven in particular by agricultural expansion [@maxwell_biodiversity:_2016; @wwf_living_2020]
+* Increasing demand for food as the human population continues to grow and develop, some of which will be met by improvements in efficiency (increasing yields per area, decreasing waste, shift away from meat-based diets in some cultures) [@tilman_global_2011; @tilman_future_2017; @williams_proactive_2020], but much of which will likely be met by further conversion of primary habitat - particularly in the tropics [@gibbs_tropical_2010]
 * Habitat loss, therefore, will continue to be a major concern in conservation
-* The IUCN Red List documents species' current risk of extinction, based on thorough assessments of the threats that species face
+* The IUCN Red List documents species' current risk of extinction, based on thorough assessments of the threats that species face [@mace_quantification_2008; @iucn_iucn_2020]
 * Of the five criteria under which a species can be listed as threatened, several are directly or indirectly related to the amount of existing habitat available to a given species
-* The conservation literature has discussed in detail in the issue of 'conservation reliance', in the context of species that are unlikely to persist without sustained conservation interventions, such as prescribed burning
+* The conservation literature has discussed in detail in the issue of 'conservation reliance' [@scott_conservation-reliant_2010; @goble_conservation-reliant_2012; @scott_recovery_2005], in the context of species that are unlikely to persist without sustained conservation interventions, such as prescribed burning
 * However, a related but under-explored area of conservation reliance lies in the extent to which species are committed to their current Red List category (or worse), simply because they do not have enough habitat remaining for downlisting to ever be possible
-* Thanks to recent advances in the resolution and extent of fine-scale habitat maps, it is now possible to refine species' distribution data for all species with both spatial range data and information on habitat preferences, allowing us to quantify Area of Occurrence (AOO) at broad-scale, in a standardised way
+* Thanks to recent advances in the resolution and extent of fine-scale habitat maps, it is now possible to refine species' distribution data for all species with both spatial range data and information on habitat preferences, allowing us to quantify Area of Occurrence (AOO) at broad-scale, in a standardised way [@brooks_measuring_2019;@santini_applying_2019]
 * Comparing current AOO to the IUCN Red List thresholds reveals the species that, at present, could never qualify for future downlisting
-* Regardless of the other interventions we take - including captive breeding, habitat protection, invasive species removal etc. - these species will never recover without either habitat restoration or translocation
-* For these species, informed decisions need to be made by the relevant local stakeholders on whetherit is possible and desirable to increase habitat area. If gains in habitat quantity cannot be achieved, we must then consider whether other conservation interventions are worthwhile purely as a means to maintain the status quo, or whether such interventions are a drain on limited conservation resources for species with no hope of recovery.
+* Regardless of the other interventions we take - including captive breeding, habitat protection, invasive species removal etc. - these species will never recover without either habitat restoration or translocation [@salafsky_standard_2008]
+* For these species, informed decisions need to be made by the relevant local stakeholders regarding whether it is possible and desirable to increase habitat area. If gains in habitat quantity cannot be achieved, we must then consider whether other conservation interventions are worthwhile purely as a means to maintain the status quo, or whether such interventions are a drain on limited conservation resources for species with no hope of recovery.
 
 # Methods
 
