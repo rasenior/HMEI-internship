@@ -159,8 +159,15 @@ Class
 ```{r}
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class")
 
+ggplot(test, aes(x=AOHkm, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of AOH Across Class")
+
+ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class and Category") + facet_wrap(~Category, scales="free")
+
+ggplot(test, aes(x=AOHkm, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of AOH Across Class and Category") + facet_wrap(~Category, scales="free")
+
 
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_density() + ggtitle("Density of Differences to Next Threshold Across Class")
+
 
 ggplot(crit_top, aes(x=Difference, fill=className, alpha=0.01)) + geom_density() + ggtitle("Distribution of Differences to Next Threshold Across Class \n for Critically Endangered Species")
 
