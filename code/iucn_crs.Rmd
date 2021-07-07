@@ -108,8 +108,11 @@ Category of Conservation Reliant Species
 #table
 test %>% group_by(Category) %>% summarize(Count = n()) %>% arrange(-Count)
 
+library(ggthemr)
+ggthemr("dust")
+
 # graphs
-ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Category of CRS") + theme(axis.text.x = element_blank())
+ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Category of CRS") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
 ```
 <!-- Wow - it's pretty mad that there are as many CR birds & mammals as there are. Amphibians not so surprising, since their ranges are naturally much smaller -->
 
@@ -142,11 +145,11 @@ realms = bind_rows(realms, nea)
 <!-- The code chunk below is a simpler way to identify which realms a species occurs in -->
 ```{r, include = FALSE, eval = FALSE}
 # Figure out what the unique realms are
-sort(unique(unlist(strsplit(unique(test$realm), "[|]"))))
+sort(unique(unlist(strsplit(unique(crs$realm), "[|]"))))
 
 # Use 'grepl' to see if string is contained in another string
 realms_v2 = 
-    mutate(test,
+    mutate(crs,
            Afrotropical = grepl("Afrotropical", realm),
            Australasian = grepl("Australasian", realm),
            Indomalayan = grepl("Indomalayan", realm),
@@ -165,7 +168,7 @@ Number of CRS in each realm
 ```{r}
 realms %>% group_by(realm) %>% summarize(Count = n()) %>% arrange(-Count)
 
-ggplot(realms, aes(x=realm)) + geom_bar() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Realms of CRS")
+ggplot(realms, aes(x=realm)) + geom_bar() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Number of CRS in each Realm")
 
 ggplot(realms, aes(x=realm, fill=realm)) + geom_bar() + facet_wrap(~Category) + theme(axis.text.x = element_blank()) + ggtitle("Category and Realm of CRS")
 
@@ -176,16 +179,16 @@ ggplot(realms, aes(x=realm, fill=realm)) + geom_bar() + facet_wrap(~Category) + 
 
 Class
 ```{r}
+ggthemr("light")
+
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class")
 
 # I'm adding this one below with free scales so we can see what's going on in
 # EN and VU without the distribution being squashed by CR
-ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class") +
-    facet_wrap(~ Category, scales = "free")
+ggplot(test, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
+    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 2, multi_line = TRUE)) + labs(fill="Class") + ylab("Count") + xlab("Difference (km^2)")
 
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_density() + ggtitle("Density of Differences to Next Threshold Across Class")
-
-ggplot(crit_top, aes(x=Difference, fill=className, alpha=0.01)) + geom_density() + ggtitle("Distribution of Differences to Next Threshold Across Class \n for Critically Endangered Species")
 
 ggplot(test, aes(x=Difference)) + geom_histogram() + facet_wrap(~className) + ggtitle("Distribution of Differences to Next Threshold Across Class")
 
@@ -272,3 +275,117 @@ NOTE: I did proportion analysis and it was definitely not significant.
 ```{r, include=F}
 ggplot(top_diff, aes(x=Category, fill=Category)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences") + theme(axis.text.x = element_text(angle = 90))
 ```
+
+
+
+
+
+
+
+
+
+# GLM
+```{r}
+library(lme4)
+```
+
+### CRS 
+= column for species name + class + whether CRS (0 or 1)
+glm(CRS ~ class, family = "binomial")
+```{r}
+crs = data %>% mutate(CRS = ifelse(is.na(Difference), 0, ifelse(Difference > 1, 1, 0)))
+
+ggplot(crs, aes(x = as.factor(CRS))) +
+    geom_bar() +
+    facet_grid(Category ~ className) 
+```
+Near Threatened species are not CRS, all other categories have majority CRS. Amphibians have highest counts of CRS across categories. 
+
+Create GLM
+- Really high deviance --> class does not correlate with CRS 
+```{r}
+glm = glm(CRS ~ className, data = crs, family = "binomial")
+summary(glm)
+anova(glm, test = "LRT")
+```
+
+```{r}
+glm5 = glm(CRS ~ className * Category, data = crs, family = "binomial")
+summary(glm5)
+
+# can remove interaction term
+glm6 <- update(glm5, ~.- className:Category)
+anova(glm5, glm6, test = "LRT")
+
+# dropping category makes much worse
+glm7 <- update(glm6, ~.- Category)
+anova(glm6, glm7, test = "LRT")
+
+# worse but still okay 
+glm8 <- update(glm6, ~.- className)
+anova(glm6, glm8, test = "LRT")
+
+# highest AIC score is removing Category, lowest is removing className and interaction
+AIC(glm5, glm6, glm7, glm8)
+```
+
+
+### CRS_realm 
+= species + class + whether CRS + realms
+```{r}
+sort(unique(unlist(strsplit(unique(crs$realm), "[|]"))))
+
+# Use 'grepl' to see if string is contained in another string
+realms_v2 = 
+    mutate(crs,
+           Afrotropical = grepl("Afrotropical", realm),
+           Australasian = grepl("Australasian", realm),
+           Indomalayan = grepl("Indomalayan", realm),
+           Nearctic = grepl("Nearctic", realm),
+           Neotropical = grepl("Neotropical", realm),
+           Oceanian = grepl("Oceanian", realm),
+           Palearctic = grepl("Palearctic", realm), 
+           Antarctic = grepl("Antarctic", realm))
+
+# long
+realms_long <- realms_v2 %>%  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, Neotropical, Oceanian, Palearctic, Antarctic), names_to='Realms', values_to='value')
+
+realms_long_test <- realms_long %>% filter(value == TRUE)
+```
+
+GLM
+```{r}
+glm9 = glm(CRS ~ className * Realms, data = realms_long_test, family = "binomial")
+summary(glm9)
+anova(glm9, test = "LRT")
+
+# don't remove interaction term, deviance is higher
+glm10 <- update(glm9, ~.- className:Realms)
+anova(glm9, glm10, test = "LRT")
+
+# dropping Realms makes it worse
+glm11 <- update(glm10, ~.- Realms)
+anova(glm10, glm11, test = "LRT")
+
+# dropping className makes it worse
+glm12 <- update(glm11, ~.- className)
+anova(glm11, glm12, test = "LRT")
+
+# lowest AIC is glm9 with both categories and interaction term (still very high though)
+AIC(glm9, glm10, glm11, glm12)
+
+
+
+# Best model is still glm6 --> Category and className w/ no interaction or realm
+glm13 = glm(CRS ~ className * Realms * Category, data = realms_long_test, family = "binomial")
+anova(glm9, glm13, test = "LRT")
+AIC(glm9, glm6, glm13)
+```
+
+Realm of each species
+```{r}
+glm14 = glm(CRS ~ className * realm, data = crs, family = "binomial")
+anova(glm14, test = "LRT")
+AIC(glm6, glm14)
+```
+
