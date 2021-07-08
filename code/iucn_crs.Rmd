@@ -521,7 +521,21 @@ AIC(glm6, glm14)
 ```
 
 
---> run lm for difference and class ? 
+Run lm for difference and class 
+```{r}
+# Make a standard lm
+lm <- lm(Difference ~ className, 
+          data = data)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm)
+summary(lm)
+
+```
+className and Difference has a p-value of 0.0006433, but a low adjusted R-squared of 0.005839. Indicates that className is statistically significant.
+
+
 
 ```{r}
 crs_top25 <- crs %>% mutate(top25 = ifelse(Category == 'Critically Endangered' & Difference >= 9.231000, 1, ifelse(Category == 'Endangered' & Difference >= 457.429708, 1, ifelse(Category == 'Vulnerable' & Difference >= 1263.658855, 1, 0))))
