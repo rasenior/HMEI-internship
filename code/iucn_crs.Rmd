@@ -328,7 +328,8 @@ anova(glm6, glm8, test = "LRT")
 # highest AIC score is removing Category, lowest is removing className and interaction
 AIC(glm5, glm6, glm7, glm8)
 ```
-
+-- Category is most important variable
+-- class is not 
 
 ### CRS_realm 
 = species + class + whether CRS + realms
@@ -355,7 +356,7 @@ realms_long_test <- realms_long %>% filter(value == TRUE)
 
 GLM
 ```{r}
-glm9 = glm(CRS ~ className * Realms, data = realms_long_test, family = "binomial")
+glm9 = glm(CRS ~ Category * Realms, data = realms_long_test, family = "binomial")
 summary(glm9)
 anova(glm9, test = "LRT")
 
@@ -383,9 +384,19 @@ AIC(glm9, glm6, glm13)
 ```
 
 Realm of each species
+- get rid of species in multiple categories ? 
 ```{r}
 glm14 = glm(CRS ~ className * realm, data = crs, family = "binomial")
 anova(glm14, test = "LRT")
 AIC(glm6, glm14)
+```
+
+
+--> run lm for difference and class ? 
+
+```{r}
+crs_top25 <- crs %>% mutate(top25 = ifelse(Category == 'Critically Endangered' & Difference >= 9.231000, 1, ifelse(Category == 'Endangered' & Difference >= 457.429708, 1, ifelse(Category == 'Vulnerable' & Difference >= 1263.658855, 1, 0))))
+
+write.csv(crs_top25,"Desktop\\crs_top25.csv")
 ```
 
