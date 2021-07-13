@@ -59,7 +59,6 @@ data <- data %>% mutate(Category = ifelse(ten_lowest == TRUE, "Critically Endang
 data <- data %>% mutate(Difference = ifelse(ten_lowest == TRUE, 10 - AOHkm, ifelse(five_lowest == TRUE, 500 - AOHkm, ifelse(two_lowest == TRUE, 2000 - AOHkm, NA))))
 
 
-
 # remove differences less than 1 km^2 and Differences that are NA
 test2 <- data %>% filter(Difference > 1)
 
@@ -532,9 +531,50 @@ par(mfrow = c(2,2))
 plot(lm)
 summary(lm)
 
+# compare to lm for category
+lm_cat <- lm(Difference ~ Category, 
+          data = data)
+par(mfrow = c(2,2))
+plot(lm_cat)
+summary(lm_cat)
+
 ```
 className and Difference has a p-value of 0.0006433, but a low adjusted R-squared of 0.005839. Indicates that className is statistically significant.
 
+- try difference / max difference for these models 
+```{r}
+crs_difference <- crs %>% mutate(difference_prop = ifelse(Category == "Critically Endangered", Difference / 10, ifelse(Category == "Endangered", Difference / 490, ifelse(Category == "Vulnerable", Difference / 1500, NA))))
+
+# Make a standard lm
+lm_prop <- lm(difference_prop ~ className, 
+          data = crs_difference)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm_prop)
+summary(lm_prop)
+
+# Make a standard lm
+lm_prop_cat <- lm(difference_prop ~ Category, 
+          data = crs_difference)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm_prop_cat)
+summary(lm_prop_cat)
+
+# Make a standard lm
+lm_prop_realm <- lm(difference_prop ~ realm, 
+          data = crs_difference)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm_prop_realm)
+summary(lm_prop_realm)
+    
+```
+- much smaller p-value for category (close to 0) than classname (0.07748)
+- very high p-value for realm (not good model)
 
 
 ```{r}
@@ -542,4 +582,35 @@ crs_top25 <- crs %>% mutate(top25 = ifelse(Category == 'Critically Endangered' &
 
 write.csv(crs_top25,"Desktop\\crs_top25.csv")
 ```
+
+
+### Poisson
+- group_by class and realm, summarize for sum, that sum is response variable for poisson distribution
+- change family from binary to poisson 
+```{r}
+class_realm <- crs %>% group_by(className, realm) %>% summarize(Sum = n())
+
+poisson <- 
+    glm(Sum ~ className * realm, 
+        data = class_realm, 
+        family = "poisson")
+
+anova(poisson)
+summary(poisson)
+```
+
+Using Many GLM
+```{r}
+library(mvabund)
+poisson2 <- manyglm(Sum ~ className * realm, data = class_realm, family = "poisson")
+
+plot(poisson2)
+
+anova(poisson2)
+summary(poisson2)
+```
+P-value: 0.001
+
+
+### Correlation between className and Category
 
