@@ -613,4 +613,12 @@ P-value: 0.001
 
 
 ### Correlation between className and Category
+```{r}
+ggplot(crs, aes(className, Category)) + geom_count()
 
+class_cat = table(crs$className, crs$Category) 
+
+chisq <- chisq.test(class_cat)
+chisq
+```
+p-value is very small (< 2.2e-16), therefore there is a strong correlation between Category and class
