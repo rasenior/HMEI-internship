@@ -107,9 +107,6 @@ Category of Conservation Reliant Species
 #table
 test %>% group_by(Category) %>% summarize(Count = n()) %>% arrange(-Count)
 
-library(ggthemr)
-ggthemr("dust")
-
 # graphs
 ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Category of CRS") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
 ```
@@ -178,8 +175,6 @@ ggplot(realms, aes(x=realm, fill=realm)) + geom_bar() + facet_wrap(~Category) + 
 
 Class
 ```{r}
-ggthemr("light")
-
 ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class")
 
 # I'm adding this one below with free scales so we can see what's going on in
@@ -232,7 +227,6 @@ top_diff = full_join(top_diff, vul_top)
 # bottom 25% of all Differences
 all_top = test %>% filter(Difference >= 485.591354)
 ```
-
 
 
 ### Class
@@ -398,6 +392,7 @@ anova(glm_dropInter6, glm_dropInter5, test = "LRT") # this interaction is not si
 # Test significance of class
 glm_dropClass <- update(glm_dropInter6, ~.- className)
 anova(glm_dropClass, glm_dropInter6, test = "LRT") # class is not significant
+anova(glm_dropInter6, glm_dropClass, test = "LRT")
 
 # Test significance of realm
 glm_dropRealm <- update(glm_dropInter6, ~.- Realms)
