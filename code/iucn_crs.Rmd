@@ -77,6 +77,8 @@ There are 2612 species with a difference to habitat threshold greater than 1 km^
 Negative value means Habitat Category is uplisted compared to redlistCategory, 0 means they match, positive means Habitat Category is downlisted compared to redlistCategory. 
 ```{r}
 test %>% group_by(cat_red_change) %>% summarize(Sum = n())
+
+change2 <- test %>% filter(cat_red_change == -2) %>% select(scientificName, className)
 ```
 1322 species (50.6%) do not change category. 581 species (22.2%) have less habitat than redlistCategory (- value). 709 species (27.1%) have more habitat than redlistCategory (+ value).
 <!-- It is notable that so many species should probably be in a higher risk category! -->
