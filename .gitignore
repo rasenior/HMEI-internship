@@ -8,3 +8,5 @@ HMEI-GDrive
 .Rdata
 .httr-oauth
 .DS_Store
+/docs/*.docx
+/code/test.py
