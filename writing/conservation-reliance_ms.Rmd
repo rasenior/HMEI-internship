@@ -107,7 +107,7 @@ In downstream analyses, we summarise all conservation reliant species, as define
 
 We also explore the difference between each species' listed category on the Red List and their habitat category. The difference is red list category subtracted from category as numerical values.
 
-The number of no exit species within each realm is calculated, in whcih a realm contains a no exit species if that species is listed solely in that realm or cross-listed in the realm.
+The number of no exit species within each realm is calculated, in which a realm contains a no exit species if that species is listed solely in that realm or cross-listed in the realm.
 
 - we will need to add how we generated the maps
 - change conservation reliant species to no exit species
