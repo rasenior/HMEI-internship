@@ -100,9 +100,29 @@ To quantify the extent to which AOH is a limiting factor in decreasing a species
 
 For the three 'threatened' Red List categories of Vulnerable, Endangered and Critically Endangered, the AOH thresholds are, respectively: < 2000 km^; < 500 km^2; and, < 10 km^2. We categorise species as conservation reliant if their AOH falls below any of the three thresholds. We futher require that species are at least 1 km^2 from that threshold, based on the assumption that 1 km^2 is a trivial difference that can be gained or lost easily, and is within the error of the spatial data. We note that when the Red List use these thresholds for classification, they additionally require that two out of three subcriteria are met. However, several additional metrics would be needed to assess these subcriteria (habitat fragmentation, and temporal trends in population size or habitat quantity or quality) [@santini_applying_2019]. Such classification is beyond the scope of this study, as we are interested not in automating Red List classification, but rather in the extent to which habitat quantity limits our ability to improve species' prospects. Here, when a species is classed as conservation reliant, we are referring to situations where no matter what other actions we might take to address threats and improve outcomes for threatened species, their limited AOH means that conservation reliant species will always be limited in the extent to which extinction risk can be mitigated.
 
-In downstream analyses, we summarise all conservation reliant species, as defined above, and we also explore the magnitude of species' reliance on conservation by calculating the difference between species' AOH and the next highest threshold. This difference is the amount of habitat that a species would need to gain to have any chance of downlisting to a lower category of extinction risk, regardless of what other conservation actions we might take. We explore both the distribution of these differences to threshold, as well as the upper quantile of species that are furthest from the next threshold - the 'extreme conservation reliant' species. These are the species with the most additional habitat required to safeguard them from extinction, and thus the species most likely to require major and concerted effort to save.  
+In downstream analyses, we summarise all conservation reliant species, as defined above, and we also explore the magnitude of species' reliance on conservation by calculating the difference between species' AOH and the next highest threshold. This difference is the amount of habitat that a species would need to gain to have any chance of downlisting to a lower category of extinction risk, regardless of what other conservation actions we might take. We explore both the distribution of these differences to threshold, as well as the upper quantile of species within each habitat category that are furthest from the next threshold - the 'extreme conservation reliant' species. These are the species with the most additional habitat required to safeguard them from extinction, and thus the species most likely to require major and concerted effort to save.  
+
+
+*** Add???
+
+We also explore the difference between each species' listed category on the Red List and their habitat category. The difference is red list category subtracted from category as numerical values.
+
+The number of no exit species within each realm is calculated, in which a realm contains a no exit species if that species is listed solely in that realm or cross-listed in the realm.
+
+- we will need to add how we generated the maps
+- change conservation reliant species to no exit species
+
 
 ## Statistical analyses
+
+Statistical analyses were conducted in R Studio, Version 1.4.1103. 
+
+In order to compare the effect of class, realm, and habitat category on whether a species is a no exit species, a generalized linear regression (GLM) with binomial distribution was ran on the data set that contained the number of species within each realm. 
+
+To test the significance of class, realm, and category on the difference to next threshold, a linear regression was ran for each of the variables as the dependent variable and Difference / Max Difference as the independent variable. The independent variable divides the difference to next threshold by the max difference possible for each threshold in order to standardize the differences across habitat category. 
+
+Finally, a Chi-squared test was used to test the statistical dependence of class and habitat category. 
+
 
 * What version of R you used
 * What analyses you did (model type, model structure, model validation, model inference)
