@@ -126,7 +126,7 @@ for i in range(spplen):
     sp = spp.get(i)
     print('Getting AOH for species ' + str(i + 1) + ' of ' + str(spplen + 1))
     seasonEOO = ee.Number(eooColl[i].get('eooSeason'))
-    spSeason = ee.List([season.get(seasonEOO.subtract(1))])
+    spSeason = ee.List([season.get(seasonEOO.subtract(1))]).add('NA')
     aoh = rs.getAOH(sp,sppRanges,sppBbox,
                     lc,lcField,lcType,lcYrsStr,
                     elevpath,habitatPrefs,
