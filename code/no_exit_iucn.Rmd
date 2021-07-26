@@ -403,3 +403,18 @@ chisq <- chisq.test(class_cat)
 chisq
 ```
 p-value is very small (< 2.2e-16), therefore there is a strong correlation between Category and class
+
+
+# Spatial Data
+Save data frame for spatial analysis
+
+```{r}
+
+nes_top25 <- data %>% mutate(NES = AOHkm < 1999) %>% mutate(Top25 = ifelse(Category == 'Critically Endangered' & Difference >= 8.754866, 1, ifelse(Category == 'Endangered' & Difference >= 459.977142, 1, ifelse(Category == 'Vulnerable' & Difference >= 1278.32419, 1, 0))))
+
+nes_top25 <- nes_top25 %>% rename(scientificName = species)
+
+write.csv(nes_top25,"Desktop\\nes_top25.csv")
+
+```
+

@@ -24,7 +24,7 @@ subdat = iucndat[
 
 # List all classes considered
 classes = ['amphibia','magnoliopsida','reptilia','aves','mammalia']
-taxaName = classes[0]
+taxaName = classes[4]
 sppAll = list(set(subdat[subdat['className']==taxaName].scientificName.to_list()))
   
 # All species ranges
@@ -110,7 +110,7 @@ spplen = spp.size().getInfo()
 eooColl = []
 for i in range(spplen):
     sp = spp.get(i)
-    print('Processing species ' + str(i + 1) + ' of ' + str(spplen + 1))
+    print('Getting EOO for ' + str(i + 1) + ' of ' + str(spplen + 1))
     eoo = rs.EOO(sppRanges, sppBbox, sp, proj, spScale).set('species',sp)
     # Append to list
     eooColl.append(eoo)
@@ -124,9 +124,9 @@ aohColl = []
 bboxes = []
 for i in range(spplen):
     sp = spp.get(i)
-    print('Processing species ' + str(i + 1) + ' of ' + str(spplen + 1))
+    print('Getting AOH for species ' + str(i + 1) + ' of ' + str(spplen + 1))
     seasonEOO = ee.Number(eooColl[i].get('eooSeason'))
-    spSeason = ee.List([season.get(seasonEOO.subtract(1))])
+    spSeason = ee.List([season.get(seasonEOO.subtract(1))]).add('NA')
     aoh = rs.getAOH(sp,sppRanges,sppBbox,
                     lc,lcField,lcType,lcYrsStr,
                     elevpath,habitatPrefs,
@@ -142,7 +142,7 @@ for i in range(spplen):
 aohStats = []    
 for i in range(spplen):
     sp = spp.get(i)
-    print('Processing species ' + str(i + 1) + ' of ' + str(spplen + 1))
+    print('Calculating AOH stats for species ' + str(i + 1) + ' of ' + str(spplen + 1))
     # Get AOH stats
     aohStats_i = (
         rs.AOHstats(sp,sppBbox,aohColl[i],wdpaPath,proj,spScale))
