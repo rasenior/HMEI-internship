@@ -104,7 +104,7 @@ Negative value means Habitat Category is uplisted compared to redlistCategory, 0
 ```{r}
 test %>% group_by(cat_red_change) %>% summarize(Sum = n())
 
-change2 <- test %>% filter(cat_red_change == -2) %>% select(species, className)
+change2 <- test %>% filter(cat_red_change == -2) %>% select(species, className, redlistCategory)
 ```
 1313 species (52.8%) do not change category. 549 species (22.1%) have less habitat than redlistCategory (- value). 626 species (25.2%) have more habitat than redlistCategory (+ value).
 
@@ -412,9 +412,9 @@ Save data frame for spatial analysis
 
 nes_top25 <- data %>% mutate(NES = AOHkm < 1999) %>% mutate(Top25 = ifelse(Category == 'Critically Endangered' & Difference >= 8.754866, 1, ifelse(Category == 'Endangered' & Difference >= 459.977142, 1, ifelse(Category == 'Vulnerable' & Difference >= 1278.32419, 1, 0))))
 
-nes_top25 <- nes_top25 %>% rename(scientificName = species)
+nes_top25 <- nes_top25 %>% rename(scientificName = species) %>% rename(top25 = Top25)
 
-write.csv(nes_top25,"Desktop\\nes_top25.csv")
+write.csv(nes_top25,"nes_top25.csv")
 
 ```
 
