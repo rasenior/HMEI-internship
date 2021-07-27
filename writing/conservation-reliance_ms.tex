@@ -1,0 +1,211 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  british,
+  a4paper,
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Calibri}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={No exit: the conservation reliance of species with too little habitat},
+  pdflang={en-GB},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[CO,CE]{\thepage}
+\usepackage{setspace}
+\doublespacing
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[shorthands=off,main=british]{babel}
+\fi
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{No exit: the conservation reliance of species with too little habitat}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Sophia Richter\textsuperscript{1} , Rebecca A. Senior\textsuperscript{2}*, and David S. Wilcove\textsuperscript{1,2}
+
+\textsuperscript{1}Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA.
+
+\textsuperscript{2}Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA.
+
+*\textbf{Corresponding author:} \href{mailto:rebecca.a.senior@gmail.com}{\nolinkurl{rebecca.a.senior@gmail.com}} (R.A. Senior)
+
+\textbf{ORCID iDs:} orcid.org/0000-0002-8208-736X (R.A. Senior)
+
+\textbf{Authorship:} R.A.S. and D.S.W. conceived the study. R.A.S. collated the data. S.R. carried out the analyses and wrote the first draft of the manuscript, with substantial contribution from R.A.S. and D.S.W.
+
+\textbf{Funding:} High Meadows Environmental Institute and High Meadows Foundation.
+
+\textbf{Key words:} conservation; extinction; IUCN Red List; conservation planning; biodiversity; threatened species
+
+\textbf{Article type:} Perspective
+
+\textbf{Number of words:}
+
+\textbf{Number of References:}
+
+\textbf{Number of Figures:} ; \textbf{Number of Tables:} 0
+
+Conservation Letters formatting guidelines:
+
+Perspectives provide a forum for authors to discuss recent developments or ideas with broad and significant policy relevance to conservation. They should be forward looking and written with a view to informing non-specialist readers (thus should be presented using straightforward prose and avoiding jargon). Perspectives may be up to 3000 words in length and should contain no more than 5 figures and/or tables, and fewer than 30 references.
+
+\hypertarget{abstract}{%
+\section{Abstract}\label{abstract}}
+
+\textbf{/200 words}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\begin{itemize}
+\tightlist
+\item
+  World is currently experiencing a biodiversity crisis
+\item
+  The biggest driver of biodiversity loss is habitat loss, driven in particular by agricultural expansion
+\item
+  Increasing demand for food as the human population continues to grow and develop, some of which will be met by improvements in efficiency (increasing yields per area, decreasing waste, shift away from meat-based diets in some cultures), but much of which will be met by further conversion of primary habitat - particularly in the tropics
+\item
+  Habitat loss, therefore, will continue to be a major concern in conservation
+\item
+  The IUCN Red List documents species' current risk of extinction, based on thorough assessments of the threats that species face
+\item
+  Of the five criteria under which a species can be listed as threatened, several are directly or indirectly related to the amount of existing habitat available to a given species
+\item
+  The conservation literature has discussed in detail in the issue of `conservation reliance', in the context of species that are unlikely to persist without sustained conservation interventions, such as prescribed burning
+\item
+  However, a related but under-explored area of conservation reliance lies in the extent to which species are committed to their current Red List category (or worse), simply because they do not have enough habitat remaining for downlisting to ever be possible
+\item
+  Thanks to recent advances in the resolution and extent of fine-scale habitat maps, it is now possible to refine species' distribution data for all species with both spatial range data and information on habitat preferences, allowing us to quantify Area of Occurrence (AOO) at broad-scale, in a standardised way
+\item
+  Comparing current AOO to the IUCN Red List thresholds reveals the species that, at present, could never qualify for future downlisting
+\item
+  Regardless of the other interventions we take - including captive breeding, habitat protection, invasive species removal etc. - these species will never recover without either habitat restoration or translocation
+\item
+  For these species, informed decisions need to be made by the relevant local stakeholders on whetherit is possible and desirable to increase habitat area. If gains in habitat quantity cannot be achieved, we must then consider whether other conservation interventions are worthwhile purely as a means to maintain the status quo, or whether such interventions are a drain on limited conservation resources for species with no hope of recovery.
+\end{itemize}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+\hypertarget{area-of-habitat}{%
+\subsection{Area of Habitat}\label{area-of-habitat}}
+
+\hypertarget{statistical-analyses}{%
+\subsection{Statistical analyses}\label{statistical-analyses}}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+\hypertarget{data-availability}{%
+\subsection{Data availability}\label{data-availability}}
+
+The datasets used to support the findings of this study are available for download by request from their respective providers. Species assessments can be accessed from the IUCN Red List of Threatened Species website at \url{https://www.iucnredlist.org}, and range maps can be requested at \url{https://www.iucnredlist.org/resources/spatial-data-download}. Protected area maps can be requested from the World Database on Protected Areas, found at \url{https://www.unep-wcmc.org/resources-and-data/analysis/main/wdpa}.
+
+\hypertarget{code-availability}{%
+\subsection{Code availability}\label{code-availability}}
+
+Custom Python code to calculate species Area of Habitat in Google Earth Engine will be published at a later date, and is available on request from R.A.S.
+
+\hypertarget{acknowledgements}{%
+\subsection{Acknowledgements}\label{acknowledgements}}
+
+Funding for this research was provided by the High Meadows Environmental Institute and High Meadows Foundation.
+
+\hypertarget{author-contributions}{%
+\subsection{Author contributions}\label{author-contributions}}
+
+R.A.S. and D.S.W. conceived the study. R.A.S. collated the data. S.R. carried out the analyses and wrote the first draft of the manuscript, with substantial contribution from R.A.S. and D.S.W.
+
+\hypertarget{competing-interests}{%
+\subsection{Competing interests}\label{competing-interests}}
+
+The authors declare no competing interests.
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\end{document}
