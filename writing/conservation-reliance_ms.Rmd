@@ -73,7 +73,7 @@ __/200 words__
 
 # Introduction
 
-<!-- TI am leaving the general outline here because I mostly followed it (with a few small differences) -->
+<!-- I am leaving the general outline here because I mostly followed it (with a few small differences) -->
 
 <!-- P1 = biodiversity loss is a problem, driven primarily by habitat loss therefore will continue to be a problem -> need to care about how much habitat species have -->
 
@@ -95,7 +95,7 @@ Previous research has shown that habitat area and fragmentation are directly rel
 
 The IUCN Red List documents species' current risk of extinction, based on thorough assessments of their status and the threats that they face [@mace_quantification_2008; @iucn_iucn_2020]. Given the link between habitat area and extinction risk, the IUCN Red List uses habitat area as one of the five listing criteria under which a species can be listed as threatened, and several others are directly or indirectly related to the amount of existing habitat available to a given species. Because a species only needs to meet one criteria to be listed in a threatened category, habitat area has the potential to be a limiting factor for downlisting species on the Red List. This reflects the reality that populations cannot recover and expand if there is insufficient habitat. Using habitat area data, two related and important facets can be identified for species; one is how close a species is to uplisting Red List category (getting worse), and the other is how far a species is from improving in terms of habitat. While Extent of Occurrence (EOO) data had been used more commonly for species due to ease of obtaining, recent advances in habitat maps now makes it possible to refine species data to quantify Area of Occurrence (AOO) in a broad-scale, standardised way [@brooks_measuring_2019;@santini_applying_2019]. AOO is the preferred method for measuring habitat area, as EOO may include unoccupied or unsuitable habitats while AOO does not. Using this new AOO data allows us to identify species with insufficient habitat, species that are close to uplisting, and species far from downlisting on the Red List. 
 
-<!-- * 30 x 30 is a global thing, that different countries will probably sign up to at the UN Biodiversity Conference. The US, UK and other countries have already made the commitment, but it is anticipated that it will be global. -->
+<!-- * I changed the citation for 30 by 30. Was there anything else you wanted me to do with that? -->
 
 <!-- * I expanded a bit more on the policy side but can definitely try to do more - we might want to talk a little bit about your vision for making it more 'upfront' in the paper. -->
 <!-- * I also felt like Goal 15 of SDG was relevant to both 'categories' of species we are talking about here (because it is both reverse and halt). If you think otherwise I can move it to just the second category -->
