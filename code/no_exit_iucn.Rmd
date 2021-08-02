@@ -17,6 +17,7 @@ knitr::opts_chunk$set(message=F)
 ```{r}
 # Libraries and read data set
 library(dplyr)
+library(tidyr)
 library(readr)
 library(GGally)
 library(ggplot2)
@@ -292,9 +293,14 @@ realms_v4 =
            Antarctic = grepl("Antarctic", realm))
 
 # long
-realms_long_nes <- realms_v4 %>%  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, Neotropical, Oceanian, Palearctic, Antarctic), names_to='Realms', values_to='value')
-
-realms_long_nes <- realms_long_nes %>% filter(value == TRUE)
+realms_long_nes <- 
+  realms_v4 %>%  
+  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, 
+                      Neotropical, Oceanian, Palearctic, Antarctic), 
+               names_to='Realms', values_to='value') %>% 
+  filter(value == TRUE) %>% 
+  dplyr::select(species,className,NES,Realms,Category,AOHkm,Difference)
+# I simplified the above so the dataframe is easier to inspect
 ```
 
 
@@ -392,6 +398,122 @@ summary(lm_prop_realm)
 ```
 - much smaller p-value for category (close to 0) than classname (0.06501)
 - very high p-value for realm
+
+```{r nes-proximity}
+nes_difference <- nes %>% 
+  mutate(difference_prop = ifelse(Category == "Critically Endangered", Difference / 10, 
+                                  ifelse(Category == "Endangered", Difference / 490, 
+                                         ifelse(Category == "Vulnerable", Difference / 1500, NA))),
+         # Flip the scale so bigger numbers = closer to threshold for downlisting
+         proximity = 1 - difference_prop) %>% 
+  dplyr::select(species, AOHkm, Category, 
+                Difference, difference_prop, proximity,
+                className, realm) %>% 
+  filter(
+    # Drop NAs
+    !(is.na(Difference)),
+    # Restrict to species occurring in one Realm only
+    !(grepl("[|]", realm))
+    )
+
+# Round negative values to zero (these are the ones that are < 1 km from the threshold)
+nes_difference$proximity[nes_difference$proximity < 0] <- 0
+
+# Plot the distribution of standardised differences
+ggplot(nes_difference, 
+       aes(x = proximity, fill = className)) +
+  geom_histogram() +
+  facet_wrap(~ Category)
+
+# GLM with Poisson because relative diff is actually a proportion
+glm_diff <- glm(proximity ~ className + realm + AOHkm, 
+                data = nes_difference,
+                family = "poisson") # ignore the non-integer warnings
+
+# Model inference
+summary(glm_diff)
+anova(glm_diff, test = "LRT")
+
+# Drop class
+anova(update(glm_diff, ~.- className), glm_diff, test = "LRT")
+# Drop realm
+anova(update(glm_diff, ~.- realm), glm_diff, test = "LRT")
+# Drop AOH
+anova(update(glm_diff, ~.- AOHkm), glm_diff, test = "LRT")
+
+### Only absolute AOH is a strong predictor or proximity to threshold
+
+#############################
+# Plot model-predicted values
+#############################
+
+# Make up some new data
+newdat <- expand.grid(
+  # All levels of taxonomic class
+  className = unique(glm_diff$data$className),
+  # All levels of realm
+  realm = unique(glm_diff$data$realm),
+  # Sequence of 100 made up values for AOH, bounded by observed data
+  AOHkm = seq(min(glm_diff$data$AOHkm),
+              max(glm_diff$data$AOHkm),
+              length.out = 100))
+
+# Use model to predict distance values
+predvals <- predict(glm_diff, newdata = newdat, type = "link", se.fit = TRUE)
+
+# Function to calculate inverse logit
+inv.logit <- function(x) exp(x)/(1 + exp(x))
+
+# Function to calculate critical significance value
+ci.critical <- 
+  function(siglevel) qnorm((100 - siglevel) / 100 / 2, lower.tail = FALSE)
+ci_const = ci.critical(95)
+
+# Add vals to newdat dataframe
+newdat <- 
+  newdat %>% 
+  mutate(proximity = predvals$fit,
+         se = predvals$se.fit,
+         CI_lo = proximity - (ci_const * se),
+         CI_hi = proximity + (ci_const * se)) 
+# Back transform
+newdat[,c("proximity", "CI_lo", "CI_hi")] <- 
+  inv.logit(newdat[,c("proximity", "CI_lo", "CI_hi")])
+
+# Plot model-predicted values
+ggplot(newdat, 
+       aes(x = AOHkm, y = proximity)) +
+  # # Add confidence intervals
+  # geom_ribbon(aes(ymin = CI_lo,
+  #                 ymax = CI_hi,
+  #                 fill = realm),
+  #             alpha = 0.3) +
+  # Add fitted line
+  geom_line(aes(colour = realm)) +
+  # Facet by taxonomic class
+  facet_grid(~ className) +
+  theme_classic()
+
+# Since class and realm aren't relevant, we can also just pick a reference level
+# or average across everything, and plot one line only
+newdat_avg <- 
+  group_by(newdat, AOHkm) %>% 
+  summarise(proximity = median(proximity),
+            CI_lo = median(CI_lo),
+            CI_hi = median(CI_hi))
+ggplot(newdat_avg, 
+       aes(x = AOHkm, y = proximity)) +
+  # Add confidence intervals
+  geom_ribbon(aes(ymin = CI_lo,
+                  ymax = CI_hi),
+              alpha = 0.1) +
+  # Add fitted line
+  geom_line() +
+  theme_classic()
+
+# Proximity to threshold increases as absolute AOH increases
+```
+
 
 ### Correlation between className and Category
 ```{r}
