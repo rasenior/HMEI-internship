@@ -67,7 +67,7 @@ proj = ee.Projection(wkt_mollweide) # Mollweide projection
 spScale = ee.Number(2e3) # resolution for RL thresholds
 
 # Elevation data
-elevpath = 'USGS/SRTMGL1_003' # SRTM v3
+elevpath = "users/rasenior/LandCover/EarthEnv-DEM90_wgs84_1km" # EarthEnv
 
 # Land cover data -------------------------------------------------------------
 

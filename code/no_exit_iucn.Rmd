@@ -26,11 +26,17 @@ library(tidyr)
 
 ```{r}
 # Get a vector of all the filenames
-files <- list.files(path = "jung2015_RL", 
+files <- 
+  lapply(c("amphibia", "aves", "magnoliopsida", "mammalia", "reptilia"),
+         function(x){
+           list.files(path = file.path("D:/Work/Data/GEE/jung2015_RL", 
+                                       paste("jung2015_RL", x, sep = "_")), 
                     # Keep the full file path
                     full.names = TRUE,
                     # Limit to CSV files
                     pattern = "\\.csv$")
+         }) %>% unlist(.)
+  
 
 # Read each one in with lapply & bind all
 areadat <- 
@@ -44,7 +50,7 @@ areadat <-
 Merge area data and IUCN data
 ```{r}
 # read iucn data
-iucndat <- read_csv('iucn_dat.csv') %>% 
+iucndat <- read_csv('HMEI-GDrive/data/iucn_dat.csv') %>% 
   # Rename the AOH variables to avoid confusion
   # (Jung refers to the land cover map by Jung et al. 2015)
   rename(areaAOH_jung = areaAOH,
