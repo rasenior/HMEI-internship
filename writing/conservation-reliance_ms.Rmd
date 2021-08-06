@@ -159,7 +159,7 @@ Across class and threshold met, there is a right skew towards a large difference
 ```{r difference-histogram}
 ggplot(nes, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + 
   ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
-    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 2, multi_line = TRUE)) + 
+    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
   labs(fill="Class") + 
   ylab("Count") + xlab("Difference (km^2)") + 
   theme(axis.text.x = element_text(angle = 45))
