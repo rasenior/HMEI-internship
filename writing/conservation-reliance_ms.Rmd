@@ -131,6 +131,48 @@ The degree to which species are constrained from future downlisting by current A
 
 # Results
 
+2,488 species of the 3,869 species with AOH data have habitat areas below the 2000 km^2 threshold. 
+Of the 2,488 species that qualify as NES, 1389 are amphibians, 527 birds, 461 mammals, 59 magnoliopsida, and 52 reptiles. Furthermore, 335 fall below the 10 km^2 threshold, 720 fall between the 10 km^2 and 500 km^2 thresholds, and 1433 have between 500 km^2 and 2000 km^2 AOH. Figure 1 shows the threshold and class of the identified NES.
+
+```{r class-and-threshold-graph}
+library(readr)
+library(ggplot2)
+library(stringr)
+library(dplyr)
+
+nes <- read_csv('nes.csv')
+
+nes <- nes %>% mutate(Category = str_replace(Category, "Critically Endangered", "10 km^2")) %>% 
+  mutate(Category = str_replace(Category, "Endangered", "500 km^2")) %>% 
+  mutate(Category = str_replace(Category, "Vulnerable", "2000 km^2"))
+
+# relevel Categories
+nes$Category <- factor(nes$Category, levels = c("10 km^2", "500 km^2", "2000 km^2"))
+
+ggplot(nes, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Threshold of NES") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
+```
+
+The three realms with the most NES are Neotropical (1101 species), Afrotropical (571 species), and Indomalayan (452 species). 
+
+Across class and threshold met, there is a right skew towards a large difference to the threshold, in particular for those between 10 km^2 and 500 km^2 (Figure 2).
+
+```{r difference-histogram}
+ggplot(nes, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + 
+  ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
+    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 2, multi_line = TRUE)) + 
+  labs(fill="Class") + 
+  ylab("Count") + xlab("Difference (km^2)") + 
+  theme(axis.text.x = element_text(angle = 45))
+```
+
+The 25% of NES with the largest difference to the threshold across each threshold category was also subsetted. Of the 623 species in the top 25% differences, 358 are amphibians, 124 birds, 113 mammals, 15 reptiles, and 13 magnoliopsida. The three realms with the most top 25% differences are Neotropical, Afrotropical, and Indomalayan. 
+
+The concentration of NES and top 25% mammals, birds, and amphibians have been mapped by realm and country (Figure 3).
+
+[maps]
+
+The GLM ran on proximity to threshold varying by taxonomic class, biogeography and absolute AOH found that only absolute AOH had a significant effect on proximity to threshold, while taxonomic class and realm had no significance. 
+
 # Discussion
 
 
