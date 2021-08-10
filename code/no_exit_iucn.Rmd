@@ -123,8 +123,10 @@ Category of NES
 #table
 test %>% group_by(Category) %>% summarize(Count = n()) %>% arrange(-Count)
 
+write.csv(test,"nes.csv")
+
 # graphs
-ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Category of NES") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
+ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Threshold of NES") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
 ```
 
 Realm of Counts of NES
@@ -538,6 +540,43 @@ nes_top25 <- data %>% mutate(CRS = as.numeric(AOHkm < 1999)) %>% mutate(top25 = 
 nes_top25 <- nes_top25 %>% rename(scientificName = species) 
 
 write.csv(nes_top25,"nes_top25.csv")
+
+```
+
+```{r}
+# Realm proportion
+
+prop <- nes_top25 %>%
+  mutate(
+    # Match species name to how it appears in occurrence dataframe
+    scientificName = gsub(" ", "_", scientificName)) %>% 
+  filter(!(is.na(CRS)),
+         !(is.na(top25))) %>% 
+  dplyr::select(scientificName, phylumName, orderName, className, familyName,
+                redlistCategory, areaAOH, areaAOHinPA, 
+                Category, Difference, CRS, top25, realm, country)
+
+
+# Summarize by realm
+prop_test <- prop %>%
+  filter(!(is.na(realm))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realm, sep = "\\|") %>% 
+  # Count species in each realm
+  group_by(realm, className, CRS) %>% 
+  summarise(n = n())
+
+
+prop1 = prop_test %>% filter(CRS == 1)
+prop2 = prop %>%
+  filter(!(is.na(realm))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realm, sep = "\\|") %>% 
+  # Count species in each realm
+  group_by(realm, className) %>% 
+  summarise(total = n())
+prop3 = inner_join(prop2, prop1, by=c('realm'='realm', 'className' = 'className'))
+prop3 = prop3 %>% mutate(prop = n / total)
 
 ```
 
