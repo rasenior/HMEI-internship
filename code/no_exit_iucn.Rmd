@@ -431,7 +431,7 @@ ggplot(nes_difference,
 # GLM with Poisson because relative diff is actually a proportion
 glm_diff <- glm(proximity ~ className + realm + AOHkm, 
                 data = nes_difference,
-                family = "poisson") # ignore the non-integer warnings
+                family = "binomial") # ignore the non-integer warnings
 
 # Model inference
 summary(glm_diff)
