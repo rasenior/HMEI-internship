@@ -405,8 +405,8 @@ summary(lm_prop_realm)
 ```{r nes-proximity}
 nes_difference <- nes %>% 
   mutate(difference_prop = ifelse(Category == "Critically Endangered", Difference / 10, 
-                                  ifelse(Category == "Endangered", Difference / 490, 
-                                         ifelse(Category == "Vulnerable", Difference / 1500, NA))),
+                                  ifelse(Category == "Endangered", Difference / 491, 
+                                         ifelse(Category == "Vulnerable", Difference / 1501, NA))),
          # Flip the scale so bigger numbers = closer to threshold for downlisting
          proximity = 1 - difference_prop) %>% 
   dplyr::select(species, AOHkm, Category, 
