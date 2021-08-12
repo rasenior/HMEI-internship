@@ -42,7 +42,7 @@ library(ggplot2)
 library(lme4)
 ```
 
-```{r load-data}
+```{r load-raw-data, eval = FALSE}
 # Get a vector of all the filenames
 files <- 
   lapply(c("amphibia", "aves", "magnoliopsida", "mammalia", "reptilia"),
@@ -66,17 +66,30 @@ areadat <-
 ```
 
 Merge area data and IUCN data
-```{r merge-data}
+```{r merge-data, eval = FALSE}
+# Function to reformat new country & realm info
+gsubGeo <- function(x){gsub(", ",";",gsub("[]]","",gsub("[[]","",x)))}
+
 # read iucn data
 iucndat <- read_csv('HMEI-GDrive/data/iucn_dat.csv') %>% 
   # Rename the AOH variables to avoid confusion
   # (Jung refers to the land cover map by Jung et al. 2015)
   rename(areaAOH_jung = areaAOH,
-         areaAOHinPA_jung = areaAOHinPA)
+         areaAOHinPA_jung = areaAOHinPA) %>% 
+  # Reformat realm & country info
+  mutate(realms = gsubGeo(realms),
+         countries = gsubGeo(countries))
 merge_dat <- 
   inner_join(areadat, iucndat, by=c('species'='scientificName')) %>% 
   # Limit to the columns we need
-  dplyr::select(species,className,areaAOH,realm,country,redlistCategory)
+  dplyr::select(species,className,areaAOH,realms,countries,redlistCategory)
+
+# The above steps take ages, so better to save as .Rds and read back in
+saveRDS(merge_dat, "HMEI-GDrive/data/sorted/merge_dat.Rds")
+```
+
+```{r load-merged-data}
+merge_dat <- readRDS("HMEI-GDrive/data/sorted/merge_dat.Rds")
 ```
 
 # Data Frame Modifications
