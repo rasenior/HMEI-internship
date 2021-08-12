@@ -36,6 +36,10 @@ knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALS
                       fig.width = 16.6/2.54, fig.height = 15/2.54)
 ```
 
+```{r data}
+load("HMEI-GDrive/data/sorted/msdata.Rdata")
+```
+
 _______________________________________________________________________________________
 
 Sophia Richter^1^ , Rebecca A. Senior^2^*, and David S. Wilcove^1,2^
