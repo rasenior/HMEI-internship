@@ -82,14 +82,42 @@ iucndat <- read_csv('HMEI-GDrive/data/iucn_dat.csv') %>%
 merge_dat <- 
   inner_join(areadat, iucndat, by=c('species'='scientificName')) %>% 
   # Limit to the columns we need
-  dplyr::select(species,className,areaAOH,realms,countries,redlistCategory)
+  dplyr::select(species,className,areaAOH,realms,countries,redlistCategory) %>% 
+  # Record if species are realm/country endemic
+  mutate(realm_endemic = !(grepl(";", realms)),
+         country_endemic = !(grepl(";", countries)))
+```
+
+```{r sort-realms}
+# Look at the realm categories
+realm_cats <- sort(unique(unlist(strsplit(unique(merge_dat$realms), "[;]"))))
+
+# Use 'grepl' to see if string is contained in another string
+realm_info <- 
+  lapply(realm_cats, function(x) grepl(x, merge_dat$realms)) %>% 
+  bind_cols()
+colnames(realm_info) <- realm_cats
+
+# Add to merge_dat
+merge_dat <- cbind(merge_dat, realm_info)
+
+# Long dataframe
+realms_long <- 
+  merge_dat %>%  
+  dplyr::select(-realms) %>% 
+  pivot_longer(cols= all_of(realm_cats), 
+               names_to='realms', values_to='value') %>% 
+  filter(value == TRUE) %>% 
+  dplyr::select(-value)
 
 # The above steps take ages, so better to save as .Rds and read back in
 saveRDS(merge_dat, "HMEI-GDrive/data/sorted/merge_dat.Rds")
+saveRDS(realms_long, "HMEI-GDrive/data/sorted/realms_long.Rds")
 ```
 
 ```{r load-merged-data}
 merge_dat <- readRDS("HMEI-GDrive/data/sorted/merge_dat.Rds")
+realms_long <- readRDS("HMEI-GDrive/data/sorted/realms_long.Rds")
 ```
 
 # Data Frame Modifications
@@ -175,8 +203,6 @@ merge_dat %>%
   summarize(Count = n()) %>% 
   arrange(-Count)
 
-# write.csv(test,"HMEI-GDrive/data/nes.csv",fileEncoding = "UTF8")
-
 # graphs
 ggplot(merge_dat, aes(x=className, fill=className)) + 
   geom_bar() + 
@@ -187,29 +213,6 @@ ggplot(merge_dat, aes(x=className, fill=className)) +
 ```
 
 Realm of Counts of NES
-
-```{r sort-realms}
-sort(unique(unlist(strsplit(unique(merge_dat$realm), "[|]"))))
-
-# Use 'grepl' to see if string is contained in another string
-realms <- 
-  mutate(merge_dat,
-         Afrotropical = grepl("Afrotropical", realm),
-         Australasian = grepl("Australasian", realm),
-         Indomalayan = grepl("Indomalayan", realm),
-         Nearctic = grepl("Nearctic", realm),
-         Neotropical = grepl("Neotropical", realm),
-         Oceanian = grepl("Oceanian", realm),
-         Palearctic = grepl("Palearctic", realm))
-
-# long
-realms_long <- 
-  realms %>%  
-  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, 
-                      Neotropical, Oceanian, Palearctic), 
-               names_to='Realms', values_to='value') %>% 
-  filter(value == TRUE)
-```
 
 Realms of each Conservation Reliant Species
 ```{r nes-realm}
@@ -620,9 +623,6 @@ Save data frame for spatial analysis
 nes_top25 <- data %>% mutate(CRS = as.numeric(AOHkm < 1999)) %>% mutate(top25 = ifelse(Category == 'Critically Endangered' & Difference >= 8.754866, 1, ifelse(Category == 'Endangered' & Difference >= 459.977142, 1, ifelse(Category == 'Vulnerable' & Difference >= 1278.32419, 1, 0))))
 
 nes_top25 <- nes_top25 %>% rename(scientificName = species) 
-
-write.csv(nes_top25,"HMEI-GDrive/data/nes_top25.csv",fileEncoding = "UTF8")
-
 ```
 
 ```{r}
