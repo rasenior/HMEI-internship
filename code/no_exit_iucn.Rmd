@@ -189,7 +189,7 @@ Negative value means Habitat Category is uplisted compared to redlistCategory, 0
 ```{r summarize-category-change}
 all_df %>% 
   group_by(cat_red_change) %>% 
-  summarize(Sum = n())
+  summarise(Sum = n())
 
 change_dat <- 
   all_df %>% 
@@ -205,7 +205,7 @@ Classes of NES
 # Table
 nes_df %>% 
   group_by(className) %>% 
-  summarize(Count = n()) %>% 
+  summarise(Count = n()) %>% 
   arrange(-Count)
 ```
 
@@ -232,7 +232,7 @@ Realms of each Conservation Reliant Species
 ```{r nes-realm}
 nes_df %>% 
   group_by(Realms) %>% 
-  summarize(Count = n()) %>% 
+  summarise(Count = n()) %>% 
   arrange(-Count)
 ```
 
@@ -342,7 +342,7 @@ top_diff = full_join(top_diff, vul_top)
 ```{r top-diff-class}
 top_diff %>% 
   group_by(className) %>% 
-  summarize(Count = n()) %>% 
+  summarise(Count = n()) %>% 
   arrange(-Count)
 
 ggplot(top_diff, aes(x=className)) + 
@@ -658,4 +658,3 @@ save(all_df,nes_df,realms_long_all,realms_long_nes,
      glm_diff,class_results,realm_results,aoh_results, 
      file = "HMEI-GDrive/data/sorted/msdata.Rdata")
 ```
-
