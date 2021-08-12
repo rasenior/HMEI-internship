@@ -77,24 +77,24 @@ iucndat <- read_csv('HMEI-GDrive/data/iucn_dat.csv') %>%
   rename(areaAOH_jung = areaAOH,
          areaAOHinPA_jung = areaAOHinPA) %>% 
   # Reformat realm & country info
-  mutate(realms = gsubGeo(realms),
+  mutate(Realms = gsubGeo(realms),
          countries = gsubGeo(countries))
 merge_dat <- 
   inner_join(areadat, iucndat, by=c('species'='scientificName')) %>% 
   # Limit to the columns we need
-  dplyr::select(species,className,areaAOH,realms,countries,redlistCategory) %>% 
+  dplyr::select(species,className,areaAOH,Realms,countries,redlistCategory) %>% 
   # Record if species are realm/country endemic
-  mutate(realm_endemic = !(grepl(";", realms)),
+  mutate(realm_endemic = !(grepl(";", Realms)),
          country_endemic = !(grepl(";", countries)))
 ```
 
 ```{r sort-realms, eval = FALSE}
 # Look at the realm categories
-realm_cats <- sort(unique(unlist(strsplit(unique(merge_dat$realms), "[;]"))))
+realm_cats <- sort(unique(unlist(strsplit(unique(merge_dat$Realms), "[;]"))))
 
 # Use 'grepl' to see if string is contained in another string
 realm_info <- 
-  lapply(realm_cats, function(x) grepl(x, merge_dat$realms)) %>% 
+  lapply(realm_cats, function(x) grepl(x, merge_dat$Realms)) %>% 
   bind_cols()
 colnames(realm_info) <- realm_cats
 
@@ -148,16 +148,23 @@ merge_dat <- merge_dat %>%
                                      ifelse(redlistCategory == "Vulnerable", 3, 
                                             ifelse(redlistCategory == "Near Threatened", 4, 
                                                    NA)))),
-         cat_red_change = num_Category - num_redlist)
+         cat_red_change = num_Category - num_redlist,
+         # Standardised difference
+         difference_prop = ifelse(Category == "Critically Endangered", Difference / 10, 
+                                  ifelse(Category == "Endangered", Difference / 490, 
+                                         ifelse(Category == "Vulnerable", Difference / 1500, 
+                                                NA))),
+         # Flip the scale so bigger numbers = closer to threshold for downlisting
+         proximity = 1 - difference_prop)
 ```
 
 ```{r realm-long-df, eval = FALSE}
 # Long dataframe
 realms_long <- 
   merge_dat %>%  
-  dplyr::select(-realms) %>% 
+  dplyr::select(-Realms) %>% 
   pivot_longer(cols= all_of(realm_cats), 
-               names_to='realms', values_to='value') %>% 
+               names_to='Realms', values_to='value') %>% 
   filter(value == TRUE) %>% 
   dplyr::select(-value)
 ```
@@ -221,7 +228,7 @@ Realm of Counts of NES
 Realms of each Conservation Reliant Species
 ```{r nes-realm}
 merge_dat %>% 
-  group_by(realms) %>% 
+  group_by(Realms) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
 ```
@@ -229,16 +236,16 @@ merge_dat %>%
 Number of CRS in each realm
 ```{r realm-nes-count}
 realms_long %>% 
-  group_by(realms) %>% 
+  group_by(Realms) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
 
-ggplot(realms_long, aes(x=realms)) + 
+ggplot(realms_long, aes(x=Realms)) + 
   geom_bar() + 
   theme(axis.text.x = element_text(angle = 90)) + 
   ggtitle("Number of CRS in each Realm")
 
-ggplot(realms_long, aes(x=Realms, fill=realms)) + 
+ggplot(realms_long, aes(x=Realms, fill=Realms)) + 
   geom_bar() + 
   facet_wrap(~Category) + 
   theme(axis.text.x = element_blank()) + 
@@ -397,9 +404,10 @@ Near Threatened species are not NES, all other categories have majority NES. Amp
 Realm NES
 
 ```{r interaction-test}
+# I think we should focus on endemic species here, to avoid double-counting
 glm_full_nes <- 
     glm(NES ~ className * Realms + className * Category + Realms * Category, 
-        data = realms_long , 
+        data = filter(realms_long, realm_endemic),
         family = "binomial", maxit=100)
 
 # Drop & test each interaction in turn
@@ -458,7 +466,9 @@ AIC(glm_dropInter6_nes,glm_dropClass_nes,glm_dropRealm_nes,glm_dropCat_nes)
 ### LM on Difference 
 - try difference / max difference for these models 
 ```{r}
-nes_difference <- nes %>% mutate(difference_prop = ifelse(Category == "Critically Endangered", Difference / 10, ifelse(Category == "Endangered", Difference / 490, ifelse(Category == "Vulnerable", Difference / 1500, NA))))
+nes_difference <- 
+  merge_dat %>% 
+  mutate()
 
 # Make a standard lm
 lm_prop <- lm(difference_prop ~ className, 
