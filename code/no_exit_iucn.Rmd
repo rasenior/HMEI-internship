@@ -88,7 +88,7 @@ merge_dat <-
          country_endemic = !(grepl(";", countries)))
 ```
 
-```{r sort-realms}
+```{r sort-realms, eval = FALSE}
 # Look at the realm categories
 realm_cats <- sort(unique(unlist(strsplit(unique(merge_dat$realms), "[;]"))))
 
@@ -100,28 +100,10 @@ colnames(realm_info) <- realm_cats
 
 # Add to merge_dat
 merge_dat <- cbind(merge_dat, realm_info)
-
-# Long dataframe
-realms_long <- 
-  merge_dat %>%  
-  dplyr::select(-realms) %>% 
-  pivot_longer(cols= all_of(realm_cats), 
-               names_to='realms', values_to='value') %>% 
-  filter(value == TRUE) %>% 
-  dplyr::select(-value)
-
-# The above steps take ages, so better to save as .Rds and read back in
-saveRDS(merge_dat, "HMEI-GDrive/data/sorted/merge_dat.Rds")
-saveRDS(realms_long, "HMEI-GDrive/data/sorted/realms_long.Rds")
-```
-
-```{r load-merged-data}
-merge_dat <- readRDS("HMEI-GDrive/data/sorted/merge_dat.Rds")
-realms_long <- readRDS("HMEI-GDrive/data/sorted/realms_long.Rds")
 ```
 
 # Data Frame Modifications
-```{r aoh-thresholds}
+```{r aoh-thresholds, eval = FALSE}
 # Modify data frame
 merge_dat <- merge_dat %>% 
   # remove species with 0 or NA AOH
@@ -169,9 +151,31 @@ merge_dat <- merge_dat %>%
          cat_red_change = num_Category - num_redlist)
 ```
 
+```{r realm-long-df, eval = FALSE}
+# Long dataframe
+realms_long <- 
+  merge_dat %>%  
+  dplyr::select(-realms) %>% 
+  pivot_longer(cols= all_of(realm_cats), 
+               names_to='realms', values_to='value') %>% 
+  filter(value == TRUE) %>% 
+  dplyr::select(-value)
+```
+
 There are 2488 species with a habitat that qualifies a species for a threatened category. 
 
-Negative value means Habitat Category is uplisted compared to redlistCategory, 0 means they match, positive means Habitat Category is downlisted compared to redlistCategory. 
+Negative value means Habitat Category is uplisted compared to redlistCategory, 0 means they match, positive means Habitat Category is downlisted compared to redlistCategory.
+
+```{r write-sorted-data, eval = FALSE}
+# The above steps take ages, so better to save as .Rds and read back in
+saveRDS(merge_dat, "HMEI-GDrive/data/sorted/merge_dat.Rds")
+saveRDS(realms_long, "HMEI-GDrive/data/sorted/realms_long.Rds")
+```
+
+```{r load-sorted-data}
+merge_dat <- readRDS("HMEI-GDrive/data/sorted/merge_dat.Rds")
+realms_long <- readRDS("HMEI-GDrive/data/sorted/realms_long.Rds")
+```
 
 ```{r summarize-category-change}
 merge_dat %>% 
@@ -217,7 +221,7 @@ Realm of Counts of NES
 Realms of each Conservation Reliant Species
 ```{r nes-realm}
 merge_dat %>% 
-  group_by(realm) %>% 
+  group_by(realms) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
 ```
@@ -225,16 +229,16 @@ merge_dat %>%
 Number of CRS in each realm
 ```{r realm-nes-count}
 realms_long %>% 
-  group_by(Realms) %>% 
+  group_by(realms) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
 
-ggplot(realms_long, aes(x=Realms)) + 
+ggplot(realms_long, aes(x=realms)) + 
   geom_bar() + 
   theme(axis.text.x = element_text(angle = 90)) + 
   ggtitle("Number of CRS in each Realm")
 
-ggplot(realms_long, aes(x=Realms, fill=Realms)) + 
+ggplot(realms_long, aes(x=Realms, fill=realms)) + 
   geom_bar() + 
   facet_wrap(~Category) + 
   theme(axis.text.x = element_blank()) + 
