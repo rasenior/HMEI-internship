@@ -6,6 +6,23 @@ output:
     html_document: default
     pdf_document: default
 ---
+
+My changes below might look major, but the code is going the exact same thing as
+before. The purpose of dplyr and the pipe (%>%) system is to avoid the need to
+overwrite objects or keep making new objects that are almost the same but with
+a new column - you just add dataframe modifications on top of each other
+in the same chunk of code. I was getting confused by the test vs. test 2 vs. 
+data vs. nes
+
+I encourage you to 'wrap' your code (press enter - as I do here) after 
+'%>%', after '+' (in ggplot code) and at ~80 characters, to improve readability. 
+You can actually get RStudio to add a vertical line for you at a specified 
+number of characters, so you know where to wrap: 
+Tools -> Global Options -> Code -> Display -> Show margin
+
+I have added names to your code chunks to make them easier to navigate through.
+You can see them in the markdown outline (Ctrl + Shift + O) if you turn them on:
+Tools -> Global Options -> R Markdown -> Show in document outline -> Sections and Named Chunks
     
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
@@ -13,24 +30,31 @@ knitr::opts_chunk$set(warning=F)
 knitr::opts_chunk$set(message=F)
 ```
 
-
-```{r}
-# Libraries and read data set
+```{r load-packages}
+# Data wrangling
 library(dplyr)
 library(tidyr)
 library(readr)
+# Figures
 library(GGally)
 library(ggplot2)
-library(tidyr)
+# Stats
+library(lme4)
 ```
 
-```{r}
+```{r load-data}
 # Get a vector of all the filenames
-files <- list.files(path = "jung2015_RL", 
+files <- 
+  lapply(c("amphibia", "aves", "magnoliopsida", "mammalia", "reptilia"),
+         function(x){
+           list.files(path = file.path("D:/Work/Data/GEE/jung2015_RL", 
+                                       paste("jung2015_RL", x, sep = "_")), 
                     # Keep the full file path
                     full.names = TRUE,
                     # Limit to CSV files
                     pattern = "\\.csv$")
+         }) %>% unlist(.)
+  
 
 # Read each one in with lapply & bind all
 areadat <- 
@@ -42,178 +66,239 @@ areadat <-
 ```
 
 Merge area data and IUCN data
-```{r}
+```{r merge-data}
 # read iucn data
-iucndat <- read_csv('iucn_dat.csv') %>% 
+iucndat <- read_csv('HMEI-GDrive/data/iucn_dat.csv') %>% 
   # Rename the AOH variables to avoid confusion
   # (Jung refers to the land cover map by Jung et al. 2015)
   rename(areaAOH_jung = areaAOH,
          areaAOHinPA_jung = areaAOHinPA)
-
-merge_dat <- inner_join(areadat, iucndat, by=c('species'='scientificName'))
+merge_dat <- 
+  inner_join(areadat, iucndat, by=c('species'='scientificName')) %>% 
+  # Limit to the columns we need
+  dplyr::select(species,className,areaAOH,realm,country,redlistCategory)
 ```
 
 # Data Frame Modifications
-```{r}
+```{r aoh-thresholds}
 # Modify data frame
-
-# remove species with 0 or NA AOH
-data <- merge_dat %>% filter(!(is.na(areaAOH)), areaAOH > 0)
-
-# convert AOH to km^2
-data <- data %>% mutate(AOHkm = areaAOH/1000000)
-
-
-# add column for whether AOH falls below 9 km (more than 1 km away from threshold)
-data <- data %>% mutate(ten = AOHkm < 9)
-# add column for whether AOH falls below more than 1 km below 500 km threshold
-data <- data %>% mutate(five_hundred = AOHkm < 499)
-# add column for whether AOH falls below more than 1 km below 2000 km threshold
-data <- data %>% mutate(two_thousand = AOHkm < 1999)
-
-
-# column if ten is lowest threshold
-data <- data %>% mutate(ten_lowest = ten)
-# column if 500 is lowest threshold
-data <- data %>% mutate(five_lowest = xor(ten, five_hundred))
-# column if 2000 is lowest threshold
-data <- data %>% mutate(two_lowest = xor(five_hundred, two_thousand))
-
-
-# record what category should be
-data <- data %>% mutate(Category = ifelse(ten_lowest == TRUE, "Critically Endangered", ifelse(five_lowest == TRUE, "Endangered", ifelse(two_lowest == TRUE, "Vulnerable", "Near Threatened"))))
-
-
-# Calculate difference to next threshold
-data <- data %>% mutate(Difference = ifelse(ten_lowest == TRUE, 10 - AOHkm, ifelse(five_lowest == TRUE, 500 - AOHkm, ifelse(two_lowest == TRUE, 2000 - AOHkm, NA))))
-
-
-# remove Differences that are NA
-test2 <- data %>% filter(!(is.na(Difference)))
-
-
-# Calculate Difference between Category and redlistCategory
-test <- test2 %>% mutate(num_Category = ifelse(Category == "Critically Endangered", 1, ifelse(Category == "Endangered", 2, ifelse(Category == "Vulnerable", 3, ifelse(Category == "Near Threatened", 4, NA)))))
-
-test <- test %>% mutate(num_redlist = ifelse(redlistCategory == "Critically Endangered", 1, ifelse(redlistCategory == "Endangered", 2, ifelse(redlistCategory == "Vulnerable", 3, ifelse(redlistCategory == "Near Threatened", 4, NA)))))
-
-test <- test %>% mutate(cat_red_change = num_Category - num_redlist)
+merge_dat <- merge_dat %>% 
+  # remove species with 0 or NA AOH
+  filter(!(is.na(areaAOH)), areaAOH > 0) %>%
+  mutate(
+    # convert AOH to km^2
+    AOHkm = areaAOH/1000000,
+    # Identify NES
+    NES = AOHkm < 1999,
+    # add column for whether AOH falls below 9 km (more than 1 km away from threshold)
+    ten = AOHkm < 9, 
+    # add column for whether AOH falls below more than 1 km below 500 km threshold
+    five_hundred = AOHkm < 499,
+    # add column for whether AOH falls below more than 1 km below 2000 km threshold
+    two_thousand = AOHkm < 1999,
+    # column if ten is lowest threshold
+    ten_lowest = ten,
+    # column if 500 is lowest threshold
+    five_lowest = xor(ten, five_hundred),
+    # column if 2000 is lowest threshold
+    two_lowest = xor(five_hundred, two_thousand),
+    # record what category should be
+    Category = ifelse(ten_lowest == TRUE, "Critically Endangered", 
+                      ifelse(five_lowest == TRUE, "Endangered", 
+                             ifelse(two_lowest == TRUE, "Vulnerable", 
+                                    "Near Threatened"))),
+    # Calculate difference to next threshold
+    Difference = ifelse(ten_lowest == TRUE, 10 - AOHkm, 
+                        ifelse(five_lowest == TRUE, 500 - AOHkm, 
+                               ifelse(two_lowest == TRUE, 2000 - AOHkm, 
+                                      NA)))) %>% 
+    # remove Differences that are NA
+  filter(!(is.na(Difference))) %>% 
+  # Calculate Difference between Category and redlistCategory
+  mutate(num_Category = ifelse(Category == "Critically Endangered", 1, 
+                               ifelse(Category == "Endangered", 2, 
+                                      ifelse(Category == "Vulnerable", 3, 
+                                             ifelse(Category == "Near Threatened", 4, 
+                                                    NA)))),
+         num_redlist = ifelse(redlistCategory == "Critically Endangered", 1, 
+                              ifelse(redlistCategory == "Endangered", 2, 
+                                     ifelse(redlistCategory == "Vulnerable", 3, 
+                                            ifelse(redlistCategory == "Near Threatened", 4, 
+                                                   NA)))),
+         cat_red_change = num_Category - num_redlist)
 ```
 
 There are 2488 species with a habitat that qualifies a species for a threatened category. 
 
 Negative value means Habitat Category is uplisted compared to redlistCategory, 0 means they match, positive means Habitat Category is downlisted compared to redlistCategory. 
-```{r}
-test %>% group_by(cat_red_change) %>% summarize(Sum = n())
 
-change2 <- test %>% filter(cat_red_change == -2) %>% select(species, className, redlistCategory)
+```{r summarize-category-change}
+merge_dat %>% 
+  group_by(cat_red_change) %>% 
+  summarize(Sum = n())
+
+change_dat <- 
+  merge_dat %>% 
+  filter(cat_red_change == -2) %>% 
+  select(species, className, redlistCategory)
 ```
 1313 species (52.8%) do not change category. 549 species (22.1%) have less habitat than redlistCategory (- value). 626 species (25.2%) have more habitat than redlistCategory (+ value).
 
 # No Exit Species (NES)
 
 Classes of NES
-```{r}
+```{r nes-classes}
 # Table
-test %>% group_by(className) %>% summarize(Count = n()) %>% arrange(-Count)
+merge_dat %>% 
+  group_by(className) %>% 
+  summarize(Count = n()) %>% arrange(-Count)
 ```
 
 Category of NES
-```{r}
+```{r nes-category}
 #table
-test %>% group_by(Category) %>% summarize(Count = n()) %>% arrange(-Count)
+merge_dat %>% 
+  group_by(Category) %>% 
+  summarize(Count = n()) %>% 
+  arrange(-Count)
 
-write.csv(test,"nes.csv")
+# write.csv(test,"HMEI-GDrive/data/nes.csv",fileEncoding = "UTF8")
 
 # graphs
-ggplot(test, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Class and Threshold of NES") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
+ggplot(merge_dat, aes(x=className, fill=className)) + 
+  geom_bar() + 
+  facet_wrap(~Category) + 
+  ggtitle("Class and Threshold of NES") + 
+  theme(axis.text.x = element_blank()) + 
+  labs(fill="Class") + xlab(" ") + ylab("Count")
 ```
 
 Realm of Counts of NES
-```{r}
-sort(unique(unlist(strsplit(unique(test$realm), "[|]"))))
+
+```{r sort-realms}
+sort(unique(unlist(strsplit(unique(merge_dat$realm), "[|]"))))
 
 # Use 'grepl' to see if string is contained in another string
-realms_v3 = 
-    mutate(test,
-           Afrotropical = grepl("Afrotropical", realm),
-           Australasian = grepl("Australasian", realm),
-           Indomalayan = grepl("Indomalayan", realm),
-           Nearctic = grepl("Nearctic", realm),
-           Neotropical = grepl("Neotropical", realm),
-           Oceanian = grepl("Oceanian", realm),
-           Palearctic = grepl("Palearctic", realm))
+realms <- 
+  mutate(merge_dat,
+         Afrotropical = grepl("Afrotropical", realm),
+         Australasian = grepl("Australasian", realm),
+         Indomalayan = grepl("Indomalayan", realm),
+         Nearctic = grepl("Nearctic", realm),
+         Neotropical = grepl("Neotropical", realm),
+         Oceanian = grepl("Oceanian", realm),
+         Palearctic = grepl("Palearctic", realm))
 
 # long
-realms_long <- realms_v3 %>%  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, Neotropical, Oceanian, Palearctic), names_to='Realms', values_to='value')
-
-realms_long <- realms_long %>% filter(value == TRUE)
+realms_long <- 
+  realms %>%  
+  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, 
+                      Neotropical, Oceanian, Palearctic), 
+               names_to='Realms', values_to='value') %>% 
+  filter(value == TRUE)
 ```
 
 Realms of each Conservation Reliant Species
-```{r}
-test %>% group_by(realm) %>% summarize(Count = n()) %>% arrange(-Count)
+```{r nes-realm}
+merge_dat %>% 
+  group_by(realm) %>% 
+  summarize(Count = n()) %>% 
+  arrange(-Count)
 ```
 
 Number of CRS in each realm
-```{r}
-realms_long %>% group_by(Realms) %>% summarize(Count = n()) %>% arrange(-Count)
+```{r realm-nes-count}
+realms_long %>% 
+  group_by(Realms) %>% 
+  summarize(Count = n()) %>% 
+  arrange(-Count)
 
-ggplot(realms_long, aes(x=Realms)) + geom_bar() + theme(axis.text.x = element_text(angle = 90)) + ggtitle("Number of CRS in each Realm")
+ggplot(realms_long, aes(x=Realms)) + 
+  geom_bar() + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  ggtitle("Number of CRS in each Realm")
 
-ggplot(realms_long, aes(x=Realms, fill=Realms)) + geom_bar() + facet_wrap(~Category) + theme(axis.text.x = element_blank()) + ggtitle("Category and Realm of CRS")
+ggplot(realms_long, aes(x=Realms, fill=Realms)) + 
+  geom_bar() + 
+  facet_wrap(~Category) + 
+  theme(axis.text.x = element_blank()) + 
+  ggtitle("Category and Realm of CRS")
 
 ```
-
 
 # Difference Distribution
 
 Class
-```{r}
-ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Class")
+```{r diff-density-class}
+ggplot(merge_dat, aes(x=Difference, fill=className, alpha=0.01)) + 
+  geom_histogram() + 
+  ggtitle("Distribution of Differences to Next Threshold Across Class")
 
-ggplot(test, aes(x=Difference, fill=className, alpha=0.01)) + geom_density() + ggtitle("Density of Differences to Next Threshold Across Class")
+ggplot(merge_dat, aes(x=Difference, fill=className, alpha=0.01)) + 
+  geom_density() + 
+  ggtitle("Density of Differences to Next Threshold Across Class")
 
-ggplot(test, aes(x=Difference)) + geom_histogram() + facet_wrap(~className) + ggtitle("Distribution of Differences to Next Threshold Across Class")
+ggplot(merge_dat, aes(x=Difference)) + 
+  geom_histogram() + 
+  facet_wrap(~className) + 
+  ggtitle("Distribution of Differences to Next Threshold Across Class")
 
-ggplot(test, aes(x=Difference)) + geom_density() + facet_wrap(~className) + ggtitle("Density of Differences to Next Threshold Across Class")
+ggplot(merge_dat, aes(x=Difference)) + 
+  geom_density() + 
+  facet_wrap(~className) + 
+  ggtitle("Density of Differences to Next Threshold Across Class")
 ```
 
-Histogram pf Differences by Class
-```{r}
-# I'm adding this one below with free scales so we can see what's going on in
-# EN and VU without the distribution being squashed by CR
-ggplot(test, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
-    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 2, multi_line = TRUE)) + labs(fill="Class") + ylab("Count") + xlab("Difference (km^2)")
+Histogram of Differences by Class
+```{r diff-hist-class}
+ggplot(merge_dat, aes(x=Difference, fill=className)) + 
+  geom_histogram(alpha=0.7) + 
+  ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
+  facet_wrap(~ Category, scales = "free", 
+             labeller = label_wrap_gen(width = 2, multi_line = TRUE)) + 
+  labs(fill="Class") + 
+  ylab("Count") + 
+  xlab("Difference (km^2)")
 ```
- <!-- Cool - looks like most things are close to the threshold -->
- 
+
 Category
-```{r}
-ggplot(test, aes(x=Difference, fill=Category, alpha=0.5)) + geom_histogram() + ggtitle("Distribution of Differences to Next Threshold Across Category")
+```{r diff-hist-category}
+ggplot(merge_dat, aes(x=Difference, fill=Category, alpha=0.5)) + 
+  geom_histogram() + 
+  ggtitle("Distribution of Differences to Next Threshold Across Category")
 ```
 
 Realm
-```{r}
-ggplot(realms_long, aes(x=Difference, fill=Realms)) + geom_histogram() + ggtitle("Distribution of Differences Across Realm")
+```{r diff-hist-realm}
+ggplot(realms_long, aes(x=Difference, fill=Realms)) + 
+  geom_histogram() + 
+  ggtitle("Distribution of Differences Across Realm")
 
-ggplot(realms_long, aes(x=Difference)) + geom_histogram() + facet_wrap(~Realms)
+ggplot(realms_long, aes(x=Difference)) + 
+  geom_histogram() + 
+  facet_wrap(~Realms)
 
-ggplot(realms_long, aes(x=Difference)) + geom_density() + facet_wrap(~Realms)  + ggtitle("Distribution of Differences Across Realm")
+ggplot(realms_long, aes(x=Difference)) + 
+  geom_density() + 
+  facet_wrap(~Realms) + 
+  ggtitle("Distribution of Differences Across Realm")
 
-ggplot(realms_long, aes(x=Difference)) + geom_density() + facet_wrap(~Realms)  + ggtitle("Density of Differences Across Realm")
+ggplot(realms_long, aes(x=Difference)) + 
+  geom_density() + 
+  facet_wrap(~Realms) + 
+  ggtitle("Density of Differences Across Realm")
 ```
 
 
 # Top 25% Differences
 
-```{r, include=F}
+```{r top-25-diff, include=F}
 # Top 25% of each category
-crit_top = test %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754866)
+crit_top = merge_dat %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754866)
 
-endan_top = test %>% filter(Category == 'Endangered') %>% filter(Difference >= 459.977142)
+endan_top = merge_dat %>% filter(Category == 'Endangered') %>% filter(Difference >= 459.977142)
 
-vul_top = test %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1278.32419)
+vul_top = merge_dat %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1278.32419)
 
 # near_top = test %>% filter(Category == 'Near Threatened')
 
@@ -224,21 +309,33 @@ top_diff = full_join(top_diff, vul_top)
 ```
 
 ### Class
-```{r}
-top_diff %>% group_by(className) %>% summarize(Count = n()) %>% arrange(-Count)
+```{r top-diff-class}
+top_diff %>% 
+  group_by(className) %>% 
+  summarize(Count = n()) %>% 
+  arrange(-Count)
 
-ggplot(top_diff, aes(x=className)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences")
+ggplot(top_diff, aes(x=className)) + 
+  geom_bar() + 
+  ggtitle("Distribution of Top 25% (of each category) AOH Differences")
 
-ggplot(top_diff, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Distribution of Top 25% AOH Differences") + theme(axis.text.x = element_text(angle = 90))
+ggplot(top_diff, aes(x=className, fill=className)) + 
+  geom_bar() + 
+  facet_wrap(~Category) + 
+  ggtitle("Distribution of Top 25% AOH Differences") + 
+  theme(axis.text.x = element_text(angle = 90))
 ```
 
 ### Category
-```{r, include=F}
-ggplot(top_diff, aes(x=Category, fill=Category)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences") + theme(axis.text.x = element_text(angle = 90))
+```{r top-diff-category, include=F}
+ggplot(top_diff, aes(x=Category, fill=Category)) + 
+  geom_bar() + 
+  ggtitle("Distribution of Top 25% (of each category) AOH Differences") + 
+  theme(axis.text.x = element_text(angle = 90))
 ```
 
 ### Realm
-```{r, include=F}
+```{r top-diff-realm, include=F}
 crit_realms = realms_long %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754419)
 
 endan_realms = realms_long %>% filter(Category == 'Endangered') %>% filter(Difference >= 457.821961)
@@ -251,66 +348,38 @@ vul_realms = realms_long %>% filter(Category == 'Vulnerable') %>% filter(Differe
 top_realm = full_join(crit_realms, endan_realms)
 top_realm = full_join(top_realm, vul_realms)
 #top_realm = full_join(bottom_realm, near_realms)
+
+ggplot(top_realm, aes(x=Realms)) + 
+  geom_bar() + 
+  ggtitle("Distribution of Top 25% (of each category) AOH Differences Across Realm") + 
+  theme(axis.text.x = element_text(angle = 90))
+
+ggplot(top_realm, aes(x=Realms, fill=Realms)) + 
+  geom_bar() + 
+  facet_wrap(~Category) + 
+  ggtitle("Distribution of Top 25% AOH Differences Across Realm") + 
+  theme(axis.text.x = element_text(angle = 90))
 ```
-
-```{r}
-ggplot(top_realm, aes(x=Realms)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences Across Realm") + theme(axis.text.x = element_text(angle = 90))
-
-ggplot(top_realm, aes(x=Realms, fill=Realms)) + geom_bar() + facet_wrap(~Category) + ggtitle("Distribution of Top 25% AOH Differences Across Realm") + theme(axis.text.x = element_text(angle = 90))
-```
-
-
 
 # GLM
-```{r}
-library(lme4)
-```
 
 ### NES
 = column for species name + class + whether NES (0 or 1)
 glm(NES ~ class, family = "binomial")
-```{r}
-nes = data %>% mutate(NES = AOHkm < 1999)
 
-ggplot(nes, aes(x = as.factor(NES))) +
+```{r nes-count-plot}
+ggplot(merge_dat, aes(x = as.factor(NES))) +
     geom_bar() +
     facet_grid(Category ~ className) 
 ```
 Near Threatened species are not NES, all other categories have majority NES. Amphibians have highest counts of NES across threatened categories but lower counts than birds and mammals for near threatened. 
 
-
 Realm NES
-```{r}
-sort(unique(unlist(strsplit(unique(nes$realm), "[|]"))))
-
-# Use 'grepl' to see if string is contained in another string
-realms_v4 = 
-    mutate(nes,
-           Afrotropical = grepl("Afrotropical", realm),
-           Australasian = grepl("Australasian", realm),
-           Indomalayan = grepl("Indomalayan", realm),
-           Nearctic = grepl("Nearctic", realm),
-           Neotropical = grepl("Neotropical", realm),
-           Oceanian = grepl("Oceanian", realm),
-           Palearctic = grepl("Palearctic", realm), 
-           Antarctic = grepl("Antarctic", realm))
-
-# long
-realms_long_nes <- 
-  realms_v4 %>%  
-  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, 
-                      Neotropical, Oceanian, Palearctic, Antarctic), 
-               names_to='Realms', values_to='value') %>% 
-  filter(value == TRUE) %>% 
-  dplyr::select(species,className,NES,Realms,Category,AOHkm,Difference)
-# I simplified the above so the dataframe is easier to inspect
-```
-
 
 ```{r interaction-test}
 glm_full_nes <- 
     glm(NES ~ className * Realms + className * Category + Realms * Category, 
-        data = realms_long_nes , 
+        data = realms_long , 
         family = "binomial", maxit=100)
 
 # Drop & test each interaction in turn
@@ -539,7 +608,7 @@ nes_top25 <- data %>% mutate(CRS = as.numeric(AOHkm < 1999)) %>% mutate(top25 = 
 
 nes_top25 <- nes_top25 %>% rename(scientificName = species) 
 
-write.csv(nes_top25,"nes_top25.csv")
+write.csv(nes_top25,"HMEI-GDrive/data/nes_top25.csv",fileEncoding = "UTF8")
 
 ```
 
@@ -578,5 +647,11 @@ prop2 = prop %>%
 prop3 = inner_join(prop2, prop1, by=c('realm'='realm', 'className' = 'className'))
 prop3 = prop3 %>% mutate(prop = n / total)
 
+```
+
+```{r save-data}
+# Inspect the loaded objects
+ls()
+c("nes",)
 ```
 
