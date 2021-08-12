@@ -44,25 +44,19 @@ library(lme4)
 
 ```{r load-raw-data, eval = FALSE}
 # Get a vector of all the filenames
-files <- 
-  lapply(c("amphibia", "aves", "magnoliopsida", "mammalia", "reptilia"),
-         function(x){
-           list.files(path = file.path("D:/Work/Data/GEE/jung2015_RL", 
-                                       paste("jung2015_RL", x, sep = "_")), 
-                      # Keep the full file path
-                      full.names = TRUE,
-                      # Limit to CSV files
-                      pattern = "\\.csv$")
-         }) %>% unlist(.)
-
+files <- list.files(path = "jung2015_RL", 
+                    # Keep the full file path
+                    full.names = TRUE,
+                    # Limit to CSV files
+                    pattern = "\\.csv$")
 
 # Read each one in with lapply & bind all
 areadat <- 
-  lapply(files, function(file_i){
-    suppressMessages(read_csv(file_i))
-  }) %>% 
-  # Collapse list into dataframe
-  bind_rows()
+    lapply(files, function(file_i){
+        suppressMessages(read_csv(file_i))
+    }) %>% 
+    # Collapse list into dataframe
+    bind_rows()
 ```
 
 Merge area data and IUCN data
@@ -71,7 +65,7 @@ Merge area data and IUCN data
 gsubGeo <- function(x){gsub(", ",";",gsub("[]]","",gsub("[[]","",x)))}
 
 # read iucn data
-iucndat <- read_csv('HMEI-GDrive/data/iucn_dat.csv') %>% 
+iucndat <- read_csv('iucn_dat.csv') %>% 
   # Rename the AOH variables to avoid confusion
   # (Jung refers to the land cover map by Jung et al. 2015)
   rename(areaAOH_jung = areaAOH,
