@@ -36,6 +36,13 @@ knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALS
                       fig.width = 16.6/2.54, fig.height = 15/2.54)
 ```
 
+```{r packages}
+library(readr)
+library(ggplot2)
+library(stringr)
+library(dplyr)
+```
+
 ```{r data}
 load("HMEI-GDrive/data/sorted/msdata.Rdata")
 ```
@@ -118,21 +125,24 @@ All statistical analyses were conducted in R version 4.0.3 [@r_core_team_2020]. 
 Of the 3,869 species with AOH data, 2,488 species have habitat areas below the 2000 km^2 threshold to be considered as NES (Figure \@ref(fig:class-and-threshold-graph)). Of the 2,488 NES, most species were amphibians (1389), followed by birds (527), mammals (461), assessed plants in the class Magnoliopsida (59), and, finally, assessed reptiles (52). By Red List threshold, 335 species fall below the 10 km^2 threshold for Critically Endangered, 720 between the 10 km^2 and 500 km^2 thresholds (Endangered), and 1433 have between 500 km^2 and 2000 km^2 AOH (Vulnerable). We also identified ENES, as the upper quartile of each threshold group (top 25%) that had AOH values furthest from the downlisting threshold. Of the 623 species in the upper quartile, 358 were amphibians, followed by birds (124), mammals (113), assessed reptiles (15), and assessed plants in the class Magnoliopsida (13).
 
 ```{r class-and-threshold-graph}
-library(readr)
-library(ggplot2)
-library(stringr)
-library(dplyr)
-
-nes <- read_csv('nes.csv')
-
-nes <- nes %>% mutate(Category = str_replace(Category, "Critically Endangered", "AOH < 10 km^2")) %>% 
+nes <- 
+  nes_df %>% 
+  mutate(Category = str_replace(Category, "Critically Endangered", "AOH < 10 km^2")) %>% 
   mutate(Category = str_replace(Category, "Endangered", "AOH < 500 km^2")) %>% 
   mutate(Category = str_replace(Category, "Vulnerable", "AOH < 2000 km^2"))
 
 # relevel Categories
-nes$Category <- factor(nes$Category, levels = c("AOH < 10 km^2", "AOH < 500 km^2", "AOH < 2000 km^2"))
+nes$Category <- 
+  factor(nes$Category, levels = c("AOH < 10 km^2", "AOH < 500 km^2", "AOH < 2000 km^2"))
 
-ggplot(nes, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category, labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + ggtitle("Class and Threshold of NES") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
+ggplot(nes, aes(x=className, fill=className)) + 
+  geom_bar() + 
+  facet_wrap(~Category, labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
+  ggtitle("Class and Threshold of NES") + 
+  theme(axis.text.x = element_blank()) + 
+  labs(fill="Class") + 
+  xlab(" ") + 
+  ylab("Count")
 ```
 
 <!-- Added stats for p-value and degrees of freedom when each variable was dropped for GLM. Residual deviance for all three was 713.16 -->
@@ -144,9 +154,11 @@ Across class and Red List thresholds, there is a right skew towards a large diff
 The GLM ran on proximity to threshold varying by taxonomic class, biogeography and absolute AOH found that only absolute AOH had a significant effect on proximity to threshold, while taxonomic class and realm had no significance. 
 
 ```{r difference-histogram}
-ggplot(nes, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + 
+ggplot(nes, aes(x=Difference, fill=className)) + 
+  geom_histogram(alpha=0.7) + 
   ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
-    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
+    facet_wrap(~ Category, scales = "free", 
+               labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
   labs(fill="Class") + 
   ylab("Count") + xlab("Difference (km^2)") + 
   theme(axis.text.x = element_text(angle = 45))
