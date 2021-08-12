@@ -118,17 +118,31 @@ library(readr)
 library(ggplot2)
 library(stringr)
 library(dplyr)
+library(RColorBrewer)
 
-nes <- read_csv('nes.csv')
+nes_g <- read_csv('nes.csv')
 
-nes <- nes %>% mutate(Category = str_replace(Category, "Critically Endangered", "AOH < 10 km^2")) %>% 
-  mutate(Category = str_replace(Category, "Endangered", "AOH < 500 km^2")) %>% 
-  mutate(Category = str_replace(Category, "Vulnerable", "AOH < 2000 km^2"))
+nes_g <- nes_g %>% mutate(Category = str_replace(Category, "Critically Endangered", "AOH < 10 km^2")) %>% 
+  mutate(Category = str_replace(Category, "Endangered", "10 < AOH < 500 km^2")) %>% 
+  mutate(Category = str_replace(Category, "Vulnerable", "500 < AOH < 2000 km^2"))
 
 # relevel Categories
-nes$Category <- factor(nes$Category, levels = c("AOH < 10 km^2", "AOH < 500 km^2", "AOH < 2000 km^2"))
+nes_g$Category <- factor(nes_g$Category, levels = c("AOH < 10 km^2", "10 < AOH < 500 km^2", "500 < AOH < 2000 km^2"))
 
-ggplot(nes, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category, labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + ggtitle("Class and Threshold of NES") + theme(axis.text.x = element_blank()) + labs(fill="Class") + xlab(" ") + ylab("Count")
+max_val <- 834
+
+ggplot(nes_g, aes(x=className, fill=className)) + 
+  geom_bar() + 
+  facet_wrap(~Category, labeller = label_wrap_gen(width = 25, multi_line = TRUE)) +
+  theme_bw() + theme(panel.grid = element_blank()) +
+  ggtitle("Class and Threshold of NES") + 
+  theme(axis.text.x = element_blank()) + 
+  labs(fill="Class") +
+  xlab(" ") + 
+  ylab("Count") + 
+  theme(legend.position = "none") + 
+  scale_fill_brewer(palette="Set1") +
+  scale_y_continuous(breaks = seq(0, max_val, by = 100), limits=c(0, max_val))
 ```
 
 <!-- Added stats for p-value and degrees of freedom when each variable was dropped for GLM. Residual deviance for all three was 713.16 -->
@@ -140,12 +154,14 @@ Across class and Red List thresholds, there is a right skew towards a large diff
 The GLM ran on proximity to threshold varying by taxonomic class, biogeography and absolute AOH found that only absolute AOH had a significant effect on proximity to threshold, while taxonomic class and realm had no significance. 
 
 ```{r difference-histogram}
-ggplot(nes, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + 
+ggplot(nes_g, aes(x=Difference, fill=className)) + geom_histogram(alpha=0.7) + 
   ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
-    facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
+  facet_wrap(~ Category, scales = "free", labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
+  theme_bw() + theme(panel.grid = element_blank()) +
   labs(fill="Class") + 
   ylab("Count") + xlab("Difference (km^2)") + 
-  theme(axis.text.x = element_text(angle = 45))
+  theme(axis.text.x = element_text(angle = 45)) + 
+  scale_fill_brewer(palette="Set1") 
 ```
 
 The three realms with the most NES are Neotropical (1101 species), Afrotropical (571 species), and Indomalayan (452 species). These were also the three realms with the most ENES. Mapping total NES and ENES by country (Figure 3), we see that certain countries - such as Colombia, Peru, Mexico and Madagascar - harbour a striking proportion of the world's most habitat-limited species.
