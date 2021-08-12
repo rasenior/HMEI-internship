@@ -41,6 +41,15 @@ library(readr)
 library(ggplot2)
 library(stringr)
 library(dplyr)
+library(ggtext)
+library(png)
+library(grid)
+
+# Define function to capitalise first letter
+capitalise <- function(string) {
+  substr(string, 1, 1) <- toupper(substr(string, 1, 1))
+  string
+}
 ```
 
 ```{r data}
@@ -134,15 +143,36 @@ nes <-
 # relevel Categories
 nes$Category <- 
   factor(nes$Category, levels = c("AOH < 10 km^2", "AOH < 500 km^2", "AOH < 2000 km^2"))
+nes$className <- 
+  factor(nes$className, 
+         levels = unique(nes$className),
+         labels = capitalise(unique(nes$className)))
+
+# Code to add pics to labels
+classes <- levels(nes$className)
+labels <- paste(
+  "<img src=", 
+  "'",
+  file.path("HMEI-GDrive/resources/phylopic", paste(tolower(classes), 'png', sep = ".")),
+  "' ",
+  "width='10' />", 
+  classes,
+  sep = ""
+)
+names(labels) <- classes
 
 ggplot(nes, aes(x=className, fill=className)) + 
   geom_bar() + 
   facet_wrap(~Category, labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
   ggtitle("Class and Threshold of NES") + 
-  theme(axis.text.x = element_blank()) + 
   labs(fill="Class") + 
   xlab(" ") + 
-  ylab("Count")
+  ylab("Count") +
+  theme(axis.text.x = element_markdown(color = "black",
+                                       angle = 45, 
+                                       hjust = 1, vjust = 1,
+                                       margin = unit(c(-5, 0, 0, 0), "pt"))) +
+  scale_x_discrete(labels = labels)
 ```
 
 <!-- Added stats for p-value and degrees of freedom when each variable was dropped for GLM. Residual deviance for all three was 713.16 -->
@@ -166,7 +196,18 @@ ggplot(nes, aes(x=Difference, fill=className)) +
 
 The three realms with the most NES are Neotropical (1101 species), Afrotropical (571 species), and Indomalayan (452 species). These were also the three realms with the most ENES. Mapping total NES and ENES by country (Figure 3), we see that certain countries - such as Colombia, Peru, Mexico and Madagascar - harbour a striking proportion of the world's most habitat-limited species.
 
-[maps]
+```{r map, eval = FALSE}
+map <- 
+  readPNG("HMEI-GDrive/figs/IUCN Data Maps/combi_crs_map_country.png") %>% 
+  rasterGrob(interpolate = TRUE)
+ggplot() +
+  theme_void() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  annotation_custom(map,
+                    xmin = -Inf, xmax = Inf,
+                    ymin = -Inf, ymax = Inf)
+```
 
 # Discussion
 
