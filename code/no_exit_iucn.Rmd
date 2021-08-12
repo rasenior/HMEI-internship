@@ -23,7 +23,7 @@ Tools -> Global Options -> Code -> Display -> Show margin
 I have added names to your code chunks to make them easier to navigate through.
 You can see them in the markdown outline (Ctrl + Shift + O) if you turn them on:
 Tools -> Global Options -> R Markdown -> Show in document outline -> Sections and Named Chunks
-    
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 knitr::opts_chunk$set(warning=F)
@@ -49,20 +49,20 @@ files <-
          function(x){
            list.files(path = file.path("D:/Work/Data/GEE/jung2015_RL", 
                                        paste("jung2015_RL", x, sep = "_")), 
-                    # Keep the full file path
-                    full.names = TRUE,
-                    # Limit to CSV files
-                    pattern = "\\.csv$")
+                      # Keep the full file path
+                      full.names = TRUE,
+                      # Limit to CSV files
+                      pattern = "\\.csv$")
          }) %>% unlist(.)
-  
+
 
 # Read each one in with lapply & bind all
 areadat <- 
-    lapply(files, function(file_i){
-        suppressMessages(read_csv(file_i))
-    }) %>% 
-    # Collapse list into dataframe
-    bind_rows()
+  lapply(files, function(file_i){
+    suppressMessages(read_csv(file_i))
+  }) %>% 
+  # Collapse list into dataframe
+  bind_rows()
 ```
 
 Merge area data and IUCN data
@@ -86,6 +86,7 @@ merge_dat <-
   # Record if species are realm/country endemic
   mutate(realm_endemic = !(grepl(";", Realms)),
          country_endemic = !(grepl(";", countries)))
+
 ```
 
 ```{r sort-realms, eval = FALSE}
@@ -100,12 +101,21 @@ colnames(realm_info) <- realm_cats
 
 # Add to merge_dat
 merge_dat <- cbind(merge_dat, realm_info)
+
+# The above steps take ages, so better to save as .Rds and read back in
+saveRDS(merge_dat, "HMEI-GDrive/data/sorted/merge_dat.Rds")
 ```
 
 # Data Frame Modifications
-```{r aoh-thresholds, eval = FALSE}
+
+```{r load-sorted-data}
+merge_dat <- readRDS("HMEI-GDrive/data/sorted/merge_dat.Rds")
+realm_cats <- sort(unique(unlist(strsplit(unique(merge_dat$Realms), "[;]"))))
+```
+
+```{r aoh-thresholds}
 # Modify data frame
-merge_dat <- merge_dat %>% 
+all_df <- merge_dat %>% 
   # remove species with 0 or NA AOH
   filter(!(is.na(areaAOH)), areaAOH > 0) %>%
   mutate(
@@ -135,8 +145,6 @@ merge_dat <- merge_dat %>%
                         ifelse(five_lowest == TRUE, 500 - AOHkm, 
                                ifelse(two_lowest == TRUE, 2000 - AOHkm, 
                                       NA)))) %>% 
-    # remove Differences that are NA
-  filter(!(is.na(Difference))) %>% 
   # Calculate Difference between Category and redlistCategory
   mutate(num_Category = ifelse(Category == "Critically Endangered", 1, 
                                ifelse(Category == "Endangered", 2, 
@@ -156,41 +164,41 @@ merge_dat <- merge_dat %>%
                                                 NA))),
          # Flip the scale so bigger numbers = closer to threshold for downlisting
          proximity = 1 - difference_prop)
+
+nes_df <-
+  all_df %>% 
+  # remove Differences that are NA
+  filter(!(is.na(Difference)))
+
+# Sanity check
+unique(nes_df$NES)
 ```
 
-```{r realm-long-df, eval = FALSE}
+```{r realm-long-df}
 # Long dataframe
-realms_long <- 
-  merge_dat %>%  
+realms_long_all <- 
+  all_df %>%  
   dplyr::select(-Realms) %>% 
   pivot_longer(cols= all_of(realm_cats), 
                names_to='Realms', values_to='value') %>% 
   filter(value == TRUE) %>% 
   dplyr::select(-value)
+realms_long_nes <-
+  realms_long_all %>% 
+  filter(NES)
 ```
 
 There are 2488 species with a habitat that qualifies a species for a threatened category. 
 
 Negative value means Habitat Category is uplisted compared to redlistCategory, 0 means they match, positive means Habitat Category is downlisted compared to redlistCategory.
 
-```{r write-sorted-data, eval = FALSE}
-# The above steps take ages, so better to save as .Rds and read back in
-saveRDS(merge_dat, "HMEI-GDrive/data/sorted/merge_dat.Rds")
-saveRDS(realms_long, "HMEI-GDrive/data/sorted/realms_long.Rds")
-```
-
-```{r load-sorted-data}
-merge_dat <- readRDS("HMEI-GDrive/data/sorted/merge_dat.Rds")
-realms_long <- readRDS("HMEI-GDrive/data/sorted/realms_long.Rds")
-```
-
 ```{r summarize-category-change}
-merge_dat %>% 
+all_df %>% 
   group_by(cat_red_change) %>% 
   summarize(Sum = n())
 
 change_dat <- 
-  merge_dat %>% 
+  all_df %>% 
   filter(cat_red_change == -2) %>% 
   select(species, className, redlistCategory)
 ```
@@ -201,21 +209,22 @@ change_dat <-
 Classes of NES
 ```{r nes-classes}
 # Table
-merge_dat %>% 
+nes_df %>% 
   group_by(className) %>% 
-  summarize(Count = n()) %>% arrange(-Count)
+  summarize(Count = n()) %>% 
+  arrange(-Count)
 ```
 
 Category of NES
 ```{r nes-category}
 #table
-merge_dat %>% 
+nes_df %>% 
   group_by(Category) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
 
 # graphs
-ggplot(merge_dat, aes(x=className, fill=className)) + 
+ggplot(nes_df, aes(x=className, fill=className)) + 
   geom_bar() + 
   facet_wrap(~Category) + 
   ggtitle("Class and Threshold of NES") + 
@@ -227,7 +236,7 @@ Realm of Counts of NES
 
 Realms of each Conservation Reliant Species
 ```{r nes-realm}
-merge_dat %>% 
+nes_df %>% 
   group_by(Realms) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
@@ -235,17 +244,17 @@ merge_dat %>%
 
 Number of CRS in each realm
 ```{r realm-nes-count}
-realms_long %>% 
+realms_long_nes %>% 
   group_by(Realms) %>% 
   summarize(Count = n()) %>% 
   arrange(-Count)
 
-ggplot(realms_long, aes(x=Realms)) + 
+ggplot(realms_long_nes, aes(x=Realms)) + 
   geom_bar() + 
   theme(axis.text.x = element_text(angle = 90)) + 
   ggtitle("Number of CRS in each Realm")
 
-ggplot(realms_long, aes(x=Realms, fill=Realms)) + 
+ggplot(realms_long_nes, aes(x=Realms, fill=Realms)) + 
   geom_bar() + 
   facet_wrap(~Category) + 
   theme(axis.text.x = element_blank()) + 
@@ -257,20 +266,20 @@ ggplot(realms_long, aes(x=Realms, fill=Realms)) +
 
 Class
 ```{r diff-density-class}
-ggplot(merge_dat, aes(x=Difference, fill=className, alpha=0.01)) + 
+ggplot(nes_df, aes(x=Difference, fill=className, alpha=0.01)) + 
   geom_histogram() + 
   ggtitle("Distribution of Differences to Next Threshold Across Class")
 
-ggplot(merge_dat, aes(x=Difference, fill=className, alpha=0.01)) + 
+ggplot(nes_df, aes(x=Difference, fill=className, alpha=0.01)) + 
   geom_density() + 
   ggtitle("Density of Differences to Next Threshold Across Class")
 
-ggplot(merge_dat, aes(x=Difference)) + 
+ggplot(nes_df, aes(x=Difference)) + 
   geom_histogram() + 
   facet_wrap(~className) + 
   ggtitle("Distribution of Differences to Next Threshold Across Class")
 
-ggplot(merge_dat, aes(x=Difference)) + 
+ggplot(nes_df, aes(x=Difference)) + 
   geom_density() + 
   facet_wrap(~className) + 
   ggtitle("Density of Differences to Next Threshold Across Class")
@@ -278,7 +287,7 @@ ggplot(merge_dat, aes(x=Difference)) +
 
 Histogram of Differences by Class
 ```{r diff-hist-class}
-ggplot(merge_dat, aes(x=Difference, fill=className)) + 
+ggplot(nes_df, aes(x=Difference, fill=className)) + 
   geom_histogram(alpha=0.7) + 
   ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
   facet_wrap(~ Category, scales = "free", 
@@ -290,27 +299,27 @@ ggplot(merge_dat, aes(x=Difference, fill=className)) +
 
 Category
 ```{r diff-hist-category}
-ggplot(merge_dat, aes(x=Difference, fill=Category, alpha=0.5)) + 
+ggplot(nes_df, aes(x=Difference, fill=Category, alpha=0.5)) + 
   geom_histogram() + 
   ggtitle("Distribution of Differences to Next Threshold Across Category")
 ```
 
 Realm
 ```{r diff-hist-realm}
-ggplot(realms_long, aes(x=Difference, fill=Realms)) + 
+ggplot(realms_long_nes, aes(x=Difference, fill=Realms)) + 
   geom_histogram() + 
   ggtitle("Distribution of Differences Across Realm")
 
-ggplot(realms_long, aes(x=Difference)) + 
+ggplot(realms_long_nes, aes(x=Difference)) + 
   geom_histogram() + 
   facet_wrap(~Realms)
 
-ggplot(realms_long, aes(x=Difference)) + 
+ggplot(realms_long_nes, aes(x=Difference)) + 
   geom_density() + 
   facet_wrap(~Realms) + 
   ggtitle("Distribution of Differences Across Realm")
 
-ggplot(realms_long, aes(x=Difference)) + 
+ggplot(realms_long_nes, aes(x=Difference)) + 
   geom_density() + 
   facet_wrap(~Realms) + 
   ggtitle("Density of Differences Across Realm")
@@ -321,11 +330,11 @@ ggplot(realms_long, aes(x=Difference)) +
 
 ```{r top-25-diff, include=F}
 # Top 25% of each category
-crit_top = merge_dat %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754866)
+crit_top = nes_df %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754866)
 
-endan_top = merge_dat %>% filter(Category == 'Endangered') %>% filter(Difference >= 459.977142)
+endan_top = nes_df %>% filter(Category == 'Endangered') %>% filter(Difference >= 459.977142)
 
-vul_top = merge_dat %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1278.32419)
+vul_top = nes_df %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1278.32419)
 
 # near_top = test %>% filter(Category == 'Near Threatened')
 
@@ -363,11 +372,11 @@ ggplot(top_diff, aes(x=Category, fill=Category)) +
 
 ### Realm
 ```{r top-diff-realm, include=F}
-crit_realms = realms_long %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754419)
+crit_realms = realms_long_nes %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754419)
 
-endan_realms = realms_long %>% filter(Category == 'Endangered') %>% filter(Difference >= 457.821961)
+endan_realms = realms_long_nes %>% filter(Category == 'Endangered') %>% filter(Difference >= 457.821961)
 
-vul_realms = realms_long %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1265.166894)
+vul_realms = realms_long_nes %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1265.166894)
 
 # near_realms = realms %>% filter(Category == 'Near Threatened') 
 
@@ -395,9 +404,9 @@ ggplot(top_realm, aes(x=Realms, fill=Realms)) +
 glm(NES ~ class, family = "binomial")
 
 ```{r nes-count-plot}
-ggplot(merge_dat, aes(x = as.factor(NES))) +
-    geom_bar() +
-    facet_grid(Category ~ className) 
+ggplot(all_df, aes(x = as.factor(NES))) +
+  geom_bar() +
+  facet_grid(Category ~ className) 
 ```
 Near Threatened species are not NES, all other categories have majority NES. Amphibians have highest counts of NES across threatened categories but lower counts than birds and mammals for near threatened. 
 
@@ -406,9 +415,9 @@ Realm NES
 ```{r interaction-test}
 # I think we should focus on endemic species here, to avoid double-counting
 glm_full_nes <- 
-    glm(NES ~ className * Realms + className * Category + Realms * Category, 
-        data = filter(realms_long, realm_endemic),
-        family = "binomial", maxit=100)
+  glm(NES ~ className * Realms + className * Category + Realms * Category, 
+      data = filter(realms_long_all, realm_endemic),
+      family = "binomial", maxit=100)
 
 # Drop & test each interaction in turn
 glm_dropInter1_nes <- update(glm_full_nes, ~.- className:Realms)
@@ -467,12 +476,16 @@ AIC(glm_dropInter6_nes,glm_dropClass_nes,glm_dropRealm_nes,glm_dropCat_nes)
 - try difference / max difference for these models 
 ```{r}
 nes_difference <- 
-  merge_dat %>% 
-  mutate()
-
+  nes_df %>% 
+  filter(
+    # Drop NAs
+    !(is.na(Difference)),
+    # Restrict to species occurring in one Realm only
+    realm_endemic
+  )
 # Make a standard lm
 lm_prop <- lm(difference_prop ~ className, 
-          data = nes_difference)
+              data = nes_df)
 
 # Model validation plots
 par(mfrow = c(2,2))
@@ -481,7 +494,7 @@ summary(lm_prop)
 
 # Make a standard lm
 lm_prop_cat <- lm(difference_prop ~ Category, 
-          data = nes_difference)
+                  data = nes_difference)
 
 # Model validation plots
 par(mfrow = c(2,2))
@@ -489,35 +502,19 @@ plot(lm_prop_cat)
 summary(lm_prop_cat)
 
 # Make a standard lm
-lm_prop_realm <- lm(difference_prop ~ realm, 
-          data = nes_difference)
+lm_prop_realm <- lm(difference_prop ~ Realms, 
+                    data = nes_df)
 
 # Model validation plots
 par(mfrow = c(2,2))
 plot(lm_prop_realm)
 summary(lm_prop_realm)
-    
+
 ```
 - much smaller p-value for category (close to 0) than classname (0.06501)
 - very high p-value for realm
 
 ```{r nes-proximity}
-nes_difference <- nes %>% 
-  mutate(difference_prop = ifelse(Category == "Critically Endangered", Difference / 10, 
-                                  ifelse(Category == "Endangered", Difference / 491, 
-                                         ifelse(Category == "Vulnerable", Difference / 1501, NA))),
-         # Flip the scale so bigger numbers = closer to threshold for downlisting
-         proximity = 1 - difference_prop) %>% 
-  dplyr::select(species, AOHkm, Category, 
-                Difference, difference_prop, proximity,
-                className, realm) %>% 
-  filter(
-    # Drop NAs
-    !(is.na(Difference)),
-    # Restrict to species occurring in one Realm only
-    !(grepl("[|]", realm))
-    )
-
 # Round negative values to zero (these are the ones that are < 1 km from the threshold)
 nes_difference$proximity[nes_difference$proximity < 0] <- 0
 
@@ -528,7 +525,7 @@ ggplot(nes_difference,
   facet_wrap(~ Category)
 
 # GLM with Poisson because relative diff is actually a proportion
-glm_diff <- glm(proximity ~ className + realm + AOHkm, 
+glm_diff <- glm(proximity ~ className + Realms + AOHkm, 
                 data = nes_difference,
                 family = "binomial") # ignore the non-integer warnings
 
@@ -537,11 +534,11 @@ summary(glm_diff)
 anova(glm_diff, test = "LRT")
 
 # Drop class
-anova(update(glm_diff, ~.- className), glm_diff, test = "LRT")
+class_results <- anova(update(glm_diff, ~.- className), glm_diff, test = "LRT")
 # Drop realm
-anova(update(glm_diff, ~.- realm), glm_diff, test = "LRT")
+realm_results <- anova(update(glm_diff, ~.- Realms), glm_diff, test = "LRT")
 # Drop AOH
-anova(update(glm_diff, ~.- AOHkm), glm_diff, test = "LRT")
+aoh_results <- anova(update(glm_diff, ~.- AOHkm), glm_diff, test = "LRT")
 
 ### Only absolute AOH is a strong predictor or proximity to threshold
 
@@ -554,7 +551,7 @@ newdat <- expand.grid(
   # All levels of taxonomic class
   className = unique(glm_diff$data$className),
   # All levels of realm
-  realm = unique(glm_diff$data$realm),
+  Realms = unique(glm_diff$data$Realms),
   # Sequence of 100 made up values for AOH, bounded by observed data
   AOHkm = seq(min(glm_diff$data$AOHkm),
               max(glm_diff$data$AOHkm),
@@ -591,7 +588,7 @@ ggplot(newdat,
   #                 fill = realm),
   #             alpha = 0.3) +
   # Add fitted line
-  geom_line(aes(colour = realm)) +
+  geom_line(aes(colour = Realms)) +
   # Facet by taxonomic class
   facet_grid(~ className) +
   theme_classic()
@@ -616,12 +613,12 @@ ggplot(newdat_avg,
 # Proximity to threshold increases as absolute AOH increases
 ```
 
-
 ### Correlation between className and Category
-```{r}
-ggplot(nes, aes(className, Category)) + geom_count()
+```{r class-category-corr}
+ggplot(nes_df, aes(className, Category)) + 
+  geom_count()
 
-class_cat = table(nes$className, nes$Category) 
+class_cat = table(nes_df$className, nes_df$Category) 
 
 chisq <- chisq.test(class_cat)
 chisq
@@ -632,53 +629,39 @@ p-value is very small (< 2.2e-16), therefore there is a strong correlation betwe
 # Spatial Data
 Save data frame for spatial analysis
 
-```{r}
-
-nes_top25 <- data %>% mutate(CRS = as.numeric(AOHkm < 1999)) %>% mutate(top25 = ifelse(Category == 'Critically Endangered' & Difference >= 8.754866, 1, ifelse(Category == 'Endangered' & Difference >= 459.977142, 1, ifelse(Category == 'Vulnerable' & Difference >= 1278.32419, 1, 0))))
-
-nes_top25 <- nes_top25 %>% rename(scientificName = species) 
-```
-
-```{r}
-# Realm proportion
-
-prop <- nes_top25 %>%
+```{r nes-top25-spatial}
+nes_top25 <- 
+  all_df %>% 
+  mutate(top25 = ifelse(Category == 'Critically Endangered' & Difference >= 8.754866, 1, 
+                        ifelse(Category == 'Endangered' & Difference >= 459.977142, 1, 
+                               ifelse(Category == 'Vulnerable' & Difference >= 1278.32419, 1, 
+                                      0)))) %>% 
+  rename(scientificName = species) %>%
   mutate(
     # Match species name to how it appears in occurrence dataframe
     scientificName = gsub(" ", "_", scientificName)) %>% 
-  filter(!(is.na(CRS)),
-         !(is.na(top25))) %>% 
-  dplyr::select(scientificName, phylumName, orderName, className, familyName,
-                redlistCategory, areaAOH, areaAOHinPA, 
-                Category, Difference, CRS, top25, realm, country)
+  # Limit to real endemics
+  filter(realm_endemic)
+```
 
-
-# Summarize by realm
-prop_test <- prop %>%
-  filter(!(is.na(realm))) %>% 
-  # Separate - species occurs in multiple rows if range across multiple realms
-  separate_rows(realm, sep = "\\|") %>% 
+```{r nes-top25-prop}
+# Summarize NES by realm
+realm_nes <-
+  nes_top25 %>%
+  filter(!(is.na(Realms))) %>% 
   # Count species in each realm
-  group_by(realm, className, CRS) %>% 
-  summarise(n = n())
-
-
-prop1 = prop_test %>% filter(CRS == 1)
-prop2 = prop %>%
-  filter(!(is.na(realm))) %>% 
-  # Separate - species occurs in multiple rows if range across multiple realms
-  separate_rows(realm, sep = "\\|") %>% 
-  # Count species in each realm
-  group_by(realm, className) %>% 
-  summarise(total = n())
-prop3 = inner_join(prop2, prop1, by=c('realm'='realm', 'className' = 'className'))
-prop3 = prop3 %>% mutate(prop = n / total)
-
+  group_by(Realms, className) %>% 
+  summarise(n = n(),
+            n_NES = length(which(NES)),
+            n_nonNES = length(which(!(NES))),
+            prop_NES = n_NES / n)
 ```
 
 ```{r save-data}
-# Inspect the loaded objects
+# Inspect the loaded objects - what might we need in the manuscript?
 ls()
-c("nes",)
+save(all_df,nes_df,realms_long_all,realms_long_nes,
+     glm_diff,class_results,realm_results,aoh_results, 
+     file = "HMEI-GDrive/data/sorted/msdata.Rdata")
 ```
 
