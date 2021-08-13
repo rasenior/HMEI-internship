@@ -31,7 +31,7 @@ header-includes:
 ```{r setup, include=FALSE}
 knitr::opts_knit$set(root.dir = "../")
 knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALSE,
-                      dpi = 300, fig.path = "output/main/", fig.align = "center", 
+                      dpi = 300, fig.path = "figs/main/", fig.align = "center", 
                       fig.width = 16.6/2.54, fig.height = 15/2.54)
 ```
 
