@@ -1,0 +1,162 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={No exit: the conservation reliance of species with too little habitat},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{Supplementary Information}
+\fancyfoot[CO,CE]{\thepage}
+\usepackage{setspace}
+\doublespacing
+
+ % For manual landscape pages
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+% For manual syntax highlighting
+\usepackage{fontspec}
+\setmainfont{Calibri} % Calibri is main font
+\newcommand*{\myfont}{\fontfamily{lmtt}\selectfont} % Latin Modern typewriter for syntax
+\DeclareTextFontCommand{\textmyfont}{\myfont}
+
+%  For tables
+\usepackage{multirow}
+\usepackage{gensymb}
+
+% To change labelling of supplementary figures and tables
+\newcommand{\beginsupplement}{\setcounter{table}{0}  \renewcommand{\tablename}{Supplementary Table} \setcounter{figure}{0} \renewcommand{\figurename}{Supplementary Figure}}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{No exit: the conservation reliance of species with too little habitat}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Supplementary Information}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Sophia Richter\textsuperscript{1} , Rebecca A. Senior\textsuperscript{2}*, and David S. Wilcove\textsuperscript{1,2}
+
+\textsuperscript{1}Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA.
+
+\textsuperscript{2}Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA.
+
+*\textbf{Corresponding author:} \href{mailto:rebecca.a.senior@gmail.com}{\nolinkurl{rebecca.a.senior@gmail.com}} (R.A. Senior)
+
+\textbf{ORCID iDs:} orcid.org/0000-0002-8208-736X (R.A. Senior)
+
+\pagebreak
+\raggedright
+\setcounter{tocdepth}{2}
+\tableofcontents
+\beginsupplement
+
+\pagebreak
+
+\hypertarget{supplementary-figures}{%
+\section{Supplementary Figures}\label{supplementary-figures}}
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{figs/som/fig-s-1-1} 
+
+}
+
+\caption{The total number of threatened species within each country classified as `No Exit Species' (NES). Results are summarised for each taxonomic group (rows), , and shaded from low NES count (yellow) to high (red).}\label{fig:fig-s-1}
+\end{figure}
+
+\pagebreak
+
+\hypertarget{supplementary-tables}{%
+\section{Supplementary Tables}\label{supplementary-tables}}
+
+\pagebreak
+
+\hypertarget{supplementary-references}{%
+\section{Supplementary References}\label{supplementary-references}}
+
+\end{document}

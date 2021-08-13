@@ -1,0 +1,99 @@
+---
+title: "No exit: the conservation reliance of species with too little habitat"
+subtitle: 'Supplementary Information'
+output:
+    bookdown::pdf_document2:
+        toc: no
+        latex_engine: xelatex
+        fig_caption: yes
+        keep_tex: yes
+        includes:
+            in_header: header.tex 
+    bookdown::word_document2:
+        reference_docx: ms_general.docx
+    bookdown::html_document2:
+        toc: no
+fontsize: 12pt
+geometry: margin=2.5cm
+papersize: a4
+documentclass: article
+link-citations: yes
+csl: elsevier-harvard.csl
+biblio-style: apalike
+bibliography: [refs.bib, funky-refs.bib, pckgs.bib]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALSE,
+                      dpi = 300, fig.path = "figs/som/", fig.align = "center", 
+                      fig.width = 16.6/2.54, fig.height = 15/2.54)
+```
+
+```{r packages}
+library(readr)
+library(ggplot2)
+library(stringr)
+library(dplyr)
+library(ggtext)
+library(png)
+library(grid)
+library(RColorBrewer)
+library(Hmisc)
+
+# Define function to capitalise first letter
+capitalise <- function(string) {
+  substr(string, 1, 1) <- toupper(substr(string, 1, 1))
+  string
+}
+```
+
+```{r data}
+load("HMEI-GDrive/data/sorted/msdata.Rdata")
+```
+
+_______________________________________________________________________________________
+
+Sophia Richter^1^ , Rebecca A. Senior^2^*, and David S. Wilcove^1,2^
+
+^1^Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA.
+
+^2^Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA.
+
+*__Corresponding author:__ rebecca.a.senior@gmail.com (R.A. Senior)
+
+__ORCID iDs:__ orcid.org/0000-0002-8208-736X (R.A. Senior)
+
+\pagebreak
+\raggedright
+\setcounter{tocdepth}{2}
+\tableofcontents
+\beginsupplement
+
+\pagebreak
+
+# Supplementary Figures
+
+(ref:cap-1) The total number of threatened species within each country classified as 'No Exit Species' (NES). Results are summarised for each taxonomic group (rows), , and shaded from low NES count (yellow) to high (red).
+
+```{r fig-s-1, fig.cap = "(ref:cap-1)", fig.width = 16.6/2.54, fig.height = 18/2.54}
+map <- 
+  readPNG("HMEI-GDrive/figs/NES (new data) figs/nes_map_country.png") %>% 
+  rasterGrob(interpolate = TRUE)
+ggplot() +
+  theme_void() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  annotation_custom(map,
+                    xmin = -Inf, xmax = Inf,
+                    ymin = -Inf, ymax = Inf)
+```
+
+\pagebreak
+
+# Supplementary Tables
+
+\pagebreak
+
+# Supplementary References
+
