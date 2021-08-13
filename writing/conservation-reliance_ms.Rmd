@@ -16,7 +16,6 @@ bibliography: [refs.bib, funky-refs.bib, pckgs.bib]
 fontsize: 12pt
 geometry: margin=2.5cm
 mainfont: Calibri
-lang: en-GB
 papersize: a4
 documentclass: article
 header-includes:
