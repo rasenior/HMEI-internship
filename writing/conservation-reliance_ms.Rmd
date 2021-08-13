@@ -44,6 +44,8 @@ library(dplyr)
 library(ggtext)
 library(png)
 library(grid)
+library(RColorBrewer)
+library(Hmisc)
 
 # Define function to capitalise first letter
 capitalise <- function(string) {
@@ -130,26 +132,26 @@ All statistical analyses were conducted in R version 4.0.3 [@r_core_team_2020]. 
 Of the 3,869 species with AOH data, 2,488 species have habitat areas below the 2000 km^2 threshold to be considered as NES (Figure \@ref(fig:class-and-threshold-graph)). Of the 2,488 NES, most species were amphibians (1389), followed by birds (527), mammals (461), assessed plants in the class Magnoliopsida (59), and, finally, assessed reptiles (52). By Red List threshold, 335 species fall below the 10 km^2 threshold for Critically Endangered, 720 between the 10 km^2 and 500 km^2 thresholds (Endangered), and 1433 have between 500 km^2 and 2000 km^2 AOH (Vulnerable). We also identified ENES, as the upper quartile of each threshold group (top 25%) that had AOH values furthest from the downlisting threshold. Of the 623 species in the upper quartile, 358 were amphibians, followed by birds (124), mammals (113), assessed reptiles (15), and assessed plants in the class Magnoliopsida (13).
 
 ```{r class-and-threshold-graph}
-nes <- 
-  nes_df %>% 
+nes <- nes_df %>% 
   mutate(Category = str_replace(Category, "Critically Endangered", "AOH < 10 km^2")) %>% 
-  mutate(Category = str_replace(Category, "Endangered", "AOH < 500 km^2")) %>% 
-  mutate(Category = str_replace(Category, "Vulnerable", "AOH < 2000 km^2"))
+  mutate(Category = str_replace(Category, "Endangered", "10 < AOH < 500 km^2")) %>% 
+  mutate(Category = str_replace(Category, "Vulnerable", "500 < AOH < 2000 km^2"))
 
 # relevel Categories
 nes$Category <- 
-  factor(nes$Category, levels = c("AOH < 10 km^2", "AOH < 500 km^2", "AOH < 2000 km^2"))
+  factor(nes$Category, 
+         levels = c("AOH < 10 km^2", "10 < AOH < 500 km^2", "500 < AOH < 2000 km^2"))
 nes$className <- 
   factor(nes$className, 
          levels = unique(nes$className),
-         labels = capitalise(unique(nes$className)))
+         labels = capitalize(unique(nes$className)))
 
 # Code to add pics to labels
 classes <- levels(nes$className)
 labels <- paste(
   "<img src=", 
   "'",
-  file.path("HMEI-GDrive/resources/phylopic", paste(tolower(classes), 'png', sep = ".")),
+  file.path("phylopic", paste(tolower(classes), 'png', sep = ".")),
   "' ",
   "width='10' />", 
   classes,
@@ -157,13 +159,19 @@ labels <- paste(
 )
 names(labels) <- classes
 
+max_val <- 834
+
 ggplot(nes, aes(x=className, fill=className)) + 
   geom_bar() + 
-  facet_wrap(~Category, labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
-  ggtitle("Class and Threshold of NES") + 
-  labs(fill="Class") + 
+  facet_wrap(~Category, labeller = label_wrap_gen(width = 25, multi_line = TRUE)) +
+  theme_bw() + theme(panel.grid = element_blank()) +
+  ggtitle("Class and AOH Threshold of NES") + 
+  labs(fill="Class") +
   xlab(" ") + 
-  ylab("Count") +
+  ylab("Count") + 
+  theme(legend.position = "none") + 
+  scale_fill_brewer(palette="Set1") +
+  scale_y_continuous(breaks = seq(0, max_val, by = 100), limits=c(0, max_val)) +
   theme(axis.text.x = element_markdown(color = "black",
                                        angle = 45, 
                                        hjust = 1, vjust = 1,
@@ -183,14 +191,16 @@ The GLM ran on proximity to threshold varying by taxonomic class, biogeography a
 ggplot(nes, aes(x=Difference, fill=className)) + 
   geom_histogram(alpha=0.7) + 
   ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
-    facet_wrap(~ Category, scales = "free", 
-               labeller = label_wrap_gen(width = 12, multi_line = TRUE)) + 
+  facet_wrap(~ Category, scales = "free", 
+             labeller = label_wrap_gen(width = 15, multi_line = TRUE)) + 
+  theme_bw() + theme(panel.grid = element_blank()) +
   labs(fill="Class") + 
   ylab("Count") + xlab("Difference (km^2)") + 
-  theme(axis.text.x = element_text(angle = 45))
+  theme(axis.text.x = element_text(angle = 45)) + 
+  scale_fill_brewer(palette="Set1") 
 ```
 
-The three realms with the most NES are Neotropical (1101 species), Afrotropical (571 species), and Indomalayan (452 species). These were also the three realms with the most ENES. Mapping total NES and ENES by country (Figure 3), we see that certain countries - such as Colombia, Peru, Mexico and Madagascar - harbour a striking proportion of the world's most habitat-limited species.
+The three realms with the most NES are Neotropical (489 species), Oriental (439 species), and Panamanian (431 species). These were also the three realms with the most ENES, although there are more ENES in Panamanian than Oriental. Mapping total NES and ENES by country (Figure 3), we see that certain countries - such as Colombia, Peru, Mexico and Madagascar - harbour a striking proportion of the world's most habitat-limited species.
 
 ```{r map, eval = FALSE}
 map <- 
