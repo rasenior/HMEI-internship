@@ -633,9 +633,7 @@ nes_top25 <-
   rename(scientificName = species) %>%
   mutate(
     # Match species name to how it appears in occurrence dataframe
-    scientificName = gsub(" ", "_", scientificName)) %>% 
-  # Limit to real endemics
-  filter(realm_endemic)
+    scientificName = gsub(" ", "_", scientificName)) 
 ```
 
 ```{r nes-top25-prop}
