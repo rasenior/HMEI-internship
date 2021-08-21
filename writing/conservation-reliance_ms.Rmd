@@ -89,6 +89,9 @@ Perspectives provide a forum for authors to discuss recent developments or ideas
 
 # Abstract
 
+<!-- The abstract is 274 words right now --> 
+
+The world is currently experiencing a biodiversity crisis driven by habitat loss and conversion. This loss of habitat has led to many species living in highly fragmented and small habitat areas that increase several risk factors for extinction, including stochastic and edge effects. Small habitat area pushes species to become conservation reliant, with no hope for recovering without habitat restoration. Recent advances in satellite data have allowed us to create habitat maps and quantify Area of Habitat (AOH) for 3,869 terrestrial species. Of these species with AOH data, it was found that 2,488 species have an AOH 2000 km^2. These species are classified as "No Exit Species" (NES) because they meet the threatened category habitat criteria on the IUCN Red List and are unable to exit ‘threatened’ status without an increase in available habitat. Most NES are, in order, amphibians, birds, and mammals. The absolute difference between each species’ AOH and the threshold for downlisting to the next lowest Red List category was calculated, and Extreme No Exit Species (ENES) were identified as the upper quantile of species within each habitat category that are furthest from the threshold. In spatial analysis, it was found that a few key countries house a high number of both NES and ENES, comprising Colombia, Mexico, Madagascar, and Indonesia. We identify the species and regions most in need of habitat protection, where strategic expansion of PAs under "30 x 30" and habitat restoration through the Bonn Challenge could have a major impact. Additionally, conservation NGOs and organizations with limited resources have the ability to redirect their limited resources towards methods that can make the biggest impact. 
 
 __/200 words__
 
