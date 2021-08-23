@@ -1,13 +1,8 @@
 .Rproj.user
 .Rhistory
-.RData
 .Ruserdata
 admin
 HMEI-GDrive
 *.html
-.Rdata
-.httr-oauth
-.DS_Store
-/docs/*.docx
-/code/test.py
 /code/ras_args.Rmd
+/docs/*.docx
