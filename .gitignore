@@ -6,3 +6,4 @@ HMEI-GDrive
 *.html
 /code/ras_args.Rmd
 /docs/*.docx
+/writing/figs
