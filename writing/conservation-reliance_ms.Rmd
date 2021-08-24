@@ -77,15 +77,11 @@ __Key words:__ conservation; extinction; IUCN Red List; conservation planning; b
 
 __Article type:__ Perspective
 
-__Number of words:__ 
+__Number of words:__ 4750
 
-__Number of References:__ 
+__Number of References:__ 63
 
-__Number of Figures:__ ; __Number of Tables:__ 0 
-
-Conservation Letters formatting guidelines:
-
-Perspectives provide a forum for authors to discuss recent developments or ideas with broad and significant policy relevance to conservation. They should be forward looking and written with a view to informing non-specialist readers (thus should be presented using straightforward prose and avoiding jargon). Perspectives may be up to 3000 words in length and should contain no more than 5 figures and/or tables, and fewer than 30 references.
+__Number of Figures:__ 3; __Number of Tables:__ 0 
 
 # Abstract
 
@@ -93,7 +89,7 @@ Perspectives provide a forum for authors to discuss recent developments or ideas
 
 The world is currently experiencing a biodiversity crisis driven by habitat loss and conversion. This loss of habitat has led to many species living in highly fragmented and small habitat areas that increase several risk factors for extinction, including stochastic and edge effects. Small habitat area pushes species to become conservation reliant, with no hope for recovering without habitat restoration. Recent advances in satellite data have allowed us to create habitat maps and quantify Area of Habitat (AOH) for 3,869 terrestrial species. Of these species with AOH data, it was found that 2,488 species have an AOH 2000 km^2. These species are classified as "No Exit Species" (NES) because they meet the threatened category habitat criteria on the IUCN Red List and are unable to exit ‘threatened’ status without an increase in available habitat. Most NES are, in order, amphibians, birds, and mammals. The absolute difference between each species’ AOH and the threshold for downlisting to the next lowest Red List category was calculated, and Extreme No Exit Species (ENES) were identified as the upper quantile of species within each habitat category that are furthest from the threshold. In spatial analysis, it was found that a few key countries house a high number of both NES and ENES, comprising Colombia, Mexico, Madagascar, and Indonesia. We identify the species and regions most in need of habitat protection, where strategic expansion of PAs under "30 x 30" and habitat restoration through the Bonn Challenge could have a major impact. Additionally, conservation NGOs and organizations with limited resources have the ability to redirect their limited resources towards methods that can make the biggest impact. 
 
-__/300 words__
+__271/300 words__
 
 # Introduction
 
@@ -135,7 +131,7 @@ All statistical analyses were conducted in R version 4.0.3 [@r_core_team_2020]. 
 
 Of the 3,869 species with AOH data, 2,488 species have habitat areas below the 2000 km^2 threshold to be considered as NES (Fig. \@ref(fig:fig-1)). Of the 2,488 NES, most species were amphibians (1389), followed by birds (527), mammals (461), assessed plants in the class Magnoliopsida (59), and, finally, assessed reptiles (52). By Red List threshold, 335 species fall below the 10 km^2 threshold for Critically Endangered, 720 between the 10 km^2 and 500 km^2 thresholds (Endangered), and 1433 have between 500 km^2 and 2000 km^2 AOH (Vulnerable). We also identified ENES, as the upper quartile of each threshold group (top 25%) that had AOH values furthest from the downlisting threshold. Of the 623 species in the upper quartile, 358 were amphibians, followed by birds (124), mammals (113), assessed reptiles (15), and assessed plants in the class Magnoliopsida (13).
 
-```{r fig-1, fig.cap = "Class and AOH of NES. The total number of threatened species classified as 'No Exit Species' (NES), within each class and AOH threshold met."}
+```{r fig-1, fig.cap = "The total number of threatened species classified as 'No Exit Species' (NES), within each taxonomic class and AOH range."}
 nes <- nes_df %>% 
   mutate(Category = str_replace(Category, "Critically Endangered", "AOH < 10 km^2")) %>% 
   mutate(Category = str_replace(Category, "Endangered", "10 < AOH < 500 km^2")) %>% 
@@ -190,9 +186,10 @@ Across class and Red List thresholds, there is a right skew towards a large diff
 
 The GLM ran on proximity to threshold varying by taxonomic class, biogeography and absolute AOH found that only absolute AOH had a significant effect on proximity to threshold, while taxonomic class and realm had no significance. 
 
-```{r fig-2, fig.cap = "Distribution of Differences to Next Threshold Across Class and Category. A histogram of NES within each class and AOH threshold met. Difference is 'proximity to threshold', calculated as the absolute difference between a species' AOH and the max threshold of its AOH category, divided by the maximum possible difference. "}
-ggplot(nes, aes(x=Difference, fill=className)) + 
-  geom_histogram(alpha=0.7) + 
+```{r fig-2, fig.cap = "Distribution of the difference between species' absolute AOH and the nearest threshold for downlisting. Curves are derived from a smoothed kernel density estimate of species-level values, and shaded by taxonomic class."}
+
+ggplot(nes, aes(x=Difference, fill=className)) +
+  geom_density(alpha = 0.3, colour = "transparent") +
   facet_wrap(~ Category, scales = "free", 
              labeller = label_wrap_gen(width = 15, multi_line = TRUE)) + 
   theme_bw() + theme(panel.grid = element_blank()) +
@@ -204,7 +201,7 @@ ggplot(nes, aes(x=Difference, fill=className)) +
 
 The three realms with the most NES are Neotropical (489 species), Oriental (439 species), and Panamanian (431 species). These were also the three realms with the most ENES, although there are more ENES in Panamanian than Oriental. Mapping total NES and ENES by country (Fig. 3), we see that certain countries - such as Colombia, Peru, Mexico and Madagascar - harbor a striking proportion of the world's most habitat-limited species.
 
-(ref:cap-3) a) The total number of threatened species within each country classified as 'No Exit Species' (NES). Results are summarized for each taxonomic group (rows), and shaded from low NES count (yellow) to high (red). b) The total number of threatened species within each country classified as 'Extreme No Exit Species' (ENES), those species with large differences between AOH and threshold. Results are summarized for each taxonomic group (rows), and shaded from low NES count (yellow) to high (red).
+(ref:cap-3) The total number of threatened species within each country classified as (a) 'No Exit Species' (NES) and (b) 'Extreme No Exit Species' (ENES), which are those species in the upper quartile of differences between AOH and the nearest threshold for downlisting. Countries are shaded from low count (yellow) to high (red).
 
 ```{r fig-3, fig.cap = "(ref:cap-3)"}
 map <- 
