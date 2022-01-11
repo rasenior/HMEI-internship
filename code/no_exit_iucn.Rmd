@@ -656,3 +656,29 @@ save(all_df,nes_df,realms_long_all,realms_long_nes,
      glm_diff,class_results,realm_results,aoh_results, 
      file = "HMEI-GDrive/data/sorted/msdata.Rdata")
 ```
+
+
+
+# EDGE species analysis
+load files
+```{r}
+edge_amph <- read.csv('EDGE_amphibia.csv')
+edge_aves <- read.csv('EDGE_aves.csv')
+edge_mamm <- read.csv('EDGE_mammalia.csv')
+edge_rept <- read.csv('EDGE_reptilia.csv')
+
+# keep only top 100 in each
+edge_amph <- edge_amph %>% filter(EDGE.Rank <= 100)
+edge_aves <- edge_aves %>% filter(EDGE.Rank <= 100)
+edge_mamm <- edge_mamm %>% filter(EDGE.Rank <= 100)
+edge_rept <- edge_rept %>% filter(EDGE.Rank <= 100)
+```
+
+compare edge to nes
+```{r}
+amph <- inner_join(nes, edge_amph, by=c('species'='Species'))
+aves <- inner_join(nes, edge_aves, by=c('species'='Species'))
+mamm <- inner_join(nes, edge_mamm, by=c('species'='Species'))
+rept <- inner_join(nes, edge_rept, by=c('species'='Species'))
+```
+
