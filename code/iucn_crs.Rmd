@@ -14,62 +14,68 @@ knitr::opts_chunk$set(message=F)
 ```
 
 
-```{r}
+```{r libraries}
 # Libraries and read data set
 library(dplyr)
 library(readr)
 library(GGally)
 library(ggplot2)
 
-iucn <- read.csv('iucn_dat.csv')
+iucn <- read.csv('HMEI-GDrive/data/iucn_dat.csv')
 ```
 
 
-```{r}
+```{r sort-data}
 # Modify data frame
-
-# remove species with 0 or NA AOH
-data <- iucn %>% filter(!(is.na(areaAOH)), areaAOH > 0)
-
-# convert AOH to km^2
-data <- data %>% mutate(AOHkm = areaAOH/1000000)
-
-
-# add column for whether AOH falls below 10 km
-data <- data %>% mutate(ten = AOHkm < 10)
-# add column for whether AOH falls below 500
-data <- data %>% mutate(five_hundred = AOHkm < 500)
-# add column for whether AOH falls below 2000
-data <- data %>% mutate(two_thousand = AOHkm < 2000)
-
-
-# column if ten is lowest threshold
-data <- data %>% mutate(ten_lowest = ten)
-# column if 500 is lowest threshold
-data <- data %>% mutate(five_lowest = xor(ten, five_hundred))
-# column if 2000 is lowest threshold
-data <- data %>% mutate(two_lowest = xor(five_hundred, two_thousand))
-
-
-# record what category should be
-data <- data %>% mutate(Category = ifelse(ten_lowest == TRUE, "Critically Endangered", ifelse(five_lowest == TRUE, "Endangered", ifelse(two_lowest == TRUE, "Vulnerable", "Near Threatened"))))
-
-
-# Calculate difference to next threshold
-data <- data %>% mutate(Difference = ifelse(ten_lowest == TRUE, 10 - AOHkm, ifelse(five_lowest == TRUE, 500 - AOHkm, ifelse(two_lowest == TRUE, 2000 - AOHkm, NA))))
-
-
-# remove differences less than 1 km^2 and Differences that are NA
-test2 <- data %>% filter(Difference > 1)
-
-
-
-# Calculate Difference between Category and redlistCategory
-test <- test2 %>% mutate(num_Category = ifelse(Category == "Critically Endangered", 1, ifelse(Category == "Endangered", 2, ifelse(Category == "Vulnerable", 3, ifelse(Category == "Near Threatened", 4, NA)))))
-
-test <- test %>% mutate(num_redlist = ifelse(redlistCategory == "Critically Endangered", 1, ifelse(redlistCategory == "Endangered", 2, ifelse(redlistCategory == "Vulnerable", 3, ifelse(redlistCategory == "Near Threatened", 4, NA)))))
-
-test <- test %>% mutate(cat_red_change = num_Category - num_redlist)
+crs <- iucn %>% 
+    # remove species with 0 or NA AOH
+    filter(!(is.na(areaAOH)), areaAOH > 0) %>%
+    mutate(
+        # convert AOH to km^2
+        AOHkm = areaAOH/1000000,  
+        # add column for whether AOH falls below 10 km
+        ten = AOHkm < 10,
+        # add column for whether AOH falls below 500
+        five_hundred = AOHkm < 500,
+        # add column for whether AOH falls below 2000
+        two_thousand = AOHkm < 2000,
+        # column if ten is lowest threshold
+        ten_lowest = ten,
+        # column if 500 is lowest threshold
+        five_lowest = xor(ten, five_hundred),
+        # column if 2000 is lowest threshold
+        two_lowest = xor(five_hundred, two_thousand),
+        # record what category should be
+        Category = ifelse(ten_lowest == TRUE, "Critically Endangered", 
+                          ifelse(five_lowest == TRUE, "Endangered", 
+                                 ifelse(two_lowest == TRUE, "Vulnerable", "Near Threatened"))),
+        # Calculate difference to next threshold
+        Difference = ifelse(ten_lowest == TRUE, 10 - AOHkm, 
+                            ifelse(five_lowest == TRUE, 500 - AOHkm, 
+                                   ifelse(two_lowest == TRUE, 2000 - AOHkm, NA))),
+        # Calculate Difference between Category and redlistCategory
+        num_Category = ifelse(Category == "Critically Endangered", 1, 
+                              ifelse(Category == "Endangered", 2, 
+                                     ifelse(Category == "Vulnerable", 3, 
+                                            ifelse(Category == "Near Threatened", 4, NA)))),
+        num_redlist = ifelse(redlistCategory == "Critically Endangered", 1, 
+                             ifelse(redlistCategory == "Endangered", 2, 
+                                    ifelse(redlistCategory == "Vulnerable", 3, 
+                                           ifelse(redlistCategory == "Near Threatened", 4, NA)))),
+        cat_red_change = num_Category - num_redlist) %>% 
+    # Select variables of interest
+    dplyr::select(scientificName,className,
+                  redlistCategory,Category,
+                  AOHkm,Difference,
+                  num_Category,num_redlist,cat_red_change) %>% 
+    # Rename some variables for simplicity
+    rename(
+        # True Red List category 
+        "category_true" = "redlistCategory",
+        "category_true_num" = "num_redlist",
+        # Red List category based on AOH only
+        "category_aoh" = "Category",
+        "category_aoh_num" = "num_Category")
 ```
 
 There are 2612 species with a difference to habitat threshold greater than 1 km^2. 
@@ -86,11 +92,11 @@ change2 <- test %>% filter(cat_red_change == -2) %>% select(scientificName, clas
 
 The largest category of species with AOH data is endangered, neotropical amphibians. The only species with AOH data are vulnerable, endangered, or critically endangered. Of all species that are in these three red list categories, the largest category is endangered neotropical amphibans.
 ```{r}
-data %>% group_by(Category, realm, className) %>% summarize(Sum = n()) %>% arrange(-Sum)
+df %>% group_by(Category, realm, className) %>% summarize(Sum = n()) %>% arrange(-Sum)
 
-data %>% group_by(redlistCategory, realm, className) %>% summarize(Sum = n()) %>% arrange(-Sum)
+df %>% group_by(redlistCategory, realm, className) %>% summarize(Sum = n()) %>% arrange(-Sum)
 
-data %>% distinct(redlistCategory)
+df %>% distinct(redlistCategory)
 
 iucn %>% filter(redlistCategory == "Vulnerable" | redlistCategory == "Endangered" | redlistCategory == "Critically Endangered") %>% group_by(redlistCategory, realm, className) %>% summarize(Sum = n()) %>% arrange(-Sum)
 ```
@@ -288,7 +294,7 @@ library(lme4)
 = column for species name + class + whether CRS (0 or 1)
 glm(CRS ~ class, family = "binomial")
 ```{r}
-crs = data %>% mutate(CRS = ifelse(is.na(Difference), 0, ifelse(Difference > 1, 1, 0)))
+crs = df %>% mutate(CRS = ifelse(is.na(Difference), 0, ifelse(Difference > 1, 1, 0)))
 
 ggplot(crs, aes(x = as.factor(CRS))) +
     geom_bar() +
@@ -521,7 +527,7 @@ Run lm for difference and class
 ```{r}
 # Make a standard lm
 lm <- lm(Difference ~ className, 
-          data = data)
+          data = df)
 
 # Model validation plots
 par(mfrow = c(2,2))
@@ -530,7 +536,7 @@ summary(lm)
 
 # compare to lm for category
 lm_cat <- lm(Difference ~ Category, 
-          data = data)
+          data = df)
 par(mfrow = c(2,2))
 plot(lm_cat)
 summary(lm_cat)
