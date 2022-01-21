@@ -21,7 +21,7 @@ library(GGally)
 library(ggplot2)
 library(lme4)
 
-iucn <- read.csv('HMEI-GDrive/data/iucn_dat.csv')
+iucn <- read.csv('HMEI-GDrive/data/iucn_dat_corrected.csv')
 
 # Define wee function to reformat realms variable
 gsubGeo <- function(x){gsub(", ",";",gsub("[]]","",gsub("[[]","",x)))}
@@ -177,8 +177,8 @@ realms <-
         Oriental = grepl("Oriental", realm),
         Palearctic = grepl("Palearctic", realm),
         Panamanian = grepl("Panamanian", realm),
-        Saharo-Arabian = grepl("Saharo-Arabian", realm),
-        Sino-Japanese = grepl("Sino-Japanese", realm))
+        "Saharo-Arabian" = grepl("Saharo-Arabian", realm),
+        "Sino-Japanese" = grepl("Sino-Japanese", realm))
 ```
 
 Realms of each Conservation Reliant Species
@@ -423,181 +423,16 @@ AIC(glm5, glm6, glm7, glm8)
 # long
 realms_long <- 
     realms %>%  
-    pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, 
-                        Nearctic, Neotropical, Oceanian, Palearctic), 
-                 names_to='Realms', values_to='value') %>% 
+    pivot_longer(cols=c(
+        Afrotropical,Australian,Madagascan,Nearctic,Neotropical,Oceanian,
+        Oriental,Palearctic,Panamanian,"Saharo-Arabian","Sino-Japanese"), 
+        names_to='Realms', values_to='value') %>% 
     filter(value == TRUE) %>% 
     dplyr::select(-c(value)) %>% 
     arrange(scientificName, Realms)
 ```
 
-GLM
-
-```{r interaction-test}
-glm_full <- 
-    glm(CRS ~ className * Realms + className * Category + Realms * Category, 
-        data = realms_long_test, 
-        family = "binomial")
-
-# Drop & test each interaction in turn
-glm_dropInter1 <- update(glm_full, ~.- className:Realms)
-anova(glm_dropInter1, glm_full, test = "LRT") # this interaction is not significant
-
-glm_dropInter2 <- update(glm_full, ~.- className:Category)
-anova(glm_dropInter2, glm_full, test = "LRT") # this interaction is not significant
-
-glm_dropInter3 <- update(glm_full, ~.- Realms:Category)
-anova(glm_dropInter3, glm_full, test = "LRT") # this interaction is not significant
-
-#-------------------------------------------------------------------------------
-# Dropping Realms:Category had the least effect (smallest change in Deviance, biggest p value)
-# so make this the new reference model and repeat with remaining interactions
-# ------------------------------------------------------------------------------
-
-glm_dropInter4 <- update(glm_dropInter3, ~.- className:Realms)
-anova(glm_dropInter4, glm_dropInter3, test = "LRT") # this interaction is not significant
-
-glm_dropInter5 <- update(glm_dropInter3, ~.- className:Category)
-anova(glm_dropInter5, glm_dropInter3, test = "LRT") # this interaction is not significant
-
-#-------------------------------------------------------------------------------
-# Dropping className:Category had the least effect (smallest change in Deviance, biggest p value)
-# so make this the new reference model and repeat with remaining interaction
-# ------------------------------------------------------------------------------
-
-glm_dropInter6 <- update(glm_dropInter5, ~.- className:Realms)
-anova(glm_dropInter6, glm_dropInter5, test = "LRT") # this interaction is not significant
-
-#-------------------------------------------------------------------------------
-# Drop ALL interactions - HOORAY
-# now test significance of individual variables
-# ------------------------------------------------------------------------------
-
-# Test significance of class
-glm_dropClass <- update(glm_dropInter6, ~.- className)
-anova(glm_dropClass, glm_dropInter6, test = "LRT") # class is not significant
-anova(glm_dropInter6, glm_dropClass, test = "LRT")
-
-# Test significance of realm
-glm_dropRealm <- update(glm_dropInter6, ~.- Realms)
-anova(glm_dropRealm, glm_dropInter6, test = "LRT") # realm is not significant
-
-# Test significance of category
-glm_dropCat <- update(glm_dropInter6, ~.- Category)
-anova(glm_dropCat, glm_dropInter6, test = "LRT") # category is significant
-
-# Compare AIC as well, for good measure
-AIC(glm_dropInter6,glm_dropClass,glm_dropRealm,glm_dropCat)
-# all quite similar, except for dropping Category which produces a *much* worse model
-```
-
-```{r plot-model-output}
-# Get model-predicted values --------------------------------------------------
-
-# First we need to create a new dataframe with all possible values
-newdat <-  
-    expand.grid(Category = unique(realms_long_test$Category),
-                className = unique(realms_long_test$className))
-
-# Now we predict y values, using our model (here, just with class and category)
-predvals <- predict(glm_dropRealm, newdata = newdat, 
-                    # Return y values on the scale of the link function (logistic)
-                    type = "link", 
-                    # Return standard errors of model-predicted y values
-                    se.fit = TRUE)
-
-# Function to calculate critical significance value, used to convert
-# standard error to 95% confidence intervals
-ci.critical <- 
-    function(siglevel) qnorm((100 - siglevel) / 100 / 2, lower.tail = FALSE)
-ci_const <- ci.critical(95)
-
-# Assign to dataframe
-newdat <-
-    newdat %>% 
-    mutate(crs_prob = predvals$fit, 
-           se = predvals$se.fit,
-           CI_lo = crs_prob - (ci_const * se),
-           CI_hi = crs_prob + (ci_const * se))
-head(newdat)
-
-# You'll see that these values appear to be crazy at first - this is because
-# we specified a binomial error family, meaning that the values by default are 
-# on a logit scale and need to be back-transformed before plotting:
-
-# Function to calculate inverse logit
-inv.logit <- function(x){
-    exp(x)/(1 + exp(x))
-}
-
-# Now we can back transform the y values
-newdat <-
-    newdat %>% 
-    mutate(crs_prob = inv.logit(crs_prob),
-           se = inv.logit(se),
-           CI_lo = inv.logit(CI_lo),
-           CI_hi = inv.logit(CI_hi))
-head(newdat)
-# Values now range between zero and one
-
-# Plot model-predicted values ---------------------------------------------
-
-ggplot(newdat, aes(x = className, y = crs_prob, 
-                   colour = Category)) +
-    geom_point(position = position_dodge(width = 0.5)) +
-    # 95% confidence intervals
-    geom_errorbar(aes(ymin = CI_lo,
-                      ymax = CI_hi),
-                  position = position_dodge(width = 0.5),
-                  width = 0) +
-    ylab("Probability of being CRS")
-
-# Generally similar probabilities among taxa, but amphibians a little lower
-
-# Increasing probability of improvement if old category was higher risk of extinction
-
-# No errorbars for LC/CR because these categories can only go in one direction
-
-```
-
-
-
-```{r}
-glm9 = glm(CRS ~ Category * Realms, data = realms_long_test, family = "binomial")
-summary(glm9)
-anova(glm9, test = "LRT")
-
-# don't remove interaction term, deviance is higher
-glm10 <- update(glm9, ~.- className:Realms)
-anova(glm9, glm10, test = "LRT")
-
-# dropping Realms makes it worse
-glm11 <- update(glm10, ~.- Realms)
-anova(glm10, glm11, test = "LRT")
-
-# dropping className makes it worse
-glm12 <- update(glm11, ~.- className)
-anova(glm11, glm12, test = "LRT")
-
-# lowest AIC is glm9 with both categories and interaction term (still very high though)
-AIC(glm9, glm10, glm11, glm12)
-
-
-
-# Best model is still glm6 --> Category and className w/ no interaction or realm
-glm13 = glm(CRS ~ className * Realms * Category, data = realms_long_test, family = "binomial")
-anova(glm9, glm13, test = "LRT")
-AIC(glm9, glm6, glm13)
-```
-
-Realm of each species
-- get rid of species in multiple categories ? 
-```{r}
-glm14 = glm(CRS ~ className * realm, data = crs, family = "binomial")
-anova(glm14, test = "LRT")
-AIC(glm6, glm14)
-```
-
+# Stats
 
 Run lm for difference and class 
 ```{r}
