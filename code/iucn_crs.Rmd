@@ -8,24 +8,27 @@ output:
 ---
     
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
-knitr::opts_chunk$set(warning=F)
-knitr::opts_chunk$set(message=F)
+knitr::opts_chunk$set(echo = F,warning=F,message=F,eval=F)
 ```
 
 
 ```{r libraries}
 # Libraries and read data set
 library(dplyr)
+library(tidyr)
 library(readr)
 library(GGally)
 library(ggplot2)
+library(lme4)
 
 iucn <- read.csv('HMEI-GDrive/data/iucn_dat.csv')
+
+# Define wee function to reformat realms variable
+gsubGeo <- function(x){gsub(", ",";",gsub("[]]","",gsub("[[]","",x)))}
 ```
 
 
-```{r sort-data}
+```{r sort-data, eval = TRUE}
 # Modify data frame
 crs <- iucn %>% 
     # remove species with 0 or NA AOH
@@ -33,6 +36,8 @@ crs <- iucn %>%
     mutate(
         # convert AOH to km^2
         AOHkm = areaAOH/1000000,  
+        # Reformat realms variable
+        realms = gsubGeo(realms),
         # add column for whether AOH falls below 10 km
         ten = AOHkm < 10,
         # add column for whether AOH falls below 500
@@ -62,11 +67,13 @@ crs <- iucn %>%
                              ifelse(redlistCategory == "Endangered", 2, 
                                     ifelse(redlistCategory == "Vulnerable", 3, 
                                            ifelse(redlistCategory == "Near Threatened", 4, NA)))),
-        cat_red_change = num_Category - num_redlist) %>% 
+        cat_red_change = num_Category - num_redlist,
+        # Define CRS species (i.e. where AOH falls at least below VU threshold)
+        CRS = !(is.na(Difference))) %>% 
     # Select variables of interest
     dplyr::select(scientificName,className, realms,
                   redlistCategory,Category,
-                  AOHkm,Difference,
+                  AOHkm,Difference,CRS,
                   num_Category,num_redlist,cat_red_change) %>% 
     # Rename some variables for simplicity
     rename(
@@ -155,24 +162,23 @@ Realm
 <!-- The code chunk below is a simpler way to identify which realms a species occurs in -->
 ```{r realms, include = FALSE, eval = FALSE}
 # Figure out what the unique realms are
-sort(unique(unlist(strsplit(unique(crs$realm), "[|]"))))
-
-# Define wee function to reformat realms variable
-gsubGeo <- function(x){gsub(", ",";",gsub("[]]","",gsub("[[]","",x)))}
+sort(unique(unlist(strsplit(unique(crs$realm), ";"))))
 
 # Use 'grepl' to see if string is contained in another string
 realms <-
     crs %>% 
-    # Get rid of square brackets in realm variable
-    mutate(realm = gsubGeo(realm)) %>% 
     mutate(
-           Afrotropical = grepl("Afrotropical", realm),
-           Australasian = grepl("Australasian", realm),
-           Indomalayan = grepl("Indomalayan", realm),
-           Nearctic = grepl("Nearctic", realm),
-           Neotropical = grepl("Neotropical", realm),
-           Oceanian = grepl("Oceanian", realm),
-           Palearctic = grepl("Palearctic", realm))
+        Afrotropical = grepl("Afrotropical", realm),
+        Australian = grepl("Australian", realm),
+        Madagascan = grepl("Madagascan", realm),
+        Nearctic = grepl("Nearctic", realm),
+        Neotropical = grepl("Neotropical", realm),
+        Oceanian = grepl("Oceanian", realm),
+        Oriental = grepl("Oriental", realm),
+        Palearctic = grepl("Palearctic", realm),
+        Panamanian = grepl("Panamanian", realm),
+        Saharo-Arabian = grepl("Saharo-Arabian", realm),
+        Sino-Japanese = grepl("Sino-Japanese", realm))
 ```
 
 Realms of each Conservation Reliant Species
@@ -270,7 +276,7 @@ ggplot(realms, aes(x=Difference)) +
 
 # Top 25% Differences
 
-```{r, include=F}
+```{r top25}
 # Calculate quantiles
 quants <-
     crs %>% 
@@ -301,21 +307,37 @@ diff_bottom25 <- filter(crs, diff_bottom25)
 
 ### Class
 ```{r}
-top_diff %>% group_by(className) %>% summarize(Count = n()) %>% arrange(-Count)
+# Look at species furthest from downlisting threshold
+diff_top25 %>% 
+    group_by(className) %>% 
+    summarize(Count = n()) %>% 
+    arrange(-Count)
 
-ggplot(top_diff, aes(x=className)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences")
+ggplot(diff_top25, aes(x=className)) + 
+    geom_bar() + 
+    ggtitle("Distribution of Top 25% (of each category) AOH Differences")
 
-ggplot(top_diff, aes(x=className, fill=className)) + geom_bar() + facet_wrap(~Category) + ggtitle("Distribution of Top 25% AOH Differences") + theme(axis.text.x = element_text(angle = 90))
+ggplot(diff_top25, aes(x=className, fill=className)) + 
+    geom_bar() + 
+    facet_wrap(~category_aoh) + 
+    ggtitle("Distribution of Top 25% AOH Differences") + 
+    theme(axis.text.x = element_text(angle = 90))
 ```
 
 
 ### Realm
 ```{r, include=F}
-crit_realms = realms %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 9.231000)
+crit_realms = realms %>% 
+    filter(category_aoh == 'Critically Endangered') %>% 
+    filter(Difference >= quants$diff75[quants$category_aoh == "Critically Endangered"])
 
-endan_realms = realms %>% filter(Category == 'Endangered') %>% filter(Difference >= 457.821961)
+endan_realms = realms %>% 
+    filter(category_aoh == 'Endangered') %>% 
+    filter(Difference >= quants$diff75[quants$category_aoh == "Endangered"])
 
-vul_realms = realms %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1265.166894)
+vul_realms = realms %>% 
+    filter(category_aoh == 'Vulnerable') %>% 
+    filter(Difference >= quants$diff75[quants$category_aoh == "Vulnerable"])
 
 # near_realms = realms %>% filter(Category == 'Near Threatened') 
 
@@ -327,45 +349,46 @@ top_realm = full_join(top_realm, vul_realms)
 
 
 ```{r}
-ggplot(top_realm, aes(x=realm)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences Across Realm") + theme(axis.text.x = element_text(angle = 90))
+ggplot(top_realm, aes(x=realm)) + 
+    geom_bar() + 
+    ggtitle("Distribution of Top 25% (of each category) AOH Differences Across Realm") + 
+    theme(axis.text.x = element_text(angle = 90))
 
-ggplot(top_realm, aes(x=realm, fill=realm)) + geom_bar() + facet_wrap(~Category) + ggtitle("Distribution of Top 25% AOH Differences Across Realm") + theme(axis.text.x = element_text(angle = 90))
+ggplot(top_realm, aes(x=realm, fill=realm)) + 
+    geom_bar() + 
+    facet_wrap(~category_aoh) + 
+    ggtitle("Distribution of Top 25% AOH Differences Across Realm") + 
+    theme(axis.text.x = element_text(angle = 90))
 ```
 
 NOTE: I did proportion analysis and it was definitely not significant. 
 
 ### Category
 ```{r, include=F}
-ggplot(top_diff, aes(x=Category, fill=Category)) + geom_bar() + ggtitle("Distribution of Top 25% (of each category) AOH Differences") + theme(axis.text.x = element_text(angle = 90))
+ggplot(diff_top25, aes(x=category_aoh, fill=category_aoh)) + 
+    geom_bar() + 
+    ggtitle("Distribution of Top 25% (of each category) AOH Differences") + 
+    theme(axis.text.x = element_text(angle = 90))
 ```
-
-
-
-
-
-
-
-
 
 # GLM
-```{r}
-library(lme4)
-```
 
 ### CRS 
 = column for species name + class + whether CRS (0 or 1)
 glm(CRS ~ class, family = "binomial")
+
 ```{r}
-crs = df %>% mutate(CRS = ifelse(is.na(Difference), 0, ifelse(Difference > 1, 1, 0)))
+# crs = df %>% mutate(CRS = ifelse(is.na(Difference), 0, ifelse(Difference > 1, 1, 0)))
 
 ggplot(crs, aes(x = as.factor(CRS))) +
     geom_bar() +
-    facet_grid(Category ~ className) 
+    facet_grid(category_aoh ~ className) 
 ```
 Near Threatened species are not CRS, all other categories have majority CRS. Amphibians have highest counts of CRS across categories. 
 
 Create GLM
-- Really high deviance --> class does not correlate with CRS 
+- Really high deviance --> class DOES correlate with CRS
+- This means that dropping the variable className massively decreases the amount of deviance explained by the model
 ```{r}
 glm = glm(CRS ~ className, data = crs, family = "binomial")
 summary(glm)
@@ -373,15 +396,15 @@ anova(glm, test = "LRT")
 ```
 
 ```{r}
-glm5 = glm(CRS ~ className * Category, data = crs, family = "binomial")
+glm5 = glm(CRS ~ className * category_aoh_num, data = crs, family = "binomial")
 summary(glm5)
 
 # can remove interaction term
-glm6 <- update(glm5, ~.- className:Category)
+glm6 <- update(glm5, ~.- className:category_aoh)
 anova(glm5, glm6, test = "LRT")
 
 # dropping category makes much worse
-glm7 <- update(glm6, ~.- Category)
+glm7 <- update(glm6, ~.- category_aoh)
 anova(glm6, glm7, test = "LRT")
 
 # worse but still okay 
@@ -397,24 +420,15 @@ AIC(glm5, glm6, glm7, glm8)
 ### CRS_realm 
 = species + class + whether CRS + realms
 ```{r}
-sort(unique(unlist(strsplit(unique(crs$realm), "[|]"))))
-
-# Use 'grepl' to see if string is contained in another string
-realms_v2 = 
-    mutate(crs,
-           Afrotropical = grepl("Afrotropical", realm),
-           Australasian = grepl("Australasian", realm),
-           Indomalayan = grepl("Indomalayan", realm),
-           Nearctic = grepl("Nearctic", realm),
-           Neotropical = grepl("Neotropical", realm),
-           Oceanian = grepl("Oceanian", realm),
-           Palearctic = grepl("Palearctic", realm), 
-           Antarctic = grepl("Antarctic", realm))
-
 # long
-realms_long <- realms_v2 %>%  pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, Nearctic, Neotropical, Oceanian, Palearctic, Antarctic), names_to='Realms', values_to='value')
-
-realms_long_test <- realms_long %>% filter(value == TRUE)
+realms_long <- 
+    realms %>%  
+    pivot_longer(cols=c(Afrotropical, Australasian, Indomalayan, 
+                        Nearctic, Neotropical, Oceanian, Palearctic), 
+                 names_to='Realms', values_to='value') %>% 
+    filter(value == TRUE) %>% 
+    dplyr::select(-c(value)) %>% 
+    arrange(scientificName, Realms)
 ```
 
 GLM
