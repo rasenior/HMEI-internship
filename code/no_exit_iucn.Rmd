@@ -7,23 +7,6 @@ output:
     pdf_document: default
 ---
 
-My changes below might look major, but the code is going the exact same thing as
-before. The purpose of dplyr and the pipe (%>%) system is to avoid the need to
-overwrite objects or keep making new objects that are almost the same but with
-a new column - you just add dataframe modifications on top of each other
-in the same chunk of code. I was getting confused by the test vs. test 2 vs. 
-data vs. nes
-
-I encourage you to 'wrap' your code (press enter - as I do here) after 
-'%>%', after '+' (in ggplot code) and at ~80 characters, to improve readability. 
-You can actually get RStudio to add a vertical line for you at a specified 
-number of characters, so you know where to wrap: 
-Tools -> Global Options -> Code -> Display -> Show margin
-
-I have added names to your code chunks to make them easier to navigate through.
-You can see them in the markdown outline (Ctrl + Shift + O) if you turn them on:
-Tools -> Global Options -> R Markdown -> Show in document outline -> Sections and Named Chunks
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 knitr::opts_chunk$set(warning=F)
@@ -65,7 +48,7 @@ Merge area data and IUCN data
 gsubGeo <- function(x){gsub(", ",";",gsub("[]]","",gsub("[[]","",x)))}
 
 # read iucn data
-iucndat <- read_csv('iucn_dat.csv') %>% 
+iucndat <- read_csv('HMEI-GDrive/data/iucn_dat_corrected.csv') %>% 
   # Rename the AOH variables to avoid confusion
   # (Jung refers to the land cover map by Jung et al. 2015)
   rename(areaAOH_jung = areaAOH,
@@ -116,13 +99,13 @@ all_df <- merge_dat %>%
     # convert AOH to km^2
     AOHkm = areaAOH/1000000,
     # Identify NES
-    NES = AOHkm < 1999,
+    NES = AOHkm < 2000,
     # add column for whether AOH falls below 9 km (more than 1 km away from threshold)
-    ten = AOHkm < 9, 
+    ten = AOHkm < 10, 
     # add column for whether AOH falls below more than 1 km below 500 km threshold
-    five_hundred = AOHkm < 499,
+    five_hundred = AOHkm < 500,
     # add column for whether AOH falls below more than 1 km below 2000 km threshold
-    two_thousand = AOHkm < 1999,
+    two_thousand = AOHkm < 2000,
     # column if ten is lowest threshold
     ten_lowest = ten,
     # column if 500 is lowest threshold
@@ -159,9 +142,28 @@ all_df <- merge_dat %>%
          # Flip the scale so bigger numbers = closer to threshold for downlisting
          proximity = 1 - difference_prop)
 
+# Calculate quantiles
+quants <-
+    all_df %>% 
+    group_by(Category) %>%
+    summarize(diff25 = quantile(Difference, probs = 0.25, na.rm = TRUE), # lower
+              diff50 = quantile(Difference, probs = 0.5, na.rm = TRUE), # median
+              diff75 = quantile(Difference, probs = 0.75, na.rm = TRUE)) # upper
+
+# Add to df
+all_df <- 
+    left_join(all_df, quants, by = "Category") %>% 
+    mutate(
+        # Identify species furthest from downlisting threshold
+        diff_top25 = Difference >= diff75,
+        # Identify species closest to downlisting threshold
+        diff_bottom25 = Difference <= diff25
+        )
+
 nes_df <-
   all_df %>% 
   # remove Differences that are NA
+    # (i.e. species that would not be classed as threatened according to AOH)
   filter(!(is.na(Difference)))
 
 # Sanity check
@@ -323,33 +325,27 @@ ggplot(realms_long_nes, aes(x=Difference)) +
 # Top 25% Differences
 
 ```{r top-25-diff, include=F}
-# Top 25% of each category
-crit_top = nes_df %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754866)
+# Filter to highest risk species, furthest from downlisting threshold
+# (top 25% of distance from threshold)
+diff_top25 <- filter(nes_df, diff_top25)
 
-endan_top = nes_df %>% filter(Category == 'Endangered') %>% filter(Difference >= 459.977142)
-
-vul_top = nes_df %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1278.32419)
-
-# near_top = test %>% filter(Category == 'Near Threatened')
-
-# also all combined
-top_diff = full_join(crit_top, endan_top)
-top_diff = full_join(top_diff, vul_top)
-# bottom_PA = full_join(bottom_PA, near_PA)
+# Filter to easy win species, closest to downlisting threshold
+# (bottom 25% of distance from threshold)
+diff_bottom25 <- filter(nes_df, diff_bottom25)
 ```
 
 ### Class
 ```{r top-diff-class}
-top_diff %>% 
+diff_top25 %>% 
   group_by(className) %>% 
   summarise(Count = n()) %>% 
   arrange(-Count)
 
-ggplot(top_diff, aes(x=className)) + 
+ggplot(diff_top25, aes(x=className)) + 
   geom_bar() + 
   ggtitle("Distribution of Top 25% (of each category) AOH Differences")
 
-ggplot(top_diff, aes(x=className, fill=className)) + 
+ggplot(diff_top25, aes(x=className, fill=className)) + 
   geom_bar() + 
   facet_wrap(~Category) + 
   ggtitle("Distribution of Top 25% AOH Differences") + 
@@ -358,7 +354,7 @@ ggplot(top_diff, aes(x=className, fill=className)) +
 
 ### Category
 ```{r top-diff-category, include=F}
-ggplot(top_diff, aes(x=Category, fill=Category)) + 
+ggplot(diff_top25, aes(x=Category, fill=Category)) + 
   geom_bar() + 
   ggtitle("Distribution of Top 25% (of each category) AOH Differences") + 
   theme(axis.text.x = element_text(angle = 90))
@@ -366,11 +362,17 @@ ggplot(top_diff, aes(x=Category, fill=Category)) +
 
 ### Realm
 ```{r top-diff-realm, include=F}
-crit_realms = realms_long_nes %>% filter(Category == 'Critically Endangered') %>% filter(Difference >= 8.754419)
+crit_realms = realms_long_nes %>% 
+    filter(Category == 'Critically Endangered') %>% 
+    filter(Difference >= quants$diff75[quants$Category == "Critically Endangered"])
 
-endan_realms = realms_long_nes %>% filter(Category == 'Endangered') %>% filter(Difference >= 457.821961)
+endan_realms = realms_long_nes %>% 
+    filter(Category == 'Endangered') %>% 
+    filter(Difference >= quants$diff75[quants$Category == "Endangered"])
 
-vul_realms = realms_long_nes %>% filter(Category == 'Vulnerable') %>% filter(Difference >= 1265.166894)
+vul_realms = realms_long_nes %>% 
+    filter(Category == 'Vulnerable') %>% 
+    filter(Difference >= quants$diff75[quants$Category == "Vulnerable"])
 
 # near_realms = realms %>% filter(Category == 'Near Threatened') 
 
@@ -625,11 +627,7 @@ Save data frame for spatial analysis
 
 ```{r nes-top25-spatial}
 nes_top25 <- 
-  all_df %>% 
-  mutate(top25 = ifelse(Category == 'Critically Endangered' & Difference >= 8.754866, 1, 
-                        ifelse(Category == 'Endangered' & Difference >= 459.977142, 1, 
-                               ifelse(Category == 'Vulnerable' & Difference >= 1278.32419, 1, 
-                                      0)))) %>% 
+  all_df %>%
   rename(scientificName = species) %>%
   mutate(
     # Match species name to how it appears in occurrence dataframe
