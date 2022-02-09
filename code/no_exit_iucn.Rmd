@@ -651,7 +651,7 @@ realm_nes <-
 # Inspect the loaded objects - what might we need in the manuscript?
 ls()
 save(all_df,nes_df,realms_long_all,realms_long_nes,
-     glm_diff,class_results,realm_results,aoh_results, 
+     glm_diff,class_results,realm_results,aoh_results,newdat_avg,
      file = "HMEI-GDrive/data/sorted/msdata.Rdata")
 ```
 
