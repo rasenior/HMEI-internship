@@ -1,0 +1,44 @@
+---
+output:
+    bookdown::word_document2:
+        reference_docx: coverletter_template.docx
+fontsize: 12pt
+geometry: margin=2.5cm
+mainfont: Calibri
+lang: en-GB
+papersize: a4
+documentclass: article
+header-includes:
+- \usepackage{hyperref}
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhf{}
+- \fancyfoot[CO,CE]{\thepage}
+- \usepackage{setspace}
+- \doublespacing
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALSE,
+                      dpi = 300, fig.path = "output/", fig.align = "center", 
+                      fig.width = 16.6/2.54, fig.height = 15/2.54)
+```
+
+Dear Dr Anna Armstrong,
+
+With this letter we submit our revised manuscript "Global patterns of documented conservation action and inaction". We thank you for the opportunity to revise the manuscript. We have made extensive changes in response to the recommendations of Reviewers, which we describe in full in the response document. In brief:
+
+1. Both Reviewers 1 and 2 felt that our wording needed to better reflect the limitations of the data and our analyses, and thus we have modified language throughout the text to make clear that our conclusions are based on documented conservation interventions (also now reflected in the title) and, where relevant, specific threats and the presence or absence of appropriate types of intervention to tackle those threats. 
+
+2. We added an additional sensitivity analysis to fully address the concern of Reviewer 1 that 'possibly extinct' species might be driving the lower incidence of documented conservation interventions for Critically Endangered species. Our conclusions held when possibly extinct species were excluded.
+
+3. Reviewer 2 provided helpful clarification regarding the potential issue of heterogeneity in assessments by Red List assessors. This heterogeneity, which is intrinsic to the Red List assessment process and cannot therefore be fully separated and eliminated, could result in taxonomic and geographic biases. We now discuss this issue explicitly in the main text, highlighting that we cannot at present distinguish between situations where no conservation interventions have been taken versus situations where measures have been taken but not reported. We go on to note that both possibilities need to be identified and addressed to improve conservation policy and practice at a global scale. Given that we manually reviewed the Red List text and cross-checked the Red List information against other global databases, we are confident that ours is the most comprehensive database available on the implementation of conservation interventions. This we further verified by considering a case study of 88 Mexican amphibian species threatened by habitat loss and seemingly lacking Protected Area overage, which was highlighted by Reviewer 2. After an additional, extensive manual search, we found that only two of the 88 species do indeed occur in Protected Areas, and that is because new information came to light since we downloaded the data used in our study. Both these species were reassessed by the Red List after we downloaded our data. We believe that this "error rate" of 2/88 - which is not so much an error on our part as late-arriving information - is sufficiently low that it does not suggest any major biases that would undermine our conclusions.
+
+4. Reviewer 2 was concerned that some of our results were misleading due to our focus on absolute numbers of threatened and apparently neglected species, rather than as a proportion of total threatened species richness. In the main text we chose to focus on absolute numbers because we felt this was more relevant to targeting conservation effort to where it is needed most. However, we recognise that understanding geographic patterns is difficult without the broader context of threatened species richness. Thus, we now clearly discuss the supplementary analyses and figures added in our previous revision, which consider the absolute number of apparently neglected species relative to the total number of threatened species. We have also added the supplementary figure requested by the Reviewer, which demonstrates the correlation between the number of threatened and endemic species that have documented conservation interventions versus the number that do not.
+
+Ours is the first study to comprehensively document what we are doing in conservation and where, and this is essential for strategic allocation of conservation effort. Such knowledge is crucial as we approach the UN Biodiversity Conference (COP 15) in Kunming, China, later this year, and thus our study remains extremely timely and relevant to global conservation, ecology, law and policy.
+
+With best regards,
+
+Rebecca A. Senior, on behalf of all co-authors
