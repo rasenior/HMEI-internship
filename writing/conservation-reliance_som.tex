@@ -6,10 +6,21 @@
   12pt,
   a4paper,
 ]{article}
+\title{No exit: the conservation reliance of species with too little habitat}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Supplementary Information}
+\author{}
+\date{\vspace{-2.5em}}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -97,46 +108,34 @@
 
 % To change labelling of supplementary figures and tables
 \newcommand{\beginsupplement}{\setcounter{table}{0}  \renewcommand{\tablename}{Supplementary Table} \setcounter{figure}{0} \renewcommand{\figurename}{Supplementary Figure}}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-
-\title{No exit: the conservation reliance of species with too little habitat}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Supplementary Information}
-\author{}
-\date{\vspace{-2.5em}}
 
 \begin{document}
 \maketitle
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-Sophia Richter\textsuperscript{1} , Rebecca A. Senior\textsuperscript{2}*, and David S. Wilcove\textsuperscript{1,2}
+Sophia Richter\textsuperscript{1}‡, Rebecca A. Senior\textsuperscript{2,3}*‡, and David S. Wilcove\textsuperscript{1,2}
 
 \textsuperscript{1}Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA.
 
 \textsuperscript{2}Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA.
 
+\textsuperscript{3}Conservation Ecology Group, Department of Biosciences, Durham University, Durham DH1 3LE, UK
+
 *\textbf{Corresponding author:} \href{mailto:rebecca.a.senior@gmail.com}{\nolinkurl{rebecca.a.senior@gmail.com}} (R.A. Senior)
+
+‡These authors contributed equally to this work
 
 \textbf{ORCID iDs:} orcid.org/0000-0002-8208-736X (R.A. Senior)
 
 \pagebreak
 \raggedright
-\setcounter{tocdepth}{2}
-\tableofcontents
 \beginsupplement
 
 \pagebreak
-
-\hypertarget{supplementary-figures}{%
-\section{Supplementary Figures}\label{supplementary-figures}}
 
 
 
@@ -146,17 +145,59 @@ Sophia Richter\textsuperscript{1} , Rebecca A. Senior\textsuperscript{2}*, and D
 
 }
 
-\caption{The total number of threatened species within each country classified as `No Exit Species' (NES). Results are summarised for each taxonomic group (rows), , and shaded from low NES count (yellow) to high (red).}\label{fig:fig-s-1}
+\caption{The total number of threatened species within each country classified as `No Exit Species.' Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).}\label{fig:fig-s-1}
 \end{figure}
 
 \pagebreak
 
-\hypertarget{supplementary-tables}{%
-\section{Supplementary Tables}\label{supplementary-tables}}
+
+
+\begin{figure}
+
+{\centering \includegraphics{figs/som/fig-s-2-1} 
+
+}
+
+\caption{The total number of threatened species within each country classified as `Extreme No Exit Species.' Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).}\label{fig:fig-s-2}
+\end{figure}
 
 \pagebreak
 
-\hypertarget{supplementary-references}{%
-\section{Supplementary References}\label{supplementary-references}}
+
+
+\begin{figure}
+
+{\centering \includegraphics{figs/som/fig-s-3-1} 
+
+}
+
+\caption{The total number of threatened species within each zoogeographic realm classified as `No Exit Species.' Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).}\label{fig:fig-s-3}
+\end{figure}
+
+\pagebreak
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{figs/som/fig-s-4-1} 
+
+}
+
+\caption{The total number of threatened species within each zoogeographic realm classified as `Extreme No Exit Species.' Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).}\label{fig:fig-s-4}
+\end{figure}
+
+\pagebreak
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{figs/som/fig-s-5-1} 
+
+}
+
+\caption{The model-predicted relationship between species' proximity to threshold and absolute Area of Habitat (AOH), averaged across taxonomic classes and zoogeographic realms. Proximity to threshold is scaled from 0 to 1, with 0 representing the minimum difference between species' AOH and the downlisting threshold (i.e.~no difference), and 1 representing the maximum difference between species' AOH and the downlisting threshold (the value of the maximum difference is dependent on which downlisting threshold AOH is being compared to). Grey shading represents 95\% Confidence Intervals.}\label{fig:fig-s-5}
+\end{figure}
 
 \end{document}
