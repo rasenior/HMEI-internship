@@ -4,6 +4,9 @@
 admin
 HMEI-GDrive
 *.html
+*.docx
+*.pdf
+*.png
+*.log
 /code/ras_args.Rmd
-/docs/*.docx
 /writing/figs
