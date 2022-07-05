@@ -1,0 +1,27 @@
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{Supplementary Information}
+\fancyfoot[CO,CE]{\thepage}
+\usepackage{setspace}
+\doublespacing
+
+ % For manual landscape pages
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+% For manual syntax highlighting
+\usepackage{fontspec}
+\setmainfont{Calibri} % Calibri is main font
+\newcommand*{\myfont}{\fontfamily{lmtt}\selectfont} % Latin Modern typewriter for syntax
+\DeclareTextFontCommand{\textmyfont}{\myfont}
+
+%  For tables
+\usepackage{multirow}
+\usepackage{gensymb}
+
+% To change labelling of supplementary figures and tables
+\newcommand{\beginsupplement}{\setcounter{table}{0}  \renewcommand{\tablename}{Supplementary Table} \setcounter{figure}{0} \renewcommand{\figurename}{Supplementary Figure}}

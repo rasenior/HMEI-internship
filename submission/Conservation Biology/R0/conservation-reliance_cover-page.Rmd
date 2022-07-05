@@ -1,0 +1,83 @@
+---
+title: "No exit: the conservation reliance of species with little remaining habitat"
+output:
+    bookdown::word_document2:
+        reference_docx: "../../../HMEI-GDrive/resources/word-templates/ms_general.docx"
+        number_sections: false
+    bookdown::pdf_document2:
+        toc: no
+        latex_engine: xelatex
+        fig_caption: yes
+        keep_tex: yes
+link-citations: yes
+csl: conservation-biology.csl
+biblio-style: apalike
+bibliography: [refs.bib, funky-refs.bib, pckgs.bib]
+fontsize: 12pt
+geometry: margin=2.5cm
+mainfont: Calibri
+papersize: a4
+documentclass: article
+header-includes:
+- \usepackage{hyperref}
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhf{}
+- \fancyfoot[CO,CE]{\thepage}
+- \usepackage{setspace}
+- \doublespacing
+---
+
+_______________________________________________________________________________________
+
+Sophia Richter^1^&Dagger;, Rebecca A. Senior^2,3^*&Dagger;, and David S. Wilcove^1,2^
+
+^1^Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA.
+
+^2^Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA.
+
+^3^Conservation Ecology Group, Department of Biosciences, Durham University, Durham DH1 3LE, UK
+
+*__Corresponding author:__ rebecca.a.senior@gmail.com (R.A. Senior)
+
+&Dagger;These authors contributed equally to this work
+
+__ORCID iDs:__ orcid.org/0000-0002-8208-736X (R.A. Senior)
+  
+__Authorship:__ R.A.S. and D.S.W. conceived the study. R.A.S. collated the data. S.R. carried out the analyses and wrote the first draft of the manuscript, with substantial contributions from R.A.S. and D.S.W. 
+
+__Funding:__ High Meadows Environmental Institute and High Meadows Foundation.
+
+__Key words:__ conservation; extinction; IUCN Red List; conservation planning; biodiversity; threatened species
+
+__Running head:__ Limited habitat limits recovery
+
+__Article type:__ Practice and Policy
+
+__Number of words from Abstract through Literature Cited:__ 5204/6000
+
+__Number of manuscript pages (Cover Page through Literature Cited):__ 22
+
+__Number of References:__ 42
+
+__Number of Figures:__ 3; __Number of Tables:__ 1
+
+## Acknowledgements
+
+Funding for this research was provided by the High Meadows Environmental Institute (S.R.) and High Meadows Foundation (R.A.S.).
+
+## Data availability 
+
+The datasets used to support the findings of this study are available for download by request from their respective providers. Species assessments can be accessed from the IUCN Red List of Threatened Species website at https://www.iucnredlist.org, and range maps can be requested at https://www.iucnredlist.org/resources/spatial-data-download. Protected Area maps can be requested from the World Database on Protected Areas, found at https://www.unep-wcmc.org/resources-and-data/analysis/main/wdpa. 
+
+## Code availability
+
+Custom Python code to calculate species Area of Habitat in Google Earth Engine will be published at a later date, and is available on request from R.A.S.
+
+## Author contributions
+
+R.A.S. and D.S.W. conceived the study. R.A.S. collated the data. S.R. carried out the analyses and wrote the first draft of the manuscript, with substantial contribution from R.A.S. and D.S.W. 
+
+## Competing interests
+
+The authors declare no competing interests.

@@ -1,0 +1,37 @@
+---
+output:
+    bookdown::word_document2:
+        reference_docx: coverletter_template.docx
+fontsize: 12pt
+geometry: margin=2.5cm
+mainfont: Calibri
+lang: en-GB
+papersize: a4
+documentclass: article
+header-includes:
+- \usepackage{hyperref}
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhf{}
+- \fancyfoot[CO,CE]{\thepage}
+- \usepackage{setspace}
+- \doublespacing
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALSE,
+                      dpi = 300, fig.path = "output/", fig.align = "center", 
+                      fig.width = 16.6/2.54, fig.height = 15/2.54)
+```
+
+Dear Editor,
+
+Please find the attached manuscript "No exit: the conservation reliance of species with little remaining habitat", for consideration as a Practice and Policy article in Conservation Biology. 
+
+The ongoing and pervasive threat of habitat conversion has left many species with small and highly fragmented habitats. A suite of factors - from stochasticity to edge effects - renders these species at high risk of extinction, reliant on conservation monitoring and management to safeguard their future in the wild. Here, out of 3869 threatened species assessed, we identify 2489 species that can never exit threatened status on the Red List of the International Union for Conservation of Nature. Remaining habitat area for each of these "No Exit Species" is < 2,000 km^2^. No amount of conservation effort can rescue No Exit species without accompanying gains in habitat area, likely through restoration.
+
+Habitat restoration is gaining traction in conservation policy and practice, particularly in this UN Decade on Ecosystem Restoration. The magnitude of restoration required, however, is sobering. We determined that most No Exit Species have so little habitat as to be closer to the Red List threshold for uplisting (increased extinction risk) than the threshold for downlisting (decreased extinction risk). Thus, gains in habitat must also be matched with robust protection. The majority of No Exit Species are concentrated in a few key countries, including Colombia, Mexico, Madagascar, and Indonesia, all of which (and many more) have committed to protect at least 30% of land and oceans by 2030.
+
+Identifying species that are conservation reliant is essential to directing policy and practice. Without this information, we run the risk of allocating limited conservation resources to species that simply cannot recover without accompanying gains in habitat area, and therefore require ongoing management and monitoring to prevent extinction. Given the relevance of our findings to biodiversity conservation, we believe that our study is extremely relevant to readers of Conservation Biology. 
+

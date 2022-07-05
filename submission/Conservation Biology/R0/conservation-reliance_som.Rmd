@@ -1,0 +1,145 @@
+---
+title: "No exit: the conservation reliance of species with too little habitat"
+subtitle: 'Supplementary Information'
+output:
+    bookdown::pdf_document2:
+        toc: no
+        latex_engine: xelatex
+        fig_caption: yes
+        keep_tex: yes
+        includes:
+            in_header: header.tex 
+fontsize: 12pt
+geometry: margin=2.5cm
+papersize: a4
+documentclass: article
+link-citations: yes
+csl: elsevier-harvard.csl
+biblio-style: apalike
+bibliography: [refs.bib, funky-refs.bib, pckgs.bib]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "../../../")
+knitr::opts_chunk$set(echo = FALSE,message = FALSE,error = FALSE, warning = FALSE,
+                      dpi = 300, fig.path = "figs/som/", fig.align = "center", 
+                      fig.width = 16.6/2.54, fig.height = 15/2.54)
+```
+
+```{r packages}
+library(readr)
+library(ggplot2)
+library(stringr)
+library(dplyr)
+library(ggtext)
+library(png)
+library(grid)
+library(RColorBrewer)
+library(Hmisc)
+
+# Define function to capitalise first letter
+capitalise <- function(string) {
+  substr(string, 1, 1) <- toupper(substr(string, 1, 1))
+  string
+}
+```
+
+```{r data}
+load("HMEI-GDrive/data/sorted/msdata.Rdata")
+```
+
+_______________________________________________________________________________________
+
+\pagebreak
+\raggedright
+\beginsupplement
+
+\pagebreak
+
+(ref:cap-1) The total number of threatened species within each country classified as 'No Exit Species'. Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).
+
+```{r fig-s-1, fig.cap = "(ref:cap-1)", fig.width = 7/2.54, fig.height = 20/2.54}
+map <- 
+  readPNG("HMEI-GDrive/figs/nes_map_country.png") %>% 
+  rasterGrob(interpolate = TRUE)
+ggplot() +
+  theme_void() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  annotation_custom(map,
+                    xmin = -Inf, xmax = Inf,
+                    ymin = -Inf, ymax = Inf)
+```
+
+\pagebreak
+
+(ref:cap-2) The total number of threatened species within each country classified as 'Extreme No Exit Species'. Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).
+
+```{r fig-s-2, fig.cap = "(ref:cap-2)", fig.width = 7/2.54, fig.height = 20/2.54}
+map <- 
+  readPNG("HMEI-GDrive/figs/top25_map_country.png") %>% 
+  rasterGrob(interpolate = TRUE)
+ggplot() +
+  theme_void() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  annotation_custom(map,
+                    xmin = -Inf, xmax = Inf,
+                    ymin = -Inf, ymax = Inf)
+```
+
+\pagebreak
+
+(ref:cap-3) The total number of threatened species within each zoogeographic realm classified as 'No Exit Species'. Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).
+
+```{r fig-s-3, fig.cap = "(ref:cap-3)", fig.width = 7/2.54, fig.height = 20/2.54}
+map <- 
+  readPNG("HMEI-GDrive/figs/top25_map_realm.png") %>% 
+  rasterGrob(interpolate = TRUE)
+ggplot() +
+  theme_void() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  annotation_custom(map,
+                    xmin = -Inf, xmax = Inf,
+                    ymin = -Inf, ymax = Inf)
+```
+
+\pagebreak
+
+(ref:cap-4) The total number of threatened species within each zoogeographic realm classified as 'Extreme No Exit Species'. Results are summarised for each taxonomic group (rows), and shaded from low count (yellow) to high (red).
+
+```{r fig-s-4, fig.cap = "(ref:cap-4)", fig.width = 7/2.54, fig.height = 20/2.54}
+map <- 
+  readPNG("HMEI-GDrive/figs/top25_map_realm.png") %>% 
+  rasterGrob(interpolate = TRUE)
+ggplot() +
+  theme_void() +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  annotation_custom(map,
+                    xmin = -Inf, xmax = Inf,
+                    ymin = -Inf, ymax = Inf)
+```
+
+\pagebreak
+
+(ref:cap-5) The model-predicted relationship between species' proximity to threshold and absolute Area of Habitat (AOH), averaged across taxonomic classes and zoogeographic realms. Proximity to threshold is scaled from 0 to 1, with 0 representing the minimum difference between species' AOH and the downlisting threshold (i.e. no difference), and 1 representing the maximum difference between species' AOH and the downlisting threshold (the value of the maximum difference is dependent on which downlisting threshold AOH is being compared to). Grey shading represents 95% Confidence Intervals.
+
+```{r fig-s-5, fig.cap = "(ref:cap-5)", fig.width = 16.6/2.54, fig.height = 18/2.54}
+ggplot(newdat_avg, 
+       aes(x = AOHkm, y = proximity)) +
+    # Add confidence intervals
+    geom_ribbon(aes(ymin = CI_lo,
+                    ymax = CI_hi),
+                alpha = 0.1) +
+    # Add fitted line
+    geom_line() +
+    xlab(paste("AOH (km","\U00B2",")",sep= "")) + 
+    ylab("Proximity to downlisting threshold") + 
+    theme_bw() +
+    theme(panel.grid = element_blank()) +
+    scale_y_continuous(breaks = seq(0,1,0.1))
+```
+
+
