@@ -1,0 +1,864 @@
+RL ID,Order,Family,Species,Common Name,ED,RL Status,GE,EDGE,EDGE Rank,Distribution,Median ED
+11450,ANURA,LEIOPELMATIDAE,Leiopelma archeyi,Archey's Frog,62.80319614,Critically Endangered,4,6.928392008,1,New Zealand,16.42792702
+1272,CAUDATA,CRYPTOBRANCHIDAE,Andrias davidianus,Chinese Giant Salamander,61.18251793,Critically Endangered,4,6.90266262,2,China,16.42792702
+58051,ANURA,NASIKABATRACHIDAE,Nasikabatrachus sahyadrensis,Purple Frog,107.281039,Endangered,3,6.764171602,3,India,16.42792702
+59048,ANURA,SOOGLOSSIDAE,Sechellophryne pipilodryas,Seychelles Palm Frog,51.84541603,Critically Endangered,4,6.739959695,4,Seychelles,16.42792702
+14663,ANURA,SOOGLOSSIDAE,Sooglossus thomasseti,Thomasset's Frog,50.86188903,Critically Endangered,4,6.721172927,5,Seychelles,16.42792702
+59649,GYMNOPHIONA,SCOLECOMORPHIDAE,Crotaphatrema lamottei,Mount Oku Caecilian,41.84070855,Critically Endangered,4,6.530077507,6,Cameroon,16.42792702
+21529,ANURA,MYOBATRACHIDAE,Taudactylus acutirostris,Sharp Snouted Day Frog,41.41061596,Critically Endangered,4,6.51998743,7,Australia,16.42792702
+21531,ANURA,MYOBATRACHIDAE,Taudactylus eungellensis,Eungella Day Frog,41.41061596,Critically Endangered,4,6.51998743,7,Australia,16.42792702
+21533,ANURA,MYOBATRACHIDAE,Taudactylus pleione,Kroombit Tinker Frog,41.41061596,Critically Endangered,4,6.51998743,7,Australia,16.42792702
+21534,ANURA,MYOBATRACHIDAE,Taudactylus rheophilus,Northern Tinker Frog,41.41061596,Critically Endangered,4,6.51998743,7,Australia,16.42792702
+9773,ANURA,HELEOPHRYNIDAE,Heleophryne rosei,Table Mountain Ghost Frog,39.15446715,Critically Endangered,4,6.465322418,11,South Africa,16.42792702
+6715,ANURA,ALYTIDAE,Latonia nigriventer,Hula Painted Frog,37.93593046,Critically Endangered,4,6.434506209,12,Israel,16.42792702
+54427,ANURA,ARTHROLEPTIDAE,Leptodactylodon axillaris,NA,37.77116085,Critically Endangered,4,6.430265415,13,Cameroon,16.42792702
+54432,ANURA,ARTHROLEPTIDAE,Leptodactylodon erythrogaster,Redbelly Egg Frog,37.77116085,Critically Endangered,4,6.430265415,13,Cameroon,16.42792702
+54440,ANURA,ARTHROLEPTIDAE,Leptodactylodon wildi,NA,37.77116085,Critically Endangered,4,6.430265415,13,Cameroon,16.42792702
+19514,ANURA,RHINODERMATIDAE,Rhinoderma rufum,Northern Darwin's Frog,36.381162,Critically Endangered,4,6.39375561,16,Chile,16.42792702
+57703,ANURA,BREVICIPITIDAE,Balebreviceps hillmani,Bale Mountains Treefrog,36.17859046,Critically Endangered,4,6.388321793,17,Ethiopia,16.42792702
+58253,ANURA,CONRAUIDAE,Conraua derooi,Togo Slippery Frog,35.44422997,Critically Endangered,4,6.368371868,18,"Ghana,Togo",16.42792702
+58666,ANURA,RANIDAE,Glandirana minima,Little Gland Frog,32.00072149,Critically Endangered,4,6.269118147,19,China,16.42792702
+59220,CAUDATA,PLETHODONTIDAE,Bradytriton silus,Finca Chiblac Salamander,31.90953558,Critically Endangered,4,6.266351173,20,Guatemala,16.42792702
+54444,ANURA,BOMBINATORIDAE,Barbourula kalimantanensis,Bornean Flat-headed Frog,62.75420114,Endangered,3,6.234476624,21,NA,16.42792702
+54615,ANURA,BUFONIDAE,Nannophryne cophotis,Paramo Toad,30.70228713,Critically Endangered,4,6.22897755,22,NA,16.42792702
+58310,ANURA,RANIXALIDAE,Indirana gundia,NA,30.48731417,Critically Endangered,4,6.222173462,23,India,16.42792702
+58314,ANURA,RANIXALIDAE,Indirana phrynoderma,Toad-skinned Frog,30.48731417,Critically Endangered,4,6.222173462,23,India,16.42792702
+21567318,GYMNOPHIONA,RHINATREMATIDAE,Rhinatrema shiv,Two-lined Caecilian,61.49474915,Endangered,3,6.214524081,25,Guyana,16.42792702
+49581455,ANURA,MICROHYLIDAE,Plethodontohyla matavy,NA,29.53567605,Critically Endangered,4,6.191484429,26,Madagascar,16.42792702
+56914,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus richmondi,Richmond's Robber Frog,29.28726386,Critically Endangered,4,6.183316012,27,Puerto Rico,16.42792702
+89183310,ANURA,CRAUGASTORIDAE,Noblella madreselva,NA,29.2229214,Critically Endangered,4,6.181189345,28,Peru,16.42792702
+10215,ANURA,CRAUGASTORIDAE,Holoaden bradei,Itatiaia Highland Frog,29.12873822,Critically Endangered,4,6.178068197,29,Brazil,16.42792702
+59221,CAUDATA,PLETHODONTIDAE,Chiropterotriton arboreus,Arboreal Splayfoot Salamander,27.45731278,Critically Endangered,4,6.12099389,30,Mexico,16.42792702
+59226,CAUDATA,PLETHODONTIDAE,Chiropterotriton lavae,Pigmy Splayfoot Salamander,27.05285168,Critically Endangered,4,6.106679013,31,Mexico,16.42792702
+58161,ANURA,PIPIDAE,Pipa myersi,Myers' Surinam Toad,55.07870644,Endangered,3,6.106197718,32,Panama,16.42792702
+175535,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus chukuchuku,Spiny Puddle Frog,26.74530061,Critically Endangered,4,6.095655201,33,Cameroon,16.42792702
+175371,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus intermedius,NA,26.74530061,Critically Endangered,4,6.095655201,33,Ghana,16.42792702
+58391,ANURA,DICROGLOSSIDAE,Nannophrys marmorata,NA,26.69535965,Critically Endangered,4,6.0938536,35,Sri Lanka,16.42792702
+59222,CAUDATA,PLETHODONTIDAE,Chiropterotriton chiropterus,Salamandra pie-plano común,26.46567301,Critically Endangered,4,6.085525693,36,Mexico,16.42792702
+59228,CAUDATA,PLETHODONTIDAE,Chiropterotriton mosaueri,Cave Splayfoot Salmander,26.46567301,Critically Endangered,4,6.085525693,36,Mexico,16.42792702
+54815,ANURA,BUFONIDAE,Leptophryne cruentata,Bleeding Toad,26.10079985,Critically Endangered,4,6.072151964,38,Indonesia,16.42792702
+2119,ANURA,PETROPEDETIDAE,Arthroleptides dutoiti,Du Toit's Torrent Frog,26.0193327,Critically Endangered,4,6.069141358,39,"Kenya,Uganda",16.42792702
+41118,ANURA,MICROHYLIDAE,Cophixalus concinnus,Beautiful Nursery-frog,25.80767466,Critically Endangered,4,6.061276937,40,Australia,16.42792702
+59227,CAUDATA,PLETHODONTIDAE,Chiropterotriton magnipes,Bigfoot Splayfoot Salamander,25.51745398,Critically Endangered,4,6.050391879,41,Mexico,16.42792702
+20380,ANURA,SOOGLOSSIDAE,Sechellophryne gardineri,Gardiner's Seychelles Frog,51.84541603,Endangered,3,6.046812515,42,Seychelles,16.42792702
+58010,ANURA,MICROHYLIDAE,Rhombophryne helenae,NA,25.29289459,Critically Endangered,4,6.041887457,43,Madagascar,16.42792702
+58571,ANURA,DICROGLOSSIDAE,Ingerana charlesdarwini,NA,24.94092674,Critically Endangered,4,6.028410627,44,India,16.42792702
+16997,ANURA,LIMNODYNASTIDAE,Philoria frosti,Baw Baw Frog,24.93435256,Critically Endangered,4,6.028157166,45,Australia,16.42792702
+20381,ANURA,SOOGLOSSIDAE,Sooglossus sechellensis,Seychelles Frog,50.86188903,Endangered,3,6.028025747,46,Seychelles,16.42792702
+78535878,ANURA,MICROHYLIDAE,Cophyla karenae,NA,24.81393119,Critically Endangered,4,6.023503037,47,Madagascar,16.42792702
+79788927,ANURA,MICROHYLIDAE,Cophyla maharipeo,NA,24.81393119,Critically Endangered,4,6.023503037,47,Madagascar,16.42792702
+79789021,ANURA,MICROHYLIDAE,Cophyla puellarum,NA,24.81393119,Critically Endangered,4,6.023503037,47,Madagascar,16.42792702
+55567,ANURA,HYLIDAE,Megastomatohyla mixe,Mixe Treefrog,24.77230587,Critically Endangered,4,6.021889222,50,Mexico,16.42792702
+55592,ANURA,HYLIDAE,Megastomatohyla pellita,Oaxacan Yellow Treefrog,24.77230587,Critically Endangered,4,6.021889222,50,Mexico,16.42792702
+68568328,ANURA,MANTELLIDAE,Boophis ankarafensis,NA,24.62979596,Critically Endangered,4,6.016344302,52,Madagascar,16.42792702
+164889,ANURA,MANTELLIDAE,Boophis baetkei,NA,24.62979596,Critically Endangered,4,6.016344302,52,Madagascar,16.42792702
+57409,ANURA,MANTELLIDAE,Boophis liami,NA,24.62979596,Critically Endangered,4,6.016344302,52,Madagascar,16.42792702
+49546770,ANURA,MANTELLIDAE,Boophis tsilomaro,NA,24.62979596,Critically Endangered,4,6.016344302,52,Madagascar,16.42792702
+59232,CAUDATA,PLETHODONTIDAE,Chiropterotriton terrestris,Terrestrial Splayfoot Salamander,24.55294447,Critically Endangered,4,6.013341276,56,Mexico,16.42792702
+190943,ANURA,MICROHYLIDAE,Anodonthyla theoi,NA,24.45029304,Critically Endangered,4,6.00931598,57,Madagascar,16.42792702
+190944,ANURA,MICROHYLIDAE,Anodonthyla vallani,NA,24.45029304,Critically Endangered,4,6.00931598,57,Madagascar,16.42792702
+56952,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus schmidti,Schmidt's Robber Frog,24.41467826,Critically Endangered,4,6.007915614,59,"Dominican Republic,Haiti",16.42792702
+59328,CAUDATA,PLETHODONTIDAE,Parvimolge townsendi,Townsend's Salamander,24.38929056,Critically Endangered,4,6.006916176,60,Mexico,16.42792702
+49581681,ANURA,MANTELLIDAE,Spinomantis nussbaumi,NA,24.2111413,Critically Endangered,4,5.999874734,61,Madagascar,16.42792702
+56485,ANURA,CRAUGASTORIDAE,Strabomantis cadenai,Nutibara Robber Frog,24.14764441,Critically Endangered,4,5.997352953,62,Colombia,16.42792702
+56649,ANURA,CRAUGASTORIDAE,Strabomantis helonotus,NA,24.14764441,Critically Endangered,4,5.997352953,62,Ecuador,16.42792702
+79680099,ANURA,MICROHYLIDAE,Rhombophryne analamaina,NA,24.12763489,Critically Endangered,4,5.996556954,64,Madagascar,16.42792702
+49583995,ANURA,MICROHYLIDAE,Rhombophryne hara,NA,24.12763489,Critically Endangered,4,5.996556954,64,Madagascar,16.42792702
+49563555,ANURA,MANTELLIDAE,Gephyromantis mafy,NA,24.05233586,Critically Endangered,4,5.993555793,66,Madagascar,16.42792702
+57200,ANURA,CRAUGASTORIDAE,Psychrophrynella bagrecito,Bagrecito Andes Frog,23.68796629,Critically Endangered,4,5.978904652,67,Peru,16.42792702
+135999,ANURA,CRAUGASTORIDAE,Psychrophrynella guillei,NA,23.68796629,Critically Endangered,4,5.978904652,67,"Bolivia, Plurinational States of",16.42792702
+136103,ANURA,CRAUGASTORIDAE,Psychrophrynella illimani,NA,23.68796629,Critically Endangered,4,5.978904652,67,"Bolivia, Plurinational States of",16.42792702
+136145,ANURA,CRAUGASTORIDAE,Psychrophrynella kallawaya,NA,23.68796629,Critically Endangered,4,5.978904652,67,"Bolivia, Plurinational States of",16.42792702
+136150,ANURA,CRAUGASTORIDAE,Psychrophrynella saltator,NA,23.68796629,Critically Endangered,4,5.978904652,67,"Bolivia, Plurinational States of",16.42792702
+56874,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus poolei,NA,23.66720649,Critically Endangered,4,5.978063411,72,Haiti,16.42792702
+54420,ANURA,ARTHROLEPTIDAE,Astylosternus nganhanus,Nganha Night Frog,23.57389777,Critically Endangered,4,5.974273536,73,Cameroon,16.42792702
+56088,ANURA,HYPEROLIIDAE,Alexteroon jynx,NA,23.41425457,Critically Endangered,4,5.967755888,74,Cameroon,16.42792702
+41226,ANURA,CERATOBATRACHIDAE,Alcalus mariae,Palawan Eastern Frog,47.63222427,Endangered,3,5.963727904,75,Philippines,16.42792702
+57509,ANURA,MANTELLIDAE,Mantidactylus pauliani,Madagascar Frog,22.86160116,Critically Endangered,4,5.944859243,76,Madagascar,16.42792702
+59652,GYMNOPHIONA,SCOLECOMORPHIDAE,Scolecomorphus uluguruensis,Nyingwa Caecilian,46.64164022,Endangered,3,5.943148715,77,"Tanzania, United Republic of",16.42792702
+57067,ANURA,CRAUGASTORIDAE,Oreobates zongoensis,NA,22.71550171,Critically Endangered,4,5.938717637,78,"Bolivia, Plurinational States of",16.42792702
+58075,ANURA,PETROPEDETIDAE,Ericabatrachus baleensis,Bale Mountains Frog,22.68274906,Critically Endangered,4,5.937335618,79,Ethiopia,16.42792702
+58380,ANURA,MICRIXALIDAE,Micrixalus kottigeharensis,NA,22.39553688,Critically Endangered,4,5.925133995,80,India,16.42792702
+56988,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus symingtoni,Symington's Robber Frog,22.27775065,Critically Endangered,4,5.920086719,81,Cuba,16.42792702
+55830,ANURA,HYLIDAE,Phytotriades auratus,NA,22.24307427,Critically Endangered,4,5.918595929,82,Trinidad and Tobago,16.42792702
+57946,ANURA,MICROHYLIDAE,Parhoplophryne usambarica,Amani Forest Frog,22.20985528,Critically Endangered,4,5.917165707,83,"Tanzania, United Republic of",16.42792702
+175360,ANURA,ARTHROLEPTIDAE,Arthroleptis kidogo,Tiny Squeaker Frog,22.12555269,Critically Endangered,4,5.913526905,84,"Tanzania, United Republic of",16.42792702
+16770720,ANURA,ARTHROLEPTIDAE,Arthroleptis kutogundua,Overlooked Squeaker Frog,22.12555269,Critically Endangered,4,5.913526905,84,"Tanzania, United Republic of",16.42792702
+54389,ANURA,ARTHROLEPTIDAE,Arthroleptis troglodytes,Cave Squeaker,22.12555269,Critically Endangered,4,5.913526905,84,Zimbabwe,16.42792702
+56721,ANURA,CRAUGASTORIDAE,Craugastor lineatus,Montane Robber Frog,22.10171475,Critically Endangered,4,5.912495569,87,"Guatemala,Mexico",16.42792702
+54360,CAUDATA,PLETHODONTIDAE,Cryptotriton monzoni,NA,22.04280224,Critically Endangered,4,5.909942176,88,Guatemala,16.42792702
+20372,ANURA,LEPTODACTYLIDAE,Pleurodema somuncurense,El Rincon Stream Frog,21.85597523,Critically Endangered,4,5.901801303,89,Argentina,16.42792702
+13997902,ANURA,PIPIDAE,Xenopus lenduensis,Lendu Plateau Clawed Frog,21.63628457,Critically Endangered,4,5.892142853,90,"Congo, The Democratic Republic of the",16.42792702
+175363,ANURA,BREVICIPITIDAE,Callulina dawida,Taita Hills Warty Frog,21.54719459,Critically Endangered,4,5.888199372,91,Kenya,16.42792702
+135798,ANURA,MANTELLIDAE,Tsingymantis antitra,NA,43.93481944,Endangered,3,5.884654525,92,Madagascar,16.42792702
+54410,ANURA,ARTHROLEPTIDAE,Cardioglossa trifasciata,NA,21.32988944,Critically Endangered,4,5.878514837,93,Cameroon,16.42792702
+88219153,ANURA,MANTELLIDAE,Guibemantis diphonus,NA,21.30518808,Critically Endangered,4,5.877408023,94,Madagascar,16.42792702
+55384,ANURA,HYLIDAE,Charadrahyla altipotens,Yellow-bellied Voiceless Treefrog,21.22745893,Critically Endangered,4,5.873917136,95,Mexico,16.42792702
+55681,ANURA,HYLIDAE,Charadrahyla trux,Spine-fingered Treefrog,21.22745893,Critically Endangered,4,5.873917136,95,Mexico,16.42792702
+56403,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus albipes,NA,21.20796818,Critically Endangered,4,5.873039874,97,Cuba,16.42792702
+56827,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus parapelates,Casillon Robber Frog,21.17896147,Critically Endangered,4,5.87173288,98,Haiti,16.42792702
+194310,CAUDATA,PLETHODONTIDAE,Dendrotriton chujorum,NA,21.1274269,Critically Endangered,4,5.869406598,99,Guatemala,16.42792702
+73727195,ANURA,MEGOPHRYIDAE,Leptolalax botsfordi,NA,21.09883497,Critically Endangered,4,5.868113613,100,Viet Nam,16.42792702
+79681353,ANURA,MEGOPHRYIDAE,Leptolalax kecil,NA,21.09883497,Critically Endangered,4,5.868113613,100,NA,16.42792702
+56836,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus paulsoni,Paulson's Robber Frog,20.9183694,Critically Endangered,4,5.859913793,102,Haiti,16.42792702
+136010,CAUDATA,PLETHODONTIDAE,Oedipina tomasi,NA,20.90933356,Critically Endangered,4,5.859501458,103,Honduras,16.42792702
+55855,ANURA,HYLIDAE,Agalychnis lemur,Lemur Leaf Frog,20.88495324,Critically Endangered,4,5.858388056,104,"Colombia,Costa Rica,Panama",16.42792702
+9031,ANURA,MYOBATRACHIDAE,Geocrinia alba,White-bellied Frog,20.88167045,Critically Endangered,4,5.858238043,105,Australia,16.42792702
+58062,ANURA,PYXICEPHALIDAE,Anhydrophryne ngongoniensis,Mistbelt Chirping Frog,42.57066249,Endangered,3,5.853825587,106,South Africa,16.42792702
+56577,ANURA,CRAUGASTORIDAE,Craugastor emcelae,Rio Claro Robber Frog,20.75958597,Critically Endangered,4,5.852643117,107,Panama,16.42792702
+59240,CAUDATA,PLETHODONTIDAE,Dendrotriton rabbi,Guatemalan Bromeliad Salamander,20.74207448,Critically Endangered,4,5.851838022,108,Guatemala,16.42792702
+13032,ANURA,MICROHYLIDAE,Melanobatrachus indicus,NA,42.4433973,Endangered,3,5.850900421,109,India,16.42792702
+58916,ANURA,RHACOPHORIDAE,Raorchestes ponmudi,NA,20.6172008,Critically Endangered,4,5.846078053,110,India,16.42792702
+59238,CAUDATA,PLETHODONTIDAE,Dendrotriton cuchumatanus,Forest Bromeliad Salamander,20.57752127,Critically Endangered,4,5.844240813,111,Guatemala,16.42792702
+59236,CAUDATA,PLETHODONTIDAE,Cryptotriton veraepacis,Baja Verapaz Salamander,20.41970517,Critically Endangered,4,5.836900023,112,Guatemala,16.42792702
+56413,ANURA,CRAUGASTORIDAE,Craugastor anciano,Corquin Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56498,ANURA,CRAUGASTORIDAE,Craugastor catalinae,NA,20.00211102,Critically Endangered,4,5.81721168,113,"Costa Rica,Panama",16.42792702
+56516,ANURA,CRAUGASTORIDAE,Craugastor coffeus,NA,20.00211102,Critically Endangered,4,5.81721168,113,"Guatemala,Honduras",16.42792702
+56537,ANURA,CRAUGASTORIDAE,Craugastor cruzi,Cruz Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56579,ANURA,CRAUGASTORIDAE,Craugastor emleni,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56582,ANURA,CRAUGASTORIDAE,Craugastor epochthidius,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56598,ANURA,CRAUGASTORIDAE,Craugastor fecundus,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56622,ANURA,CRAUGASTORIDAE,Craugastor glaucus,Rana-ladrona Gris,20.00211102,Critically Endangered,4,5.81721168,113,Mexico,16.42792702
+56631,ANURA,CRAUGASTORIDAE,Craugastor greggi,Gregg's Stream Frog,20.00211102,Critically Endangered,4,5.81721168,113,"Guatemala,Mexico",16.42792702
+56639,ANURA,CRAUGASTORIDAE,Craugastor guerreroensis,Guerreran Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,Mexico,16.42792702
+56641,ANURA,CRAUGASTORIDAE,Craugastor gulosus,NA,20.00211102,Critically Endangered,4,5.81721168,113,"Costa Rica,Panama",16.42792702
+56753,ANURA,CRAUGASTORIDAE,Craugastor megalotympanum,Rana-ladrona De San Martín,20.00211102,Critically Endangered,4,5.81721168,113,Mexico,16.42792702
+56761,ANURA,CRAUGASTORIDAE,Craugastor merendonensis,San Pedro Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56765,ANURA,CRAUGASTORIDAE,Craugastor milesi,Miles' Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56807,ANURA,CRAUGASTORIDAE,Craugastor olanchano,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56810,ANURA,CRAUGASTORIDAE,Craugastor omoaensis,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56872,ANURA,CRAUGASTORIDAE,Craugastor polymniae,Sierra Juarez Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,Mexico,16.42792702
+56876,ANURA,CRAUGASTORIDAE,Craugastor pozo,NA,20.00211102,Critically Endangered,4,5.81721168,113,Mexico,16.42792702
+56942,ANURA,CRAUGASTORIDAE,Craugastor saltuarius,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56976,ANURA,CRAUGASTORIDAE,Craugastor stadelmani,NA,20.00211102,Critically Endangered,4,5.81721168,113,Honduras,16.42792702
+56995,ANURA,CRAUGASTORIDAE,Craugastor taurus,Golfito Robber Frog,20.00211102,Critically Endangered,4,5.81721168,113,"Costa Rica,Panama",16.42792702
+57013,ANURA,CRAUGASTORIDAE,Craugastor trachydermus,NA,20.00211102,Critically Endangered,4,5.81721168,113,Guatemala,16.42792702
+59237,CAUDATA,PLETHODONTIDAE,Dendrotriton bromeliacius,Volcan Tajumulco Bromeliad Salamander,19.98265299,Critically Endangered,4,5.816284771,135,Guatemala,16.42792702
+56698,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus lamprotes,Castillon Robber Frog,19.92003655,Critically Endangered,4,5.813296109,136,Haiti,16.42792702
+56452,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus bartonsmithi,Barton's Robber Frog,19.91051864,Critically Endangered,4,5.812841039,137,Cuba,16.42792702
+56605,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus fowleri,Fowler's Robber Frog,19.90772114,Critically Endangered,4,5.812707246,138,"Dominican Republic,Haiti",16.42792702
+57166,ANURA,LEPTODACTYLIDAE,Leptodactylus silvanimbus,Honduras White-lipped Frog,19.85011169,Critically Endangered,4,5.809948027,139,Honduras,16.42792702
+10832,ANURA,RHINODERMATIDAE,Insuetophrynus acarpicus,Barrio's Frog,40.42351333,Endangered,3,5.803290216,140,Chile,16.42792702
+59288,CAUDATA,PLETHODONTIDAE,Ixalotriton parvus,Dwarf False Brook Salamander,19.68310556,Critically Endangered,4,5.801905933,141,Mexico,16.42792702
+57883,ANURA,MICROHYLIDAE,Microhyla karunaratnei,NA,19.64826712,Critically Endangered,4,5.800220121,142,Sri Lanka,16.42792702
+57668,ANURA,MICROHYLIDAE,Choerophryne siegfriedi,NA,19.61360932,Critically Endangered,4,5.798540227,143,Papua New Guinea,16.42792702
+58054,ANURA,PELOBATIDAE,Pelobates varaldii,Varaldi’s Spadefoot Toad,40.22319554,Endangered,3,5.798442638,144,Morocco,16.42792702
+55466,ANURA,HYLIDAE,Bromeliohyla dendroscarta,Greater Bromeliad Treefrog,19.6084171,Critically Endangered,4,5.798288312,145,Mexico,16.42792702
+55202,ANURA,DENDROBATIDAE,Minyobates steyermarki,Sapito Rojo Del Yapacana,19.54111584,Critically Endangered,4,5.79501725,146,"Venezuela, Bolivarian Republic of",16.42792702
+56825,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus parabates,Independencia Robber Frog,19.42371894,Critically Endangered,4,5.789285641,147,"Dominican Republic,Haiti",16.42792702
+54377,ANURA,ARTHROLEPTIDAE,Arthroleptis nikeae,Nike's Squeaker,19.25406023,Critically Endangered,4,5.780944001,148,"Tanzania, United Republic of",16.42792702
+59317,CAUDATA,PLETHODONTIDAE,Oedipina maritima,Maritime Worm Salamander,19.10603789,Critically Endangered,4,5.773608885,149,Panama,16.42792702
+193425,ANURA,BREVICIPITIDAE,Callulina hanseni,NA,19.08264075,Critically Endangered,4,5.77244452,150,"Tanzania, United Republic of",16.42792702
+193426,ANURA,BREVICIPITIDAE,Callulina kanga,NA,19.08264075,Critically Endangered,4,5.77244452,150,"Tanzania, United Republic of",16.42792702
+193427,ANURA,BREVICIPITIDAE,Callulina laphami,NA,19.08264075,Critically Endangered,4,5.77244452,150,"Tanzania, United Republic of",16.42792702
+202410,ANURA,BREVICIPITIDAE,Callulina meteora,NA,19.08264075,Critically Endangered,4,5.77244452,150,"Tanzania, United Republic of",16.42792702
+193428,ANURA,BREVICIPITIDAE,Callulina shengena,NA,19.08264075,Critically Endangered,4,5.77244452,150,"Tanzania, United Republic of",16.42792702
+193429,ANURA,BREVICIPITIDAE,Callulina stanleyi,NA,19.08264075,Critically Endangered,4,5.77244452,150,"Tanzania, United Republic of",16.42792702
+9772,ANURA,HELEOPHRYNIDAE,Heleophryne hewitti,Hewitt’s Ghost Frog,39.15446715,Endangered,3,5.772175237,156,South Africa,16.42792702
+56742,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus mariposa,NA,18.94652826,Critically Endangered,4,5.765643828,157,Cuba,16.42792702
+48101780,ANURA,MEGOPHRYIDAE,Megophrys damrei,NA,18.89185098,Critically Endangered,4,5.762898872,158,Cambodia,16.42792702
+58278,ANURA,DICROGLOSSIDAE,Fejervarya murthii,Ghats Wart Frog,18.8323707,Critically Endangered,4,5.759904209,159,India,16.42792702
+56688,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus jugans,La Selle Dusky Frog,18.7619555,Critically Endangered,4,5.756347372,160,"Dominican Republic,Haiti",16.42792702
+18377,CAUDATA,PROTEIDAE,Proteus anguinus,Proteus,77.587847,Vulnerable,2,5.75051143,161,"Bosnia and Herzegovina,Croatia,Italy,Slovenia",16.42792702
+56851,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus pezopetrus,NA,18.62922999,Critically Endangered,4,5.749608504,162,Cuba,16.42792702
+56920,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus rivularis,NA,18.54634045,Critically Endangered,4,5.745376802,163,Cuba,16.42792702
+58857,ANURA,RHACOPHORIDAE,Philautus jacobsoni,Jacobson's Bubble-nest Frog,18.39846223,Critically Endangered,4,5.737782519,164,NA,16.42792702
+58897,ANURA,RHACOPHORIDAE,Philautus sanctisilvaticus,Sacred Grove Bushfrog,18.39846223,Critically Endangered,4,5.737782519,164,India,16.42792702
+79076234,ANURA,MEGOPHRYIDAE,Leptobrachium kantonishikawai,NA,18.39698927,Critically Endangered,4,5.737706584,166,NA,16.42792702
+54426,ANURA,ARTHROLEPTIDAE,Leptodactylodon albiventris,Whitebelly Egg Frog,37.77116085,Endangered,3,5.737118235,167,Cameroon,16.42792702
+54431,ANURA,ARTHROLEPTIDAE,Leptodactylodon bueanus,NA,37.77116085,Endangered,3,5.737118235,167,Cameroon,16.42792702
+54433,ANURA,ARTHROLEPTIDAE,Leptodactylodon mertensi,Mertens' Egg Frog,37.77116085,Endangered,3,5.737118235,167,Cameroon,16.42792702
+54434,ANURA,ARTHROLEPTIDAE,Leptodactylodon ornatus,Ornate Egg Frog,37.77116085,Endangered,3,5.737118235,167,Cameroon,16.42792702
+54436,ANURA,ARTHROLEPTIDAE,Leptodactylodon perreti,Perret's Egg Frog ,37.77116085,Endangered,3,5.737118235,167,Cameroon,16.42792702
+54438,ANURA,ARTHROLEPTIDAE,Leptodactylodon stevarti,NA,37.77116085,Endangered,3,5.737118235,167,Gabon,16.42792702
+57536,ANURA,MANTELLIDAE,Mantidactylus zolitschka,NA,18.33673042,Critically Endangered,4,5.73459514,173,Madagascar,16.42792702
+57019,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus turquinensis,NA,18.33070356,Critically Endangered,4,5.734283412,174,Cuba,16.42792702
+56796,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus nortoni,Spiny Giant Frog,18.20466719,Critically Endangered,4,5.727742055,175,"Dominican Republic,Haiti",16.42792702
+57143,ANURA,LEPTODACTYLIDAE,Leptodactylus magistris,NA,18.20097317,Critically Endangered,4,5.727549686,176,"Venezuela, Bolivarian Republic of",16.42792702
+56511,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus chlorophenax,False Green Robber Frog,18.19789728,Critically Endangered,4,5.727389479,177,Haiti,16.42792702
+56692,ANURA,CRAUGASTORIDAE,Pristimantis kelephus,NA,18.19677318,Critically Endangered,4,5.727330924,178,Colombia,16.42792702
+56629,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus grandis,Great Peeping Frog,18.18809642,Critically Endangered,4,5.726878831,179,Mexico,16.42792702
+7142,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus jasperi,Golden Coqui,18.18809642,Critically Endangered,4,5.726878831,179,Puerto Rico,16.42792702
+135828,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus juanariveroi,NA,18.18809642,Critically Endangered,4,5.726878831,179,Puerto Rico,16.42792702
+7146,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus karlschmidti,Karl's Robber Frog,18.18809642,Critically Endangered,4,5.726878831,179,Puerto Rico,16.42792702
+56730,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus lucioi,NA,18.18809642,Critically Endangered,4,5.726878831,179,Haiti,16.42792702
+56930,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus rufescens,Red Peeping Frog,18.18809642,Critically Endangered,4,5.726878831,179,Mexico,16.42792702
+7147,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus semipalmatus,Foothill Robber Frog,18.18809642,Critically Endangered,4,5.726878831,179,Haiti,16.42792702
+57001,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus tetajulia,NA,18.18809642,Critically Endangered,4,5.726878831,179,Cuba,16.42792702
+57052,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus warreni,Warren's Robber Frog,18.18809642,Critically Endangered,4,5.726878831,179,Haiti,16.42792702
+59417,CAUDATA,PLETHODONTIDAE,Thorius minutissimus,Oaxacan Pigmy Salamander,18.12193113,Critically Endangered,4,5.723424625,188,Mexico,16.42792702
+61804,ANURA,CRAUGASTORIDAE,Craugastor tabasarae,NA,18.10666431,Critically Endangered,4,5.722625913,189,Panama,16.42792702
+58829,ANURA,RHACOPHORIDAE,Raorchestes chalazodes,NA,18.03724571,Critically Endangered,4,5.718986083,190,India,16.42792702
+189814,ANURA,RHACOPHORIDAE,Raorchestes resplendens,Resplendent Shrubfrog,18.03724571,Critically Endangered,4,5.718986083,190,India,16.42792702
+58902,ANURA,RHACOPHORIDAE,Raorchestes shillongensis,NA,18.03724571,Critically Endangered,4,5.718986083,190,India,16.42792702
+59307,CAUDATA,PLETHODONTIDAE,Oedipina altura,Cartago Worm Salamander,17.9408075,Critically Endangered,4,5.713907444,193,Costa Rica,16.42792702
+59320,CAUDATA,PLETHODONTIDAE,Oedipina paucidentata,El Empalme Worm Salamander,17.9408075,Critically Endangered,4,5.713907444,193,Costa Rica,16.42792702
+59291,CAUDATA,PLETHODONTIDAE,Pseudoeurycea orchileucos,Sierra de Juárez Worm Salamander,17.91615189,Critically Endangered,4,5.712604877,195,Mexico,16.42792702
+84500429,ANURA,MANTELLIDAE,Aglyptodactylus australis,NA,36.59959024,Endangered,3,5.706434694,196,Madagascar,16.42792702
+136095,ANURA,CYCLORAMPHIDAE,Cycloramphus faustoi,NA,17.7720814,Critically Endangered,4,5.704959456,197,Brazil,16.42792702
+56618,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus glanduliferoides,La Visite Robber Frog,17.75465248,Critically Endangered,4,5.704030576,198,Haiti,16.42792702
+56931,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus rufifemoralis,Red-legged Robber Frog,17.74734705,Critically Endangered,4,5.703640974,199,Dominican Republic,16.42792702
+56608,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus furcyensis,La Selle Red-legged Frog ,17.73734882,Critically Endangered,4,5.703107517,200,"Dominican Republic,Haiti",16.42792702
+19513,ANURA,RHINODERMATIDAE,Rhinoderma darwinii,Darwin's Frog,36.381162,Endangered,3,5.700608429,201,"Argentina,Chile",16.42792702
+59447,CAUDATA,SALAMANDRIDAE,Echinotriton chinhaiensis,Chinhai Spiny Newt,17.6719151,Critically Endangered,4,5.699609251,202,China,16.42792702
+17519,ANURA,CERATOBATRACHIDAE,Platymantis insulatus,Gigante Wrinkled Ground Frog,17.66915744,Critically Endangered,4,5.69946155,203,Philippines,16.42792702
+55099,ANURA,AROMOBATIDAE,Allobates juanii,NA,17.57537117,Critically Endangered,4,5.694425295,204,Colombia,16.42792702
+54345,ANURA,BUFONIDAE,Peltophryne lemur,Lowland Caribbean Toad,17.53174653,Critically Endangered,4,5.692074012,205,"Puerto Rico,Virgin Islands, British",16.42792702
+59050,CAUDATA,AMBYSTOMATIDAE,Ambystoma amblycephalum,Blunthead Salamander,17.5217892,Critically Endangered,4,5.691536556,206,Mexico,16.42792702
+59054,CAUDATA,AMBYSTOMATIDAE,Ambystoma bombypellum,Delicateskin Salamander ,17.5217892,Critically Endangered,4,5.691536556,206,Mexico,16.42792702
+59058,CAUDATA,AMBYSTOMATIDAE,Ambystoma granulosum,Granular Salamander,17.5217892,Critically Endangered,4,5.691536556,206,Mexico,16.42792702
+59061,CAUDATA,AMBYSTOMATIDAE,Ambystoma leorae,Leora's Stream Salamander,17.5217892,Critically Endangered,4,5.691536556,206,Mexico,16.42792702
+59070,CAUDATA,AMBYSTOMATIDAE,Ambystoma taylori,Taylor's Salamander,17.5217892,Critically Endangered,4,5.691536556,206,Mexico,16.42792702
+56550,ANURA,CRAUGASTORIDAE,Craugastor daryi,NA,35.90755195,Endangered,3,5.687857732,211,Guatemala,16.42792702
+186159,ANURA,RHACOPHORIDAE,Raorchestes chlorosomma,Green Eyed Bushfrog,17.44607765,Critically Endangered,4,5.687440477,212,India,16.42792702
+59391,CAUDATA,PLETHODONTIDAE,Aquiloeurycea praecellens,Admirable False Brook Salamander,17.44293244,Critically Endangered,4,5.687269954,213,Mexico,16.42792702
+61911,CAUDATA,PLETHODONTIDAE,Aquiloeurycea quetzalanensis,Cuetzalan Salamander,17.44293244,Critically Endangered,4,5.687269954,213,Mexico,16.42792702
+54458,ANURA,BUFONIDAE,Adenomus kandianus,NA,17.40405749,Critically Endangered,4,5.685159878,215,Sri Lanka,16.42792702
+57515,ANURA,MANTELLIDAE,Guibemantis punctatus,Dotted Madagascar Frog,17.40265684,Critically Endangered,4,5.68508377,216,Madagascar,16.42792702
+56326,ANURA,,Atopophrynus syntomopus,Sonson Frog,17.37008656,Critically Endangered,4,5.683312333,217,Colombia,16.42792702
+29430,ANURA,HYLIDAE,Dendropsophus amicorum,NA,17.31773235,Critically Endangered,4,5.680458294,218,"Venezuela, Bolivarian Republic of",16.42792702
+58309,ANURA,RANIXALIDAE,Indirana diplosticta,NA,35.58782892,Endangered,3,5.679157184,219,India,16.42792702
+59027,ANURA,RHACOPHORIDAE,Ghatixalus variabilis,NA,35.56013568,Endangered,3,5.678399999,220,India,16.42792702
+55924,ANURA,HYLIDAE,Scinax alcatraz,NA,17.23112901,Critically Endangered,4,5.67571924,221,Brazil,16.42792702
+48086163,ANURA,HYLIDAE,Scinax muriciensis,NA,17.23112901,Critically Endangered,4,5.67571924,221,Brazil,16.42792702
+55046,ANURA,DENDROBATIDAE,Hyloxalus anthracinus,South American Rocket Frog,17.02213617,Critically Endangered,4,5.664189512,223,Ecuador,16.42792702
+21623,ANURA,CALYPTOCEPHALELLIDAE,Telmatobufo bullocki,Bullock’s Mountains False Toad,35.02131386,Endangered,3,5.663552357,224,Chile,16.42792702
+76338162,ANURA,CALYPTOCEPHALELLIDAE,Telmatobufo ignotus,NA,35.02131386,Endangered,3,5.663552357,224,Chile,16.42792702
+58312,ANURA,RANIXALIDAE,Indirana leptodactyla,NA,34.95187255,Endangered,3,5.661622712,226,India,16.42792702
+56475,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus brevirostris,Short-nosed Green Frog,16.91665879,Critically Endangered,4,5.658319661,227,Haiti,16.42792702
+57034,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus ventrilineatus,NA,16.9089983,Critically Endangered,4,5.657892007,228,Haiti,16.42792702
+59590,GYMNOPHIONA,INDOTYPHLIDAE,Praslinia cooperi,Cooper's Black Caecilian,34.80037587,Endangered,3,5.657399934,229,Seychelles,16.42792702
+18582,ANURA,MYOBATRACHIDAE,Pseudophryne corroboree,Corroboree Frog,16.88660678,Critically Endangered,4,5.65664093,230,Australia,16.42792702
+58881,ANURA,RHACOPHORIDAE,Pseudophilautus ocularis,NA,16.88233628,Critically Endangered,4,5.656402148,231,Sri Lanka,16.42792702
+57435,ANURA,MANTELLIDAE,Boophis williamsi,Williams' Bright-eyed Frog,16.87888926,Critically Endangered,4,5.656209368,232,Madagascar,16.42792702
+57206,ANURA,CRAUGASTORIDAE,Bryophryne cophites,Cusco Andes Frog,34.75203822,Endangered,3,5.656048822,233,Peru,16.42792702
+56725,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus locustus,Interior Robber Frog,16.85418529,Critically Endangered,4,5.654826673,234,Puerto Rico,16.42792702
+7150,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus eneidae,Villalba Robber Frog,16.84788934,Critically Endangered,4,5.654473979,235,Puerto Rico,16.42792702
+55446,ANURA,HYLIDAE,Hyloscirtus chlorosteus,Parjacti Treefrog,16.77905026,Critically Endangered,4,5.650609535,236,"Bolivia, Plurinational States of",16.42792702
+55546,ANURA,HYLIDAE,Hyloscirtus lynchi,Lynch's Colombian Treefrog,16.77905026,Critically Endangered,4,5.650609535,236,Colombia,16.42792702
+56819,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus oxyrhyncus,Rednose Robber Frog,16.75991608,Critically Endangered,4,5.649532735,238,"Dominican Republic,Haiti",16.42792702
+56428,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus apostates,Apostates Robber Frog,16.75238501,Critically Endangered,4,5.649108596,239,Haiti,16.42792702
+2664,CAUDATA,HYNOBIIDAE,Afghanodon mustersi,NA,16.71204257,Critically Endangered,4,5.646833502,240,Afghanistan,16.42792702
+59304,CAUDATA,PLETHODONTIDAE,Nyctanolis pernix,Nimble Long-limbed Salamander,34.40253412,Endangered,3,5.646224945,241,"Guatemala,Mexico",16.42792702
+56473,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus bresslerae,NA,16.69557836,Critically Endangered,4,5.64590352,242,Cuba,16.42792702
+58122,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus krefftii,NA,34.329678,Endangered,3,5.644164889,243,"Tanzania, United Republic of",16.42792702
+59296,CAUDATA,PLETHODONTIDAE,Nototriton lignicola,NA,16.64175758,Critically Endangered,4,5.642857404,244,Honduras,16.42792702
+61920,GYMNOPHIONA,HERPELIDAE,Boulengerula niedeni,Sagalla Caecilian,34.22546717,Endangered,3,5.641210862,245,Kenya,16.42792702
+59498,GYMNOPHIONA,HERPELIDAE,Boulengerula taitana,Taita African Caecilian,34.18900895,Endangered,3,5.64017533,246,Kenya,16.42792702
+56603,ANURA,CRAUGASTORIDAE,Craugastor fleischmanni,Fleischmann's Robber Frog,16.48123545,Critically Endangered,4,5.633716768,247,Costa Rica,16.42792702
+58176,ANURA,PIPIDAE,Xenopus longipes,Lake Oku Clawed Frog,16.44189863,Critically Endangered,4,5.631464001,248,Cameroon,16.42792702
+56527,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus counouspeus,NA,33.86461464,Endangered,3,5.630913949,249,Haiti,16.42792702
+21624,ANURA,CALYPTOCEPHALELLIDAE,Telmatobufo venustus,Chile mountain false toad,33.56209244,Endangered,3,5.622199029,250,Chile,16.42792702
+59495,GYMNOPHIONA,HERPELIDAE,Boulengerula changamwensis,Changamwensis African Caecilian,33.4358639,Endangered,3,5.618540118,251,Kenya,16.42792702
+136036,ANURA,MICROHYLIDAE,Ctenophryne barbatula,NA,33.02656551,Endangered,3,5.6065831,252,Peru,16.42792702
+57204,ANURA,MICROHYLIDAE,Ctenophryne carpish,NA,33.02656551,Endangered,3,5.6065831,252,Peru,16.42792702
+5263,ANURA,CONRAUIDAE,Conraua goliath,Giant Slippery Frog,32.37466239,Endangered,3,5.587238543,254,"Cameroon,Equatorial Guinea",16.42792702
+57897,ANURA,MICROHYLIDAE,Micryletta steinegeri,NA,31.85675608,Endangered,3,5.57159893,255,"Taiwan, Province of China",16.42792702
+59559,GYMNOPHIONA,INDOTYPHLIDAE,Grandisonia brevis,NA,31.68871225,Endangered,3,5.566471369,256,NA,16.42792702
+55369,ANURA,HEMIPHRACTIDAE,Hemiphractus johnsoni,Johnson's Horned Treefrogs,31.38665414,Endangered,3,5.55718797,257,Colombia,16.42792702
+136186,ANURA,MICROHYLIDAE,Plethodontohyla fonetana,NA,31.2914227,Endangered,3,5.554243186,258,Madagascar,16.42792702
+57823,ANURA,MICROHYLIDAE,Hoplophryne uluguruensis,Uluguru Blue-bellied Frog,30.78157617,Endangered,3,5.538328298,259,"Tanzania, United Republic of",16.42792702
+57822,ANURA,MICROHYLIDAE,Hoplophryne rogersi,Usambara Blue-bellied Frog,30.76399596,Endangered,3,5.537774988,260,"Tanzania, United Republic of",16.42792702
+54616,ANURA,BUFONIDAE,Nannophryne corynetes,Abra Malaga Toad,30.70228713,Endangered,3,5.535830369,261,Peru,16.42792702
+135750,ANURA,MICROHYLIDAE,Plethodontohyla guentheri,NA,30.03667786,Endangered,3,5.514611204,262,Madagascar,16.42792702
+16801,CAUDATA,PLETHODONTIDAE,Phaeognathus hubrichti,Red Hills Salamander,30.02467313,Endangered,3,5.514224337,263,United States,16.42792702
+56948,ANURA,CRAUGASTORIDAE,Craugastor montanus,Rana-ladrona Enana-chiapaneca,29.80572685,Endangered,3,5.507142151,264,Mexico,16.42792702
+57223,ANURA,CRAUGASTORIDAE,Oreobates pereger,Ayacucho Andes Frog,29.52770731,Endangered,3,5.498076249,265,Peru,16.42792702
+59225,CAUDATA,PLETHODONTIDAE,Chiropterotriton dimidiatus,Dwarf Splayfoot Salamander,29.48273731,Endangered,3,5.496602075,266,Mexico,16.42792702
+78526171,ANURA,CRAUGASTORIDAE,Oreobates lehri,NA,29.24977464,Endangered,3,5.488930276,267,Peru,16.42792702
+57234,ANURA,CRAUGASTORIDAE,Noblella lynchi,NA,29.2229214,Endangered,3,5.488042165,268,Peru,16.42792702
+59430,CAUDATA,PROTEIDAE,Necturus alabamensis,Alabama Waterdog,28.93346222,Endangered,3,5.478418534,269,United States,16.42792702
+11451,ANURA,LEIOPELMATIDAE,Leiopelma hamiltoni,Hamilton's Frog,58.55004864,Vulnerable,2,5.473111474,270,New Zealand,16.42792702
+56298,ANURA,LEIOPELMATIDAE,Leiopelma pakeka,Maud Island Frog,58.55004864,Vulnerable,2,5.473111474,270,New Zealand,16.42792702
+56430,ANURA,CRAUGASTORIDAE,Hypodactylus araiodactylus,NA,28.77085376,Endangered,3,5.472971395,272,Peru,16.42792702
+57217,ANURA,CRAUGASTORIDAE,Hypodactylus lucida,Cannatella's Andes Frog,28.77085376,Endangered,3,5.472971395,272,Peru,16.42792702
+56302,ANURA,ELEUTHERODACTYLIDAE,Adelophryne maranguapensis,NA,28.49261795,Endangered,3,5.463581535,274,Brazil,16.42792702
+58082,ANURA,PETROPEDETIDAE,Petropedetes palmipes,Efulen Water Frog,28.08888437,Endangered,3,5.449797662,275,"Cameroon,Gabon,Equatorial Guinea",16.42792702
+136160,ANURA,MANTELLIDAE,Gephyromantis azzurrae,NA,28.07170857,Endangered,3,5.449207029,276,Madagascar,16.42792702
+57492,ANURA,MANTELLIDAE,Gephyromantis klemmeri,Klemmer's Madagascar Frog,27.86348127,Endangered,3,5.442018714,277,Madagascar,16.42792702
+59223,CAUDATA,PLETHODONTIDAE,Chiropterotriton chondrostega,Gristle-headed Splayfoot Salamander,27.80914826,Endangered,3,5.440134526,278,Mexico,16.42792702
+58405,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus vasanthi,NA,27.74054879,Endangered,3,5.437750517,279,India,16.42792702
+57677,ANURA,MICROHYLIDAE,Anodonthyla rouxae,Madagascar Climbing Frog,27.51535361,Endangered,3,5.429884207,280,Madagascar,16.42792702
+2649,CAUDATA,PLETHODONTIDAE,Batrachoseps campi,Inyo Mountains Salamander,27.48924438,Endangered,3,5.428968168,281,United States,16.42792702
+57027,ANURA,CRAUGASTORIDAE,Pristimantis urichi,Lesser Antilles Robber Frog,27.29651471,Endangered,3,5.422180184,282,Trinidad and Tobago,16.42792702
+57532,ANURA,MANTELLIDAE,Gephyromantis webbi,Webb's Madagascar Frog,27.22328393,Endangered,3,5.41958885,283,Madagascar,16.42792702
+57958,ANURA,MICROHYLIDAE,Cophyla mavomavo,Yellowish Tree Cophyline Frog,26.96447213,Endangered,3,5.410376394,284,Madagascar,16.42792702
+58396,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus beddomii,NA,26.93850455,Endangered,3,5.40944737,285,India,16.42792702
+58092,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus annulatus,Ringed River Frog,26.74530061,Endangered,3,5.40250802,286,"Côte d'Ivoire,Ghana,Guinea,Liberia",16.42792702
+58112,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus ghanensis,Ghana River Frog,26.74530061,Endangered,3,5.40250802,286,"Côte d'Ivoire,Ghana",16.42792702
+58119,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus irangi,Irangi Puddle Frog,26.74530061,Endangered,3,5.40250802,286,Kenya,16.42792702
+58130,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus pakenhami,Pakenham's River Frog,26.74530061,Endangered,3,5.40250802,286,"Tanzania, United Republic of",16.42792702
+135885,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus ungujae,NA,26.74530061,Endangered,3,5.40250802,286,"Kenya,Tanzania, United Republic of",16.42792702
+135839,ANURA,DICROGLOSSIDAE,Nannophrys naeyakai,NA,26.69535965,Endangered,3,5.400706419,291,Sri Lanka,16.42792702
+58402,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus minor,NA,26.11871165,Endangered,3,5.379665498,292,India,16.42792702
+58065,ANURA,PETROPEDETIDAE,Arthroleptides yakusini,NA,26.0193327,Endangered,3,5.375994177,293,"Tanzania, United Republic of",16.42792702
+55316,ANURA,HEMIPHRACTIDAE,Flectonotus fitzgeraldi,Ranita Marsupial De Fitzgerald,25.87937344,Endangered,3,5.370800748,294,"Trinidad and Tobago,Venezuela, Bolivarian Republic of",16.42792702
+73343869,ANURA,ARTHROLEPTIDAE,Arthroleptis xenodactylus,Amani Screeching Frog,25.86061194,Endangered,3,5.370102515,295,"Tanzania, United Republic of",16.42792702
+41039,ANURA,MICROHYLIDAE,Cophixalus mcdonaldi,Mcdonald’s Frog,25.80767466,Endangered,3,5.368129756,296,Australia,16.42792702
+57780,ANURA,MICROHYLIDAE,Cophixalus monticola,Mountain-top Nursery-frog,25.80767466,Endangered,3,5.368129756,296,Australia,16.42792702
+41040,ANURA,MICROHYLIDAE,Cophixalus neglectus,Neglected Frog,25.80767466,Endangered,3,5.368129756,296,Australia,16.42792702
+56878,ANURA,CRAUGASTORIDAE,Pristimantis prolatus,NA,25.77782244,Endangered,3,5.367015566,299,Ecuador,16.42792702
+58308,ANURA,RANIXALIDAE,Indirana brachytarsus,NA,25.692846,Endangered,3,5.363837131,300,India,16.42792702
+54397,ANURA,ARTHROLEPTIDAE,Arthroleptis aureoli,Freetown Long-fingered Frog,25.68632542,Endangered,3,5.363592819,301,Sierra Leone,16.42792702
+56632,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus greyi,NA,25.6655283,Endangered,3,5.362813198,302,Cuba,16.42792702
+48100370,ANURA,RHACOPHORIDAE,Theloderma nebulosum,Misty Moss Frog,25.31837353,Endangered,3,5.34970885,303,Viet Nam,16.42792702
+48100463,ANURA,RHACOPHORIDAE,Theloderma palliatum,Cloaked Moss Frog,25.31837353,Endangered,3,5.34970885,303,Viet Nam,16.42792702
+136002,ANURA,RHACOPHORIDAE,Theloderma ryabovi,NA,25.31837353,Endangered,3,5.34970885,303,Viet Nam,16.42792702
+57925,ANURA,MICROHYLIDAE,Oreophryne monticola,Lombok Cross Frog,25.25772239,Endangered,3,5.347401674,306,NA,16.42792702
+58064,ANURA,PETROPEDETIDAE,Arthroleptides martiensseni,Usambara Torrent Frog,25.15202161,Endangered,3,5.343368037,307,"Tanzania, United Republic of",16.42792702
+57983,ANURA,BREVICIPITIDAE,Probreviceps uluguruensis,NA,25.1043891,Endangered,3,5.341545007,308,"Tanzania, United Republic of",16.42792702
+57959,ANURA,MICROHYLIDAE,Cophyla milloti,Nosy Be Giant Treefrog,25.03817596,Endangered,3,5.339005309,309,Madagascar,16.42792702
+135988,ANURA,BREVICIPITIDAE,Probreviceps durirostris,NA,24.95124284,Endangered,3,5.335661044,310,"Tanzania, United Republic of",16.42792702
+54353,ANURA,LIMNODYNASTIDAE,Philoria kundagungan,Mountain Frog,24.93435256,Endangered,3,5.335009985,311,Australia,16.42792702
+54354,ANURA,LIMNODYNASTIDAE,Philoria loveridgei,Loveridge’s Frog,24.93435256,Endangered,3,5.335009985,311,Australia,16.42792702
+57381,ANURA,LIMNODYNASTIDAE,Philoria pughi,NA,24.93435256,Endangered,3,5.335009985,311,Australia,16.42792702
+57382,ANURA,LIMNODYNASTIDAE,Philoria richmondensis,NA,24.93435256,Endangered,3,5.335009985,311,Australia,16.42792702
+54355,ANURA,LIMNODYNASTIDAE,Philoria sphagnicolus,Sphagnum Frog,24.93435256,Endangered,3,5.335009985,311,Australia,16.42792702
+56575,ANURA,CRAUGASTORIDAE,Hypodactylus elassodiscus,NA,24.91844902,Endangered,3,5.334396574,316,"Colombia,Ecuador",16.42792702
+57954,ANURA,MICROHYLIDAE,Cophyla alticola,Madagascar Giant Treefrog ,24.81393119,Endangered,3,5.330355856,317,Madagascar,16.42792702
+79788960,ANURA,MICROHYLIDAE,Cophyla noromalalae,NA,24.81393119,Endangered,3,5.330355856,317,Madagascar,16.42792702
+49570575,ANURA,MICROHYLIDAE,Cophyla olgae,NA,24.81393119,Endangered,3,5.330355856,317,Madagascar,16.42792702
+49570767,ANURA,MICROHYLIDAE,Cophyla rava,NA,24.81393119,Endangered,3,5.330355856,317,Madagascar,16.42792702
+57963,ANURA,MICROHYLIDAE,Cophyla tsaratananaensis,Tsaratanana Giant Treefrog,24.81393119,Endangered,3,5.330355856,317,Madagascar,16.42792702
+49460189,ANURA,MANTELLIDAE,Boophis boehmei,Böhme's Bright-eyed Frog,24.78428933,Endangered,3,5.329206907,322,Madagascar,16.42792702
+55568,ANURA,HYLIDAE,Megastomatohyla mixomaculata,Variegated Treefrog,24.77230587,Endangered,3,5.328742041,323,Mexico,16.42792702
+55579,ANURA,HYLIDAE,Megastomatohyla nubicola,Cloud Forest Treefrog,24.77230587,Endangered,3,5.328742041,323,Mexico,16.42792702
+54478,ANURA,BUFONIDAE,Ghatophryne ornata,Malabar Torrent Toad,24.73251466,Endangered,3,5.327196896,325,India,16.42792702
+57982,ANURA,BREVICIPITIDAE,Probreviceps rungwensis,NA,24.71596284,Endangered,3,5.326553463,326,"Tanzania, United Republic of",16.42792702
+49380186,ANURA,MANTELLIDAE,Boophis andrangoloaka,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57390,ANURA,MANTELLIDAE,Boophis anjanaharibeensis,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49381365,ANURA,MANTELLIDAE,Boophis arcanus,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+86466824,ANURA,MANTELLIDAE,Boophis boppa,Boppa’s Bright-eyed Treefrog,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57401,ANURA,MANTELLIDAE,Boophis feonnyala,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57404,ANURA,MANTELLIDAE,Boophis haematopus,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49460407,ANURA,MANTELLIDAE,Boophis haingana,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57407,ANURA,MANTELLIDAE,Boophis jaegeri,Jaeger's Bright-eyed Frog,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57408,ANURA,MANTELLIDAE,Boophis laurenti,Andinrgitra Bright-eyed Frog,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49541778,ANURA,MANTELLIDAE,Boophis miadana,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49542051,ANURA,MANTELLIDAE,Boophis narinsi,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49543215,ANURA,MANTELLIDAE,Boophis piperatus,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49380377,ANURA,MANTELLIDAE,Boophis rhodoscelis,Betsileo Bright-eyed Frog,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+49545926,ANURA,MANTELLIDAE,Boophis sandrae,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57427,ANURA,MANTELLIDAE,Boophis schuboeae,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+57430,ANURA,MANTELLIDAE,Boophis solomaso,NA,24.62979596,Endangered,3,5.323197121,327,Madagascar,16.42792702
+59032,ANURA,RHACOPHORIDAE,Theloderma bicolor,Chapa Bug-eyed Frog,24.55212516,Endangered,3,5.320162031,343,NA,16.42792702
+190941,ANURA,MICROHYLIDAE,Anodonthyla emilei,NA,24.45029304,Endangered,3,5.316168799,344,Madagascar,16.42792702
+190942,ANURA,MICROHYLIDAE,Anodonthyla jeanbai,NA,24.45029304,Endangered,3,5.316168799,344,Madagascar,16.42792702
+58012,ANURA,MICROHYLIDAE,Rhombophryne pygmaea,Andoany Stump-toed Frog,24.36159404,Endangered,3,5.312677526,346,Madagascar,16.42792702
+57981,ANURA,BREVICIPITIDAE,Probreviceps rhodesianus,Forest Rain Frog,24.34067119,Endangered,3,5.311852204,347,Zimbabwe,16.42792702
+58512,ANURA,PTYCHADENIDAE,Ptychadena nana,Somali Grassland Frog,24.27183075,Endangered,3,5.309131908,348,Ethiopia,16.42792702
+57534,ANURA,MANTELLIDAE,Gephyromantis zavona,NA,24.23904768,Endangered,3,5.307833848,349,Madagascar,16.42792702
+55193,ANURA,DENDROBATIDAE,Excidobates mysteriosus,Rana Venenosa,24.23194261,Endangered,3,5.307552297,350,NA,16.42792702
+61836,ANURA,MANTELLIDAE,Boophis sambirano,NA,24.22116283,Endangered,3,5.307124979,351,Madagascar,16.42792702
+57470,ANURA,MANTELLIDAE,Spinomantis brunae,NA,24.2111413,Endangered,3,5.306727554,352,Madagascar,16.42792702
+57504,ANURA,MANTELLIDAE,Spinomantis microtis,Guibe's Bright-eyed Frog,24.2111413,Endangered,3,5.306727554,352,Madagascar,16.42792702
+57753,ANURA,MICROHYLIDAE,Chiasmocleis lacrimae,Central Humming Frog,24.21085981,Endangered,3,5.306716388,354,Brazil,16.42792702
+56936,ANURA,CRAUGASTORIDAE,Strabomantis ruizi,NA,24.14764441,Endangered,3,5.304205772,355,Colombia,16.42792702
+49583046,ANURA,MICROHYLIDAE,Rhombophryne be,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+57971,ANURA,MICROHYLIDAE,Rhombophryne guentherpetersi,Tsaratanana Digging Frog,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+79680110,ANURA,MICROHYLIDAE,Rhombophryne kibomena,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+85628040,ANURA,MICROHYLIDAE,Rhombophryne longicrus,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+49584796,ANURA,MICROHYLIDAE,Rhombophryne madagascariensis,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+66390759,ANURA,MICROHYLIDAE,Rhombophryne miery,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+86466943,ANURA,MICROHYLIDAE,Rhombophryne ornata,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+86466968,ANURA,MICROHYLIDAE,Rhombophryne tany,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+79130249,ANURA,MICROHYLIDAE,Rhombophryne vaventy,NA,24.12763489,Endangered,3,5.303409774,356,Madagascar,16.42792702
+49562307,ANURA,MANTELLIDAE,Gephyromantis atsingy,NA,24.05233586,Endangered,3,5.300408613,365,Madagascar,16.42792702
+49563132,ANURA,MANTELLIDAE,Gephyromantis hintelmannae,NA,24.05233586,Endangered,3,5.300408613,365,Madagascar,16.42792702
+49564032,ANURA,MANTELLIDAE,Gephyromantis ranjomavo,NA,24.05233586,Endangered,3,5.300408613,365,Madagascar,16.42792702
+58175,ANURA,PIPIDAE,Xenopus largeni,Largen's Clawed Frog,23.95466095,Endangered,3,5.296502158,368,Ethiopia,16.42792702
+57975,ANURA,MICROHYLIDAE,Rhombophryne minuta,Tiny Digging Frog,23.89945035,Endangered,3,5.294287271,369,Madagascar,16.42792702
+57473,ANURA,MANTELLIDAE,Gephyromantis corvus,NA,23.82865132,Endangered,3,5.291439823,370,Madagascar,16.42792702
+58379,ANURA,MICRIXALIDAE,Micrixalus gadgili,NA,23.8216461,Endangered,3,5.291157641,371,India,16.42792702
+59497,GYMNOPHIONA,HERPELIDAE,Boulengerula fischeri,NA,48.41314953,Vulnerable,2,5.286510935,372,Rwanda,16.42792702
+136021,ANURA,CRAUGASTORIDAE,Psychrophrynella boettgeri,NA,23.68796629,Endangered,3,5.285757472,373,Peru,16.42792702
+56767,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus minutus,NA,23.64437387,Endangered,3,5.283990176,374,Dominican Republic,16.42792702
+54418,ANURA,ARTHROLEPTIDAE,Astylosternus laurenti,Laurent's Night Frog,23.57389777,Endangered,3,5.281126355,375,Cameroon,16.42792702
+54422,ANURA,ARTHROLEPTIDAE,Astylosternus perreti,Perret's Night Frog,23.57389777,Endangered,3,5.281126355,375,Cameroon,16.42792702
+54423,ANURA,ARTHROLEPTIDAE,Astylosternus ranoides,Central Night Frog,23.57389777,Endangered,3,5.281126355,375,Cameroon,16.42792702
+59606,GYMNOPHIONA,ICHTHYOPHIIDAE,Ichthyophis weberi,Malatgan River Caecilian,23.55855885,Endangered,3,5.280501964,378,Philippines,16.42792702
+17518,ANURA,CERATOBATRACHIDAE,Cornufer vitianus,Fiji Ground Frog,23.53283582,Endangered,3,5.279453999,379,Fiji,16.42792702
+58514,ANURA,PTYCHADENIDAE,Ptychadena newtoni,Newton's Grassland Frog,23.28913117,Endangered,3,5.269470515,380,Sao Tomé and Principe,16.42792702
+56863,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus pituinus,NA,23.28540393,Endangered,3,5.26931705,381,Dominican Republic,16.42792702
+54388,ANURA,ARTHROLEPTIDAE,Arthroleptis tanneri,Tanzania Screeching Frog,23.14783026,Endangered,3,5.263636073,382,"Tanzania, United Republic of",16.42792702
+57203,ANURA,CRAUGASTORIDAE,Hypodactylus brunneus,NA,22.97695321,Endangered,3,5.256534628,383,"Colombia,Ecuador",16.42792702
+56294,ANURA,HYPEROLIIDAE,Phlyctimantis keithae,Keith's Striped Frog,22.93660813,Endangered,3,5.25485055,384,"Tanzania, United Republic of",16.42792702
+57994,ANURA,MICROHYLIDAE,Rhombophryne testudo,Nosy Be Burrowing Frog,22.91472956,Endangered,3,5.25393611,385,Madagascar,16.42792702
+58076,ANURA,PYXICEPHALIDAE,Natalobatrachus bonebergi,Kloof Frog,22.90939788,Endangered,3,5.25371314,386,South Africa,16.42792702
+57454,ANURA,MANTELLIDAE,Mantidactylus albofrenatus,Eastern Madagascar Frog,22.86160116,Endangered,3,5.251712063,387,Madagascar,16.42792702
+135792,ANURA,MANTELLIDAE,Mantidactylus bourgati,NA,22.86160116,Endangered,3,5.251712063,387,Madagascar,16.42792702
+136059,ANURA,MANTELLIDAE,Mantidactylus delormei,NA,22.86160116,Endangered,3,5.251712063,387,Madagascar,16.42792702
+57498,ANURA,MANTELLIDAE,Mantidactylus madecassus,Andringitra Madagascar Frog,22.86160116,Endangered,3,5.251712063,387,Madagascar,16.42792702
+49570548,ANURA,MANTELLIDAE,Mantidactylus paidroa,NA,22.86160116,Endangered,3,5.251712063,387,Madagascar,16.42792702
+136047,ANURA,CRAUGASTORIDAE,Oreobates ayacucho,NA,22.71550171,Endangered,3,5.245570457,392,Peru,16.42792702
+61810,ANURA,CRAUGASTORIDAE,Oreobates lundbergi,NA,22.71550171,Endangered,3,5.245570457,392,Peru,16.42792702
+12144,ANURA,HYLIDAE,Litoria brevipalmata,Green-thighed Frog,22.65424475,Endangered,3,5.242984123,394,Australia,16.42792702
+136168,ANURA,MICROHYLIDAE,Anodonthyla hutchisoni,NA,22.63594675,Endangered,3,5.242210262,395,Madagascar,16.42792702
+59234,CAUDATA,PLETHODONTIDAE,Cryptotriton alvarezdeltoroi,Alvarez del Toro's Salamander,22.6317694,Endangered,3,5.242033509,396,Mexico,16.42792702
+57962,ANURA,MICROHYLIDAE,Cophyla tetra,Four-spotted Tree Cophyline Frog,22.6048135,Endangered,3,5.240892195,397,Madagascar,16.42792702
+58194,ANURA,RANIDAE,Amnirana asperrima,Nkongsamba Frog,22.60475423,Endangered,3,5.240889684,398,"Cameroon,Nigeria",16.42792702
+58200,ANURA,RANIDAE,Amnirana occidentalis,Ivory Coast Frog,22.60475423,Endangered,3,5.240889684,398,"Côte d'Ivoire,Ghana,Guinea,Liberia",16.42792702
+54425,ANURA,ARTHROLEPTIDAE,Astylosternus schioetzi,Apouh Night Frog,22.55198417,Endangered,3,5.238651612,400,Cameroon,16.42792702
+58011,ANURA,MICROHYLIDAE,Rhombophryne psologlossa,Madagascar Stump-toed Frog,22.49115761,Endangered,3,5.23606562,401,Madagascar,16.42792702
+58084,ANURA,PETROPEDETIDAE,Petropedetes perreti,Perret's Water Frog,22.31542387,Endangered,3,5.228556652,402,Cameroon,16.42792702
+57980,ANURA,BREVICIPITIDAE,Probreviceps macrodactylus,Usambara Big-fingered Frog,22.28325397,Endangered,3,5.22717593,403,"Tanzania, United Republic of",16.42792702
+79130281,ANURA,MICROHYLIDAE,Rhombophryne serratopalpebrosa,Guibé's Digging Frog,22.26224057,Endangered,3,5.226273011,404,Madagascar,16.42792702
+57065,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus zeus,NA,22.25676848,Endangered,3,5.226037749,405,Cuba,16.42792702
+136066,ANURA,CRAUGASTORIDAE,Ceuthomantis aracamuni,NA,45.42598292,Vulnerable,2,5.22415364,406,"Venezuela, Bolivarian Republic of",16.42792702
+57867,ANURA,MICROHYLIDAE,Madecassophryne truebae,Trueb's Madagascar Treefrog,22.20985528,Endangered,3,5.224018527,407,Madagascar,16.42792702
+136142,ANURA,BREVICIPITIDAE,Probreviceps loveridgei,NA,22.13365584,Endangered,3,5.220730062,408,"Tanzania, United Republic of",16.42792702
+16575406,ANURA,ARTHROLEPTIDAE,Arthroleptis bioko,Bioko Squeaker Frog,22.12555269,Endangered,3,5.220379725,409,Equatorial Guinea,16.42792702
+175359,ANURA,ARTHROLEPTIDAE,Arthroleptis fichika,Hidden Squeaker Frog,22.12555269,Endangered,3,5.220379725,409,"Tanzania, United Republic of",16.42792702
+135994,ANURA,ARTHROLEPTIDAE,Arthroleptis nlonakoensis,NA,22.12555269,Endangered,3,5.220379725,409,Cameroon,16.42792702
+190982,ANURA,ARTHROLEPTIDAE,Arthroleptis perreti,Perret's Squeaker Frog,22.12555269,Endangered,3,5.220379725,409,Cameroon,16.42792702
+57987,ANURA,MICROHYLIDAE,Uperodon mormorata,Indian Dot Frog,22.04922416,Endangered,3,5.217073652,413,India,16.42792702
+57990,ANURA,MICROHYLIDAE,Uperodon palmatus,NA,22.04922416,Endangered,3,5.217073652,413,Sri Lanka,16.42792702
+14969,ANURA,HYLIDAE,Litoria dayi,Day's Big-eyed Treefrog,21.9993571,Endangered,3,5.214907805,415,Australia,16.42792702
+54308994,ANURA,RANIDAE,Odorrana ishikawae,Ishikawa's Frog,21.94393134,Endangered,3,5.212495014,416,Japan,16.42792702
+21816,ANURA,CYCLORAMPHIDAE,Thoropa lutzi,NA,21.90235624,Endangered,3,5.21068134,417,Brazil,16.42792702
+56834,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus patriciae,NA,21.73770695,Endangered,3,5.203466187,418,Dominican Republic,16.42792702
+56440,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus auriculatoides,NA,21.720834,Endangered,3,5.202723843,419,Dominican Republic,16.42792702
+58013,ANURA,MICROHYLIDAE,Rhombophryne roseifemoralis,NA,21.70771091,Endangered,3,5.202146096,420,Madagascar,16.42792702
+56911,ANURA,CRAUGASTORIDAE,Pristimantis rhodoplichus,Canchaque Robber Frog,21.52859836,Endangered,3,5.194227082,421,Peru,16.42792702
+57025,ANURA,CRAUGASTORIDAE,Craugastor uno,Rana-ladrona De Savage,21.44415657,Endangered,3,5.190471836,422,Mexico,16.42792702
+58209,ANURA,RANIDAE,Amolops hainanensis,NA,21.33289181,Endangered,3,5.185502103,423,China,16.42792702
+61745,ANURA,ARTHROLEPTIDAE,Cardioglossa alsco,NA,21.32988944,Endangered,3,5.185367656,424,Cameroon,16.42792702
+89186648,ANURA,ARTHROLEPTIDAE,Cardioglossa annulata,Annulated Long-fingered Frog,21.32988944,Endangered,3,5.185367656,424,Congo,16.42792702
+54411,ANURA,ARTHROLEPTIDAE,Cardioglossa venusta,Highland Long-fingered Frog,21.32988944,Endangered,3,5.185367656,424,Cameroon,16.42792702
+49569666,ANURA,MANTELLIDAE,Guibemantis annulatus,Ring-wearing Tree Frog,21.30518808,Endangered,3,5.184260842,427,Madagascar,16.42792702
+49569966,ANURA,MANTELLIDAE,Guibemantis wattersoni,Watterson’s Tree Frog,21.30518808,Endangered,3,5.184260842,427,Madagascar,16.42792702
+55441,ANURA,HYLIDAE,Charadrahyla chaneque,Fairy Treefrog,21.22745893,Endangered,3,5.180769955,429,Mexico,16.42792702
+56659,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus hypostenor,Baoruco Burrowing Frog,21.19363827,Endangered,3,5.179247225,430,"Dominican Republic,Haiti",16.42792702
+194311,CAUDATA,PLETHODONTIDAE,Dendrotriton kekchiorum,NA,21.1274269,Endangered,3,5.176259417,431,Guatemala,16.42792702
+56529,ANURA,CRAUGASTORIDAE,Pristimantis cremnobates,NA,21.11624757,Endangered,3,5.175754064,432,Ecuador,16.42792702
+57561,ANURA,MEGOPHRYIDAE,Leptolalax alpinus,NA,21.09883497,Endangered,3,5.174966433,433,China,16.42792702
+192931,ANURA,MEGOPHRYIDAE,Leptolalax applebyi,Appleby's Leaf-litter Toad,21.09883497,Endangered,3,5.174966433,433,Viet Nam,16.42792702
+48101579,ANURA,MEGOPHRYIDAE,Leptolalax bidoupensis,NA,21.09883497,Endangered,3,5.174966433,433,Viet Nam,16.42792702
+48101669,ANURA,MEGOPHRYIDAE,Leptolalax firthi,NA,21.09883497,Endangered,3,5.174966433,433,Viet Nam,16.42792702
+48101708,ANURA,MEGOPHRYIDAE,Leptolalax melicus,Musical leaf-litter toad,21.09883497,Endangered,3,5.174966433,433,Cambodia,16.42792702
+135770,ANURA,MEGOPHRYIDAE,Leptolalax solus,NA,21.09883497,Endangered,3,5.174966433,433,Thailand,16.42792702
+56634,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus gryllus,Cricket Robber Frog,21.07922009,Endangered,3,5.17407844,439,Puerto Rico,16.42792702
+61545710,CAUDATA,PLETHODONTIDAE,Cryptotriton nasalis,Cortes Salamander,21.07645522,Endangered,3,5.173953208,440,"Guatemala,Honduras",16.42792702
+59308,CAUDATA,PLETHODONTIDAE,Oedipina carablanca,Los Diamantes Worm Salamander ,21.04750057,Endangered,3,5.172640784,441,Costa Rica,16.42792702
+59313,CAUDATA,PLETHODONTIDAE,Oedipina gephyra,La Fortuna Worm Salamander,21.02438761,Endangered,3,5.171591909,442,Honduras,16.42792702
+48103132,ANURA,RHACOPHORIDAE,Rhacophorus calcaneus,Vietnam Flying Frog,21.00545076,Endangered,3,5.170731726,443,Viet Nam,16.42792702
+59229,CAUDATA,PLETHODONTIDAE,Chiropterotriton multidentatus,Toothy Splayfoot Salamander,20.91266832,Endangered,3,5.166506473,444,Mexico,16.42792702
+56616,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus glamyrus,NA,20.85754252,Endangered,3,5.163987599,445,Cuba,16.42792702
+59224,CAUDATA,PLETHODONTIDAE,Chiropterotriton cracens,Graceful Splayfoot Salamander,20.85665438,Endangered,3,5.163946965,446,Mexico,16.42792702
+54807,ANURA,BUFONIDAE,Dendrophryniscus carvalhoi,NA,20.85592607,Endangered,3,5.163913642,447,Brazil,16.42792702
+59000,ANURA,RHACOPHORIDAE,Rhacophorus lateralis,Small Tree Frog,20.79898264,Endangered,3,5.161304842,448,India,16.42792702
+61849,ANURA,MICROHYLIDAE,Cophyla berara,NA,20.79752084,Endangered,3,5.161237782,449,Madagascar,16.42792702
+1301,ANURA,PYXICEPHALIDAE,Anhydrophryne rattrayi,Rattray's Forest Frog,42.57066249,Vulnerable,2,5.160678406,450,South Africa,16.42792702
+73726400,ANURA,RHACOPHORIDAE,Gracixalus lumarius,Thorny Tree Frog,20.73576149,Endangered,3,5.158400441,451,Viet Nam,16.42792702
+56980,ANURA,CRAUGASTORIDAE,Craugastor stuarti,NA,20.59484575,Endangered,3,5.151896205,452,"Guatemala,Mexico",16.42792702
+16470,ANURA,BUFONIDAE,Pedostibes tuberculosus,Malabar Tree Toad,20.59310711,Endangered,3,5.15181569,453,India,16.42792702
+187822,ANURA,RHACOPHORIDAE,Gracixalus quyeti,Quyet's Treefrog,20.47452003,Endangered,3,5.146308659,454,Viet Nam,16.42792702
+56645,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus haitianus,NA,20.42218547,Endangered,3,5.143868631,455,Dominican Republic,16.42792702
+58210,ANURA,RANIDAE,Amolops hongkongensis,NA,20.41359744,Endangered,3,5.143467656,456,"China,Hong Kong",16.42792702
+42863484,ANURA,DICROGLOSSIDAE,Limnonectes ferneri,NA,20.35592913,Endangered,3,5.140770954,457,Philippines,16.42792702
+41239,ANURA,DICROGLOSSIDAE,Limnonectes namiyei,NA,20.35592913,Endangered,3,5.140770954,457,Japan,16.42792702
+58361,ANURA,DICROGLOSSIDAE,Limnonectes nitidus,Tanah Rata Wart Frog,20.35592913,Endangered,3,5.140770954,457,NA,16.42792702
+13597,ANURA,MYOBATRACHIDAE,Mixophyes fleayi,Queensland Barred Frog,20.31536672,Endangered,3,5.138869797,460,Australia,16.42792702
+13598,ANURA,MYOBATRACHIDAE,Mixophyes iteratus,Giant Barred-frog,20.31536672,Endangered,3,5.138869797,460,Australia,16.42792702
+56442,ANURA,CRAUGASTORIDAE,Craugastor aurilegulus,NA,20.00211102,Endangered,3,5.124064499,462,Honduras,16.42792702
+56445,ANURA,CRAUGASTORIDAE,Craugastor azueroensis,Azuero Robber Frog,20.00211102,Endangered,3,5.124064499,462,Panama,16.42792702
+56506,ANURA,CRAUGASTORIDAE,Craugastor charadra,NA,20.00211102,Endangered,3,5.124064499,462,"Guatemala,Honduras",16.42792702
+56654,ANURA,CRAUGASTORIDAE,Craugastor hobartsmithi,NA,20.00211102,Endangered,3,5.124064499,462,Mexico,16.42792702
+56665,ANURA,CRAUGASTORIDAE,Craugastor inachus,NA,20.00211102,Endangered,3,5.124064499,462,Guatemala,16.42792702
+56697,ANURA,CRAUGASTORIDAE,Craugastor laevissimus,NA,20.00211102,Endangered,3,5.124064499,462,"Honduras,Nicaragua",16.42792702
+56707,ANURA,CRAUGASTORIDAE,Craugastor lauraster,NA,20.00211102,Endangered,3,5.124064499,462,"Honduras,Nicaragua",16.42792702
+56809,ANURA,CRAUGASTORIDAE,Craugastor omiltemanus,Gunther's Robber Frog,20.00211102,Endangered,3,5.124064499,462,Mexico,16.42792702
+56838,ANURA,CRAUGASTORIDAE,Craugastor pechorum,NA,20.00211102,Endangered,3,5.124064499,462,Honduras,16.42792702
+56913,ANURA,CRAUGASTORIDAE,Craugastor rhyacobatrachus,NA,20.00211102,Endangered,3,5.124064499,462,Panama,16.42792702
+56964,ANURA,CRAUGASTORIDAE,Craugastor silvicola,Rana-ladrona Selvática,20.00211102,Endangered,3,5.124064499,462,Mexico,16.42792702
+57050,ANURA,CRAUGASTORIDAE,Craugastor vulcani,NA,20.00211102,Endangered,3,5.124064499,462,Mexico,16.42792702
+136055,ANURA,MICROHYLIDAE,Anodonthyla moramora,NA,19.89058556,Endangered,3,5.118740147,474,Madagascar,16.42792702
+158635,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus pintoi,NA,19.83282111,Endangered,3,5.115971223,475,Guinea,16.42792702
+56973,ANURA,CRAUGASTORIDAE,Craugastor spatulatus,Rana-ladrona Espatulada,19.82347772,Endangered,3,5.115522628,476,Mexico,16.42792702
+4055,ANURA,CALYPTOCEPHALELLIDAE,Calyptocephalella gayi,Wide Mouth Toad,40.48499881,Vulnerable,2,5.111626249,477,Chile,16.42792702
+57676,ANURA,MICROHYLIDAE,Anodonthyla nigrigularis,Black-throated Climbing Frog,19.68015191,Endangered,3,5.108615937,478,Madagascar,16.42792702
+59287,CAUDATA,PLETHODONTIDAE,Ixalotriton niger,Jumping Salamander,19.67353335,Endangered,3,5.108295842,479,Mexico,16.42792702
+73728100,ANURA,MICROHYLIDAE,Microhyla pulchella,Pretty Narrow-Mouth Frog,19.64826712,Endangered,3,5.107072941,480,Viet Nam,16.42792702
+57893,ANURA,MICROHYLIDAE,Microhyla sholigari,NA,19.64826712,Endangered,3,5.107072941,480,India,16.42792702
+57895,ANURA,MICROHYLIDAE,Microhyla zeylanica,NA,19.64826712,Endangered,3,5.107072941,480,Sri Lanka,16.42792702
+23124,ANURA,PIPIDAE,Xenopus gilli,Cape Platanna,19.4402752,Endangered,3,5.096948771,483,South Africa,16.42792702
+8371,CAUDATA,SALAMANDRIDAE,Euproctus platycephalus,Sardinian Mountain Newt,19.4208788,Endangered,3,5.09599939,484,Italy,16.42792702
+59452,CAUDATA,SALAMANDRIDAE,Notophthalmus meridionalis,Black-spotted Newt,19.41368758,Endangered,3,5.095647177,485,"Mexico,United States",16.42792702
+57738,ANURA,MICROHYLIDAE,Callulops kopsteini,NA,19.41361265,Endangered,3,5.095643507,486,Indonesia,16.42792702
+56310,ANURA,LEPTODACTYLIDAE,Adenomera lutzi,Lutz's Tropical Bullfrog,19.35615031,Endangered,3,5.092824634,487,Guyana,16.42792702
+61885,ANURA,RHACOPHORIDAE,Raorchestes nerostagona,NA,19.31056845,Endangered,3,5.090582906,488,India,16.42792702
+136136,ANURA,HYPEROLIIDAE,Kassina jozani,NA,19.30985752,Endangered,3,5.090547902,489,"Tanzania, United Republic of",16.42792702
+7455,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus principalis,NA,19.2628512,Endangered,3,5.088230761,490,Cuba,16.42792702
+58794,ANURA,RHACOPHORIDAE,Liuixalus romeri,Romer's Treefrog,19.19755092,Endangered,3,5.085002897,491,Hong Kong,16.42792702
+195014,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus sommeri,NA,19.1953761,Endangered,3,5.084895214,492,"Dominican Republic,Haiti",16.42792702
+19172,ANURA,RANIDAE,Babina subaspera,NA,19.14658945,Endangered,3,5.082476558,493,Japan,16.42792702
+58487,ANURA,RANIDAE,Rana sauteri,NA,19.10340087,Endangered,3,5.08033054,494,"Taiwan, Province of China",16.42792702
+56568,ANURA,CRAUGASTORIDAE,Hypodactylus dolops,NA,39.06045451,Vulnerable,2,5.076684037,495,"Colombia,Ecuador",16.42792702
+55906,ANURA,HYLIDAE,Smilisca dentata,Upland Burrowing Treefrog,19.01665058,Endangered,3,5.076005998,496,Mexico,16.42792702
+56754,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus melacara,NA,18.94391547,Endangered,3,5.07236565,497,Cuba,16.42792702
+56708,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus leberi,NA,18.93390319,Endangered,3,5.071863502,498,Cuba,16.42792702
+57633,ANURA,MEGOPHRYIDAE,Megophrys brachykolos,Short-legged Horned Toad,18.89185098,Endangered,3,5.069751691,499,Hong Kong,16.42792702
+89187048,ANURA,RHACOPHORIDAE,Chiromantis nauli,NA,18.85079145,Endangered,3,5.06768542,500,Indonesia,16.42792702
+89187170,ANURA,RHACOPHORIDAE,Chiromantis trilaksonoi,NA,18.85079145,Endangered,3,5.06768542,500,Indonesia,16.42792702
+136049,ANURA,DICROGLOSSIDAE,Fejervarya nicobariensis,Nicobar Frog,18.8323707,Endangered,3,5.066757028,502,India,16.42792702
+58282,ANURA,DICROGLOSSIDAE,Fejervarya nilagirica,NA,18.8323707,Endangered,3,5.066757028,502,India,16.42792702
+59324,CAUDATA,PLETHODONTIDAE,Oedipina stenopodia,NA,18.74167941,Endangered,3,5.062173649,504,Guatemala,16.42792702
+56397,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus adelus,NA,18.64272027,Endangered,3,5.057148342,505,Cuba,16.42792702
+58077,ANURA,PYXICEPHALIDAE,Nothophryne broadleyi,NA,18.63756157,Endangered,3,5.056885681,506,"Malawi,Mozambique",16.42792702
+59437,CAUDATA,RHYACOTRITONIDAE,Rhyacotriton olympicus,Olympic Torrent Salamander,38.24300518,Vulnerable,2,5.056067577,507,United States,16.42792702
+58880,ANURA,RHACOPHORIDAE,Liuixalus ocellatus,NA,18.59854498,Endangered,3,5.054896869,508,China,16.42792702
+56850,ANURA,CRAUGASTORIDAE,Pristimantis petrobardus,Huambos Robber Frog,18.57225615,Endangered,3,5.053554603,509,Peru,16.42792702
+57009,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus toa,NA,18.57054136,Endangered,3,5.053466985,510,Cuba,16.42792702
+57056,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus wightmanae,Wightman's Robber Frog,18.5459197,Endangered,3,5.052208095,511,Puerto Rico,16.42792702
+57198,ANURA,CRAUGASTORIDAE,Niceforonia adenobrachia,NA,18.52681265,Endangered,3,5.05123007,512,Colombia,16.42792702
+57383,ANURA,MANTELLIDAE,Aglyptodactylus laticeps,NA,38.02585307,Vulnerable,2,5.050518687,513,Madagascar,16.42792702
+57998,ANURA,MICROHYLIDAE,Scaphiophryne gottlebei,Malagasy rainbow frog,18.47109446,Endangered,3,5.048372572,514,Madagascar,16.42792702
+56578,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus emiliae,NA,18.41018471,Endangered,3,5.045239455,515,Cuba,16.42792702
+58826,ANURA,RHACOPHORIDAE,Philautus cardamonus,NA,18.39846223,Endangered,3,5.044635338,516,Cambodia,16.42792702
+58832,ANURA,RHACOPHORIDAE,Philautus cornutus,Horned Bubble-nest Frog,18.39846223,Endangered,3,5.044635338,516,NA,16.42792702
+79694432,ANURA,RHACOPHORIDAE,Philautus everetti,Everett's Flying Frog,18.39846223,Endangered,3,5.044635338,516,NA,16.42792702
+58861,ANURA,RHACOPHORIDAE,Philautus kerangae,Kerangas Bubble-nest Frog,18.39846223,Endangered,3,5.044635338,516,Malaysia,16.42792702
+26459,ANURA,RHACOPHORIDAE,Philautus schmackeri,Schmacker’s Tree Frog,18.39846223,Endangered,3,5.044635338,516,Philippines,16.42792702
+47151057,ANURA,MEGOPHRYIDAE,Leptobrachium rakhinensis,NA,18.39698927,Endangered,3,5.044559403,521,Myanmar,16.42792702
+47151835,ANURA,MEGOPHRYIDAE,Leptobrachium xanthops,NA,18.39698927,Endangered,3,5.044559403,521,Lao People's Democratic Republic,16.42792702
+54597,ANURA,BUFONIDAE,Rhaebo caeruleostictus,Blue-spotted Toad,18.38790602,Endangered,3,5.044091012,523,Ecuador,16.42792702
+54462,ANURA,BUFONIDAE,Rhaebo colomai,Carchi Andes Toad,18.38790602,Endangered,3,5.044091012,523,Colombia,16.42792702
+54437,ANURA,ARTHROLEPTIDAE,Leptodactylodon polyacanthus,African Egg Frog,37.77116085,Vulnerable,2,5.043971054,525,"Cameroon,Nigeria",16.42792702
+54439,ANURA,ARTHROLEPTIDAE,Leptodactylodon ventrimarmoratus,Speckled Egg Frog,37.77116085,Vulnerable,2,5.043971054,525,Cameroon,16.42792702
+57574,ANURA,MEGOPHRYIDAE,Leptolalax pluvialis,NA,18.30455139,Endangered,3,5.039782433,527,Viet Nam,16.42792702
+57478,ANURA,MANTELLIDAE,Gephyromantis eiselti,Eiselt's Madagascar Frog,18.29142657,Endangered,3,5.03910232,528,Madagascar,16.42792702
+57526,ANURA,MANTELLIDAE,Gephyromantis thelenae,NA,18.27822765,Endangered,3,5.0384179,529,Madagascar,16.42792702
+78929632,ANURA,RANIDAE,Pulchrana centropeninsularis,NA,18.27748773,Endangered,3,5.038379518,530,NA,16.42792702
+56556,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus dennisi,Dennis' Chirping Frog,18.18809642,Endangered,3,5.03373165,531,Mexico,16.42792702
+56561,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus dilatus,NA,18.18809642,Endangered,3,5.03373165,531,Mexico,16.42792702
+195008,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus diplasius,Patternless Whistling Frog,18.18809642,Endangered,3,5.03373165,531,Haiti,16.42792702
+135753,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus michaelschmidi,NA,18.18809642,Endangered,3,5.03373165,531,Cuba,16.42792702
+56776,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus montanus,NA,18.18809642,Endangered,3,5.03373165,531,Dominican Republic,16.42792702
+195011,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus notidodes,Neiba Telegraph Frog,18.18809642,Endangered,3,5.03373165,531,"Dominican Republic,Haiti",16.42792702
+56951,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus saxatilis,Rana fisgona marmoleada,18.18809642,Endangered,3,5.03373165,531,Mexico,16.42792702
+56989,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus syristes,Rana-fisgona Flautera,18.18809642,Endangered,3,5.03373165,531,Mexico,16.42792702
+58254,ANURA,CONRAUIDAE,Conraua robusta,Cameroon Slippery Frog,37.30054831,Vulnerable,2,5.031758573,539,"Cameroon,Nigeria",16.42792702
+58395,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus aliciae,NA,18.12064359,Endangered,3,5.030210109,540,India,16.42792702
+55100,ANURA,AROMOBATIDAE,Allobates kingsburyi,NA,18.06487113,Endangered,3,5.027288975,541,Ecuador,16.42792702
+56875,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus portoricensis,Puerto Rican Robber Frog,18.01861567,Endangered,3,5.024859813,542,Puerto Rico,16.42792702
+977,ANURA,ALYTIDAE,Alytes muletensis,Mallorcan Midwife Toad,36.866158,Vulnerable,2,5.020352146,543,Spain,16.42792702
+979,ANURA,ALYTIDAE,Alytes dickhilleni,Betic Midwife Toad,36.76543038,Vulnerable,2,5.017688505,544,Spain,16.42792702
+58672,ANURA,RANIDAE,Hylarana montivaga,NA,17.84360487,Endangered,3,5.015615134,545,Viet Nam,16.42792702
+56530,ANURA,CRAUGASTORIDAE,Pristimantis crenunguis,NA,17.8173072,Endangered,3,5.014218584,546,Ecuador,16.42792702
+58685,ANURA,RANIDAE,Babina okinavana,Ryukyu Brown Frog,17.75155016,Endangered,3,5.010717966,547,"Japan,Taiwan, Province of China",16.42792702
+56451,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus barlagnei,NA,17.74524998,Endangered,3,5.010381928,548,Guadeloupe,16.42792702
+56860,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus pinchoni,NA,17.73708989,Endangered,3,5.009946518,549,Guadeloupe,16.42792702
+56431,ANURA,CRAUGASTORIDAE,Pristimantis ardalonychus,Río Cerranayacu Rain Frog,17.72924226,Endangered,3,5.009527601,550,Peru,16.42792702
+56411,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus amplinympha,NA,17.69329443,Endangered,3,5.007606415,551,Dominica,16.42792702
+136008,ANURA,CERATOBATRACHIDAE,Platymantis diesmosi,NA,17.66915744,Endangered,3,5.006314369,552,Philippines,16.42792702
+58463,ANURA,CERATOBATRACHIDAE,Platymantis lawtoni,Lawton's Wrinkled Ground Frog,17.66915744,Endangered,3,5.006314369,552,Philippines,16.42792702
+17537,ANURA,CERATOBATRACHIDAE,Platymantis levigatus,Tablas Wrinkled Ground Frog,17.66915744,Endangered,3,5.006314369,552,NA,16.42792702
+135858,ANURA,CERATOBATRACHIDAE,Platymantis paengi,Panay Limestone Frog,17.66915744,Endangered,3,5.006314369,552,Philippines,16.42792702
+17548,ANURA,CERATOBATRACHIDAE,Platymantis panayensis,Panay Forest Frog,17.66915744,Endangered,3,5.006314369,552,Philippines,16.42792702
+17520,ANURA,CERATOBATRACHIDAE,Platymantis spelaeus,Cave Wrinkled Ground Frog,17.66915744,Endangered,3,5.006314369,552,NA,16.42792702
+17558,ANURA,CERATOBATRACHIDAE,Platymantis subterrestris,Luzon Wrinkled Ground Frog,17.66915744,Endangered,3,5.006314369,552,NA,16.42792702
+19304,CAUDATA,HYNOBIIDAE,Ranodon sibiricus,Semirechensk Salamander,17.64750064,Endangered,3,5.005153665,559,"China,Kazakhstan",16.42792702
+56065,ANURA,HYPEROLIIDAE,Afrixalus knysnae,Knysna Leaf-folding Frog,17.64001006,Endangered,3,5.004751891,560,South Africa,16.42792702
+55443,ANURA,HYLIDAE,Hyloscirtus charazani,NA,17.56525135,Endangered,3,5.000733168,561,"Bolivia, Plurinational States of",16.42792702
+54408,ANURA,ARTHROLEPTIDAE,Cardioglossa pulchra,Black Long-fingered Frog,17.56073993,Endangered,3,5.000490135,562,"Cameroon,Nigeria",16.42792702
+56890,ANURA,CRAUGASTORIDAE,Pristimantis pycnodermis,NA,17.55284099,Endangered,3,5.000064472,563,Ecuador,16.42792702
+59049,CAUDATA,AMBYSTOMATIDAE,Ambystoma altamirani,Mountain Stream Siredon,17.5217892,Endangered,3,4.998389375,564,Mexico,16.42792702
+59056,CAUDATA,AMBYSTOMATIDAE,Ambystoma flavipiperatum,Yellow-peppered Salamander,17.5217892,Endangered,3,4.998389375,564,Mexico,16.42792702
+1093,CAUDATA,AMBYSTOMATIDAE,Ambystoma lermaense,Lake Lerma Salamander,17.5217892,Endangered,3,4.998389375,564,Mexico,16.42792702
+56938,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus ruthae,NA,17.5055351,Endangered,3,4.997511424,567,"Dominican Republic,Haiti",16.42792702
+57069,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus zugi,NA,17.49793703,Endangered,3,4.997100756,568,Cuba,16.42792702
+56693,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus klinikowskii,NA,17.48884976,Endangered,3,4.996609376,569,Cuba,16.42792702
+56648,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus hedricki,Hedrick's Robber Frog,17.47635196,Endangered,3,4.995933184,570,Puerto Rico,16.42792702
+56465,ANURA,CRAUGASTORIDAE,Yunganastes bisignatus,NA,17.47149954,Endangered,3,4.99567052,571,"Bolivia, Plurinational States of",16.42792702
+55045,ANURA,AROMOBATIDAE,Allobates alessandroi,Rocket Frog,17.45894042,Endangered,3,4.99499037,572,Peru,16.42792702
+77187242,ANURA,AROMOBATIDAE,Allobates ignotus,Nurse Frog of the Serranía de Perijá,17.45894042,Endangered,3,4.99499037,572,Colombia,16.42792702
+55108,ANURA,AROMOBATIDAE,Allobates mandelorum,Sapito Ninera Oriental,17.45894042,Endangered,3,4.99499037,572,"Venezuela, Bolivarian Republic of",16.42792702
+55141,ANURA,AROMOBATIDAE,Allobates ranoides,Llanos Rocket Frog ,17.45894042,Endangered,3,4.99499037,572,Colombia,16.42792702
+56538,ANURA,CRAUGASTORIDAE,Pristimantis cryophilius,NA,17.41875779,Endangered,3,4.992811132,576,Ecuador,16.42792702
+54459,ANURA,BUFONIDAE,Adenomus kelaartii,NA,17.40405749,Endangered,3,4.992012698,577,Sri Lanka,16.42792702
+57081,ANURA,,Geobatrachus walkeri,Walker's Sierra Frog,17.37008656,Endangered,3,4.990165153,578,Colombia,16.42792702
+55496,ANURA,HYLIDAE,Dendropsophus gryllatus,NA,17.31773235,Endangered,3,4.987311113,579,NA,16.42792702
+61916,CAUDATA,SALAMANDRIDAE,Lyciasalamandra fazilae,NA,17.24124711,Endangered,3,4.983126896,580,Turkey,16.42792702
+195500,ANURA,HYLIDAE,Scinax belloni,NA,17.23112901,Endangered,3,4.98257206,581,Brazil,16.42792702
+48086193,ANURA,HYLIDAE,Scinax skuki,NA,17.23112901,Endangered,3,4.98257206,581,Brazil,16.42792702
+58250,ANURA,CONRAUIDAE,Conraua alleni,Allen's Slippery Frog,35.44422997,Vulnerable,2,4.982077507,583,"Côte d'Ivoire,Guinea,Liberia,Sierra Leone",16.42792702
+59283,CAUDATA,PLETHODONTIDAE,Gyrinophilus subterraneus,West Virginia Spring Salamander,17.21880329,Endangered,3,4.98189575,584,United States,16.42792702
+12148,ANURA,HYLIDAE,Litoria nannotis,Torrent Tree Frog,17.20981795,Endangered,3,4.981402438,585,Australia,16.42792702
+57220,ANURA,CRAUGASTORIDAE,Lynchius nebulanastes,Canchaque Andes Frog,17.12607252,Endangered,3,4.976792914,586,Peru,16.42792702
+57221,ANURA,CRAUGASTORIDAE,Lynchius parkeri,Parker’s Andes Frog ,17.11976021,Endangered,3,4.976444609,587,Peru,16.42792702
+59446,CAUDATA,SALAMANDRIDAE,Echinotriton andersoni,Anderson's Crocodile Newt,17.08285127,Endangered,3,4.974405587,588,Japan,16.42792702
+59315,CAUDATA,PLETHODONTIDAE,Oedipina grandis,Cerro Pando Worm Salamander ,17.00293844,Endangered,3,4.969976533,589,"Costa Rica,Panama",16.42792702
+135898,ANURA,MEGOPHRYIDAE,Leptobrachium ngoclinhense,NA,16.9870726,Endangered,3,4.969094853,590,Viet Nam,16.42792702
+187832,ANURA,RHACOPHORIDAE,Pseudophilautus tanu,Sri Lanka Petite Shrub-frog,16.96400661,Endangered,3,4.967811665,591,Sri Lanka,16.42792702
+61914,CAUDATA,SALAMANDRIDAE,Lyciasalamandra atifi,NA,16.95672903,Endangered,3,4.967406463,592,Turkey,16.42792702
+59138,CAUDATA,PLETHODONTIDAE,Bolitoglossa alvaradoi,Moravia de Chirripo Salamander,16.95076862,Endangered,3,4.967074476,593,Costa Rica,16.42792702
+56780,ANURA,CRAUGASTORIDAE,Pristimantis museosus,Rana Mususas,16.93065867,Endangered,3,4.965953564,594,Panama,16.42792702
+159250,ANURA,RANIDAE,Amolops minutus,NA,16.9208217,Endangered,3,4.965404802,595,Viet Nam,16.42792702
+59375,CAUDATA,PLETHODONTIDAE,Pseudoeurycea conanti,NA,16.92009673,Endangered,3,4.965364347,596,Mexico,16.42792702
+56954,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus schwartzi,Virgin Islands Coqui,16.88816892,Endangered,3,4.963581082,597,"Virgin Islands, British",16.42792702
+41048,ANURA,MYOBATRACHIDAE,Pseudophryne covacevichae,Magnificent Broodfrog,16.88660678,Endangered,3,4.96349375,598,Australia,16.42792702
+41050,ANURA,MYOBATRACHIDAE,Pseudophryne pengilleyi,Northern Corroboree Frog,16.88660678,Endangered,3,4.96349375,598,Australia,16.42792702
+76317542,ANURA,PYXICEPHALIDAE,Cacosternum thorini,Hogsback Caco,16.88004461,Endangered,3,4.963126806,600,South Africa,16.42792702
+58927,ANURA,RHACOPHORIDAE,Raorchestes travancoricus,NA,16.83842551,Endangered,3,4.960796409,601,India,16.42792702
+58359,ANURA,DICROGLOSSIDAE,Limnonectes microtympanum,NA,16.81363259,Endangered,3,4.959405582,602,Indonesia,16.42792702
+55918,ANURA,HYLIDAE,Ptychohyla spinipollex,NA,16.80997172,Endangered,3,4.959200051,603,Honduras,16.42792702
+55468,ANURA,HYLIDAE,Hyloscirtus denticulentus,Charta Treefrog,16.77905026,Endangered,3,4.957462354,604,Colombia,16.42792702
+55601,ANURA,HYLIDAE,Hyloscirtus piceigularis,Rio Luisito Treefrog,16.77905026,Endangered,3,4.957462354,604,Colombia,16.42792702
+61907,CAUDATA,PLETHODONTIDAE,Isthmura maxima,Southern Giant Salamander,16.74694632,Endangered,3,4.955655004,606,Mexico,16.42792702
+56404,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus alcoae,Barahona Rock Frog,16.72859963,Endangered,3,4.954620676,607,"Dominican Republic,Haiti",16.42792702
+56432,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus armstrongi,Baoruco Hammer Frog,16.72020459,Endangered,3,4.954147033,608,"Dominican Republic,Haiti",16.42792702
+175544,ANURA,PIPIDAE,Xenopus itombwensis,Itombwe Massif Clawed Frog,16.71702851,Endangered,3,4.953967781,609,"Congo, The Democratic Republic of the",16.42792702
+61847,ANURA,BREVICIPITIDAE,Callulina kisiwamsitu,Mazumbai Warty Frog,16.68470213,Endangered,3,4.952141521,610,"Tanzania, United Republic of",16.42792702
+57278,ANURA,LEPTODACTYLIDAE,Physalaemus soaresi,NA,16.65770532,Endangered,3,4.950613792,611,Brazil,16.42792702
+56814,ANURA,CRAUGASTORIDAE,Pristimantis orestes,NA,16.65118354,Endangered,3,4.950244379,612,Ecuador,16.42792702
+56965,ANURA,CRAUGASTORIDAE,Pristimantis simonbolivari,NA,16.63942246,Endangered,3,4.949577851,613,Ecuador,16.42792702
+56733,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus luteolus,NA,16.62658868,Endangered,3,4.948850024,614,Jamaica,16.42792702
+61906,CAUDATA,PLETHODONTIDAE,Isthmura boneti,Oaxacan False Brook Salamander,16.54855858,Endangered,3,4.944413356,615,Mexico,16.42792702
+56593,ANURA,CRAUGASTORIDAE,Pristimantis euphronides,NA,16.47254681,Endangered,3,4.940072437,616,Grenada,16.42792702
+56961,ANURA,CRAUGASTORIDAE,Pristimantis shrevei,NA,16.46265313,Endangered,3,4.939506035,617,Saint Vincent and the Grenadines,16.42792702
+57803,ANURA,MICROHYLIDAE,Dasypops schirchi,NA,33.4099602,Vulnerable,2,4.924640424,618,Brazil,16.42792702
+58805,ANURA,RHACOPHORIDAE,Theloderma moloch,Assam Indonesian Treefrog,32.67846601,Vulnerable,2,4.903153003,619,India,16.42792702
+58750,ANURA,RANIDAE,Pseudorana weiningensis,NA,32.23517924,Vulnerable,2,4.889903292,620,China,16.42792702
+41046,ANURA,LIMNODYNASTIDAE,Heleioporus australiacus,Eastern Owl Frog,32.16721415,Vulnerable,2,4.887856224,621,Australia,16.42792702
+13198,CAUDATA,SALAMANDRIDAE,Mertensiella caucasica,Caucasian Salamander,31.83036538,Vulnerable,2,4.877648222,622,"Georgia,Turkey",16.42792702
+4657,CAUDATA,SALAMANDRIDAE,Chioglossa lusitanica,Golden-striped Salamander,31.74674568,Vulnerable,2,4.87509795,623,"Spain,Portugal",16.42792702
+57073,ANURA,CRAUGASTORIDAE,Euparkerella robusta,NA,30.92908088,Vulnerable,2,4.849811582,624,Brazil,16.42792702
+57074,ANURA,CRAUGASTORIDAE,Euparkerella tridactyla,NA,30.92908088,Vulnerable,2,4.849811582,624,Brazil,16.42792702
+178176,ANURA,HYPEROLIIDAE,Morerella cyanophthalma,NA,29.84508851,Vulnerable,2,4.815271893,626,Côte d'Ivoire,16.42792702
+56891,ANURA,CRAUGASTORIDAE,Craugastor pygmaeus,Pygmy Free-fingered Frog,29.71297112,Vulnerable,2,4.810979439,627,"Guatemala,Mexico",16.42792702
+58784,ANURA,RHACOPHORIDAE,Buergeria oxycephala,NA,29.62693524,Vulnerable,2,4.808174219,628,China,16.42792702
+57023,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus unicolor,Dull Robber Frog,29.25110773,Vulnerable,2,4.795827164,629,Puerto Rico,16.42792702
+57434,ANURA,MANTELLIDAE,Boophis vittatus,NA,29.09250252,Vulnerable,2,4.790570416,630,Madagascar,16.42792702
+59545,GYMNOPHIONA,DERMOPHIIDAE,Dermophis mexicanus,Mexican Caecilian,29.06172152,Vulnerable,2,4.789547013,631,"Guatemala,Honduras,Mexico,Nicaragua,El Salvador",16.42792702
+57458,ANURA,MANTELLIDAE,Gephyromantis ambohitra,NA,28.8519792,Vulnerable,2,4.782545504,632,Madagascar,16.42792702
+56702,ANURA,CRAUGASTORIDAE,Hypodactylus latens,Boqueron Robber Frog,28.77085376,Vulnerable,2,4.779824214,633,Colombia,16.42792702
+58334,ANURA,DICROGLOSSIDAE,Limnonectes fragilis,NA,28.66718167,Vulnerable,2,4.776335802,634,China,16.42792702
+57524,ANURA,MANTELLIDAE,Gephyromantis striatus,NA,28.56260892,Vulnerable,2,4.772804712,635,Madagascar,16.42792702
+56300,ANURA,ELEUTHERODACTYLIDAE,Adelophryne baturitensis,NA,28.08591328,Vulnerable,2,4.756548338,636,Brazil,16.42792702
+57675,ANURA,MICROHYLIDAE,Anodonthyla montana,Mountain Climbing Frog,28.00374995,Vulnerable,2,4.753719491,637,Madagascar,16.42792702
+57522,ANURA,MANTELLIDAE,Gephyromantis silvanus,NA,27.78541102,Vulnerable,2,4.746163058,638,Madagascar,16.42792702
+59134,CAUDATA,PLETHODONTIDAE,Batrachoseps wrighti,Oregon Slender Salamander,27.77068455,Vulnerable,2,4.745651332,639,United States,16.42792702
+58397,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus deccanensis,NA,27.50149677,Vulnerable,2,4.736250965,640,India,16.42792702
+41052,ANURA,MYOBATRACHIDAE,Spicospina flammocaerulea,Sunset Frog,27.1855258,Vulnerable,2,4.725102938,641,Australia,16.42792702
+57517,ANURA,MANTELLIDAE,Gephyromantis rivicola,NA,27.13729441,Vulnerable,2,4.723390261,642,Madagascar,16.42792702
+59230,CAUDATA,PLETHODONTIDAE,Chiropterotriton orculus,Cope's Flat-footed Salamander,26.83837413,Vulnerable,2,4.712709794,643,Mexico,16.42792702
+57489,ANURA,MANTELLIDAE,Gephyromantis horridus,Boettger's Grainy Frog ,26.78216052,Vulnerable,2,4.710688468,644,Madagascar,16.42792702
+58094,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus asper,Itombwe River Frog,26.74530061,Vulnerable,2,4.70936084,645,"Congo, The Democratic Republic of the",16.42792702
+58121,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus kinangopensis,Kinangop River Frog,26.74530061,Vulnerable,2,4.70936084,645,Kenya,16.42792702
+58140,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus steindachneri,NA,26.74530061,Vulnerable,2,4.70936084,645,"Cameroon,Nigeria",16.42792702
+58143,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus sulfureogularis,Central River Frog,26.74530061,Vulnerable,2,4.70936084,645,"Burundi,Tanzania, United Republic of",16.42792702
+58149,ANURA,PHRYNOBATRACHIDAE,Phrynobatrachus villiersi,Yapo River Frog,26.74530061,Vulnerable,2,4.70936084,645,"Côte d'Ivoire,Ghana",16.42792702
+58311,ANURA,RANIXALIDAE,Indirana leithii,NA,26.46797068,Vulnerable,2,4.699314984,650,India,16.42792702
+57968,ANURA,MICROHYLIDAE,Plethodontohyla brevipes,Betsileo Digging Frog,26.44870752,Vulnerable,2,4.698613443,651,Madagascar,16.42792702
+57108,ANURA,CRAUGASTORIDAE,Lynchius simmonsi,Simmons' Big-headed Frog,26.25114253,Vulnerable,2,4.691389809,652,Ecuador,16.42792702
+57769,ANURA,MICROHYLIDAE,Cophixalus aenigma,Tapping Nursery-frog,25.80767466,Vulnerable,2,4.674982576,653,Australia,16.42792702
+57781,ANURA,MICROHYLIDAE,Cophixalus nubicola,NA,25.80767466,Vulnerable,2,4.674982576,653,Papua New Guinea,16.42792702
+41041,ANURA,MICROHYLIDAE,Cophixalus saxatilis,Black Mountain Boulder Frog,25.80767466,Vulnerable,2,4.674982576,653,Australia,16.42792702
+56982,ANURA,CRAUGASTORIDAE,Pristimantis suetus,Rana Minuscula,25.79783957,Vulnerable,2,4.674615632,656,Colombia,16.42792702
+56464,ANURA,CRAUGASTORIDAE,Strabomantis biporcatus,Sapito Cornudo,25.71494375,Vulnerable,2,4.671517461,657,"Venezuela, Bolivarian Republic of",16.42792702
+58389,ANURA,DICROGLOSSIDAE,Nannophrys ceylonensis,NA,25.583053,Vulnerable,2,4.666568269,658,Sri Lanka,16.42792702
+61886,ANURA,RHACOPHORIDAE,Theloderma petilum,NA,25.31837353,Vulnerable,2,4.65656167,659,"Lao People's Democratic Republic,Viet Nam",16.42792702
+55178,ANURA,DENDROBATIDAE,Excidobates captivus,Rio Santiago Poison Frog,25.06752684,Vulnerable,2,4.646984718,660,NA,16.42792702
+57960,ANURA,MICROHYLIDAE,Cophyla occultans,Island Giant Treefrog,24.81393119,Vulnerable,2,4.637208676,661,Madagascar,16.42792702
+54481,ANURA,BUFONIDAE,Ghatophryne rubigina,Kerala Stream Toad,24.73251466,Vulnerable,2,4.634049715,662,India,16.42792702
+57388,ANURA,MANTELLIDAE,Boophis andohahela,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+57389,ANURA,MANTELLIDAE,Boophis andreonei,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+57392,ANURA,MANTELLIDAE,Boophis blommersae,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+49454520,ANURA,MANTELLIDAE,Boophis brachychir,Nosy Be Bright-eyed Frog,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+49459837,ANURA,MANTELLIDAE,Boophis fayi,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+57412,ANURA,MANTELLIDAE,Boophis majori,Ambohimitombo Bright-eyed Frog,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+57416,ANURA,MANTELLIDAE,Boophis miniatus,Tiny Bright-eyed Frog,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+49543547,ANURA,MANTELLIDAE,Boophis popi,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+49546338,ANURA,MANTELLIDAE,Boophis spinophis,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+49546929,ANURA,MANTELLIDAE,Boophis ulftunni,NA,24.62979596,Vulnerable,2,4.63004994,663,Madagascar,16.42792702
+54371,ANURA,ARTHROLEPTIDAE,Arthroleptis francei,Ruo River Screeching Frog,24.60803075,Vulnerable,2,4.629200365,673,"Malawi,Mozambique",16.42792702
+57502,ANURA,MANTELLIDAE,Spinomantis massi,NA,24.2111413,Vulnerable,2,4.613580373,674,Madagascar,16.42792702
+49582559,ANURA,MANTELLIDAE,Spinomantis tavaratra,NA,24.2111413,Vulnerable,2,4.613580373,674,Madagascar,16.42792702
+56412,ANURA,CRAUGASTORIDAE,Strabomantis anatipes,Anatipes Robber Frog,24.14764441,Vulnerable,2,4.611058592,676,"Colombia,Ecuador",16.42792702
+56508,ANURA,CRAUGASTORIDAE,Strabomantis cheiroplethus,Rio Calles Robber Frog,24.14764441,Vulnerable,2,4.611058592,676,Colombia,16.42792702
+56524,ANURA,CRAUGASTORIDAE,Strabomantis cornutus,NA,24.14764441,Vulnerable,2,4.611058592,676,"Colombia,Ecuador",16.42792702
+56670,ANURA,CRAUGASTORIDAE,Strabomantis ingeri,Inger's Robber Frog,24.14764441,Vulnerable,2,4.611058592,676,Colombia,16.42792702
+56786,ANURA,CRAUGASTORIDAE,Strabomantis necopinus,Rana Cabezona,24.14764441,Vulnerable,2,4.611058592,676,Colombia,16.42792702
+49581234,ANURA,MICROHYLIDAE,Rhombophryne mangabensis,NA,24.12763489,Vulnerable,2,4.610262593,681,Madagascar,16.42792702
+49585498,ANURA,MICROHYLIDAE,Rhombophryne staffordi,NA,24.12763489,Vulnerable,2,4.610262593,681,Madagascar,16.42792702
+57523,ANURA,MANTELLIDAE,Gephyromantis spiniferus,Greater Spiny Madagascar Frog,24.05233586,Vulnerable,2,4.607261432,683,Madagascar,16.42792702
+49565720,ANURA,MANTELLIDAE,Gephyromantis tahotra,NA,24.05233586,Vulnerable,2,4.607261432,683,Madagascar,16.42792702
+56785,ANURA,CRAUGASTORIDAE,Strabomantis necerus,Mindo Robber Frog,23.92242795,Vulnerable,2,4.60206248,685,Ecuador,16.42792702
+58407,ANURA,DICROGLOSSIDAE,Ingerana borealis,Rotung Oriental Frog,23.87202988,Vulnerable,2,4.600038235,686,"Bangladesh,Bhutan,India",16.42792702
+58382,ANURA,MICRIXALIDAE,Micrixalus nudis,NA,23.8216461,Vulnerable,2,4.59801046,687,India,16.42792702
+58383,ANURA,MICRIXALIDAE,Micrixalus phyllophilus,NA,23.8216461,Vulnerable,2,4.59801046,687,India,16.42792702
+41237,ANURA,DICROGLOSSIDAE,Quasipaa fasciculispina,NA,23.78776192,Vulnerable,2,4.596644422,689,"Cambodia,Thailand",16.42792702
+57199,ANURA,CRAUGASTORIDAE,Psychrophrynella adenopleura,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+136053,ANURA,CRAUGASTORIDAE,Psychrophrynella ankohuma,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+136165,ANURA,CRAUGASTORIDAE,Psychrophrynella chacaltaya,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+136030,ANURA,CRAUGASTORIDAE,Psychrophrynella illampu,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+57215,ANURA,CRAUGASTORIDAE,Psychrophrynella kempffi,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+57226,ANURA,CRAUGASTORIDAE,Psychrophrynella pinguis,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+136104,ANURA,CRAUGASTORIDAE,Psychrophrynella quimsacruzis,NA,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of",16.42792702
+57230,ANURA,CRAUGASTORIDAE,Psychrophrynella wettsteini,Wettstein's Andes Frog,23.68796629,Vulnerable,2,4.592610291,690,"Bolivia, Plurinational States of,Peru",16.42792702
+54409,ANURA,ARTHROLEPTIDAE,Cardioglossa schioetzi,Acha Tugi Long-fingered Frog,23.631325,Vulnerable,2,4.590313368,698,"Cameroon,Nigeria",16.42792702
+54417,ANURA,ARTHROLEPTIDAE,Astylosternus fallax,Fopouanga Night Frog,23.57389777,Vulnerable,2,4.587979174,699,Cameroon,16.42792702
+59631,GYMNOPHIONA,ICHTHYOPHIIDAE,Ichthyophis pseudangularis,Taylor's Caecilian,23.55855885,Vulnerable,2,4.587354784,700,Sri Lanka,16.42792702
+58449,ANURA,CERATOBATRACHIDAE,Cornufer akarithymus,Pomugu Wrinkled Ground Frog,23.53283582,Vulnerable,2,4.586306819,701,Papua New Guinea,16.42792702
+58475,ANURA,CERATOBATRACHIDAE,Cornufer parkeri,Parker's Wrinkled Ground Frog,23.53283582,Vulnerable,2,4.586306819,701,Papua New Guinea,16.42792702
+57796,ANURA,MICROHYLIDAE,Copiula minor,NA,23.5043433,Vulnerable,2,4.585144741,703,Papua New Guinea,16.42792702
+54405,ANURA,ARTHROLEPTIDAE,Cardioglossa melanogaster,Amiet's Long-fingered Frog,23.32687691,Vulnerable,2,4.577876146,704,"Cameroon,Nigeria",16.42792702
+56405,ANURA,CRAUGASTORIDAE,Craugastor alfredi,Alfred's Rainfrog,23.14653247,Vulnerable,2,4.570435148,705,"Guatemala,Mexico",16.42792702
+57399,ANURA,MANTELLIDAE,Boophis englaenderi,NA,23.1309283,Vulnerable,2,4.569788711,706,Madagascar,16.42792702
+41045,ANURA,MYOBATRACHIDAE,Crinia tinnula,Tinkling Froglet,23.0701447,Vulnerable,2,4.567266625,707,Australia,16.42792702
+57528,ANURA,MANTELLIDAE,Mantidactylus tricinctus,NA,22.86160116,Vulnerable,2,4.558564882,708,Madagascar,16.42792702
+136181,ANURA,MEGOPHRYIDAE,Ophryophryne synoria,NA,22.84475011,Vulnerable,2,4.557858433,709,Cambodia,16.42792702
+87763480,ANURA,CRAUGASTORIDAE,Oreobates amarakaeri,NA,22.71550171,Vulnerable,2,4.552423276,710,Peru,16.42792702
+57439,ANURA,MANTELLIDAE,Mantella bernhardi,Bernhard's Mantella,22.71246196,Vulnerable,2,4.552295092,711,Madagascar,16.42792702
+59109,CAUDATA,HYNOBIIDAE,Pachyhynobius shangchengensis,NA,22.65917174,Vulnerable,2,4.550045212,712,China,16.42792702
+57505,ANURA,MANTELLIDAE,Boehmantis microtympanum,Angel's Madagascar Frog,22.65627183,Vulnerable,2,4.549922635,713,Madagascar,16.42792702
+135759,ANURA,RANIDAE,Staurois parvus,Bornean Rock Frog,22.57769483,Vulnerable,2,4.546595492,714,"Brunei Darussalam,Malaysia",16.42792702
+55502,ANURA,HYLIDAE,Hypsiboas heilprini,Hispaniolan Green Treefrog,22.48897031,Vulnerable,2,4.542825324,715,"Dominican Republic,Haiti",16.42792702
+57818,ANURA,MICROHYLIDAE,Gastrophrynoides borneensis,NA,22.20985528,Vulnerable,2,4.530871346,716,Malaysia,16.42792702
+176285,ANURA,ARTHROLEPTIDAE,Arthroleptis nguruensis,NA,22.12555269,Vulnerable,2,4.527232544,717,"Tanzania, United Republic of",16.42792702
+57988,ANURA,MICROHYLIDAE,Uperodon nagaoi,NA,22.04922416,Vulnerable,2,4.523926471,718,Sri Lanka,16.42792702
+57991,ANURA,MICROHYLIDAE,Uperodon triangularis,NA,22.04922416,Vulnerable,2,4.523926471,718,India,16.42792702
+58384,ANURA,MICRIXALIDAE,Micrixalus saxicola,Malabar Tropical Frog,22.02143179,Vulnerable,2,4.52271996,720,NA,16.42792702
+59241,CAUDATA,PLETHODONTIDAE,Dendrotriton sanctibarbarus,NA,21.97684823,Vulnerable,2,4.520781471,721,Honduras,16.42792702
+21817,ANURA,CYCLORAMPHIDAE,Thoropa petropolitana,NA,21.90235624,Vulnerable,2,4.517534159,722,Brazil,16.42792702
+57696,ANURA,MICROHYLIDAE,Austrochaperina novaebritanniae,NA,21.76247126,Vulnerable,2,4.511407544,723,Papua New Guinea,16.42792702
+57600,ANURA,MEGOPHRYIDAE,Oreolalax rhodostigmatus,NA,21.71922208,Vulnerable,2,4.509505715,724,China,16.42792702
+57227,ANURA,CRAUGASTORIDAE,Pristimantis simonsii,Paramo Andes Frog,21.54523186,Vulnerable,2,4.501817957,725,NA,16.42792702
+57472,ANURA,MANTELLIDAE,Gephyromantis cornutus,Horned Madagascar Frog,21.43817224,Vulnerable,2,4.497057987,726,Madagascar,16.42792702
+58227,ANURA,RANIDAE,Amolops torrentis,NA,21.42944001,Vulnerable,2,4.496668743,727,China,16.42792702
+57490,ANURA,MANTELLIDAE,Guibemantis kathrinae,NA,21.30518808,Vulnerable,2,4.491113662,728,Madagascar,16.42792702
+66390706,ANURA,MANTELLIDAE,Guibemantis tasifotsy,White-flanked Malagasy Tree Frog,21.30518808,Vulnerable,2,4.491113662,728,Madagascar,16.42792702
+58769,ANURA,PYXICEPHALIDAE,Strongylopus kitumbeine,NA,21.23733842,Vulnerable,2,4.488067148,730,"Tanzania, United Republic of",16.42792702
+58771,ANURA,PYXICEPHALIDAE,Strongylopus rhodesianus,Chimanimani Stream Frog,21.23733842,Vulnerable,2,4.488067148,730,"Mozambique,Zimbabwe",16.42792702
+55577,ANURA,HYLIDAE,Charadrahyla nephila,Oaxacan Cloud-forest Treefrog,21.22745893,Vulnerable,2,4.487622774,732,Mexico,16.42792702
+58438,ANURA,DICROGLOSSIDAE,Quasipaa shini,Spiny-flanked Frog,21.15958215,Vulnerable,2,4.484564367,733,China,16.42792702
+57566,ANURA,MEGOPHRYIDAE,Leptolalax hamidi,NA,21.09883497,Vulnerable,2,4.481819252,734,"Indonesia,Malaysia",16.42792702
+88136917,ANURA,MEGOPHRYIDAE,Leptolalax isos,NA,21.09883497,Vulnerable,2,4.481819252,734,"Cambodia,Viet Nam",16.42792702
+58917,ANURA,RHACOPHORIDAE,Raorchestes bobingeri,NA,20.94678962,Vulnerable,2,4.474915231,736,India,16.42792702
+9032,ANURA,MYOBATRACHIDAE,Geocrinia vitellina,Orange-bellied Frog,20.88167045,Vulnerable,2,4.471943682,737,Australia,16.42792702
+58847,ANURA,RHACOPHORIDAE,Raorchestes glandulosus,Southern Bubble-nest Frog,20.8638044,Vulnerable,2,4.471126863,738,India,16.42792702
+56037,ANURA,HEMIPHRACTIDAE,Stefania schuberti,Rana Stefania Del Auyan-tepui,20.79254859,Vulnerable,2,4.467862465,739,"Venezuela, Bolivarian Republic of",16.42792702
+48101220,ANURA,RHACOPHORIDAE,Gracixalus quangi,Quang’s Tree Frog,20.73576149,Vulnerable,2,4.46525326,740,Viet Nam,16.42792702
+58909,ANURA,RHACOPHORIDAE,Raorchestes graminirupes,NA,20.73009155,Vulnerable,2,4.464992368,741,India,16.42792702
+57525,ANURA,MANTELLIDAE,Gephyromantis tandroka,NA,20.71705458,Vulnerable,2,4.464392238,742,Madagascar,16.42792702
+59242,CAUDATA,PLETHODONTIDAE,Dendrotriton xolocalcae,Xolocalca Bromeliad Salamander,20.65423144,Vulnerable,2,4.461495244,743,Mexico,16.42792702
+187830,ANURA,RHACOPHORIDAE,Raorchestes chromasynchysi,Confusing Green Bushfrog,20.49646881,Vulnerable,2,4.454183041,744,India,16.42792702
+58470,ANURA,CERATOBATRACHIDAE,Platymantis montanus,NA,20.49365253,Vulnerable,2,4.454052022,745,Philippines,16.42792702
+13595,ANURA,MYOBATRACHIDAE,Mixophyes balbus,Grey Barred Frog,20.46797925,Vulnerable,2,4.452856849,746,Australia,16.42792702
+48109439,ANURA,DICROGLOSSIDAE,Quasipaa acanthophora,NA,20.37407408,Vulnerable,2,4.448473057,747,Viet Nam,16.42792702
+40799,ANURA,DICROGLOSSIDAE,Limnonectes diuatus,NA,20.35592913,Vulnerable,2,4.447623773,748,NA,16.42792702
+48109487,ANURA,DICROGLOSSIDAE,Limnonectes isanensis,NA,20.35592913,Vulnerable,2,4.447623773,748,Thailand,16.42792702
+58343,ANURA,DICROGLOSSIDAE,Limnonectes kenepaiensis,Kenepai Wart Frog,20.35592913,Vulnerable,2,4.447623773,748,"Indonesia,Malaysia",16.42792702
+58319,ANURA,DICROGLOSSIDAE,Limnonectes liui,NA,20.35592913,Vulnerable,2,4.447623773,748,China,16.42792702
+190994,ANURA,DICROGLOSSIDAE,Limnonectes megastomias,NA,20.35592913,Vulnerable,2,4.447623773,748,Thailand,16.42792702
+55671,ANURA,HYLIDAE,Charadrahyla taeniopus,Porthole Treefrog,20.34298148,Vulnerable,2,4.44701731,753,Mexico,16.42792702
+17534,ANURA,CERATOBATRACHIDAE,Platymantis hazelae,Hazel's Wrinkled Ground Frog,20.25553777,Vulnerable,2,4.442911823,754,Philippines,16.42792702
+56426,ANURA,CRAUGASTORIDAE,Craugastor aphanus,NA,20.00211102,Vulnerable,2,4.430917319,755,Guatemala,16.42792702
+56478,ANURA,CRAUGASTORIDAE,Craugastor brocchi,NA,20.00211102,Vulnerable,2,4.430917319,755,"Guatemala,Mexico",16.42792702
+56551,ANURA,CRAUGASTORIDAE,Craugastor decoratus,Rana ladrona adornada,20.00211102,Vulnerable,2,4.430917319,755,Mexico,16.42792702
+56748,ANURA,CRAUGASTORIDAE,Craugastor matudai,Rana-chirriadora De Matuda,20.00211102,Vulnerable,2,4.430917319,755,"Guatemala,Mexico",16.42792702
+56847,ANURA,CRAUGASTORIDAE,Craugastor persimilis,NA,20.00211102,Vulnerable,2,4.430917319,755,Costa Rica,16.42792702
+56882,ANURA,CRAUGASTORIDAE,Craugastor psephosypharus,Rana Del Bosque Verrugosa,20.00211102,Vulnerable,2,4.430917319,755,"Belize,Guatemala",16.42792702
+56921,ANURA,CRAUGASTORIDAE,Craugastor rivulus,NA,20.00211102,Vulnerable,2,4.430917319,755,Guatemala,16.42792702
+57060,ANURA,CRAUGASTORIDAE,Craugastor xucanebi,NA,20.00211102,Vulnerable,2,4.430917319,755,Guatemala,16.42792702
+56994,ANURA,CRAUGASTORIDAE,Craugastor tarahumaraensis,Rana-ladradora Tarahumara,19.98096005,Vulnerable,2,4.429909723,763,Mexico,16.42792702
+58168,ANURA,PIPIDAE,Xenopus amieti,Volcano Clawed Frog,19.93707426,Vulnerable,2,4.427815837,764,Cameroon,16.42792702
+58718,ANURA,RANIDAE,Lithobates sierramadrensis,Sierra Madre Occidental Frog,19.83808493,Vulnerable,2,4.42307668,765,Mexico,16.42792702
+20456,CAUDATA,PLETHODONTIDAE,Speleomantes genei,Gene's Cave Salamander,19.81422617,Vulnerable,2,4.421931065,766,Italy,16.42792702
+56468,ANURA,CRAUGASTORIDAE,Craugastor bocourti,NA,19.77535047,Vulnerable,2,4.420061572,767,Guatemala,16.42792702
+59239,CAUDATA,PLETHODONTIDAE,Dendrotriton megarhinus,Longnose Bromeliad Salamander,19.75799522,Vulnerable,2,4.419225845,768,Mexico,16.42792702
+59628,GYMNOPHIONA,ICHTHYOPHIIDAE,Ichthyophis orthoplicatus,Pattipola Caecilia,19.73764667,Vulnerable,2,4.418245089,769,Sri Lanka,16.42792702
+58427,ANURA,DICROGLOSSIDAE,Quasipaa jiulongensis,Jiulong Spiny Frog,19.729044,Vulnerable,2,4.41783017,770,China,16.42792702
+56033,ANURA,HEMIPHRACTIDAE,Stefania riveroi,Rana Stefania De Rivero,19.67074749,Vulnerable,2,4.415013897,771,"Venezuela, Bolivarian Republic of",16.42792702
+57874,ANURA,MICROHYLIDAE,Microhyla annamensis,Vietnam Rice Frog ,19.64826712,Vulnerable,2,4.41392576,772,Viet Nam,16.42792702
+73727593,ANURA,MICROHYLIDAE,Microhyla arboricola,Tree-dwelling Narrow-Mouth Frog,19.64826712,Vulnerable,2,4.41392576,772,Viet Nam,16.42792702
+79098509,ANURA,MICROHYLIDAE,Microhyla orientalis,NA,19.64826712,Vulnerable,2,4.41392576,772,NA,16.42792702
+73727759,ANURA,MICROHYLIDAE,Microhyla pineticola,Pine Narrow-Mouth Frog,19.64826712,Vulnerable,2,4.41392576,772,Viet Nam,16.42792702
+58597,ANURA,RANIDAE,Sylvirana faber,NA,19.64299135,Vulnerable,2,4.413670221,776,Cambodia,16.42792702
+57520,ANURA,MANTELLIDAE,Gephyromantis schilfi,NA,19.50676678,Vulnerable,2,4.40704928,777,Madagascar,16.42792702
+57518,ANURA,MANTELLIDAE,Gephyromantis salegy,NA,19.50506694,Vulnerable,2,4.406966385,778,Madagascar,16.42792702
+56437,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus audanti,South Island Telegraph Frog,19.41205869,Vulnerable,2,4.4024202,779,"Dominican Republic,Haiti",16.42792702
+58891,ANURA,RHACOPHORIDAE,Philautus refugii,Lanjak Bush Frog,19.31160962,Vulnerable,2,4.397486986,780,Malaysia,16.42792702
+56225,ANURA,HYPEROLIIDAE,Kassina arboricola,Ivory Coast Running Frog,19.30985752,Vulnerable,2,4.397400721,781,"Côte d'Ivoire,Ghana",16.42792702
+135862,ANURA,HYPEROLIIDAE,Kassina decorata,Decorated Running Frog,19.30985752,Vulnerable,2,4.397400721,781,Cameroon,16.42792702
+56230,ANURA,HYPEROLIIDAE,Kassina lamottei,Rainforest Running Frog,19.30985752,Vulnerable,2,4.397400721,781,Côte d'Ivoire,16.42792702
+58856,ANURA,RHACOPHORIDAE,Philautus ingeri,NA,19.26400182,Vulnerable,2,4.395140364,784,"Brunei Darussalam,Malaysia",16.42792702
+1099,CAUDATA,AMBYSTOMATIDAE,Ambystoma cingulatum,Frosted Flatwoods Salamander,19.21981739,Vulnerable,2,4.392957544,785,United States,16.42792702
+57054,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus wetmorei,Tiburon Whistling Frog,19.2059604,Vulnerable,2,4.392271991,786,"Dominican Republic,Haiti",16.42792702
+56922,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus ronaldi,NA,18.95745205,Vulnerable,2,4.379896971,787,Cuba,16.42792702
+56534,ANURA,CRAUGASTORIDAE,Pristimantis crucifer,NA,18.94714322,Vulnerable,2,4.379380297,788,Ecuador,16.42792702
+57630,ANURA,MEGOPHRYIDAE,Megophrys auralensis,NA,18.89185098,Vulnerable,2,4.37660451,789,Cambodia,16.42792702
+56584,ANURA,CRAUGASTORIDAE,Pristimantis eriphus,NA,18.87260037,Vulnerable,2,4.375636278,790,"Colombia,Ecuador",16.42792702
+136075,ANURA,RHACOPHORIDAE,Chiromantis samkosensis,NA,18.85079145,Vulnerable,2,4.374538239,791,Cambodia,16.42792702
+56910,ANURA,CRAUGASTORIDAE,Craugastor rhodopis,Polymorphic Robber Frog,18.84231179,Vulnerable,2,4.374110978,792,Mexico,16.42792702
+186065,ANURA,ELEUTHERODACTYLIDAE,Diasporus ventrimaculatus,NA,18.82617382,Vulnerable,2,4.373297336,793,Costa Rica,16.42792702
+7149,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus cooki,Coqui Guajon,18.57113844,Vulnerable,2,4.360350314,794,Puerto Rico,16.42792702
+57909,ANURA,MICROHYLIDAE,Oreophryne celebensis,NA,18.53184482,Vulnerable,2,4.358340562,795,NA,16.42792702
+57932,ANURA,MICROHYLIDAE,Oreophryne variabilis,NA,18.53184482,Vulnerable,2,4.358340562,795,NA,16.42792702
+56570,ANURA,CRAUGASTORIDAE,Tachiramantis douglasi,NA,18.52681265,Vulnerable,2,4.35808289,797,Colombia,16.42792702
+57553,ANURA,MEGOPHRYIDAE,Leptobrachium hainanense,NA,18.48988994,Vulnerable,2,4.356190228,798,China,16.42792702
+58326,ANURA,DICROGLOSSIDAE,Limnonectes acanthi,Busuanga Wart Frog,18.48758985,Vulnerable,2,4.356072206,799,Philippines,16.42792702
+56953,ANURA,CRAUGASTORIDAE,Pristimantis schultei,Schulte's Robber Frog,18.43308163,Vulnerable,2,4.353271214,800,Peru,16.42792702
+58838,ANURA,RHACOPHORIDAE,Philautus erythrophthalmus,NA,18.39846223,Vulnerable,2,4.351488158,801,Malaysia,16.42792702
+58846,ANURA,RHACOPHORIDAE,Philautus garo,Garo Hills Bubble-nest Frog,18.39846223,Vulnerable,2,4.351488158,801,India,16.42792702
+58884,ANURA,RHACOPHORIDAE,Philautus pallidipes,Pangerango Bubble-nest Frog,18.39846223,Vulnerable,2,4.351488158,801,Indonesia,16.42792702
+46255743,ANURA,MEGOPHRYIDAE,Leptobrachium leucops,NA,18.39698927,Vulnerable,2,4.351412223,804,Viet Nam,16.42792702
+46256092,ANURA,MEGOPHRYIDAE,Leptobrachium mangyanorum,Mindoro Litter Frog,18.39698927,Vulnerable,2,4.351412223,804,NA,16.42792702
+47151415,ANURA,MEGOPHRYIDAE,Leptobrachium tagbanorum,Palawan Litter Frog,18.39698927,Vulnerable,2,4.351412223,804,NA,16.42792702
+191005,ANURA,BUFONIDAE,Rhaebo andinophrynoides,NA,18.38790602,Vulnerable,2,4.350943832,807,"Colombia,Ecuador",16.42792702
+58658,ANURA,RANIDAE,Pulchrana mangyanum,NA,18.27748773,Vulnerable,2,4.345232337,808,NA,16.42792702
+58439,ANURA,DICROGLOSSIDAE,Quasipaa spinosa,Chinese Edible Frog,18.25936712,Vulnerable,2,4.344291907,809,"China,Hong Kong,Viet Nam",16.42792702
+58424,ANURA,DICROGLOSSIDAE,Quasipaa exilispinosa,Little Spiny Frog,18.2068643,Vulnerable,2,4.341562092,810,"China,Hong Kong",16.42792702
+57149,ANURA,LEPTODACTYLIDAE,Leptodactylus nesiotus,NA,18.20097317,Vulnerable,2,4.341255325,811,Trinidad and Tobago,16.42792702
+136080,ANURA,LEPTODACTYLIDAE,Leptodactylus peritoaktites,Rana Ahumada De La Selva Costera De Ecuador,18.20097317,Vulnerable,2,4.341255325,811,Ecuador,16.42792702
+56419,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus angustidigitorum,Patzcuaro Peeping Frog,18.18809642,Vulnerable,2,4.34058447,813,Mexico,16.42792702
+56714,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus leprus,Leprus Chirping Frog,18.18809642,Vulnerable,2,4.34058447,813,"Belize,Guatemala,Mexico",16.42792702
+56727,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus longipes,Long-footed Chirping Frog,18.18809642,Vulnerable,2,4.34058447,813,Mexico,16.42792702
+56770,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus modestus,Rana-chirriadora Dedos Chatos,18.18809642,Vulnerable,2,4.34058447,813,Mexico,16.42792702
+56794,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus nivicolimae,Rana-chirriadora Del Nevado De Colima,18.18809642,Vulnerable,2,4.34058447,813,Mexico,16.42792702
+56928,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus rubrimaculatus,Dusky Chirping Frog,18.18809642,Vulnerable,2,4.34058447,813,"Guatemala,Mexico",16.42792702
+57037,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus verrucipes,Rana-chirrionera Orejona,18.18809642,Vulnerable,2,4.34058447,813,Mexico,16.42792702
+56487,ANURA,CRAUGASTORIDAE,Pristimantis calcaratus,San Antonio Robber Frog,18.18547678,Vulnerable,2,4.340447936,820,Colombia,16.42792702
+58859,ANURA,RHACOPHORIDAE,Gracixalus jinxiuensis,Jinxiu Bubble-nest Frog,18.1846875,Vulnerable,2,4.340406796,821,NA,16.42792702
+56433,ANURA,CRAUGASTORIDAE,Yunganastes ashkapara,NA,17.9832118,Vulnerable,2,4.32984936,822,"Bolivia, Plurinational States of",16.42792702
+59132,CAUDATA,PLETHODONTIDAE,Batrachoseps regius,Kings River Slender Salamander,17.94188485,Vulnerable,2,4.327669961,823,United States,16.42792702
+59305,CAUDATA,PLETHODONTIDAE,Oedipina alfaroi,Limon Worm Salamander,17.9408075,Vulnerable,2,4.327613083,824,"Costa Rica,Panama",16.42792702
+61918,CAUDATA,SALAMANDRIDAE,Lyciasalamandra helverseni,NA,17.88438066,Vulnerable,2,4.324629521,825,Greece,16.42792702
+2648,CAUDATA,PLETHODONTIDAE,Batrachoseps stebbinsi,Tehachapi Slender Salamander,17.82669101,Vulnerable,2,4.321569959,826,United States,16.42792702
+54941,ANURA,CENTROLENIDAE,Ikakogi tayrona,Magdalena Giant Glass Frog,17.8110152,Vulnerable,2,4.320736974,827,Colombia,16.42792702
+58398,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus humayuni,NA,17.78261103,Vulnerable,2,4.319225858,828,India,16.42792702
+57480,ANURA,MANTELLIDAE,Gephyromantis enki,NA,17.68230306,Vulnerable,2,4.313871076,829,Madagascar,16.42792702
+58481,ANURA,CERATOBATRACHIDAE,Platymantis sierramadrensis,NA,17.66915744,Vulnerable,2,4.313167189,830,NA,16.42792702
+58483,ANURA,CERATOBATRACHIDAE,Platymantis taylori,NA,17.66915744,Vulnerable,2,4.313167189,830,Philippines,16.42792702
+136128,CAUDATA,AMBYSTOMATIDAE,Ambystoma bishopi,Reticulated Flatwoods Salamander,17.5217892,Vulnerable,2,4.305242195,832,United States,16.42792702
+58401,ANURA,NYCTIBATRACHIDAE,Nyctibatrachus major,NA,17.47130109,Vulnerable,2,4.302512596,833,India,16.42792702
+77186357,ANURA,AROMOBATIDAE,Allobates amissibilis,NA,17.45894042,Vulnerable,2,4.30184319,834,Guyana,16.42792702
+55066,ANURA,AROMOBATIDAE,Allobates chalcopis,Martinique Volcano Frog,17.45894042,Vulnerable,2,4.30184319,834,Martinique,16.42792702
+55092,ANURA,AROMOBATIDAE,Allobates humilis,Sapito Ninera Humilde,17.45894042,Vulnerable,2,4.30184319,834,"Venezuela, Bolivarian Republic of",16.42792702
+55122,ANURA,AROMOBATIDAE,Allobates olfersioides,Rio Rocket Frog,17.45894042,Vulnerable,2,4.30184319,834,Brazil,16.42792702
+135892,ANURA,AROMOBATIDAE,Allobates subfolionidificans,NA,17.45894042,Vulnerable,2,4.30184319,834,Brazil,16.42792702
+55338,ANURA,HEMIPHRACTIDAE,Gastrotheca guentheri,Gunther's Marsupial Frog,17.34271453,Vulnerable,2,4.295526828,839,"Colombia,Ecuador",16.42792702
+61805,ANURA,CYCLORAMPHIDAE,Cycloramphus acangatan,NA,17.27193886,Vulnerable,2,4.291660848,840,Brazil,16.42792702
+58551,ANURA,RANIDAE,Indosylvirana aurantiaca,Boulenger's Golden-backed frog,17.27158352,Vulnerable,2,4.291641401,841,"India,Sri Lanka",16.42792702
+57487,ANURA,MANTELLIDAE,Spinomantis guibei,Guibe's Madagascar Frog,17.08629525,Vulnerable,2,4.281448844,842,Madagascar,16.42792702
+54346,ANURA,HYLIDAE,Osteopilus vastus,Hispaniolan Giant Treefrog,17.03488517,Vulnerable,2,4.278602308,843,"Dominican Republic,Haiti",16.42792702
+135867,ANURA,MANTELLIDAE,Gephyromantis runewsweeki,NA,16.95594777,Vulnerable,2,4.274215773,844,Madagascar,16.42792702
+159251,ANURA,RANIDAE,Amolops splendissimus,NA,16.9208217,Vulnerable,2,4.272257621,845,Viet Nam,16.42792702
+18583,ANURA,MYOBATRACHIDAE,Pseudophryne australis,Red-crowned Toadlet,16.88660678,Vulnerable,2,4.270346569,846,Australia,16.42792702
+56260,ANURA,ARTHROLEPTIDAE,Leptopelis karissimbensis,NA,16.86885194,Vulnerable,2,4.269353443,847,"Congo, The Democratic Republic of the,Rwanda,Uganda",16.42792702
+135825,CAUDATA,PLETHODONTIDAE,Speleomantes sarrabusensis,NA,16.85238464,Vulnerable,2,4.268431454,848,Italy,16.42792702
+29472,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus goini,NA,16.80866963,Vulnerable,2,4.265979758,849,Cuba,16.42792702
+41241,CAUDATA,SALAMANDRIDAE,Lyciasalamandra luschani,NA,16.80351121,Vulnerable,2,4.265690058,850,"Greece,Turkey",16.42792702
+58327,ANURA,DICROGLOSSIDAE,Limnonectes arathooni,Djikoro Wart Frog,16.77951607,Vulnerable,2,4.264341373,851,NA,16.42792702
+78964958,ANURA,HYLIDAE,Hyloscirtus antioquia,NA,16.77905026,Vulnerable,2,4.264315174,852,NA,16.42792702
+55427,ANURA,HYLIDAE,Hyloscirtus callipeza,Sardinata Treefrog,16.77905026,Vulnerable,2,4.264315174,852,Colombia,16.42792702
+107282592,ANURA,HYLIDAE,Hyloscirtus diabolus,NA,16.77905026,Vulnerable,2,4.264315174,852,NA,16.42792702
+55607,ANURA,HYLIDAE,Hyloscirtus platydactylus,Merida Andes Treefrog,16.77905026,Vulnerable,2,4.264315174,852,"Colombia,Venezuela, Bolivarian Republic of",16.42792702
+55678,ANURA,HYLIDAE,Hyloscirtus torrenticola,NA,16.77905026,Vulnerable,2,4.264315174,852,"Colombia,Ecuador",16.42792702
+61904,CAUDATA,PLETHODONTIDAE,Plethodon asupak,Scottbar Salamander,16.76970625,Vulnerable,2,4.263789472,857,United States,16.42792702
+59379,CAUDATA,PLETHODONTIDAE,Aquiloeurycea galeanae,Galeana False Brook Salamander,16.74287012,Vulnerable,2,4.262278113,858,Mexico,16.42792702
+58746,ANURA,RANIDAE,Lithobates vibicarius,Rancho Redondo Frog,16.68743523,Vulnerable,2,4.259148875,859,Costa Rica,16.42792702
+57240,ANURA,LEPTODACTYLIDAE,Physalaemus atlanticus,NA,16.65770532,Vulnerable,2,4.257466611,860,Brazil,16.42792702
+58000,ANURA,MICROHYLIDAE,Scaphiophryne marmorata,Marbled Rain Frog,16.63470921,Vulnerable,2,4.256163435,861,Madagascar,16.42792702
+41037,ANURA,HYLIDAE,Litoria olongburensis,Olongburra Frog,16.50084542,Vulnerable,2,4.248543551,862,Australia,16.42792702
+57030,ANURA,ELEUTHERODACTYLIDAE,Eleutherodactylus varians,NA,16.460782,Vulnerable,2,4.246251699,863,Cuba,16.42792702

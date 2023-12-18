@@ -10,3 +10,5 @@ HMEI-GDrive
 *.log
 /code/ras_args.Rmd
 /writing/figs
+spatial
+jung2015_RL

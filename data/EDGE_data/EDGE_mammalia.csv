@@ -1,0 +1,561 @@
+RL ID,Order,Family,Species,Common Name,ED,RL Status,GE,EDGE,EDGE Rank,Distribution,Median ED
+136322,MONOTREMATA,TACHYGLOSSIDAE,Zaglossus attenboroughi,Sir David's Long-beaked Echidna,46.569828,Critically Endangered,4,6.634787417,1,Indonesia,7.564372143
+23179,MONOTREMATA,TACHYGLOSSIDAE,Zaglossus bruijnii,Western Long-beaked Echidna,46.569828,Critically Endangered,4,6.634787417,1,Indonesia,7.564372143
+14260,CHIROPTERA,MYSTACINIDAE,Mystacina robusta,New Zealand Greater Short-tailed Bat,41.38425371,Critically Endangered,4,6.519365641,3,New Zealand,7.564372143
+12119,CETARTIODACTYLA,INIIDAE,Lipotes vexillifer,Baiji,39.23933215,Critically Endangered,4,6.467433651,4,China,7.564372143
+3339,DIPROTODONTIA,BURRAMYIDAE,Burramys parvus,Mountain Pygmy Possum,34.65598467,Critically Endangered,4,6.346505728,5,Australia,7.564372143
+20321,EULIPOTYPHLA,SOLENODONTIDAE,Solenodon paradoxus,Hispaniolan Solenodon,61.5334489,Endangered,3,6.215143138,6,"Dominican Republic,Haiti",7.564372143
+20320,EULIPOTYPHLA,SOLENODONTIDAE,Atopogale cubana,Cuban Solenodon,61.5334489,Endangered,3,6.215143138,6,Cuba,7.564372143
+6553,PERISSODACTYLA,RHINOCEROTIDAE,Dicerorhinus sumatrensis,Sumatran Rhinoceros,30.02221006,Critically Endangered,4,6.207292124,8,"Indonesia,Malaysia",7.564372143
+6557,PERISSODACTYLA,RHINOCEROTIDAE,Diceros bicornis,Black Rhinoceros,27.73204724,Critically Endangered,4,6.130601851,9,"Angola,Kenya,Mozambique,Namibia,Tanzania, United Republic of,South Africa,Zimbabwe",7.564372143
+9564,DIPROTODONTIA,PETAURIDAE,Gymnobelideus leadbeateri,Leadbeater's Possum,27.68176025,Critically Endangered,4,6.128850112,10,Australia,7.564372143
+11343,DIPROTODONTIA,VOMBATIDAE,Lasiorhinus krefftii,Northern Hairy-nosed Wombat,26.19057565,Critically Endangered,4,6.075459152,11,Australia,7.564372143
+19495,PERISSODACTYLA,RHINOCEROTIDAE,Rhinoceros sondaicus,Javan Rhinoceros,25.32572861,Critically Endangered,4,6.043135457,12,"Indonesia,Viet Nam",7.564372143
+41758,CETARTIODACTYLA,PLATANISTIDAE,Platanista gangetica,South Asian River Dolphin,50.03310219,Endangered,3,6.011916026,13,"Bangladesh,India,Nepal,Pakistan",7.564372143
+63543,CETARTIODACTYLA,CAMELIDAE,Camelus ferus,Bactrian Camel,24.25789969,Critically Endangered,4,6.001727688,14,"China,Mongolia",7.564372143
+136557,RODENTIA,OCTODONTIDAE,Tympanoctomys aureus,Golden Vizcacha Rat,22.19067908,Critically Endangered,4,5.916339156,15,Argentina,7.564372143
+136714,RODENTIA,OCTODONTIDAE,Tympanoctomys loschalchalerosorum,Chalchalero Viscacha Rat,22.19067908,Critically Endangered,4,5.916339156,15,Argentina,7.564372143
+12764,PHOLIDOTA,MANIDAE,Manis pentadactyla,Chinese Pangolin,20.68665552,Critically Endangered,4,5.849285841,17,"Bhutan,China,Hong Kong,India,Lao People's Democratic Republic,Myanmar,Nepal,Thailand,Taiwan, Province of China,Viet Nam",7.564372143
+12763,PHOLIDOTA,MANIDAE,Manis javanica,Sunda Pangolin,20.68642086,Critically Endangered,4,5.84927502,18,"Brunei Darussalam,Indonesia,Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Singapore,Thailand,Viet Nam",7.564372143
+6302,PRIMATES,DAUBENTONIIDAE,Daubentonia madagascariensis,Aye-aye,41.88164751,Endangered,3,5.837885479,19,Madagascar,7.564372143
+10826,PRIMATES,INDRIIDAE,Indri indri,Indri,20.30505119,Critically Endangered,4,5.831532912,20,Madagascar,7.564372143
+7140,PROBOSCIDEA,ELEPHANTIDAE,Elephas maximus,Asian Elephant,39.66277708,Endangered,3,5.784754648,21,"Bangladesh,Bhutan,China,Indonesia,India,Cambodia,Lao People's Democratic Republic,Sri Lanka,Myanmar,Malaysia,Nepal,Thailand,Viet Nam",7.564372143
+714,CARNIVORA,AILURIDAE,Ailurus fulgens,Red Panda,39.41042235,Endangered,3,5.778529272,22,"Bhutan,China,India,Myanmar,Nepal",7.564372143
+61925,PILOSA,BRADYPODIDAE,Bradypus pygmaeus,Pygmy Three-toed Sloth,18.99130032,Critically Endangered,4,5.767885917,23,Panama,7.564372143
+39761,PRIMATES,LORISIDAE,Nycticebus javanicus,Javan Slow Loris,18.88917616,Critically Endangered,4,5.762764394,24,Indonesia,7.564372143
+3326,LAGOMORPHA,LEPORIDAE,Bunolagus monticularis,Riverine Rabbit,18.68448366,Critically Endangered,4,5.752419416,25,South Africa,7.564372143
+5748,AFROSORICIDA,CHRYSOCHLORIDAE,Cryptochloris wintoni,De Winton's Golden Mole,18.58650834,Critically Endangered,4,5.747429701,26,South Africa,7.564372143
+21472,PERISSODACTYLA,TAPIRIDAE,Tapirus indicus,Malay Tapir,37.63095761,Endangered,3,5.733495507,27,"Indonesia,Myanmar,Malaysia,Thailand",7.564372143
+21471,PERISSODACTYLA,TAPIRIDAE,Tapirus bairdii,Baird's Tapir,37.49722939,Endangered,3,5.730027816,28,"Belize,Colombia,Costa Rica,Guatemala,Honduras,Mexico,Nicaragua,Panama",7.564372143
+10831,CETARTIODACTYLA,INIIDAE,Inia geoffrensis,Amazon River Dolphin,35.83910599,Endangered,3,5.686001485,29,NA,7.564372143
+41576,PRIMATES,CHEIROGALEIDAE,Cheirogaleus sibreei,Sibree's Dwarf Lemur,17.36688978,Critically Endangered,4,5.683138297,30,Madagascar,7.564372143
+5112,CHIROPTERA,EMBALLONURIDAE,Coleura seychellensis,Seychelles Sheath-tailed Bat,17.33001412,Critically Endangered,4,5.681128554,31,Seychelles,7.564372143
+18492,DIPROTODONTIA,PSEUDOCHEIRIDAE,Pseudocheirus occidentalis,Western Ringtail Possum,17.25540362,Critically Endangered,4,5.677049847,32,Australia,7.564372143
+10032,CETARTIODACTYLA,HIPPOPOTAMIDAE,Choeropsis liberiensis,Pygmy Hippopotamus,32.89037006,Endangered,3,5.602572447,33,"Côte d'Ivoire,Guinea,Liberia,Sierra Leone",7.564372143
+15090,RODENTIA,OCTODONTIDAE,Octodon pacificus,NA,15.8515884,Critically Endangered,4,5.597033642,34,Chile,7.564372143
+14222,DASYUROMORPHIA,MYRMECOBIIDAE,Myrmecobius fasciatus,Numbat,31.32678353,Endangered,3,5.55533764,35,Australia,7.564372143
+18107,DIPROTODONTIA,POTOROIDAE,Potorous gilbertii,Gilbert's Potoroo,14.97200527,Critically Endangered,4,5.543426241,36,Australia,7.564372143
+40652,PRIMATES,GALAGIDAE,Galagoides rondoensis,Rondo Dwarf Galago,14.92148105,Critically Endangered,4,5.540257929,37,"Tanzania, United Republic of",7.564372143
+179234,PRIMATES,TARSIIDAE,Tarsius tumpara,Siau Island Tarsier,14.8950241,Critically Endangered,4,5.538594833,38,Indonesia,7.564372143
+136824,CHIROPTERA,NATALIDAE,Natalus jamaicensis,Jamaican Greater Funnel-eared Bat,14.72050677,Critically Endangered,4,5.527554746,39,Jamaica,7.564372143
+18,RODENTIA,ABROCOMIDAE,Abrocoma boliviensis,Bolivian Chinchilla Rat,14.67901423,Critically Endangered,4,5.524911867,40,"Bolivia, Plurinational States of",7.564372143
+6909,SIRENIA,DUGONGIDAE,Dugong dugon,Dugong,59.29626074,Vulnerable,2,5.485564452,41,"United Arab Emirates,Australia,Bahrain,Brunei Darussalam,Cocos (Keeling) Islands,China,Djibouti,Egypt,Eritrea,Indonesia,India,Jordan,Japan,Kenya,Cambodia,Comoros,Sri Lanka,Madagascar,Malaysia,Mozambique,New Caledonia,Papua New Guinea,Philippines,Palau,Qatar,Saudi Arabia,Solomon Islands,Seychelles,Sudan,Singapore,Somalia,Thailand,Timor-Leste,Tanzania, United Republic of,Viet Nam,Vanuatu,Yemen,Mayotte",7.564372143
+136218,DIPROTODONTIA,PHALANGERIDAE,Ailurops melanotis,Talaud Bear Cuscus,13.82470854,Critically Endangered,4,5.468884007,42,Indonesia,7.564372143
+18597,CETARTIODACTYLA,BOVIDAE,Pseudoryx nghetinhensis,Saola,13.68,Critically Endangered,4,5.459074745,43,"Lao People's Democratic Republic,Viet Nam",7.564372143
+121097935,PRIMATES,HOMINIDAE,Pongo abelii,Sumatran Orangutan,13.67486909,Critically Endangered,4,5.458725167,44,Indonesia,7.564372143
+17975,PRIMATES,HOMINIDAE,Pongo pygmaeus,Bornean Orangutan,13.67486909,Critically Endangered,4,5.458725167,44,"Indonesia,Malaysia",7.564372143
+12820,DIDELPHIMORPHIA,DIDELPHIDAE,Marmosops handleyi,Opossum-souris De Handley,13.19468926,Critically Endangered,4,5.425456621,46,Colombia,7.564372143
+9672,PRIMATES,LEMURIDAE,Hapalemur aureus,Golden Bamboo Lemur,12.92913456,Critically Endangered,4,5.40657138,47,Madagascar,7.564372143
+9676,PRIMATES,LEMURIDAE,Hapalemur alaotrensis,Alaotra Reed Lemur,12.58906535,Critically Endangered,4,5.381854173,48,Madagascar,7.564372143
+22918,PRIMATES,LEMURIDAE,Varecia variegata,Black-and-white Ruffed Lemur,12.40481547,Critically Endangered,4,5.368202728,49,Madagascar,7.564372143
+22920,PRIMATES,LEMURIDAE,Varecia rubra,Red Ruffed Lemur,12.34761643,Critically Endangered,4,5.363926547,50,Madagascar,7.564372143
+13703,DIDELPHIMORPHIA,DIDELPHIDAE,Monodelphis unistriata,Single-striped Opossum,12.23366879,Critically Endangered,4,5.35535297,51,"Argentina,Brazil",7.564372143
+7949,PERISSODACTYLA,EQUIDAE,Equus africanus,African Wild Ass,12.05033479,Critically Endangered,4,5.34140251,52,"Eritrea,Ethiopia",7.564372143
+16851,DIPROTODONTIA,PHALANGERIDAE,Phalanger matanim,Telefomin Cuscus,11.99404209,Critically Endangered,4,5.337079674,53,Papua New Guinea,7.564372143
+9674,PRIMATES,LEMURIDAE,Prolemur simus,Greater Bamboo Lemur,11.96151379,Critically Endangered,4,5.334573211,54,Madagascar,7.564372143
+21972,RODENTIA,MURIDAE,Tokudaia muenninki,Okinawa Spiny Rat,11.77629659,Critically Endangered,4,5.320180348,55,Japan,7.564372143
+21473,PERISSODACTYLA,TAPIRIDAE,Tapirus pinchaque,Mountain Tapir,24.39687841,Endangered,3,5.314067811,56,"Colombia,Ecuador,Peru",7.564372143
+21982,CHIROPTERA,MOLOSSIDAE,Tomopeas ravus,Blunt-eared Bat,24.36112684,Endangered,3,5.312659104,57,Peru,7.564372143
+18352,PRIMATES,INDRIIDAE,Propithecus tattersalli,Golden-crowned Sifaka,11.61493866,Critically Endangered,4,5.307470442,58,Madagascar,7.564372143
+39547,CARNIVORA,EUPLERIDAE,Eupleres major,Western Falanouc,24.12537892,Endangered,3,5.303319989,59,Madagascar,7.564372143
+19705,MACROSCELIDEA,MACROSCELIDIDAE,Rhynchocyon chrysopygus,Golden-rumped Sengi,23.94177186,Endangered,3,5.295985524,60,Kenya,7.564372143
+4015,CETARTIODACTYLA,TAYASSUIDAE,Catagonus wagneri,Chacoan Peccary,23.88173795,Endangered,3,5.29357566,61,"Argentina,Bolivia, Plurinational States of,Paraguay",7.564372143
+39994,PRIMATES,HOMINIDAE,Gorilla beringei,Eastern Gorilla,11.30363127,Critically Endangered,4,5.282483166,62,"Congo, The Democratic Republic of the,Rwanda,Uganda",7.564372143
+9404,PRIMATES,HOMINIDAE,Gorilla gorilla,Western Gorilla,11.30363127,Critically Endangered,4,5.282483166,62,NA,7.564372143
+22102,SIRENIA,TRICHECHIDAE,Trichechus inunguis,Amazonian Manatee,47.89600835,Vulnerable,2,5.275990125,64,"Brazil,Colombia,Ecuador,Peru",7.564372143
+6439,RODENTIA,NESOMYIDAE,Dendromus kahuziensis,Mt. Kahuzi Climbing Mouse,11.13993481,Critically Endangered,4,5.269089138,65,"Congo, The Democratic Republic of the",7.564372143
+18360,PRIMATES,INDRIIDAE,Propithecus candidus,Silky Sifaka,10.90963904,Critically Endangered,4,5.249936798,66,Madagascar,7.564372143
+6506,EULIPOTYPHLA,TALPIDAE,Desmana moschata,Russian Desman,22.71031095,Endangered,3,5.245351556,67,"Kazakhstan,Russian Federation,Ukraine",7.564372143
+17829,EULIPOTYPHLA,ERINACEIDAE,Podogymnura aureospinula,Dinagat Gymnure,22.60177975,Endangered,3,5.240763664,68,Philippines,7.564372143
+6234,CETARTIODACTYLA,BOVIDAE,Beatragus hunteri,Hirola,10.78490472,Critically Endangered,4,5.239408174,69,Kenya,7.564372143
+10138,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros hypophyllus,Kolar Leaf-nosed Bat,10.75436651,Critically Endangered,4,5.236813512,70,India,7.564372143
+1933,CHIROPTERA,PTEROPODIDAE,Aproteles bulmerae,Bulmer's Fruit Bat,10.70589115,Critically Endangered,4,5.232680954,71,Papua New Guinea,7.564372143
+18358,PRIMATES,INDRIIDAE,Propithecus diadema,Diademed Sifaka,10.65361804,Critically Endangered,4,5.228205415,72,Madagascar,7.564372143
+16887,CHIROPTERA,VESPERTILIONIDAE,Pharotis imogene,Thomas's Big-eared Bat,10.64190877,Critically Endangered,4,5.227200135,73,Papua New Guinea,7.564372143
+21172,CETARTIODACTYLA,SUIDAE,Porcula salvania,Pygmy Hog,10.64150907,Critically Endangered,4,5.227165801,74,India,7.564372143
+136552,MONOTREMATA,TACHYGLOSSIDAE,Zaglossus bartoni,Eastern Long-beaked Echidna,45.0175004,Vulnerable,2,5.215316129,75,"Indonesia,Papua New Guinea",7.564372143
+10588,EULIPOTYPHLA,ERINACEIDAE,Neohylomys hainanensis,Hainan Gymnure,21.97811475,Endangered,3,5.213983772,76,China,7.564372143
+17028,CETARTIODACTYLA,PHOCOENIDAE,Phocoena sinus,Vaquita,10.48392406,Critically Endangered,4,5.213536872,77,Mexico,7.564372143
+21210,LAGOMORPHA,LEPORIDAE,Sylvilagus mansuetus,San Jose Brush Rabbit,10.44474209,Critically Endangered,4,5.210119141,78,Mexico,7.564372143
+18361,PRIMATES,INDRIIDAE,Propithecus perrieri,Perrier’s Sifaka,10.42528597,Critically Endangered,4,5.208417689,79,Madagascar,7.564372143
+12375,PRIMATES,LORISIDAE,Loris tardigradus,Red Slender Loris,21.42741495,Endangered,3,5.189725634,80,Sri Lanka,7.564372143
+10141,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros lamottei,Lamotte's Roundleaf Bat,10.13235863,Critically Endangered,4,5.182444782,81,Guinea,7.564372143
+23036,CARNIVORA,VIVERRIDAE,Viverra civettina,Malabar Civet,10.11475035,Critically Endangered,4,5.180861809,82,NA,7.564372143
+2477,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera musculus,Blue Whale,21.21643663,Endangered,3,5.180273945,83,NA,7.564372143
+136520,RODENTIA,CAVIIDAE,Cavia intermedia,Santa Catarina’s Guinea Pig,10.00110409,Critically Endangered,4,5.170584362,84,Brazil,7.564372143
+136443,DIPROTODONTIA,PHALANGERIDAE,Spilocuscus wilsoni,Blue-eyed Spotted Cuscus,9.873063091,Critically Endangered,4,5.158877177,85,Indonesia,7.564372143
+12761,PHOLIDOTA,MANIDAE,Manis crassicaudata,Indian Pangolin,20.68665552,Endangered,3,5.15613866,86,"India,Sri Lanka,Nepal,Pakistan",7.564372143
+136497,PHOLIDOTA,MANIDAE,Manis culionensis,Philippine Pangolin,20.68642086,Endangered,3,5.15612784,87,Philippines,7.564372143
+2785,DIPROTODONTIA,POTOROIDAE,Bettongia penicillata,Woylie,9.825132039,Critically Endangered,4,5.154459194,88,Australia,7.564372143
+41755,CETARTIODACTYLA,PHYSETERIDAE,Physeter macrocephalus,Sperm Whale,42.23963141,Vulnerable,2,5.15305183,89,"Antigua and Barbuda,Albania,Angola,Antarctica,Argentina,Australia,Barbados,Bangladesh,Belgium,Benin,Brunei Darussalam,Bonaire, Sint Eustatius and Saba,Brazil,Bahamas,Belize,Canada,Chile,Cameroon,China,Colombia,Costa Rica,Cape Verde,Curaçao,Cyprus,Djibouti,Denmark,Dominica,Dominican Republic,Algeria,Ecuador,Egypt,Spain,Fiji,Falkland Islands (Malvinas),Micronesia, Federated States of ,Faroe Islands,France,Gabon,United Kingdom,Grenada,Ghana,Gibraltar,Greenland,Gambia,Guinea,Equatorial Guinea,Greece,Guatemala,Guinea-Bissau,Guyana,Honduras,Croatia,Haiti,Indonesia,Ireland,Israel,India,Iran, Islamic Republic of,Iceland,Italy,Jamaica,Japan,Kenya,Kiribati,Comoros,Saint Kitts and Nevis,Korea, Democratic People's Republic of,Korea, Republic of,Lebanon,Saint Lucia,Sri Lanka,Liberia,Libya,Morocco,Monaco,Saint Martin (French part),Madagascar,Marshall Islands,Mauritania,Malta,Mauritius,Maldives,Mexico,Malaysia,Mozambique,Namibia,Nigeria,Nicaragua,Netherlands,Norway,Nauru,Niue,New Zealand,Oman,Panama,Peru,Papua New Guinea,Philippines,Pakistan,Portugal,Palau,Russian Federation,Solomon Islands,Seychelles,Singapore,Saint Helena, Ascension and Tristan da Cunha,Slovenia,Sierra Leone,Senegal,Somalia,Suriname,Sao Tomé and Principe,El Salvador,Sint Maarten (Dutch part),Syrian Arab Republic,Togo,Thailand,Timor-Leste,Tunisia,Tonga,Turkey,Trinidad and Tobago,Tuvalu,Taiwan, Province of China,Tanzania, United Republic of,United States,Uruguay,Saint Vincent and the Grenadines,Venezuela, Bolivarian Republic of,Viet Nam,Vanuatu,Samoa,Yemen,South Africa",7.564372143
+22103,SIRENIA,TRICHECHIDAE,Trichechus manatus,American Manatee,42.1965272,Vulnerable,2,5.152054464,90,"Bonaire, Sint Eustatius and Saba,Brazil,Bahamas,Belize,Colombia,Costa Rica,Cuba,Curaçao,Dominican Republic,French Guiana,Guatemala,Guyana,Honduras,Jamaica,Cayman Islands,Mexico,Nicaragua,Panama,Puerto Rico,Suriname,Trinidad and Tobago,United States,Venezuela, Bolivarian Republic of,Virgin Islands, British,Virgin Islands, U.S.",7.564372143
+22104,SIRENIA,TRICHECHIDAE,Trichechus senegalensis,African Manatee,42.1965272,Vulnerable,2,5.152054464,90,"Angola,Benin,Congo, The Democratic Republic of the,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Gambia,Guinea,Equatorial Guinea,Guinea-Bissau,Liberia,Mali,Mauritania,Niger,Nigeria,Sierra Leone,Senegal,Chad,Togo",7.564372143
+20639,DIPROTODONTIA,PHALANGERIDAE,Spilocuscus rufoniger,Black-spotted Cuscus,9.759894888,Critically Endangered,4,5.148414508,92,"Indonesia,Papua New Guinea",7.564372143
+16971461,PRIMATES,CHEIROGALEIDAE,Microcebus gerpi,Gerp's Mouse Lemur,9.656678069,Critically Endangered,4,5.138775467,93,Madagascar,7.564372143
+136206,PRIMATES,CHEIROGALEIDAE,Microcebus mamiratra,Claire's Mouse Lemur,9.656678069,Critically Endangered,4,5.138775467,93,Madagascar,7.564372143
+46251646,PRIMATES,CHEIROGALEIDAE,Microcebus marohita,Marohita Mouse Lemur,9.656678069,Critically Endangered,4,5.138775467,93,Madagascar,7.564372143
+17460,RODENTIA,CAPROMYIDAE,Plagiodontia aedium,Cuvier's Hutia,20.25229519,Endangered,3,5.13590644,96,"Dominican Republic,Haiti",7.564372143
+16892,DIPROTODONTIA,PHASCOLARCTIDAE,Phascolarctos cinereus,Koala,41.49148988,Vulnerable,2,5.135598179,97,Australia,7.564372143
+14261,CHIROPTERA,MYSTACINIDAE,Mystacina tuberculata,New Zealand Lesser Short-tailed Bat,41.38425371,Vulnerable,2,5.13307128,98,New Zealand,7.564372143
+136389,EULIPOTYPHLA,SORICIDAE,Cryptotis nelsoni,Nelson's Small Eared Shrew,9.591371329,Critically Endangered,4,5.132628366,99,NA,7.564372143
+13217,RODENTIA,CAPROMYIDAE,Mesocapromys nanus,Dwarf Hutia,9.398138534,Critically Endangered,4,5.114215525,100,Cuba,7.564372143
+13584,PRIMATES,CHEIROGALEIDAE,Mirza coquereli,Coquerel's Giant Mouse Lemur,19.79409579,Endangered,3,5.114110632,101,Madagascar,7.564372143
+136684,PRIMATES,CHEIROGALEIDAE,Mirza zaza,Northern Giant Mouse Lemur,19.79409579,Endangered,3,5.114110632,101,Madagascar,7.564372143
+13218,RODENTIA,CAPROMYIDAE,Mesocapromys sanfelipensis,Little Earth Hutia,9.385251976,Critically Endangered,4,5.112975443,103,Cuba,7.564372143
+1087,AFROSORICIDA,CHRYSOCHLORIDAE,Neamblysomus gunningi,Gunning's Golden Mole,19.45004571,Endangered,3,5.097426659,104,South Africa,7.564372143
+1089,AFROSORICIDA,CHRYSOCHLORIDAE,Neamblysomus julianae,Juliana's Golden Mole,19.36498504,Endangered,3,5.093258548,105,South Africa,7.564372143
+18267,CARNIVORA,PROCYONIDAE,Procyon pygmaeus,Pygmy Raccoon,9.168210877,Critically Endangered,4,5.091854995,106,Mexico,7.564372143
+16559,LAGOMORPHA,LEPORIDAE,Pentalagus furnessi,Amami Rabbit,19.28047634,Endangered,3,5.089100208,107,Japan,7.564372143
+19742,LAGOMORPHA,LEPORIDAE,Romerolagus diazi,Volcano Rabbit,19.24986762,Endangered,3,5.087589798,108,Mexico,7.564372143
+19832,CETARTIODACTYLA,BOVIDAE,Saiga tatarica,Saiga,9.082463277,Critically Endangered,4,5.083386328,109,NA,7.564372143
+8202,PRIMATES,LEMURIDAE,Eulemur mongoz,Mongoose Lemur,8.965489567,Critically Endangered,4,5.071716803,110,Madagascar,7.564372143
+39924,PRIMATES,ATELIDAE,Lagothrix flavicauda,Peruvian Yellow-tailed Woolly Monkey,8.95762429,Critically Endangered,4,5.07092724,111,Peru,7.564372143
+2475,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera borealis,Sei Whale,18.74401536,Endangered,3,5.062291967,112,NA,7.564372143
+20425,CETARTIODACTYLA,DELPHINIDAE,Sousa teuszii,Atlantic Humpback Dolphin,8.868760792,Critically Endangered,4,5.061963015,113,"Angola,Benin,Congo,Cameroon,Western Sahara,Gabon,Gambia,Guinea,Guinea-Bissau,Mauritania,Senegal,Togo",7.564372143
+17173,CHIROPTERA,PHYLLOSTOMIDAE,Phyllonycteris aphylla,Jamaican Flower Bat,8.837551563,Critically Endangered,4,5.058795577,114,Jamaica,7.564372143
+712,CARNIVORA,URSIDAE,Ailuropoda melanoleuca,Giant Panda,38.23545253,Vulnerable,2,5.0558751,115,China,7.564372143
+5749,AFROSORICIDA,CHRYSOCHLORIDAE,Cryptochloris zyli,Van Zyl's Golden Mole,18.58650834,Endangered,3,5.054282521,116,South Africa,7.564372143
+21175,CETARTIODACTYLA,SUIDAE,Sus cebifrons,Visayan Warty Pig,8.6825267,Critically Endangered,4,5.042911612,117,Philippines,7.564372143
+12650,PERAMELEMORPHIA,THYLACOMYIDAE,Macrotis lagotis,Bilby,37.57952548,Vulnerable,2,5.039016069,118,Australia,7.564372143
+40766,RODENTIA,MURIDAE,Nilopegamys plumbeus,Ethiopian Amphibious Rat,8.632519527,Critically Endangered,4,5.037733547,119,Ethiopia,7.564372143
+20333,RODENTIA,MURIDAE,Solomys ponceleti,Poncelet's Giant Rat,8.61672212,Critically Endangered,4,5.036092193,120,"Papua New Guinea,Solomon Islands",7.564372143
+4828,AFROSORICIDA,CHRYSOCHLORIDAE,Chrysospalax trevelyani,Giant Golden Mole,18.23086848,Endangered,3,5.035958263,121,South Africa,7.564372143
+12392,PROBOSCIDEA,ELEPHANTIDAE,Loxodonta africana,African Elephant,37.3127961,Vulnerable,2,5.032078303,122,"Angola,Burkina Faso,Benin,Botswana,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Eritrea,Ethiopia,Gabon,Ghana,Guinea,Equatorial Guinea,Guinea-Bissau,Kenya,Liberia,Mali,Malawi,Mozambique,Namibia,Niger,Nigeria,Rwanda,Sierra Leone,Senegal,Somalia,South Sudan,Chad,Togo,Tanzania, United Republic of,Uganda,South Africa,Zambia,Zimbabwe",7.564372143
+16726,DIPROTODONTIA,PETAURIDAE,Petaurus abidi,Northern Glider,8.528984568,Critically Endangered,4,5.026926883,123,Papua New Guinea,7.564372143
+8211,PRIMATES,LEMURIDAE,Eulemur flavifrons,Blue-eyed Black Lemur,8.312247177,Critically Endangered,4,5.003919157,124,Madagascar,7.564372143
+5514,RODENTIA,MURIDAE,Cremnomys elvira,Large Rock-rat,8.264444373,Critically Endangered,4,4.99877261,125,India,7.564372143
+17978,CETARTIODACTYLA,INIIDAE,Pontoporia blainvillei,Franciscana,35.83910599,Vulnerable,2,4.992854305,126,"Argentina,Brazil,Uruguay",7.564372143
+512,CETARTIODACTYLA,BOVIDAE,Addax nasomaculatus,Addax,8.206347503,Critically Endangered,4,4.992481914,127,"Niger,Chad",7.564372143
+19416,RODENTIA,CRICETIDAE,Reithrodontomys spectabilis,Cozumel Harvest Mouse,8.158702234,Critically Endangered,4,4.987293213,128,Mexico,7.564372143
+135446,PRIMATES,ATELIDAE,Ateles fusciceps,Brown-headed Spider Monkey,8.108348581,Critically Endangered,4,4.981780142,129,"Colombia,Ecuador,Panama",7.564372143
+2994,PRIMATES,ATELIDAE,Brachyteles hypoxanthus,Northern Muriqui,8.047572499,Critically Endangered,4,4.975085212,130,Brazil,7.564372143
+13524,RODENTIA,MURIDAE,Millardia kondana,Kondana Rat,8.046594886,Critically Endangered,4,4.974977153,131,India,7.564372143
+23324,RODENTIA,MURIDAE,Zyzomys pedunculatus,Central Rock-rat,8.042455179,Critically Endangered,4,4.97451945,132,Australia,7.564372143
+62007,AFROSORICIDA,CHRYSOCHLORIDAE,Amblysomus marleyi,Marley's Golden Mole,16.97450383,Endangered,3,4.968395842,133,South Africa,7.564372143
+23327,RODENTIA,MURIDAE,Zyzomys palatalis,Carpentarian Rock-rat,7.94299394,Critically Endangered,4,4.963459148,134,Australia,7.564372143
+13653,CARNIVORA,PHOCIDAE,Monachus monachus,Mediterranean Monk Seal,16.80653843,Endangered,3,4.959007259,135,"Cyprus,Western Sahara,Greece,Croatia,Mauritania,Portugal,Turkey",7.564372143
+13654,CARNIVORA,PHOCIDAE,Neomonachus schauinslandi,Hawaiian Monk Seal,16.80653843,Endangered,3,4.959007259,135,United States,7.564372143
+11622,PRIMATES,LEPILEMURIDAE,Lepilemur septentrionalis,Sahafary Sportive Lemur,7.889074385,Critically Endangered,4,4.957411648,137,Madagascar,7.564372143
+15188,CETARTIODACTYLA,GIRAFFIDAE,Okapia johnstoni,Okapi,16.48287111,Endangered,3,4.94066315,138,"Congo, The Democratic Republic of the",7.564372143
+10714,RODENTIA,NESOMYIDAE,Hypogeomys antimena,Malagasy Giant Jumping Rat,16.4710254,Endangered,3,4.939985359,139,Madagascar,7.564372143
+39929,PRIMATES,PITHECIIDAE,Callicebus barbarabrownae,Blond Titi Monkey,7.731880218,Critically Endangered,4,4.939569443,140,Brazil,7.564372143
+136616,RODENTIA,CRICETIDAE,Habromys schmidlyi,Schmidly's Deer Mouse,7.660429286,Critically Endangered,4,4.931353015,141,NA,7.564372143
+9608,RODENTIA,CRICETIDAE,Habromys chinanteco,Chinanteco Deer Mouse,7.654091993,Critically Endangered,4,4.930620994,142,Mexico,7.564372143
+5760,CARNIVORA,EUPLERIDAE,Cryptoprocta ferox,Fossa,33.57644994,Vulnerable,2,4.929467174,143,Madagascar,7.564372143
+20394,EULIPOTYPHLA,SORICIDAE,Sorex sclateri,Sclater's Shrew,7.619954181,Critically Endangered,4,4.926668491,144,NA,7.564372143
+20395,EULIPOTYPHLA,SORICIDAE,Sorex stizodon,San Cristobal Shrew,7.619954181,Critically Endangered,4,4.926668491,144,NA,7.564372143
+136420,CHIROPTERA,EMBALLONURIDAE,Saccopteryx antioquensis,Antioquian Sac-winged Bat,16.05814458,Endangered,3,4.916069319,146,Colombia,7.564372143
+10103,CETARTIODACTYLA,HIPPOPOTAMIDAE,Hippopotamus amphibius,Hippopotamus,32.89037006,Vulnerable,2,4.909425266,147,"Angola,Burkina Faso,Burundi,Benin,Botswana,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Ethiopia,Gabon,Ghana,Gambia,Guinea,Equatorial Guinea,Guinea-Bissau,Kenya,Mali,Malawi,Mozambique,Namibia,Niger,Nigeria,Rwanda,Sudan,Sierra Leone,Senegal,Somalia,South Sudan,Swaziland,Chad,Togo,Tanzania, United Republic of,Uganda,South Africa,Zambia,Zimbabwe",7.564372143
+14224,PILOSA,MYRMECOPHAGIDAE,Myrmecophaga tridactyla,Giant Anteater,32.70774045,Vulnerable,2,4.904021859,148,"Argentina,Bolivia, Plurinational States of,Brazil,Colombia,Costa Rica,Ecuador,French Guiana,Guyana,Honduras,Nicaragua,Panama,Peru,Paraguay,Suriname,Venezuela, Bolivarian Republic of",7.564372143
+8834,CARNIVORA,EUPLERIDAE,Galidictis grandidieri,Grandidier’s Vontsira,15.70024538,Endangered,3,4.894864954,149,Madagascar,7.564372143
+136610,CHIROPTERA,MORMOOPIDAE,Pteronotus paraguanensis,NA,15.62606577,Endangered,3,4.890413233,150,"Venezuela, Bolivarian Republic of",7.564372143
+13923,CARNIVORA,EUPLERIDAE,Mungotictis decemlineata,Bokiboky,15.55327638,Endangered,3,4.886025592,151,Madagascar,7.564372143
+136472,CETARTIODACTYLA,SUIDAE,Babyrousa togeanensis,Togian Islands Babirusa,15.45665654,Endangered,3,4.88017159,152,Indonesia,7.564372143
+40800,LAGOMORPHA,OCHOTONIDAE,Ochotona hoffmanni,Hoffmann's Pika,15.44643389,Endangered,3,4.879550211,153,"Mongolia,Russian Federation",7.564372143
+1154,CHIROPTERA,FURIPTERIDAE,Amorphochilus schnablii,Smoky Bat,31.15048102,Vulnerable,2,4.856721773,154,"Chile,Ecuador,Peru",7.564372143
+21494,PRIMATES,TARSIIDAE,Tarsius pelengensis,Peleng Tarsier,14.93613028,Endangered,3,4.848030418,155,Indonesia,7.564372143
+21493,PRIMATES,TARSIIDAE,Tarsius sangirensis,Sangihe Tarsier,14.8945932,Endangered,3,4.845420543,156,Indonesia,7.564372143
+22066,CARNIVORA,URSIDAE,Tremarctos ornatus,Spectacled Bear,30.26473503,Vulnerable,2,4.828785147,157,"Bolivia, Plurinational States of,Colombia,Ecuador,Peru,Venezuela, Bolivarian Republic of",7.564372143
+13604,EULIPOTYPHLA,TALPIDAE,Mogera etigo,Etigo Mole,14.60724297,Endangered,3,4.827176641,158,Japan,7.564372143
+6082,CARNIVORA,VIVERRIDAE,Cynogale bennettii,Otter Civet,14.5584102,Endangered,3,4.824042883,159,"Brunei Darussalam,Indonesia,Malaysia",7.564372143
+6224,DIPROTODONTIA,PETAURIDAE,Dactylopsila tatei,Tate's Triok,14.43694257,Endangered,3,4.816205047,160,Papua New Guinea,7.564372143
+15046,LAGOMORPHA,OCHOTONIDAE,Ochotona koslowi,Kozlov's Pika,14.25191898,Endangered,3,4.804146872,161,China,7.564372143
+41712,CETARTIODACTYLA,BALAENIDAE,Eubalaena glacialis,North Atlantic Right Whale,14.10040054,Endangered,3,4.794162811,162,"Bermuda,Canada,Spain,United Kingdom,Greenland,Ireland,Iceland,Norway,Saint Pierre and Miquelon,Portugal,United States",7.564372143
+41711,CETARTIODACTYLA,BALAENIDAE,Eubalaena japonica,North Pacific Right Whale,14.10040054,Endangered,3,4.794162811,162,"Canada,Japan,Korea, Republic of,Mexico,Russian Federation,Taiwan, Province of China,United States",7.564372143
+15050,LAGOMORPHA,OCHOTONIDAE,Ochotona iliensis,Ili Pika,13.88437051,Endangered,3,4.779753245,164,China,7.564372143
+7669,CHIROPTERA,EMBALLONURIDAE,Emballonura semicaudata,Pacific Sheath-tailed Bat,13.67675577,Endangered,3,4.765706544,165,"American Samoa,Fiji,Micronesia, Federated States of ,Northern Mariana Islands,Palau,Tonga,Samoa",7.564372143
+12646,RODENTIA,NESOMYIDAE,Macrotarsomys ingens,Long-tailed Big-footed Mouse,13.6474249,Endangered,3,4.763706087,166,Madagascar,7.564372143
+11496,PRIMATES,LEMURIDAE,Lemur catta,Ring-tailed Lemur,13.57879103,Endangered,3,4.759009345,167,Madagascar,7.564372143
+22454,SCANDENTIA,TUPAIIDAE,Tupaia nicobarica,Nicobar Treeshrew,13.29241176,Endangered,3,4.739170292,168,India,7.564372143
+16873,PRIMATES,CHEIROGALEIDAE,Phaner parienti,Sambirano Fork-marked Lemur,13.21442536,Endangered,3,4.733698861,169,Madagascar,7.564372143
+5481,CHIROPTERA,CRASEONYCTERIDAE,Craseonycteris thonglongyai,Hog-nosed Bat,27.21939359,Vulnerable,2,4.726303819,170,"Myanmar,Thailand",7.564372143
+16874,PRIMATES,CHEIROGALEIDAE,Phaner pallescens,Pale Fork-marked Lemur,13.08583752,Endangered,3,4.724611403,171,Madagascar,7.564372143
+4651,RODENTIA,CHINCHILLIDAE,Chinchilla chinchilla,Short-tailed Chinchilla,13.0443925,Endangered,3,4.721664747,172,Chile,7.564372143
+4652,RODENTIA,CHINCHILLIDAE,Chinchilla lanigera,Long-tailed Chinchilla,13.0443925,Endangered,3,4.721664747,172,Chile,7.564372143
+4806,CARNIVORA,VIVERRIDAE,Chrotogale owstoni,Owston's Civet,12.91146617,Endangered,3,4.712154946,174,"Lao People's Democratic Republic,Viet Nam",7.564372143
+14262,RODENTIA,NESOMYIDAE,Mystromys albicaudatus,White-tailed Rat,12.77947625,Endangered,3,4.702621799,175,"Lesotho,South Africa",7.564372143
+16875,PRIMATES,CHEIROGALEIDAE,Phaner electromontis,Montagne D’ Ambre Fork-marked Lemur,12.70061984,Endangered,3,4.696882617,176,Madagascar,7.564372143
+22065,CETARTIODACTYLA,TRAGULIDAE,Tragulus nigricans,Balabac Mouse Deer,12.64492613,Endangered,3,4.692809282,177,Philippines,7.564372143
+165925,RODENTIA,NESOMYIDAE,Voalavo antsahabensis,Eastern Voalavo,12.60143827,Endangered,3,4.689617084,178,Madagascar,7.564372143
+21293,RODENTIA,SPALACIDAE,Tachyoryctes macrocephalus,Giant Mole Rat,12.54780478,Endangered,3,4.685666067,179,Ethiopia,7.564372143
+3833,LAGOMORPHA,LEPORIDAE,Caprolagus hispidus,Hispid Hare,12.48747831,Endangered,3,4.681203264,180,"Bangladesh,India,Nepal",7.564372143
+15106,CARNIVORA,ODOBENIDAE,Odobenus rosmarus,Walrus,25.95671407,Vulnerable,2,4.680526758,181,"Canada,Greenland,Russian Federation,Svalbard and Jan Mayen,United States",7.564372143
+12271,CHIROPTERA,PHYLLOSTOMIDAE,Lonchorhina fernandezi,Fernandez's Sword-nosed Bat,12.43896545,Endangered,3,4.677599898,182,"Venezuela, Bolivarian Republic of",7.564372143
+19496,PERISSODACTYLA,RHINOCEROTIDAE,Rhinoceros unicornis,Indian Rhinoceros,25.32572861,Vulnerable,2,4.656841096,183,"India,Nepal",7.564372143
+136330,RODENTIA,NESOMYIDAE,Nesomys lambertoni,Lowland Red Forest Rat,12.15667288,Endangered,3,4.656370615,184,Madagascar,7.564372143
+20185,RODENTIA,DIPODIDAE,Sicista armenica,Armenian Birch Mouse,12.06944313,Endangered,3,4.649718462,185,Armenia,7.564372143
+41763,PERISSODACTYLA,EQUIDAE,Equus ferus,Przewalski's Horse,12.05033479,Endangered,3,4.64825533,186,China,7.564372143
+20189,RODENTIA,DIPODIDAE,Sicista kazbegica,Kazbeg Birch Mouse,12.00892804,Endangered,3,4.645077436,187,"Georgia,Russian Federation",7.564372143
+136309,MACROSCELIDEA,MACROSCELIDIDAE,Rhynchocyon udzungwensis,Grey-faced Sengi,25.00663623,Vulnerable,2,4.644646106,188,"Tanzania, United Republic of",7.564372143
+136767,PRIMATES,INDRIIDAE,Avahi betsileo,Betsileo Woolly Lemur,11.87685386,Endangered,3,4.634872967,189,Madagascar,7.564372143
+136335,PRIMATES,INDRIIDAE,Avahi cleesei,Bemaraha Woolly Lemur,11.87685386,Endangered,3,4.634872967,189,Madagascar,7.564372143
+136369,PRIMATES,INDRIIDAE,Avahi meridionalis,Southern Woolly Lemur,11.87685386,Endangered,3,4.634872967,189,Madagascar,7.564372143
+16971566,PRIMATES,INDRIIDAE,Avahi mooreorum,Moore's Woolly Lemur,11.87685386,Endangered,3,4.634872967,189,Madagascar,7.564372143
+41579,PRIMATES,INDRIIDAE,Avahi unicolor,Sambirano Woolly Lemur,11.87685386,Endangered,3,4.634872967,189,Madagascar,7.564372143
+136695,RODENTIA,MURIDAE,Tokudaia tokunoshimensis,Tokunoshima Spiny Rat ,11.77629659,Endangered,3,4.627033167,194,Japan,7.564372143
+40522,PAUCITUBERCULATA,CAENOLESTIDAE,Caenolestes convelatus,Blackish Shrew Opossum,24.46495064,Vulnerable,2,4.623597383,195,"Colombia,Ecuador",7.564372143
+21474,PERISSODACTYLA,TAPIRIDAE,Tapirus terrestris,Lowland Tapir,24.39687841,Vulnerable,2,4.62092063,196,"Argentina,Bolivia, Plurinational States of,Brazil,Colombia,Ecuador,French Guiana,Guyana,Peru,Paraguay,Suriname,Venezuela, Bolivarian Republic of",7.564372143
+136743,PAUCITUBERCULATA,CAENOLESTIDAE,Caenolestes condorensis,Andean Caenolestid,24.21594509,Vulnerable,2,4.613770897,197,Ecuador,7.564372143
+68336601,CARNIVORA,EUPLERIDAE,Eupleres goudotii,Eastern Falanouc,24.12537892,Vulnerable,2,4.610172809,198,Madagascar,7.564372143
+8668,CARNIVORA,EUPLERIDAE,Fossa fossana,Spotted Fanaloka,24.12537892,Vulnerable,2,4.610172809,198,Madagascar,7.564372143
+12590,CHIROPTERA,MEGADERMATIDAE,Macroderma gigas,Ghost Bat,24.04669051,Vulnerable,2,4.607036065,200,Australia,7.564372143
+2435,PRIMATES,INDRIIDAE,Avahi occidentalis,Lorenz Von Liburnau’s Woolly Lemur,11.45696509,Endangered,3,4.601721453,201,Madagascar,7.564372143
+41778,CETARTIODACTYLA,TAYASSUIDAE,Tayassu pecari,White-lipped Peccary,23.88173795,Vulnerable,2,4.60042848,202,"Argentina,Bolivia, Plurinational States of,Brazil,Belize,Colombia,Costa Rica,Ecuador,French Guiana,Guatemala,Guyana,Honduras,Mexico,Nicaragua,Panama,Peru,Paraguay,Suriname,Venezuela, Bolivarian Republic of",7.564372143
+21973,RODENTIA,MURIDAE,Tokudaia osimensis,Ryukyu Spiny Rat,11.38375337,Endangered,3,4.595826943,203,Japan,7.564372143
+41986,LAGOMORPHA,OCHOTONIDAE,Ochotona argentata,Silver Pika,11.34025208,Endangered,3,4.592307988,204,China,7.564372143
+7950,PERISSODACTYLA,EQUIDAE,Equus grevyi,Grevy's Zebra,11.3292803,Endangered,3,4.591418487,205,"Ethiopia,Kenya",7.564372143
+16846,DIPROTODONTIA,PHALANGERIDAE,Phalanger lullulae,Woodlark Cuscus,11.0808294,Endangered,3,4.571061391,206,Papua New Guinea,7.564372143
+16710,PERAMELEMORPHIA,PERAMELIDAE,Peroryctes broadbenti,Giant Bandicoot,11.02946016,Endangered,3,4.566800196,207,Papua New Guinea,7.564372143
+18356,PRIMATES,INDRIIDAE,Propithecus coronatus,Crowned Sifaka,10.90963904,Endangered,3,4.556789617,208,Madagascar,7.564372143
+11034,CETARTIODACTYLA,BOVIDAE,Kobus megaceros,Nile Lechwe,10.88719513,Endangered,3,4.554903323,209,"Ethiopia,South Sudan",7.564372143
+8826,EULIPOTYPHLA,TALPIDAE,Galemys pyrenaicus,Pyrenean Desman,22.66510626,Vulnerable,2,4.550296015,210,"Andorra,Spain,France,Portugal",7.564372143
+10589,EULIPOTYPHLA,ERINACEIDAE,Hylomys parvus,Dwarf Gymnure,22.44870922,Vulnerable,2,4.541109811,211,Indonesia,7.564372143
+19711,PERAMELEMORPHIA,PERAMELIDAE,Rhynchomeles prattorum,Seram Bandicoot,10.70815604,Endangered,3,4.539727238,212,Indonesia,7.564372143
+18148,CARNIVORA,FELIDAE,Prionailurus planiceps,Flat-headed Cat,10.69129886,Endangered,3,4.53828642,213,"Brunei Darussalam,Indonesia,Malaysia",7.564372143
+18359,PRIMATES,INDRIIDAE,Propithecus edwardsi,Milne-Edward's Sifaka,10.68691974,Endangered,3,4.537911787,214,Madagascar,7.564372143
+2478,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera physalus,Fin Whale,22.31916835,Vulnerable,2,4.535570059,215,NA,7.564372143
+7017,PERAMELEMORPHIA,PERAMELIDAE,Echymipera davidi,David's Echymipera,10.62451019,Endangered,3,4.532557358,216,Papua New Guinea,7.564372143
+23115,RODENTIA,CRICETIDAE,Xenomys nelsoni,Magdelena Wood Rat,10.52947248,Endangered,3,4.524348123,217,Mexico,7.564372143
+18355,PRIMATES,INDRIIDAE,Propithecus coquereli,Coquerel's Sifaka,10.51706502,Endangered,3,4.523271392,218,Madagascar,7.564372143
+13638,CHIROPTERA,MOLOSSIDAE,Molossops aequatorianus,Equatorial Dog-faced Bat,10.50770854,Endangered,3,4.52245866,219,Ecuador,7.564372143
+18144,CINGULATA,DASYPODIDAE,Priodontes maximus,Giant Armadillo,22.00882056,Vulnerable,2,4.522172006,220,"Argentina,Bolivia, Plurinational States of,Brazil,Colombia,Ecuador,French Guiana,Guyana,Peru,Paraguay,Suriname,Venezuela, Bolivarian Republic of",7.564372143
+20958,CHIROPTERA,PHYLLOSTOMIDAE,Sturnira nana,Lesser Yellow-shouldered Bat,10.475702,Endangered,3,4.519673472,221,"Ecuador,Peru",7.564372143
+23323,RODENTIA,GEOMYIDAE,Zygogeomys trichopus,Michoacan Pocket Gopher,10.38333705,Endangered,3,4.511592166,222,Mexico,7.564372143
+15932,PRIMATES,HOMINIDAE,Pan paniscus,Bonobo,10.35436234,Endangered,3,4.509043559,223,"Congo, The Democratic Republic of the",7.564372143
+15933,PRIMATES,HOMINIDAE,Pan troglodytes,Chimpanzee,10.35436234,Endangered,3,4.509043559,223,"Angola,Burundi,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Guinea,Equatorial Guinea,Guinea-Bissau,Liberia,Mali,Nigeria,Rwanda,Sierra Leone,Senegal,South Sudan,Tanzania, United Republic of,Uganda",7.564372143
+18354,PRIMATES,INDRIIDAE,Propithecus verreauxi,Verreaux's Sifaka,10.28985365,Endangered,3,4.503345957,225,Madagascar,7.564372143
+18357,PRIMATES,INDRIIDAE,Propithecus deckenii,Van der Decken’s Sifaka,10.26308061,Endangered,3,4.500971716,226,Madagascar,7.564372143
+6232,CETARTIODACTYLA,CERVIDAE,Dama mesopotamica,Persian Fallow Deer,10.20183314,Endangered,3,4.49551898,227,"Iran, Islamic Republic of",7.564372143
+11793,LAGOMORPHA,LEPORIDAE,Lepus hainanus,Hainan Hare,10.1768129,Endangered,3,4.493282897,228,China,7.564372143
+16858,DIPROTODONTIA,PHALANGERIDAE,Phalanger alexandrae,Gebe Cuscus,10.14991505,Endangered,3,4.490873421,229,Indonesia,7.564372143
+5763,EULIPOTYPHLA,SORICIDAE,Cryptotis endersi,Ender's Small-eared Shrew,10.14718476,Endangered,3,4.49062852,230,Panama,7.564372143
+41707,CARNIVORA,VIVERRIDAE,Viverra megaspila,Large-spotted Civet,10.12856291,Endangered,3,4.48895658,231,"Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Thailand",7.564372143
+19391,CETARTIODACTYLA,BOVIDAE,Redunca fulvorufula,Mountain Reedbuck,10.12439011,Endangered,3,4.488581547,232,"Botswana,Cameroon,Ethiopia,Kenya,Lesotho,Mozambique,Nigeria,South Sudan,Swaziland,Tanzania, United Republic of,Uganda,South Africa",7.564372143
+13110,CARNIVORA,MUSTELIDAE,Melogale everetti,Bornean Ferret Badger,10.11251204,Endangered,3,4.487513226,233,Malaysia,7.564372143
+3036,PILOSA,BRADYPODIDAE,Bradypus torquatus,Maned Three-toed Sloth,21.22445301,Vulnerable,2,4.487487531,234,Brazil,7.564372143
+48269619,EULIPOTYPHLA,SORICIDAE,Cryptotis griseoventris,NA,10.06942426,Endangered,3,4.483628278,235,Mexico,7.564372143
+13393,AFROSORICIDA,TENRECIDAE,Micropotamogale lamottei,Nimba Otter Shrew,20.86337221,Vulnerable,2,4.471107096,236,NA,7.564372143
+20428,RODENTIA,SPALACIDAE,Spalax arenarius,Sandy Mole Rat,9.92273681,Endangered,3,4.470288104,237,Ukraine,7.564372143
+11979,AFROSORICIDA,TENRECIDAE,Limnogale mergulus,Web-footed Tenrec,20.75773329,Vulnerable,2,4.466263609,238,Madagascar,7.564372143
+2787,DIPROTODONTIA,POTOROIDAE,Bettongia tropica,Northern Bettong,9.825132039,Endangered,3,4.461312013,239,Australia,7.564372143
+62015,AFROSORICIDA,TENRECIDAE,Microgale jenkinsae,Jenkins' Shrew Tenrec,9.795561236,Endangered,3,4.458576595,240,Madagascar,7.564372143
+136628,AFROSORICIDA,TENRECIDAE,Microgale jobihely,Northern Shrew Tenrec,9.795561236,Endangered,3,4.458576595,240,Madagascar,7.564372143
+136299,EULIPOTYPHLA,SORICIDAE,Cryptotis merus,Darien Small Eared Shrew,9.751982101,Endangered,3,4.454531661,242,"Colombia,Panama",7.564372143
+10123,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros coxi,Cox's Leaf-nosed Bat,9.720446065,Endangered,3,4.451594307,243,Malaysia,7.564372143
+16971390,PRIMATES,CHEIROGALEIDAE,Microcebus arnholdi,Arnhold's Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+41573,PRIMATES,CHEIROGALEIDAE,Microcebus berthae,Madame Berthe's Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+136537,PRIMATES,CHEIROGALEIDAE,Microcebus bongolavensis,Bongolava Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+136347,PRIMATES,CHEIROGALEIDAE,Microcebus danfossi,Danfoss' Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+136458,PRIMATES,CHEIROGALEIDAE,Microcebus jollyae,Jolly's Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+16971425,PRIMATES,CHEIROGALEIDAE,Microcebus macarthurii,MacArthur's Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+16971364,PRIMATES,CHEIROGALEIDAE,Microcebus margotmarshae,Margot Marsh's Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+136272,PRIMATES,CHEIROGALEIDAE,Microcebus mittermeieri,Mittermeier's Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+39751,PRIMATES,CHEIROGALEIDAE,Microcebus ravelobensis,Golden-brown Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+41572,PRIMATES,CHEIROGALEIDAE,Microcebus sambiranensis,Sambirano Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+136744,PRIMATES,CHEIROGALEIDAE,Microcebus simmonsi,Simmons' Mouse Lemur,9.656678069,Endangered,3,4.445628286,244,Madagascar,7.564372143
+11202,RODENTIA,MURIDAE,Lamottemys okuensis,Mount Oku Rat,9.616013691,Endangered,3,4.441805128,255,Cameroon,7.564372143
+13216,RODENTIA,CAPROMYIDAE,Mesocapromys auritus,Large-eared Hutia,9.558993333,Endangered,3,4.436419487,256,Cuba,7.564372143
+18102,DIPROTODONTIA,POTOROIDAE,Potorous longipes,Long-footed Potoroo,20.07359707,Vulnerable,2,4.434315294,257,Australia,7.564372143
+6671,RODENTIA,MURIDAE,Diplothrix legata,Ryukyus Islands Tree Rat,9.482720551,Endangered,3,4.429169781,258,Japan,7.564372143
+71733227,CHIROPTERA,MOLOSSIDAE,Mormopterus acetabulosus,Mauritian Free-tailed Bat,9.467143602,Endangered,3,4.427682712,259,Mauritius,7.564372143
+12767,PHOLIDOTA,MANIDAE,Phataginus tricuspis,White-bellied Pangolin,19.86079871,Vulnerable,2,4.424166099,260,"Angola,Benin,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Guinea,Equatorial Guinea,Guinea-Bissau,Kenya,Liberia,Nigeria,Rwanda,Sierra Leone,South Sudan,Togo,Tanzania, United Republic of,Uganda,Zambia",7.564372143
+14560,CHIROPTERA,PTEROPODIDAE,Neopteryx frosti,Small-toothed Fruit Bat,9.400012043,Endangered,3,4.421248506,261,Indonesia,7.564372143
+22844,RODENTIA,MURIDAE,Vandeleuria nolthenii,Sri Lankan Highland Tree Mouse,9.386807927,Endangered,3,4.419978074,262,Sri Lanka,7.564372143
+41668,CARNIVORA,OTARIIDAE,Zalophus wollebaeki,Galápagos Sea Lion,9.386519912,Endangered,3,4.419950345,263,Ecuador,7.564372143
+13215,RODENTIA,CAPROMYIDAE,Mesocapromys angelcabrerai,Cabrera's Hutia,9.384331909,Endangered,3,4.419739665,264,Cuba,7.564372143
+8199,PRIMATES,LEMURIDAE,Eulemur coronatus,Crowned Lemur,9.371708416,Endangered,3,4.418523296,265,Madagascar,7.564372143
+4648,EULIPOTYPHLA,SORICIDAE,Chimarrogale phaeura,Bornean Water Shrew,9.32914167,Endangered,3,4.41441073,266,Malaysia,7.564372143
+22046,CETARTIODACTYLA,BOVIDAE,Tragelaphus buxtoni,Mountain Nyala,9.321981057,Endangered,3,4.413717246,267,Ethiopia,7.564372143
+12766,PHOLIDOTA,MANIDAE,Phataginus tetradactyla,Black-bellied Pangolin,19.63120696,Vulnerable,2,4.413099192,268,"Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Equatorial Guinea,Liberia,Nigeria,Sierra Leone",7.564372143
+12765,PHOLIDOTA,MANIDAE,Smutsia temminckii,Temminck's Ground Pangolin,19.62022115,Vulnerable,2,4.412566565,269,"Botswana,Central African Republic,Kenya,Malawi,Mozambique,Namibia,Rwanda,South Sudan,Chad,Tanzania, United Republic of,Uganda,South Africa,Zambia,Zimbabwe",7.564372143
+9001,RODENTIA,CAPROMYIDAE,Geocapromys brownii,Brown's Hutia,9.245511272,Endangered,3,4.406281227,270,Jamaica,7.564372143
+4037,CARNIVORA,FELIDAE,Catopuma badia,Borneo Bay Cat,9.112740697,Endangered,3,4.393237626,271,"Indonesia,Malaysia",7.564372143
+11697,CHIROPTERA,PHYLLOSTOMIDAE,Leptonycteris nivalis,Greater Long-nosed Bat,9.062621219,Endangered,3,4.388269231,272,"Mexico,United States",7.564372143
+14941,PRIMATES,LORISIDAE,Nycticebus pygmaeus,Pygmy Slow Loris,19.1131949,Vulnerable,2,4.387670423,273,"Cambodia,Lao People's Democratic Republic,Viet Nam",7.564372143
+14087,RODENTIA,GLIRIDAE,Myomimus roachi,Loir D'Ognev,19.10987011,Vulnerable,2,4.387505106,274,"Bulgaria,Greece,Turkey",7.564372143
+12762,PHOLIDOTA,MANIDAE,Smutsia gigantea,Giant Ground Pangolin,19.03131166,Vulnerable,2,4.383590993,275,"Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Guinea,Equatorial Guinea,Guinea-Bissau,Liberia,Sierra Leone,Senegal,Tanzania, United Republic of,Uganda",7.564372143
+39760,PRIMATES,LORISIDAE,Nycticebus menagensis,Philippine Slow Loris,18.88917616,Vulnerable,2,4.376470033,276,"Brunei Darussalam,Indonesia,Malaysia,Philippines",7.564372143
+20757,RODENTIA,MURIDAE,Nesoromys ceramicus,Seram Island Mountain Rat,8.839720263,Endangered,3,4.365868824,277,Indonesia,7.564372143
+14660,RODENTIA,MURIDAE,Nesokia bunnii,Bunni's Short-tailed Bandicoot Rat,8.787221753,Endangered,3,4.360519174,278,Iraq,7.564372143
+13570,CHIROPTERA,MINIOPTERIDAE,Miniopterus robustior,Loyalty Bent-winged Bat,8.753990844,Endangered,3,4.35711806,279,New Caledonia,7.564372143
+21174,CETARTIODACTYLA,SUIDAE,Sus verrucosus,Javan Warty Pig,8.726994013,Endangered,3,4.35434645,280,Indonesia,7.564372143
+14563,EULIPOTYPHLA,TALPIDAE,Mogera uchidai,Senkaku Mole,18.38863444,Vulnerable,2,4.350981402,281,Japan,7.564372143
+11374,CHIROPTERA,PTEROPODIDAE,Latidens salimalii,Salim Ali's Fruit Bat,8.671827177,Endangered,3,4.348658786,282,India,7.564372143
+39759,PRIMATES,LORISIDAE,Nycticebus coucang,Greater Slow Loris,18.33908543,Vulnerable,2,4.348422561,283,"Indonesia,Malaysia,Singapore,Thailand",7.564372143
+21975,CINGULATA,DASYPODIDAE,Tolypeutes tricinctus,Brazilian Three-banded Armadillo,18.3214577,Vulnerable,2,4.347510637,284,Brazil,7.564372143
+12421,CARNIVORA,MUSTELIDAE,Lutra sumatrana,Hairy-nosed Otter,8.646792764,Endangered,3,4.346067046,285,"Indonesia,Cambodia,Malaysia,Thailand,Viet Nam",7.564372143
+9680,RODENTIA,MURIDAE,Hapalomys longicaudatus,Greater Marmoset Rat,8.639032809,Endangered,3,4.345262314,286,Malaysia,7.564372143
+20335,RODENTIA,MURIDAE,Solomys salebrosus,Bougainville Giant Rat,8.59924811,Endangered,3,4.341126315,287,"Papua New Guinea,Solomon Islands",7.564372143
+16727,DIPROTODONTIA,PETAURIDAE,Petaurus gracilis,Mahogany Glider,8.5966378,Endangered,3,4.34085435,288,Australia,7.564372143
+4829,AFROSORICIDA,CHRYSOCHLORIDAE,Chrysospalax villosus,Rough-haired Golden Mole,18.1581601,Vulnerable,2,4.339023101,289,South Africa,7.564372143
+9618,RODENTIA,MURIDAE,Hadromys humei,Hume’s Rat,8.572193794,Endangered,3,4.338303957,290,India,7.564372143
+13564,CHIROPTERA,MINIOPTERIDAE,Miniopterus fuscus,Southeast Asian Long-fingered Bat,8.568096087,Endangered,3,4.337875781,291,Japan,7.564372143
+7750,CARNIVORA,MUSTELIDAE,Enhydra lutris,Sea Otter,8.559818889,Endangered,3,4.337010324,292,"Canada,Japan,Mexico,Russian Federation,United States",7.564372143
+4162,CETARTIODACTYLA,DELPHINIDAE,Cephalorhynchus hectori,Hector's Dolphin,8.550751858,Endangered,3,4.336061422,293,New Zealand,7.564372143
+136372,RODENTIA,MURIDAE,Vandeleuria nilagirica,Nilgiri Long-tailed Tree Mouse,8.534695455,Endangered,3,4.334378841,294,India,7.564372143
+40767,RODENTIA,GLIRIDAE,Dryomys niethammeri,Baluchistan Forest Dormouse,18.02656992,Vulnerable,2,4.33213078,295,Pakistan,7.564372143
+39758,PRIMATES,LORISIDAE,Nycticebus bengalensis,Bengal Slow Loris,17.9218651,Vulnerable,2,4.326612498,296,"Bangladesh,China,India,Cambodia,Lao People's Democratic Republic,Myanmar,Thailand,Viet Nam",7.564372143
+16138,DASYUROMORPHIA,DASYURIDAE,Parantechinus apicalis,Dibbler,8.44466072,Endangered,3,4.32489112,297,Australia,7.564372143
+12520,CARNIVORA,FELIDAE,Lynx pardinus,Iberian Lynx,8.438658624,Endangered,3,4.324255417,298,Spain,7.564372143
+40596,AFROSORICIDA,CHRYSOCHLORIDAE,Carpitalpa arendsi,Arend's Golden Mole,17.86200227,Vulnerable,2,4.323443798,299,"Mozambique,Zimbabwe",7.564372143
+20336,RODENTIA,MURIDAE,Solomys sapientis,Isabel Giant Rat,8.424281616,Endangered,3,4.322731051,300,Solomon Islands,7.564372143
+7014,RODENTIA,MURIDAE,Echiothrix leucura,Northern Sulawesi Echiothrix,8.382151347,Endangered,3,4.318250633,301,Indonesia,7.564372143
+14486,RODENTIA,CRICETIDAE,Nelsonia goldmani,Nelson and Coldman's Woodrat,8.380860943,Endangered,3,4.318113085,302,Mexico,7.564372143
+62008,AFROSORICIDA,CHRYSOCHLORIDAE,Amblysomus robustus,Robust Golden Mole,17.74404477,Vulnerable,2,4.317170451,303,South Africa,7.564372143
+136643,CETARTIODACTYLA,MOSCHIDAE,Moschus anhuiensis,Anhui Musk Deer,8.364808234,Endangered,3,4.3164004,304,China,7.564372143
+13894,CETARTIODACTYLA,MOSCHIDAE,Moschus berezovskii,Forest Musk Deer,8.364808234,Endangered,3,4.3164004,304,"China,Viet Nam",7.564372143
+15955,CARNIVORA,FELIDAE,Panthera tigris,Tiger,8.333032207,Endangered,3,4.313001499,306,"Bangladesh,Bhutan,China,Indonesia,India,Lao People's Democratic Republic,Myanmar,Malaysia,Nepal,Russian Federation,Thailand",7.564372143
+868,PRIMATES,CHEIROGALEIDAE,Allocebus trichotis,Hairy-eared Dwarf Lemur,17.65034394,Vulnerable,2,4.312158949,307,Madagascar,7.564372143
+21151,RODENTIA,MURIDAE,Sundamys maxi,Javan Sundamys,8.295501822,Endangered,3,4.30897215,308,Indonesia,7.564372143
+136653,DIDELPHIMORPHIA,DIDELPHIDAE,Thylamys karimii,Karimi's Fat-tailed Mouse Opossum,17.57171794,Vulnerable,2,4.307934244,309,Brazil,7.564372143
+14862,RODENTIA,MURIDAE,Notomys aquilo,Northern Hopping-mouse,8.268837799,Endangered,3,4.306099541,310,Australia,7.564372143
+136763,RODENTIA,MURIDAE,Pogonomys fergussoniensis,D’entrecasteaux Archipelago Pogonomys,8.249662551,Endangered,3,4.304028612,311,Papua New Guinea,7.564372143
+4768,AFROSORICIDA,CHRYSOCHLORIDAE,Chlorotalpa duthieae,Duthie's Golden Mole,17.47627415,Vulnerable,2,4.302781792,312,South Africa,7.564372143
+18118,RODENTIA,MURIDAE,Praomys morio,Cameroon Soft-furred Mouse,8.212151395,Endangered,3,4.299964958,313,"Cameroon,Equatorial Guinea",7.564372143
+41211,RODENTIA,MURIDAE,Praomys obscurus,NA,8.200736397,Endangered,3,4.298725066,314,Nigeria,7.564372143
+136821,RODENTIA,CRICETIDAE,Reithrodontomys bakeri,Baker's Small-toothed Harvest Mouse,8.193307462,Endangered,3,4.297917311,315,Mexico,7.564372143
+2532,CHIROPTERA,EMBALLONURIDAE,Balantiopteryx io,Thomas's Sac-winged Bat,17.37419165,Vulnerable,2,4.297241413,316,"Belize,Guatemala,Mexico",7.564372143
+9128,RODENTIA,MURIDAE,Gerbillus hesperinus,Western Gerbil,8.182408235,Endangered,3,4.296731047,317,Morocco,7.564372143
+18711,CARNIVORA,MUSTELIDAE,Pteronura brasiliensis,Giant Otter,8.16497746,Endangered,3,4.294830964,318,"Bolivia, Plurinational States of,Brazil,Colombia,Ecuador,French Guiana,Guyana,Peru,Paraguay,Suriname,Venezuela, Bolivarian Republic of",7.564372143
+2531,CHIROPTERA,EMBALLONURIDAE,Balantiopteryx infusca,Ecuadorian Sac-winged Bat,17.32308825,Vulnerable,2,4.294456279,319,"Colombia,Ecuador",7.564372143
+14662,LAGOMORPHA,LEPORIDAE,Nesolagus netscheri,Sumatran Striped Rabbit,17.31479379,Vulnerable,2,4.294003498,320,Indonesia,7.564372143
+15452,CARNIVORA,FELIDAE,Leopardus jacobita,Andean Cat,8.147354096,Endangered,3,4.292906209,321,"Argentina,Bolivia, Plurinational States of,Chile,Peru",7.564372143
+12722,RODENTIA,MURIDAE,Mallomys gunung,Alpine Woolly Rat,8.139021487,Endangered,3,4.291994863,322,Indonesia,7.564372143
+3333,RODENTIA,MURIDAE,Bunomys prolatus,Tambusisi Bunomys,8.122263084,Endangered,3,4.29015946,323,Indonesia,7.564372143
+2993,PRIMATES,ATELIDAE,Brachyteles arachnoides,Southern Muriqui,8.081944466,Endangered,3,4.28572986,324,Brazil,7.564372143
+2279,PRIMATES,ATELIDAE,Ateles geoffroyi,Geoffroy’s Spider Monkey,8.077183496,Endangered,3,4.285205499,325,"Belize,Colombia,Costa Rica,Guatemala,Honduras,Mexico,Nicaragua,Panama,El Salvador",7.564372143
+39779,PRIMATES,HYLOBATIDAE,Symphalangus syndactylus,Siamang,8.058951086,Endangered,3,4.283194881,326,"Indonesia,Malaysia,Thailand",7.564372143
+5502,RODENTIA,MURIDAE,Crateromys heaneyi,Panay Crateromys,8.034847302,Endangered,3,4.280530565,327,Philippines,7.564372143
+21456,CHIROPTERA,EMBALLONURIDAE,Taphozous hildegardeae,Hildegarde's Tomb Bat,17.06107478,Vulnerable,2,4.280053419,328,"Kenya,Tanzania, United Republic of",7.564372143
+21221,EULIPOTYPHLA,SORICIDAE,Sylvisorex morio,Arrogant Shrew,8.029148227,Endangered,3,4.279899578,329,Cameroon,7.564372143
+21220,EULIPOTYPHLA,SORICIDAE,Sylvisorex isabellae,Isabella Shrew,7.968857821,Endangered,3,4.273199876,330,Equatorial Guinea,7.564372143
+3329,RODENTIA,MURIDAE,Bunomys coelestis,Lompobatang Bunomys,7.934425137,Endangered,3,4.26935335,331,Indonesia,7.564372143
+12906,RODENTIA,MURIDAE,Maxomys wattsi,Watts’s Sulawesi Maxomys,7.891485065,Endangered,3,4.264535626,332,Indonesia,7.564372143
+16121,RODENTIA,MURIDAE,Paraleptomys rufilatus,Northern Hydromyine,7.885247392,Endangered,3,4.263833847,333,"Indonesia,Papua New Guinea",7.564372143
+9456,RODENTIA,MURIDAE,Grammomys gigas,Giant Thicket Rat,7.843524979,Endangered,3,4.259127092,334,Kenya,7.564372143
+9760,CARNIVORA,URSIDAE,Helarctos malayanus,Sun Bear,16.65124227,Vulnerable,2,4.257100526,335,"Bangladesh,Brunei Darussalam,Indonesia,India,Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Thailand,Viet Nam",7.564372143
+13143,CARNIVORA,URSIDAE,Melursus ursinus,Sloth Bear,16.65124227,Vulnerable,2,4.257100526,335,"India,Sri Lanka,Nepal",7.564372143
+22824,CARNIVORA,URSIDAE,Ursus thibetanus,Asiatic Black Bear,16.62549163,Vulnerable,2,4.255640603,337,"Afghanistan,Bangladesh,Bhutan,China,India,Iran, Islamic Republic of,Japan,Cambodia,Korea, Democratic People's Republic of,Korea, Republic of,Lao People's Democratic Republic,Myanmar,Nepal,Pakistan,Russian Federation,Thailand,Taiwan, Province of China,Viet Nam",7.564372143
+16426,RODENTIA,MURIDAE,Paulamys naso,Paula’s Long-nosed Rat,7.804360066,Endangered,3,4.254688603,338,Indonesia,7.564372143
+136731,PRIMATES,LEPILEMURIDAE,Lepilemur ankaranensis,Ankarana Sportive Lemur,7.79586064,Endangered,3,4.253722771,339,Madagascar,7.564372143
+21206,LAGOMORPHA,LEPORIDAE,Sylvilagus graysoni,Tres Marias Cottontail,7.79396198,Endangered,3,4.253506889,340,Mexico,7.564372143
+5500,RODENTIA,MURIDAE,Crateromys schadenbergi,Luzon Crateromys,7.789872645,Endangered,3,4.253041765,341,Philippines,7.564372143
+19401,RODENTIA,CRICETIDAE,Reithrodontomys raviventris,Salt-marsh Harvest Mouse,7.787368169,Endangered,3,4.252756797,342,United States,7.564372143
+136394,RODENTIA,MURIDAE,Batomys russatus,Russet Batomys,7.770894786,Endangered,3,4.250880371,343,Philippines,7.564372143
+14821,RODENTIA,MURIDAE,Niviventer hinpoon,Limestone Niviventer,7.770165022,Endangered,3,4.250797165,344,Thailand,7.564372143
+9194,CETARTIODACTYLA,GIRAFFIDAE,Giraffa camelopardalis,Giraffe,16.48287111,Vulnerable,2,4.247515969,345,NA,7.564372143
+8210,PRIMATES,LEMURIDAE,Eulemur sanfordi,Sanford's Brown Lemur,7.733086089,Endangered,3,4.246560353,346,Madagascar,7.564372143
+45047,EULIPOTYPHLA,SORICIDAE,Myosorex kihaulei,Kihaule's Mouse Shrew,7.691365018,Endangered,3,4.241771548,347,"Tanzania, United Republic of",7.564372143
+3598,RODENTIA,SCIURIDAE,Callosciurus melanogaster,Mentawai Squirrel,16.33481581,Vulnerable,2,4.239011315,348,Indonesia,7.564372143
+12561,PRIMATES,CERCOPITHECIDAE,Macaca sylvanus,Barbary Macaque,7.667080111,Endangered,3,4.238973495,349,"Algeria,Morocco",7.564372143
+136683,RODENTIA,CRICETIDAE,Habromys delicatulus,Delicate Deer Mouse,7.660429286,Endangered,3,4.238205834,350,Mexico,7.564372143
+40579,DIPROTODONTIA,PSEUDOCHEIRIDAE,Petauroides volans,Greater Glider,16.28776329,Vulnerable,2,4.236293288,351,Australia,7.564372143
+45071,RODENTIA,MURIDAE,Otomys burtoni,Burton’s Vlei Rat,7.630548145,Endangered,3,4.234749561,352,Cameroon,7.564372143
+20391,EULIPOTYPHLA,SORICIDAE,Sorex pribilofensis,Pribilof Island Shrew,7.619954181,Endangered,3,4.233521311,353,United States,7.564372143
+8204,PRIMATES,LEMURIDAE,Eulemur albifrons,White-fronted Lemur,7.617869153,Endangered,3,4.233279398,354,Madagascar,7.564372143
+8206,PRIMATES,LEMURIDAE,Eulemur collaris,Collared Brown Lemur,7.612973824,Endangered,3,4.232711192,355,Madagascar,7.564372143
+14549,CARNIVORA,OTARIIDAE,Neophoca cinerea,Australian Sea Lion,7.609659935,Endangered,3,4.232326363,356,Australia,7.564372143
+17026,CARNIVORA,OTARIIDAE,Phocarctos hookeri,New Zealand Sea Lion,7.609659935,Endangered,3,4.232326363,356,"Australia,New Zealand",7.564372143
+10278,RODENTIA,MURIDAE,Hybomys basilii,Father Basilio's Striped Mouse,7.600476357,Endangered,3,4.231259134,358,Equatorial Guinea,7.564372143
+136820,CHIROPTERA,VESPERTILIONIDAE,Neoromicia malagasyensis,Isalo Serotine,7.592386918,Endangered,3,4.230318111,359,Madagascar,7.564372143
+10279,RODENTIA,MURIDAE,Hybomys badius,Eisentraut's Striped Mouse,7.592328529,Endangered,3,4.230311315,360,Cameroon,7.564372143
+41309,LAGOMORPHA,LEPORIDAE,Sylvilagus cognatus,Manzano Mountain Cottontail,7.579119009,Endangered,3,4.22877277,361,United States,7.564372143
+20760,RODENTIA,MURIDAE,Rattus vandeuseni,Van Deusen's Rat,7.571970797,Endangered,3,4.227939212,362,Papua New Guinea,7.564372143
+40582,DIPROTODONTIA,PSEUDOCHEIRIDAE,Pseudochirops coronatus,Reclusive Ringtail,16.09214351,Vulnerable,2,4.224913275,363,Indonesia,7.564372143
+19852,CARNIVORA,EUPLERIDAE,Salanoia concolor,Brown-tailed Vontsira,15.9919967,Vulnerable,2,4.219036812,364,Madagascar,7.564372143
+15087,RODENTIA,OCTODONTIDAE,Octodon bridgesi,Bridges's Degu,15.83333996,Vulnerable,2,4.209655802,365,"Argentina,Chile",7.564372143
+8833,CARNIVORA,EUPLERIDAE,Galidictis fasciata,Broad-striped Vontsira,15.70024538,Vulnerable,2,4.201717774,366,Madagascar,7.564372143
+136244,DIDELPHIMORPHIA,DIDELPHIDAE,Marmosa phaea,Little Woolly Mouse Opossum ,15.40378867,Vulnerable,2,4.183806686,367,"Colombia,Ecuador,Peru",7.564372143
+5076,CHIROPTERA,HIPPOSIDERIDAE,Coelops robinsoni,Malayan Tailless Leaf-nosed Bat,15.34274881,Vulnerable,2,4.180078662,368,"Indonesia,Malaysia",7.564372143
+136446,CETARTIODACTYLA,SUIDAE,Babyrousa celebensis,Sulawesi Babirusa,15.31973299,Vulnerable,2,4.17866935,369,Indonesia,7.564372143
+17481,RODENTIA,PLATACANTHOMYIDAE,Platacanthomys lasiurus,Malabar Spiny Tree Mouse,15.2687502,Vulnerable,2,4.175540463,370,India,7.564372143
+12815,DIDELPHIMORPHIA,DIDELPHIDAE,Marmosa xerophila,Dryland Mouse Opossum,15.19923916,Vulnerable,2,4.171258637,371,"Colombia,Venezuela, Bolivarian Republic of",7.564372143
+21491,PRIMATES,TARSIIDAE,Tarsius tarsier,Spectral Tarsier,15.19262957,Vulnerable,2,4.170850535,372,Indonesia,7.564372143
+2461,CETARTIODACTYLA,SUIDAE,Babyrousa babyrussa,Hairy Babirusa,15.10830286,Vulnerable,2,4.165629206,373,Indonesia,7.564372143
+12592,CARNIVORA,VIVERRIDAE,Macrogalidia musschenbroekii,Sulawesi Civet,15.10496711,Vulnerable,2,4.165422102,374,Indonesia,7.564372143
+88088852,CHIROPTERA,NATALIDAE,Chilonatalus micropus,Cuban Lesser Funnel-eared Bat,15.08925057,Vulnerable,2,4.164445744,375,NA,7.564372143
+6313,RODENTIA,NESOMYIDAE,Delanymys brooksi,Delany's Swamp Mouse,14.51589317,Vulnerable,2,4.128159226,376,"Burundi,Congo, The Democratic Republic of the,Rwanda,Uganda",7.564372143
+6204,CARNIVORA,PHOCIDAE,Cystophora cristata,Hooded Seal,14.36493553,Vulnerable,2,4.118382361,377,"Canada,Greenland,Iceland,Norway",7.564372143
+21488,PRIMATES,TARSIIDAE,Tarsius bancanus,Horsfield’s Tarsier,14.2056578,Vulnerable,2,4.107961943,378,"Brunei Darussalam,Indonesia,Malaysia",7.564372143
+21489,PRIMATES,TARSIIDAE,Tarsius dentatus,Dian's Tarsier,14.19284342,Vulnerable,2,4.10711885,379,Indonesia,7.564372143
+136777,CHIROPTERA,NATALIDAE,Natalus primus,Cuban Greater Funnel-eared Bat,14.15517421,Vulnerable,2,4.104636367,380,Cuba,7.564372143
+40637,DIPROTODONTIA,PHALANGERIDAE,Ailurops ursinus,Bear Cuscus,13.89757946,Vulnerable,2,4.087493109,381,Indonesia,7.564372143
+40025,CHIROPTERA,HIPPOSIDERIDAE,Paratriaenops auritus,Grandidier's Trident Bat,13.72757372,Vulnerable,2,4.076015861,382,Madagascar,7.564372143
+40641,DIPROTODONTIA,PSEUDOCHEIRIDAE,Pseudochirulus schlegeli,Arfak Ringtail,13.67192254,Vulnerable,2,4.072229997,383,Indonesia,7.564372143
+219,CARNIVORA,FELIDAE,Acinonyx jubatus,Cheetah,13.45107629,Vulnerable,2,4.057063257,384,"Angola,Burkina Faso,Benin,Botswana,Central African Republic,Algeria,Ethiopia,Iran, Islamic Republic of,Kenya,Mali,Mozambique,Namibia,Niger,South Sudan,Chad,Tanzania, United Republic of,Uganda,South Africa,Zambia,Zimbabwe",7.564372143
+13897,CETARTIODACTYLA,MOSCHIDAE,Moschus moschiferus,Siberian Musk Deer,13.41568718,Vulnerable,2,4.054611362,385,"China,Korea, Democratic People's Republic of,Korea, Republic of,Kazakhstan,Mongolia,Russian Federation",7.564372143
+6635,CARNIVORA,VIVERRIDAE,Diplogale hosei,Hose's Civet,13.11855679,Vulnerable,2,4.033784378,386,"Brunei Darussalam,Indonesia,Malaysia",7.564372143
+136392,DIDELPHIMORPHIA,DIDELPHIDAE,Monodelphis reigi,Reig's Opossum,13.02312782,Vulnerable,2,4.027002315,387,"Venezuela, Bolivarian Republic of",7.564372143
+51221900,DIDELPHIMORPHIA,DIDELPHIDAE,Marmosops pakaraimae,NA,12.95765144,Vulnerable,2,4.022322209,388,"Guyana,Venezuela, Bolivarian Republic of",7.564372143
+12272,CHIROPTERA,PHYLLOSTOMIDAE,Lonchorhina marinkellei,Marinkelle's Sword-nosed Bat,12.93874237,Vulnerable,2,4.020966545,389,Colombia,7.564372143
+12273,CHIROPTERA,PHYLLOSTOMIDAE,Lonchorhina orinocensis,Orinoco Sword-nosed Bat,12.90320424,Vulnerable,2,4.018413696,390,"Colombia,Venezuela, Bolivarian Republic of",7.564372143
+11933,CARNIVORA,HERPESTIDAE,Liberiictis kuhni,Liberian Mongoose,12.8507602,Vulnerable,2,4.01463448,391,"Côte d'Ivoire,Liberia",7.564372143
+136384,PRIMATES,LEMURIDAE,Hapalemur meridionalis,Rusty-gray Lesser Bamboo Lemur,12.82123032,Vulnerable,2,4.0125002,392,Madagascar,7.564372143
+136399,RODENTIA,NESOMYIDAE,Brachytarsomys villosa,Hairy-tailed Tree Rat,12.80194342,Vulnerable,2,4.011103771,393,Madagascar,7.564372143
+16872,PRIMATES,CHEIROGALEIDAE,Phaner furcifer,Masoala Fork-marked Lemur,12.76338685,Vulnerable,2,4.008306301,394,Madagascar,7.564372143
+16569,PERAMELEMORPHIA,PERAMELIDAE,Perameles bougainville,Western Barred Bandicoot,12.73350699,Vulnerable,2,4.006132974,395,Australia,7.564372143
+136364,DIDELPHIMORPHIA,DIDELPHIDAE,Marmosops juninensis,Junin Slender Opossum,12.6984687,Vulnerable,2,4.003578414,396,Peru,7.564372143
+22446,SCANDENTIA,TUPAIIDAE,Tupaia chrysogaster,Golden-bellied Treeshrew,12.63899526,Vulnerable,2,3.99922735,397,Indonesia,7.564372143
+11171,DIPROTODONTIA,MACROPODIDAE,Lagostrophus fasciatus,Banded Hare Wallaby,12.57835448,Vulnerable,2,3.994771304,398,Australia,7.564372143
+9673,PRIMATES,LEMURIDAE,Hapalemur griseus,Eastern Lesser Bamboo Lemur,12.49773395,Vulnerable,2,3.988816177,399,Madagascar,7.564372143
+14932,CHIROPTERA,NYCTERIDAE,Nycteris javanica,Javan Slit-faced Bat,12.49401241,Vulnerable,2,3.988540423,400,Indonesia,7.564372143
+9678,PRIMATES,LEMURIDAE,Hapalemur occidentalis,Sambirano Lesser Bamboo Lemur,12.48532972,Vulnerable,2,3.987896768,401,Madagascar,7.564372143
+6607,RODENTIA,CRICETIDAE,Dinaromys bogdanovi,Balkan Snow Vole,12.35672003,Vulnerable,2,3.978313992,402,"Bosnia and Herzegovina,Croatia,Montenegro,Macedonia, the former Yugoslav Republic of,Serbia",7.564372143
+22823,CARNIVORA,URSIDAE,Ursus maritimus,Polar Bear,12.32523791,Vulnerable,2,3.975954185,403,"Canada,Greenland,Norway,Russian Federation,Svalbard and Jan Mayen,United States",7.564372143
+19762,RODENTIA,SCIURIDAE,Rubrisciurus rubriventer,Sulawesi Giant Squirrel,12.23671418,Vulnerable,2,3.969288707,404,Indonesia,7.564372143
+20186,RODENTIA,DIPODIDAE,Sicista caucasica,Caucasian Birch Mouse,12.16094873,Vulnerable,2,3.963548376,405,"Georgia,Russian Federation",7.564372143
+16572,PERAMELEMORPHIA,PERAMELIDAE,Perameles gunnii,Eastern Barred Bandicoot,12.00869641,Vulnerable,2,3.95191245,406,Australia,7.564372143
+2434,PRIMATES,INDRIIDAE,Avahi laniger,Eastern Woolly Lemur,11.87685386,Vulnerable,2,3.941725786,407,Madagascar,7.564372143
+136285,PRIMATES,INDRIIDAE,Avahi peyrierasi,Peyrieras' Woolly Lemur,11.87685386,Vulnerable,2,3.941725786,407,Madagascar,7.564372143
+136434,PRIMATES,INDRIIDAE,Avahi ramanantsoavanai,Ramantsoavana's Southern Woolly Lemur,11.87685386,Vulnerable,2,3.941725786,407,Madagascar,7.564372143
+41690,CARNIVORA,VIVERRIDAE,Arctictis binturong,Binturong,11.71448894,Vulnerable,2,3.929036566,410,"Bangladesh,Bhutan,China,Indonesia,India,Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Nepal,Philippines,Thailand,Viet Nam",7.564372143
+41637,CARNIVORA,MEPHITIDAE,Spilogale pygmaea,Pygmy Spotted Skunk,11.48090417,Vulnerable,2,3.910494171,411,Mexico,7.564372143
+7960,PERISSODACTYLA,EQUIDAE,Equus zebra,Mountain Zebra,11.42863397,Vulnerable,2,3.906297363,412,"Namibia,South Africa",7.564372143
+3590,CARNIVORA,OTARIIDAE,Callorhinus ursinus,Northern Fur Seal,11.32782446,Vulnerable,2,3.89815322,413,"Canada,Japan,Korea, Democratic People's Republic of,Korea, Republic of,Mexico,Russian Federation,United States",7.564372143
+20688,RODENTIA,MURIDAE,Srilankamys ohiensis,Ohiya Rat,11.07389362,Vulnerable,2,3.877339931,414,Sri Lanka,7.564372143
+20293,DASYUROMORPHIA,DASYURIDAE,Sminthopsis psammophila,Sandhill Dunnart,11.06019111,Vulnerable,2,3.876204399,415,Australia,7.564372143
+48268560,EULIPOTYPHLA,SORICIDAE,Cryptotis meridensis,Merida Small-eared Shrew,10.9240536,Vulnerable,2,3.864852032,416,"Venezuela, Bolivarian Republic of",7.564372143
+5766,EULIPOTYPHLA,SORICIDAE,Cryptotis magna,Big Mexican Small-eared Shrew,10.91620349,Vulnerable,2,3.864193473,417,NA,7.564372143
+136739,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros inornatus,Arnhem Leaf-nosed Bat,10.88291447,Vulnerable,2,3.861395971,418,Australia,7.564372143
+136688,EULIPOTYPHLA,SORICIDAE,Notiosorex villai,Villa's Grey Shrew,10.84687257,Vulnerable,2,3.858358276,419,Mexico,7.564372143
+10127,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros demissus,Makira Leaf-nosed Bat,10.82981007,Vulnerable,2,3.856916984,420,Solomon Islands,7.564372143
+10133,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros edwardshilli,Hill's Leaf-nosed Bat,10.75436651,Vulnerable,2,3.850519151,421,Papua New Guinea,7.564372143
+136819,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros khaokhouayensis,Phou Khao Khouay Leaf-nosed Bat,10.75436651,Vulnerable,2,3.850519151,421,Lao People's Democratic Republic,7.564372143
+136192,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros orbiculus,Orbiculus Leaf-nosed Bat,10.75436651,Vulnerable,2,3.850519151,421,"Indonesia,Malaysia",7.564372143
+136586,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros scutinares,Shield-nosed Leaf-nosed Bat,10.75436651,Vulnerable,2,3.850519151,421,"Lao People's Democratic Republic,Viet Nam",7.564372143
+10161,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros sorenseni,Sorensen's Leaf-nosed Bat,10.75436651,Vulnerable,2,3.850519151,421,Indonesia,7.564372143
+44165,CARNIVORA,VIVERRIDAE,Poiana leightoni,West African Oyan,10.73509056,Vulnerable,2,3.848877907,426,"Côte d'Ivoire,Liberia",7.564372143
+20890,DIPROTODONTIA,PHALANGERIDAE,Strigocuscus celebensis,Small Sulawesi Cuscus,10.66564083,Vulnerable,2,3.842942201,427,Indonesia,7.564372143
+70205537,CARNIVORA,MUSTELIDAE,Arctonyx collaris,Greater Hog Badger,10.65340535,Vulnerable,2,3.841892803,428,"Bangladesh,India,Cambodia,Lao People's Democratic Republic,Myanmar,Thailand,Viet Nam",7.564372143
+21661,CETARTIODACTYLA,BOVIDAE,Tetracerus quadricornis,Four-horned Antelope,10.62576723,Vulnerable,2,3.839518309,429,"India,Nepal",7.564372143
+14876,CHIROPTERA,PTEROPODIDAE,Notopteris macdonaldi,Fijian Blossom Bat,10.58286771,Vulnerable,2,3.835821446,430,"Fiji,Vanuatu",7.564372143
+136519,CHIROPTERA,PTEROPODIDAE,Notopteris neocaledonica,New Caledonia Blossom Bat,10.57084327,Vulnerable,2,3.834782784,431,New Caledonia,7.564372143
+29680,CARNIVORA,MUSTELIDAE,Vormela peregusna,Marbled Polecat,10.40423725,Vulnerable,2,3.820279336,432,"Afghanistan,Armenia,Azerbaijan,Bulgaria,China,Egypt,Georgia,Greece,Israel,Iraq,Iran, Islamic Republic of,Kazakhstan,Lebanon,Montenegro,Macedonia, the former Yugoslav Republic of,Mongolia,Pakistan,Romania,Serbia,Russian Federation,Syrian Arab Republic,Turkmenistan,Turkey,Ukraine,Uzbekistan",7.564372143
+136433,CHIROPTERA,MOLOSSIDAE,Eumops floridanus,Florida Bonneted Bat,10.37608876,Vulnerable,2,3.817808037,433,United States,7.564372143
+10131,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros durgadasi,Durga Das's Leaf-nosed Bat,10.31956659,Vulnerable,2,3.812827146,434,India,7.564372143
+10636,RODENTIA,SCIURIDAE,Hyosciurus ileile,Lowland Long-nosed Squirrel,10.28106348,Vulnerable,2,3.809419883,435,Indonesia,7.564372143
+23141,RODENTIA,MURIDAE,Xeromys myoides,Water Mouse,10.26696048,Vulnerable,2,3.808168953,436,"Australia,Papua New Guinea",7.564372143
+10863,PERAMELEMORPHIA,PERAMELIDAE,Isoodon auratus,Golden Bandicoot,10.20755342,Vulnerable,2,3.802882325,437,Australia,7.564372143
+5764,EULIPOTYPHLA,SORICIDAE,Cryptotis gracilis,Talamancan Small-eared Shrew,10.1686052,Vulnerable,2,3.799401096,438,"Costa Rica,Panama",7.564372143
+136776,CHIROPTERA,PTEROPODIDAE,Harpyionycteris celebensis,Sulawesi Harpy Fruit Bat,10.15868606,Vulnerable,2,3.798512575,439,Indonesia,7.564372143
+136200,DIPROTODONTIA,PHALANGERIDAE,Phalanger matabiru,Blue-eyed Cuscus,10.14991505,Vulnerable,2,3.79772624,440,Indonesia,7.564372143
+59544947,PRIMATES,CHEIROGALEIDAE,Microcebus rufus,Rufous Mouse Lemur,10.0961428,Vulnerable,2,3.792891914,441,Madagascar,7.564372143
+12847,CARNIVORA,MUSTELIDAE,Martes gwatkinsii,Nilgiri Marten,10.01228963,Vulnerable,2,3.785306249,442,India,7.564372143
+18150,CARNIVORA,FELIDAE,Prionailurus viverrinus,Fishing Cat,9.882660084,Vulnerable,2,3.773465066,443,"Bangladesh,India,Cambodia,Sri Lanka,Myanmar,Nepal,Pakistan,Thailand",7.564372143
+20638,DIPROTODONTIA,PHALANGERIDAE,Spilocuscus papuensis,Waigeo Cuscus,9.873063091,Vulnerable,2,3.772582816,444,Indonesia,7.564372143
+13885,CHIROPTERA,MOLOSSIDAE,Mormopterus norfolkensis,East-coast Free-tailed Bat,9.858608933,Vulnerable,2,3.771252577,445,Australia,7.564372143
+136639,EULIPOTYPHLA,SORICIDAE,Cryptotis phillipsii,Phillip's Small-eared Shrew,9.853299334,Vulnerable,2,3.770763481,446,Mexico,7.564372143
+10954,RODENTIA,MURIDAE,Kadarsanomys sodyi,Javan Bamboo Rat,9.825949723,Vulnerable,2,3.768240365,447,Indonesia,7.564372143
+29462,AFROSORICIDA,TENRECIDAE,Microgale monticola,Montane Shrew Tenrec,9.795561236,Vulnerable,2,3.765429414,448,Madagascar,7.564372143
+62017,AFROSORICIDA,TENRECIDAE,Microgale nasoloi,Nasolo's Shrew Tenrec,9.795561236,Vulnerable,2,3.765429414,448,Madagascar,7.564372143
+10137,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros halophyllus,Thailand Leaf-nosed Bat,9.786425485,Vulnerable,2,3.764582805,450,"Malaysia,Thailand",7.564372143
+42655,RODENTIA,SPALACIDAE,Spalax zemni,Podolian Mole Rat,9.681428684,Vulnerable,2,3.754800958,451,Ukraine,7.564372143
+136199,PRIMATES,CHEIROGALEIDAE,Microcebus lehilahytsara,Goodman's Mouse Lemur,9.656678069,Vulnerable,2,3.752481105,452,Madagascar,7.564372143
+41571,PRIMATES,CHEIROGALEIDAE,Microcebus tavaratra,Tavaratra Mouse Lemur,9.656678069,Vulnerable,2,3.752481105,452,Madagascar,7.564372143
+10108,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros ridleyi,Ridley's Leaf-nosed Bat,9.641801657,Vulnerable,2,3.751084159,454,"Brunei Darussalam,Malaysia,Singapore",7.564372143
+10149,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros marisae,Aellen's Roundleaf Bat,9.592328515,Vulnerable,2,3.746424375,455,"Côte d'Ivoire,Guinea,Liberia",7.564372143
+3160,CETARTIODACTYLA,BOVIDAE,Budorcas taxicolor,Takin,9.539859166,Vulnerable,2,3.741458542,456,"Bhutan,China,India,Myanmar",7.564372143
+21703,RODENTIA,MURIDAE,Thamnomys kempi,Kemp's Thicket Rat,9.515277567,Vulnerable,2,3.739123567,457,"Burundi,Congo, The Democratic Republic of the,Rwanda",7.564372143
+41772,CETARTIODACTYLA,SUIDAE,Sus barbatus,Bearded Pig,9.504586541,Vulnerable,2,3.738106336,458,"Brunei Darussalam,Indonesia,Malaysia",7.564372143
+21212,LAGOMORPHA,LEPORIDAE,Sylvilagus transitionalis,New England Cottontail,9.496639253,Vulnerable,2,3.737349496,459,United States,7.564372143
+1151,CETARTIODACTYLA,BOVIDAE,Ammotragus lervia,Aoudad,9.474485038,Vulnerable,2,3.735236665,460,"Algeria,Egypt,Libya,Morocco,Mali,Mauritania,Niger,Sudan,Chad,Tunisia",7.564372143
+19409,RODENTIA,CRICETIDAE,Reithrodontomys hirsutus,Hairy Harvest Mouse,9.428837863,Vulnerable,2,3.730869201,461,Mexico,7.564372143
+13887,CHIROPTERA,MOLOSSIDAE,Mormopterus phrudus,Incan Little Mastiff Bat,9.369816438,Vulnerable,2,3.725193682,462,Peru,7.564372143
+13884,CHIROPTERA,MOLOSSIDAE,Mormopterus minutus,Little Goblin Bat,9.366944859,Vulnerable,2,3.724916727,463,Cuba,7.564372143
+18306,CARNIVORA,FELIDAE,Caracal aurata,African Golden Cat,9.325829896,Vulnerable,2,3.720942874,464,"Angola,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Guinea,Equatorial Guinea,Liberia,Nigeria,Sierra Leone,Uganda",7.564372143
+10125,CHIROPTERA,HIPPOSIDERIDAE,Hipposideros curtus,Short-tailed Roundleaf Bat,9.310134219,Vulnerable,2,3.719421677,465,"Cameroon,Equatorial Guinea",7.564372143
+21184,CHIROPTERA,PTEROPODIDAE,Syconycteris carolinae,Halmaheran Blossom Bat,9.308731496,Vulnerable,2,3.719285615,466,Indonesia,7.564372143
+136808,RODENTIA,MURIDAE,Pseudomys calabyi,Kakadu Pebble Mouse,9.281192319,Vulnerable,2,3.716610599,467,Australia,7.564372143
+9002,RODENTIA,CAPROMYIDAE,Geocapromys ingrahami,Bahaman Hutia,9.245511272,Vulnerable,2,3.713134046,468,Bahamas,7.564372143
+8212,PRIMATES,LEMURIDAE,Eulemur macaco,Black Lemur,9.105098465,Vulnerable,2,3.699334456,469,Madagascar,7.564372143
+45052,RODENTIA,MURIDAE,Desmomys yaldeni,Yalden's Desmomys,9.097470668,Vulnerable,2,3.698579325,470,Ethiopia,7.564372143
+13325,PRIMATES,CHEIROGALEIDAE,Microcebus myoxinus,Peters’ Mouse Lemur,9.069639587,Vulnerable,2,3.695819276,471,Madagascar,7.564372143
+4425,CHIROPTERA,VESPERTILIONIDAE,Chalinolobus tuberculatus,New Zealand Long-tailed Bat,9.066900674,Vulnerable,2,3.695547242,472,New Zealand,7.564372143
+3564,PRIMATES,CALLITRICHIDAE,Callimico goeldii,Goeldi’s Monkey,9.060695853,Vulnerable,2,3.694930694,473,"Bolivia, Plurinational States of,Brazil,Colombia,Peru",7.564372143
+16631,RODENTIA,HETEROMYIDAE,Perognathus alticola,White-eared Pocket Mouse,9.059800309,Vulnerable,2,3.694841676,474,United States,7.564372143
+136340,CETARTIODACTYLA,SUIDAE,Sus oliveri,Oliver's Warty Pig,9.032107253,Vulnerable,2,3.692085036,475,Philippines,7.564372143
+14256,RODENTIA,CAPROMYIDAE,Mysateles melanurus,Black-tailed Hutia,8.955048423,Vulnerable,2,3.684374163,476,Cuba,7.564372143
+20165,DIPROTODONTIA,MACROPODIDAE,Setonix brachyurus,Quokka,8.916548075,Vulnerable,2,3.680499246,477,Australia,7.564372143
+8203,PRIMATES,LEMURIDAE,Eulemur rubriventer,Red-bellied Lemur,8.889196575,Vulnerable,2,3.677737267,478,Madagascar,7.564372143
+82031425,CETARTIODACTYLA,DELPHINIDAE,Sousa chinensis,Indo-Pacific Humpback Dolphin ,8.878578954,Vulnerable,2,3.676663032,479,"Bangladesh,Brunei Darussalam,China,Hong Kong,Indonesia,India,Cambodia,Myanmar,Malaysia,Philippines,Singapore,Thailand,Taiwan, Province of China,Viet Nam",7.564372143
+8032,RODENTIA,MURIDAE,Eropeplus canus,Sulawesi Soft-furred Rat,8.872239991,Vulnerable,2,3.676021138,480,Indonesia,7.564372143
+41636,CARNIVORA,MEPHITIDAE,Spilogale putorius,Eastern Spotted Skunk,8.832013455,Vulnerable,2,3.671938102,481,"Canada,Mexico,United States",7.564372143
+17400,RODENTIA,MURIDAE,Pithecheir melanurus,Javan Pithecheir,8.83120952,Vulnerable,2,3.671856331,482,Indonesia,7.564372143
+17003,RODENTIA,MURIDAE,Phloeomys cumingi,Southern Luzon Phloeomys,8.738833017,Vulnerable,2,3.662415658,483,Philippines,7.564372143
+13356,AFROSORICIDA,TENRECIDAE,Microgale dryas,Dryad Shrew Tenrec,8.711011822,Vulnerable,2,3.659554842,484,Madagascar,7.564372143
+20295,DASYUROMORPHIA,DASYURIDAE,Sminthopsis butleri,Butler's Dunnart,8.694953677,Vulnerable,2,3.657899872,485,Australia,7.564372143
+21176,CETARTIODACTYLA,SUIDAE,Sus philippensis,Philippine Warty Pig,8.682113677,Vulnerable,2,3.656574594,486,Philippines,7.564372143
+9632,RODENTIA,MURIDAE,Haeromys pusillus,Sundaic Haeromys,8.669169656,Vulnerable,2,3.655236799,487,"Indonesia,Malaysia",7.564372143
+9679,RODENTIA,MURIDAE,Hapalomys delacouri,Lesser Marmoset Rat,8.640016653,Vulnerable,2,3.652217197,488,"China,Lao People's Democratic Republic,Viet Nam",7.564372143
+11050,RODENTIA,MURIDAE,Komodomys rintjanus,Nusa Tenggara Komodomys,8.636823792,Vulnerable,2,3.651885933,489,Indonesia,7.564372143
+13219,RODENTIA,CRICETIDAE,Mesocricetus auratus,Golden Hamster,8.612196443,Vulnerable,2,3.649327116,490,"Syrian Arab Republic,Turkey",7.564372143
+10753,RODENTIA,HYSTRICIDAE,Hystrix pumila,Phillipine Porcupine,8.604338875,Vulnerable,2,3.648509324,491,Philippines,7.564372143
+14026,CARNIVORA,MUSTELIDAE,Mustela felipei,Colombian Weasel,8.589565496,Vulnerable,2,3.646969941,492,"Colombia,Ecuador",7.564372143
+136686,CARNIVORA,HERPESTIDAE,Bdeogale omnivora,Sokoke Dog Mongoose,8.581364011,Vulnerable,2,3.646114324,493,"Kenya,Tanzania, United Republic of",7.564372143
+9631,RODENTIA,MURIDAE,Haeromys minahassae,Lowland Sulawesi Haeromys,8.557206147,Vulnerable,2,3.643589801,494,Indonesia,7.564372143
+5224,RODENTIA,MURIDAE,Conilurus penicillatus,Brush-tailed Rabbit-rat,8.501069811,Vulnerable,2,3.637698765,495,"Australia,Papua New Guinea",7.564372143
+11699,CHIROPTERA,PHYLLOSTOMIDAE,Leptonycteris curasoae,Southern Long-nosed Bat,8.419629222,Vulnerable,2,3.629090088,496,"Aruba,Bonaire, Sint Eustatius and Saba,Colombia,Curaçao,Venezuela, Bolivarian Republic of",7.564372143
+21333,RODENTIA,MURIDAE,Taeromys taerae,Northeastern Mountain Taeromys,8.415752452,Vulnerable,2,3.628678441,497,Indonesia,7.564372143
+29742,CETARTIODACTYLA,CERVIDAE,Rangifer tarandus,Reindeer,8.404676633,Vulnerable,2,3.627501441,498,"Canada,Finland,Greenland,Mongolia,Norway,Russian Federation,United States",7.564372143
+136230,RODENTIA,MURIDAE,Echiothrix centrosa,Central Sulawesi Echiothrix,8.381196259,Vulnerable,2,3.625001649,499,Indonesia,7.564372143
+44861,RODENTIA,BATHYERGIDAE,Fukomys kafuensis,NA,8.37736414,Vulnerable,2,3.624593076,500,Zambia,7.564372143
+22732,CARNIVORA,FELIDAE,Panthera uncia,Snow Leopard,8.375173573,Vulnerable,2,3.624359447,501,"Afghanistan,Bhutan,China,India,Kyrgyzstan,Kazakhstan,Mongolia,Nepal,Pakistan,Russian Federation,Tajikistan,Uzbekistan",7.564372143
+14863,RODENTIA,MURIDAE,Notomys fuscus,Dusky Hopping-mouse,8.36670316,Vulnerable,2,3.623455545,502,Australia,7.564372143
+4219,PRIMATES,CERCOPITHECIDAE,Cercopithecus hamlyni,Owl-faced Monkey,8.338790576,Vulnerable,2,3.620471116,503,"Congo, The Democratic Republic of the,Rwanda",7.564372143
+11521,RODENTIA,MURIDAE,Leopoldamys siporanus,Mentawai Archipelago Leopoldamys,8.303191121,Vulnerable,2,3.616651834,504,Indonesia,7.564372143
+8703,RODENTIA,SCIURIDAE,Funambulus sublineatus,Dusky-striped Squirrel,8.296164904,Vulnerable,2,3.6158963,505,"India,Sri Lanka",7.564372143
+18549,RODENTIA,MURIDAE,Pseudomys fieldi,Djoongari,8.293269391,Vulnerable,2,3.615584778,506,Australia,7.564372143
+41540,PRIMATES,AOTIDAE,Aotus nancymaae,Nancy Ma’s Night Monkey,8.286721467,Vulnerable,2,3.614879942,507,"Brazil,Colombia,Peru",7.564372143
+6793,CETARTIODACTYLA,BOVIDAE,Dorcatragus megalotis,Beira,8.277416708,Vulnerable,2,3.613877497,508,"Djibouti,Somalia",7.564372143
+6265,DASYUROMORPHIA,DASYURIDAE,Dasyuroides byrnei,Kowari,8.269198961,Vulnerable,2,3.612991325,509,Australia,7.564372143
+15954,CARNIVORA,FELIDAE,Panthera pardus,Leopard,8.264510432,Vulnerable,2,3.612485379,510,"Afghanistan,Armenia,Angola,Azerbaijan,Bangladesh,Burkina Faso,Burundi,Benin,Bhutan,Botswana,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,China,Djibouti,Egypt,Eritrea,Ethiopia,Gabon,Ghana,Guinea,Equatorial Guinea,Guinea-Bissau,Indonesia,India,Iraq,Iran, Islamic Republic of,Kenya,Cambodia,Sri Lanka,Liberia,Mali,Myanmar,Malawi,Malaysia,Mozambique,Namibia,Niger,Nigeria,Nepal,Oman,Pakistan,Russian Federation,Rwanda,Saudi Arabia,Sudan,Sierra Leone,Senegal,Somalia,South Sudan,Swaziland,Chad,Thailand,Turkmenistan,Turkey,Tanzania, United Republic of,Uganda,Yemen,South Africa,Zambia,Zimbabwe",7.564372143
+15951,CARNIVORA,FELIDAE,Panthera leo,Lion,8.259226649,Vulnerable,2,3.611914891,511,"Angola,Burkina Faso,Benin,Botswana,Congo, The Democratic Republic of the,Central African Republic,Cameroon,Ethiopia,India,Kenya,Malawi,Mozambique,Namibia,Niger,Nigeria,Sudan,Senegal,Somalia,South Sudan,Swaziland,Chad,Tanzania, United Republic of,Uganda,South Africa,Zambia,Zimbabwe",7.564372143
+39915,PRIMATES,AOTIDAE,Aotus brumbacki,Brumback's Night Monkey,8.233187574,Vulnerable,2,3.609098699,512,Colombia,7.564372143
+1807,PRIMATES,AOTIDAE,Aotus griseimembra,Grey-handed Night Monkey,8.233187574,Vulnerable,2,3.609098699,512,"Colombia,Venezuela, Bolivarian Republic of",7.564372143
+18113,RODENTIA,MURIDAE,Praomys hartwigi,Hartwig's Soft-furred Mouse,8.218823058,Vulnerable,2,3.60754174,514,Cameroon,7.564372143
+9129,RODENTIA,MURIDAE,Gerbillus hoogstraali,Hoogstraal's Gerbil,8.195330175,Vulnerable,2,3.604990127,515,Morocco,7.564372143
+41210,RODENTIA,MURIDAE,Praomys degraaffi,De Graaff's Praomys,8.185767749,Vulnerable,2,3.603949664,516,"Burundi,Rwanda,Uganda",7.564372143
+8700,RODENTIA,SCIURIDAE,Funambulus layardi,Layard's Palm Squirrel,8.155189057,Vulnerable,2,3.60061519,517,Sri Lanka,7.564372143
+15311,CARNIVORA,FELIDAE,Leopardus guigna,Guiña,8.154578041,Vulnerable,2,3.600548448,518,"Argentina,Chile",7.564372143
+54010476,CARNIVORA,FELIDAE,Leopardus guttulus,Southern Tiger Cat,8.128014694,Vulnerable,2,3.597642583,519,"Argentina,Brazil,Paraguay",7.564372143
+54012637,CARNIVORA,FELIDAE,Leopardus tigrinus,Northern Tiger Cat,8.128014694,Vulnerable,2,3.597642583,519,"Bolivia, Plurinational States of,Brazil,Colombia,Costa Rica,Ecuador,French Guiana,Guyana,Panama,Peru,Suriname,Venezuela, Bolivarian Republic of",7.564372143
+2283,PRIMATES,ATELIDAE,Ateles paniscus,Guiana Spider Monkey,8.111784251,Vulnerable,2,3.59586291,521,"Brazil,French Guiana,Guyana,Suriname",7.564372143
+13211,RODENTIA,MURIDAE,Mesembriomys gouldii,Black-footed Tree-rat,8.09799742,Vulnerable,2,3.594348687,522,Australia,7.564372143
+17315,CHIROPTERA,VESPERTILIONIDAE,Pipistrellus maderensis,Madeira Pipistrelle,8.096381507,Vulnerable,2,3.594171059,523,"Spain,Portugal",7.564372143
+136223,CARNIVORA,VIVERRIDAE,Genetta bourloni,Bourlon's Genet,8.09472319,Vulnerable,2,3.593988737,524,"Côte d'Ivoire,Guinea,Liberia,Sierra Leone",7.564372143
+8998,CARNIVORA,VIVERRIDAE,Genetta cristata,Crested Genet,8.086330623,Vulnerable,2,3.593065516,525,"Cameroon,Nigeria",7.564372143
+21496,RODENTIA,MURIDAE,Tarsomys echinatus,Spiny Tarsomys,8.081380729,Vulnerable,2,3.592520605,526,Philippines,7.564372143
+136512,RODENTIA,MURIDAE,Niviventer cameroni,Cameron Highlands Niviventer,8.064410749,Vulnerable,2,3.5906502,527,Malaysia,7.564372143
+3330,RODENTIA,MURIDAE,Bunomys fratrorum,Northeastern Peninsula Bunomys,8.055742387,Vulnerable,2,3.589693436,528,Indonesia,7.564372143
+10329,CETARTIODACTYLA,CERVIDAE,Hydropotes inermis,Water Deer,8.044051239,Vulnerable,2,3.588401581,529,"China,Korea, Democratic People's Republic of,Korea, Republic of",7.564372143
+17602,CHIROPTERA,VESPERTILIONIDAE,Plecotus teneriffae,Canary Big-eared Bat,8.034884419,Vulnerable,2,3.587387492,530,Spain,7.564372143
+23326,RODENTIA,MURIDAE,Zyzomys maini,Arnhem Rock-rat,8.034565874,Vulnerable,2,3.587352235,531,Australia,7.564372143
+75927871,RODENTIA,MURIDAE,Pseudomys australis,Plains Mouse,8.032481029,Vulnerable,2,3.587121445,532,Australia,7.564372143
+12427,CARNIVORA,MUSTELIDAE,Lutrogale perspicillata,Smooth-coated Otter,8.022791159,Vulnerable,2,3.586048088,533,"Bangladesh,Brunei Darussalam,Bhutan,China,Indonesia,India,Iraq,Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Nepal,Pakistan,Thailand,Viet Nam",7.564372143
+19418,RODENTIA,CRICETIDAE,Reithrodontomys tenuirostris,Narrow-nosed Harvest Mouse,7.992519977,Vulnerable,2,3.582687479,534,"Guatemala,Mexico",7.564372143
+45051,EULIPOTYPHLA,SORICIDAE,Sylvisorex camerunensis,NA,7.987550954,Vulnerable,2,3.582134754,535,"Cameroon,Nigeria",7.564372143
+12795,RODENTIA,MURIDAE,Margaretamys beccarii,Spiny Lowland Margaretamys,7.931144995,Vulnerable,2,3.575838967,536,Indonesia,7.564372143
+9459,RODENTIA,MURIDAE,Grammomys minnae,Ethiopian Thicket Rat,7.918841798,Vulnerable,2,3.574460456,537,Ethiopia,7.564372143
+12902,RODENTIA,MURIDAE,Maxomys pagensis,Mentawai Archipelago Maxomys,7.91501016,Vulnerable,2,3.574030752,538,Indonesia,7.564372143
+18554,RODENTIA,MURIDAE,Pseudomys oralis,Hastings River Mouse,7.878570942,Vulnerable,2,3.569934975,539,Australia,7.564372143
+136503,CHIROPTERA,VESPERTILIONIDAE,Plecotus sardus,Sardinian Long-eared Bat,7.820343823,Vulnerable,2,3.563355213,540,Italy,7.564372143
+4681,RODENTIA,MURIDAE,Chiropodomys karlkoopmani,Koopman’s Pencil-tailed Tree Mouse,7.813322323,Vulnerable,2,3.562558838,541,Indonesia,7.564372143
+14108,EULIPOTYPHLA,SORICIDAE,Myosorex longicaudatus,Long-tailed Forest Shrew,7.812805842,Vulnerable,2,3.562500234,542,South Africa,7.564372143
+18550,RODENTIA,MURIDAE,Pseudomys fumeus,Smoky Mouse,7.806886683,Vulnerable,2,3.561828354,543,Australia,7.564372143
+41305,LAGOMORPHA,LEPORIDAE,Lepus corsicanus,Corsican Hare,7.791171588,Vulnerable,2,3.56004235,544,Italy,7.564372143
+3555,PRIMATES,PITHECIIDAE,Callicebus personatus,Atlantic Titi,7.776615717,Vulnerable,2,3.558385241,545,Brazil,7.564372143
+11797,LAGOMORPHA,LEPORIDAE,Lepus castroviejoi,Broom Hare,7.775920626,Vulnerable,2,3.55830604,546,Spain,7.564372143
+12904,RODENTIA,MURIDAE,Maxomys rajah,Rajah Sundaic Maxomys,7.74665902,Vulnerable,2,3.554966162,547,"Brunei Darussalam,Indonesia,Malaysia,Thailand",7.564372143
+17830,RODENTIA,CRICETIDAE,Podomys floridanus,Florida Mouse,7.735259009,Vulnerable,2,3.553661956,548,United States,7.564372143
+19790,EULIPOTYPHLA,SORICIDAE,Ruwenzorisorex suncoides,Ruwenzori Shrew,7.72938212,Vulnerable,2,3.552988952,549,"Burundi,Congo, The Democratic Republic of the,Rwanda,Uganda",7.564372143
+18552,RODENTIA,MURIDAE,Pseudomys novaehollandiae,New Holland Mouse,7.703597487,Vulnerable,2,3.550030806,550,Australia,7.564372143
+8209,PRIMATES,LEMURIDAE,Eulemur rufus,Red Brown Lemur,7.664564887,Vulnerable,2,3.545536068,551,Madagascar,7.564372143
+1802,PRIMATES,AOTIDAE,Aotus miconax,Andean Night Monkey,7.663849834,Vulnerable,2,3.545453538,552,Peru,7.564372143
+136264,RODENTIA,MURIDAE,Bullimus gamay,Camiguin Bullimus,7.648466483,Vulnerable,2,3.543676381,553,Philippines,7.564372143
+12907,RODENTIA,MURIDAE,Maxomys whiteheadi,Whitehead’s Sundaic Maxomys,7.6418589,Vulnerable,2,3.542912071,554,"Brunei Darussalam,Indonesia,Malaysia,Thailand",7.564372143
+14112,EULIPOTYPHLA,SORICIDAE,Myosorex okuensis,Oku Mouse Shrew,7.62478752,Vulnerable,2,3.540934688,555,Cameroon,7.564372143
+20392,EULIPOTYPHLA,SORICIDAE,Sorex macrodon,Large-toothed Shrew,7.619954181,Vulnerable,2,3.54037413,556,NA,7.564372143
+20397,EULIPOTYPHLA,SORICIDAE,Sorex milleri,Carmen Mountain Shrew,7.619954181,Vulnerable,2,3.54037413,556,Mexico,7.564372143
+9979,CHIROPTERA,VESPERTILIONIDAE,Hesperoptenus tomesi,Large False Serotine,7.596344489,Vulnerable,2,3.537631415,558,"Malaysia,Thailand",7.564372143
+1808,PRIMATES,AOTIDAE,Aotus lemurinus,Colombian Night Monkey,7.582816688,Vulnerable,2,3.536056506,559,"Colombia,Ecuador,Venezuela, Bolivarian Republic of",7.564372143
+16889,DASYUROMORPHIA,DASYURIDAE,Phascogale pirata,Northern Brush-tailed Phascogale,7.578592221,Vulnerable,2,3.535564184,560,Australia,7.564372143

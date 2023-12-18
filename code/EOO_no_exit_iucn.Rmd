@@ -1,0 +1,652 @@
+---
+title: "EOO Edits to no_exit_iucn.Rmd" 
+author: "Sophia V. Richter"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_folding: show
+    highlight: default
+    keep_md: yes
+    theme: journal
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+      toc_depth: 3
+editor_options: 
+  chunk_output_type: console
+---
+
+```{=html}
+<style>
+pre code, pre, code {
+  white-space: pre !important;
+  overflow-x: scroll !important;
+  word-break: keep-all !important;
+  word-wrap: initial !important;
+}
+</style>
+```
+```{r setup, include=FALSE}
+# For width of code chunks and scroll bar 
+options(width=250)
+
+knitr::opts_chunk$set(eval = TRUE, 
+                      echo = TRUE, 
+                      include = TRUE,
+                      warning = FALSE,
+                      collapse = FALSE,
+                      message = FALSE,
+                      engine = "R", # Chunks will always have R code, unless noted
+                      error = TRUE,
+                      fig.align = "center") 
+
+```
+
+```{r load-packages}
+# Data wrangling
+library(dplyr)
+library(tidyr)
+library(readr)
+# Figures
+library(GGally)
+library(ggplot2)
+# Stats
+library(lme4)
+```
+
+# Load data
+
+```{r load-sorted-data}
+merge_dat <- readRDS("/workdir/sr2352/HMEI-internship/data/HMEI-GDrive/data/sorted/merge_dat.Rds")
+realm_cats <- sort(unique(unlist(strsplit(unique(merge_dat$Realms), "[;]"))))
+```
+
+```{r eoo-thresholds}
+# Modify data frame
+eoo_all_df <- merge_dat %>% 
+  # remove species with 0 or NA AOH
+  filter(!(is.na(areaAOH)), areaAOH > 0) %>%
+  mutate(
+    # convert AOH to km^2
+    AOHkm = areaAOH/1000000,
+    # Identify NES
+    EOO_NES = AOHkm < 20000,
+    # add column for whether AOH falls below 100 km (more than 10 km away from threshold)
+    one_hundred = AOHkm < 100, # changed from ten
+    # add column for whether AOH falls below more than 1 km below 5000 km threshold
+    five_thousand = AOHkm < 5000, # changed from five_hundred
+    # add column for whether AOH falls below more than 1 km below 20000 km threshold
+    twenty_thousand = AOHkm < 20000, # changed from two_thousand
+    # column if one_hundred is lowest threshold
+    first_lowest = one_hundred, # was ten_lowest
+    # column if 5000 is lowest threshold 
+    second_lowest = xor(one_hundred, five_thousand), #was five_lowest
+    # column if 20000 is lowest threshold
+    third_lowest = xor(five_thousand, twenty_thousand), # was two_lowest
+    # record what category should be
+    EOO_Category = ifelse(first_lowest == TRUE, "Critically Endangered", 
+                      ifelse(second_lowest == TRUE, "Endangered", 
+                             ifelse(third_lowest == TRUE, "Vulnerable", 
+                                    "Near Threatened"))),
+    # Calculate difference to next threshold
+    Difference = ifelse(first_lowest == TRUE, 100 - AOHkm, 
+                        ifelse(second_lowest == TRUE, 5000 - AOHkm, 
+                               ifelse(third_lowest == TRUE, 20000 - AOHkm, 
+                                      NA)))) %>% 
+  # Calculate Difference between Category and redlistCategory
+  mutate(num_Category = ifelse(EOO_Category == "Critically Endangered", 1, 
+                               ifelse(EOO_Category == "Endangered", 2, 
+                                      ifelse(EOO_Category == "Vulnerable", 3, 
+                                             ifelse(EOO_Category == "Near Threatened", 4, 
+                                                    NA)))),
+         num_redlist = ifelse(redlistCategory == "Critically Endangered", 1, 
+                              ifelse(redlistCategory == "Endangered", 2, 
+                                     ifelse(redlistCategory == "Vulnerable", 3, 
+                                            ifelse(redlistCategory == "Near Threatened", 4, 
+                                                   NA)))),
+         cat_red_change = num_Category - num_redlist,
+         # Standardised difference
+         difference_prop = ifelse(EOO_Category == "Critically Endangered", Difference / 100, 
+                                  ifelse(EOO_Category == "Endangered", Difference / 4900, 
+                                         ifelse(EOO_Category == "Vulnerable", Difference / 15000, 
+                                                NA))),
+         # Flip the scale so bigger numbers = closer to threshold for downlisting
+         proximity = 1 - difference_prop)
+
+# Calculate quantiles
+quants <-
+    eoo_all_df %>% 
+    group_by(EOO_Category) %>%
+    dplyr::summarise(diff25 = quantile(Difference, probs = 0.25, na.rm = TRUE), # lower
+              diff50 = quantile(Difference, probs = 0.5, na.rm = TRUE), # median
+              diff75 = quantile(Difference, probs = 0.75, na.rm = TRUE)) # upper
+
+# Add to df
+eoo_all_df <- 
+    left_join(eoo_all_df, quants, by = "EOO_Category") %>% 
+    mutate(
+        # Identify species furthest from downlisting threshold
+        diff_top25 = Difference >= diff75,
+        # Identify species closest to downlisting threshold
+        diff_bottom25 = Difference <= diff25
+        )
+
+eoo_nes_df <-
+  eoo_all_df %>% 
+  # remove Differences that are NA
+    # (i.e. species that would not be classed as threatened according to AOH)
+  filter(!(is.na(Difference)))
+
+# Sanity check
+unique(eoo_nes_df$EOO_NES)
+```
+
+
+```{r realm-long-df}
+# Long dataframe
+eoo_realms_long_all <- 
+ eoo_all_df %>%  
+  dplyr::select(-Realms) %>% 
+  pivot_longer(cols= all_of(realm_cats), 
+               names_to='Realms', values_to='value') %>% 
+  dplyr::filter(value == TRUE) %>% 
+  dplyr::select(-value)
+
+eoo_realms_long_nes <-
+  eoo_realms_long_all %>% 
+  dplyr::filter(EOO_NES)
+```
+
+There are `r nrow(realms_long_nes)` species with a habitat that qualifies a species for a threatened category in each realm. 
+
+Negative value means Habitat Category is uplisted compared to redlistCategory, 0 means they match, positive means Habitat Category is downlisted compared to redlistCategory.
+
+```{r summarize-category-change}
+cat_change <- eoo_all_df %>% 
+  group_by(cat_red_change) %>% 
+  summarise(Sum = n())
+
+cat_change
+
+nochange <- cat_change %>% filter(cat_red_change == 0) %>% pull(Sum)
+
+decrease <- cat_change %>% filter(cat_red_change < 0) %>% summarize(sum = sum(Sum)) %>% pull(sum)
+
+increase <- cat_change %>% filter(cat_red_change > 0) %>% summarize(sum = sum(Sum)) %>% pull(sum)
+
+change_dat <- 
+  eoo_all_df %>% 
+  filter(cat_red_change == -2) %>% 
+  select(species, className, redlistCategory)
+```
+
+`r nochange` species (`r nochange / nrow(eoo_all_df) * 100` %) do not change category. `r decrease` species (`r decrease / nrow(eoo_all_df) * 100` %) have less AOH than their current red list category (- value). `r increase` species (`r increase / nrow(eoo_all_df) * 100` %) species have more AOH than their red list category (+ value).
+
+
+# No Exit Species by EOO (EOO_NES)
+
+Classes of NES
+```{r nes-classes}
+# Table
+eoo_nes_df %>% 
+  group_by(className) %>% 
+  summarise(Count = n()) %>% 
+  arrange(-Count)
+```
+
+Category of NES
+```{r nes-category}
+#table
+eoo_nes_df %>% 
+  group_by(EOO_Category) %>% 
+  summarize(Count = n()) %>% 
+  arrange(-Count)
+
+# graphs
+ggplot(eoo_nes_df, aes(x=className, fill=className)) + 
+  geom_bar() + 
+  facet_wrap(~EOO_Category) + 
+  ggtitle("Class and Threshold of NES by EOO") + 
+  theme(axis.text.x = element_blank()) + 
+  labs(fill="Class") + xlab(" ") + ylab("Count")
+```
+
+Realm of Counts of EOO_NES
+
+Realms of each Conservation Reliant Species
+```{r nes-realm}
+eoo_nes_df %>% 
+  group_by(Realms) %>% 
+  summarise(Count = n()) %>% 
+  arrange(-Count)
+```
+
+Number of CRS in each realm
+```{r realm-nes-count}
+eoo_realms_long_nes %>% 
+  group_by(Realms) %>% 
+  summarize(Count = n()) %>% 
+  arrange(-Count)
+
+ggplot(eoo_realms_long_nes, aes(x=Realms)) + 
+  geom_bar() + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  ggtitle("Number of CRS in each Realm")
+
+ggplot(eoo_realms_long_nes, aes(x=Realms, fill=Realms)) + 
+  geom_bar() + 
+  facet_wrap(~EOO_Category) + 
+  theme(axis.text.x = element_blank()) + 
+  ggtitle("Category and Realm of CRS")
+
+```
+
+# Difference Distribution
+
+Class
+```{r diff-density-class}
+ggplot(eoo_nes_df, aes(x=Difference, fill=className, alpha = 0.01)) + 
+  geom_histogram() + 
+  ggtitle("Distribution of Differences to Next Threshold Across Class")
+
+ggplot(eoo_nes_df, aes(x=Difference, fill=className, alpha=0.01)) + 
+  geom_density() + 
+  ggtitle("Density of Differences to Next Threshold Across Class")
+
+ggplot(eoo_nes_df, aes(x=Difference)) + 
+  geom_histogram() + 
+  facet_wrap(~className) + 
+  ggtitle("Distribution of Differences to Next Threshold Across Class")
+
+ggplot(eoo_nes_df, aes(x=Difference)) + 
+  geom_density() + 
+  facet_wrap(~className) + 
+  ggtitle("Density of Differences to Next Threshold Across Class")
+```
+
+Histogram of Differences by Class
+```{r diff-hist-class}
+ggplot(eoo_nes_df, aes(x=Difference, fill=className)) + 
+  geom_histogram(alpha=0.7) + 
+  ggtitle("Distribution of Differences to Next Threshold \n Across Class and Category") +
+  facet_wrap(~ EOO_Category, scales = "free", 
+             labeller = label_wrap_gen(width = 2, multi_line = TRUE)) + 
+  labs(fill="Class") + 
+  ylab("Count") + 
+  xlab("Difference (km^2)")
+```
+
+Category
+```{r diff-hist-category}
+ggplot(eoo_nes_df, aes(x=Difference, fill=EOO_Category, alpha=0.5)) + 
+  geom_histogram() + 
+  ggtitle("Distribution of Differences to Next Threshold Across Category")
+```
+
+Realm
+```{r diff-hist-realm}
+ggplot(eoo_realms_long_nes, aes(x=Difference, fill=Realms)) + 
+  geom_histogram() + 
+  ggtitle("Distribution of Differences Across Realm")
+
+ggplot(eoo_realms_long_nes, aes(x=Difference)) + 
+  geom_histogram() + 
+  facet_wrap(~Realms)
+
+```
+
+
+# Top 25% Differences
+
+```{r top-25-diff, include=F}
+# Filter to highest risk species, furthest from downlisting threshold
+# (top 25% of distance from threshold)
+diff_top25 <- filter(eoo_nes_df, diff_top25)
+
+# Filter to easy win species, closest to downlisting threshold
+# (bottom 25% of distance from threshold)
+diff_bottom25 <- filter(eoo_nes_df, diff_bottom25)
+```
+
+### Class
+```{r top-diff-class}
+diff_top25 %>% 
+  group_by(className) %>% 
+  summarise(Count = n()) %>% 
+  arrange(-Count)
+
+ggplot(diff_top25, aes(x=className)) + 
+  geom_bar() + 
+  ggtitle("Distribution of Top 25% (of each category) AOH Differences - AKA Furthest from Downlisting")
+
+ggplot(diff_top25, aes(x=className, fill=className)) + 
+  geom_bar() + 
+  facet_wrap(~EOO_Category) + 
+  ggtitle("Distribution of Top 25% AOH Differences (furthest from downlisting)") + 
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+### Category
+```{r top-diff-category, include=F}
+ggplot(diff_top25, aes(x=EOO_Category, fill=EOO_Category)) + 
+  geom_bar() + 
+  ggtitle("Distribution of Top 25% (of each category) AOH Differences (furthest from downlisting)") + 
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+### Realm
+```{r top-diff-realm, include=F}
+crit_realms <- eoo_realms_long_nes %>% 
+    filter(EOO_Category == 'Critically Endangered') %>% 
+    filter(Difference >= quants$diff75[quants$EOO_Category == "Critically Endangered"])
+
+endan_realms <- eoo_realms_long_nes %>% 
+    filter(EOO_Category == 'Endangered') %>% 
+    filter(Difference >= quants$diff75[quants$EOO_Category == "Endangered"])
+
+vul_realms <- eoo_realms_long_nes %>% 
+    filter(EOO_Category == 'Vulnerable') %>% 
+    filter(Difference >= quants$diff75[quants$EOO_Category == "Vulnerable"])
+
+# near_realms = realms %>% filter(Category == 'Near Threatened') 
+
+# also all combined
+top_realm = full_join(crit_realms, endan_realms)
+top_realm = full_join(top_realm, vul_realms)
+#top_realm = full_join(bottom_realm, near_realms)
+
+ggplot(top_realm, aes(x=Realms)) + 
+  geom_bar() + 
+  ggtitle("Distribution of Top 25% (of each category) AOH Differences Across Realm") + 
+  theme(axis.text.x = element_text(angle = 90))
+
+ggplot(top_realm, aes(x=Realms, fill=Realms)) + 
+  geom_bar() + 
+  facet_wrap(~EOO_Category) + 
+  ggtitle("Distribution of Top 25% AOH Differences Across Realm") + 
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+# GLM
+
+= column for species name + class + whether NES (0 or 1)
+glm(NES ~ class, family = "binomial")
+
+
+Realm NES
+
+```{r interaction-test}
+# I think we should focus on endemic species here, to avoid double-counting
+glm_full_nes <- 
+  glm(EOO_NES ~ className * Realms + className * EOO_Category + Realms * EOO_Category, 
+      data = filter(eoo_realms_long_all, realm_endemic),
+      family = "binomial", maxit=100)
+
+# Drop & test each interaction in turn
+glm_dropInter1_nes <- update(glm_full_nes, ~.- className:Realms)
+anova(glm_dropInter1_nes, glm_full_nes, test = "LRT") # this interaction is not significant
+
+glm_dropInter2_nes <- update(glm_full_nes, ~.- className:EOO_Category)
+anova(glm_dropInter2_nes, glm_full_nes, test = "LRT") # this interaction is not significant
+
+glm_dropInter3_nes <- update(glm_full_nes, ~.- Realms:EOO_Category)
+anova(glm_dropInter3_nes, glm_full_nes, test = "LRT") # this interaction is not significant
+
+#-------------------------------------------------------------------------------
+# All had equally small effect (p-value of 1, small deviance). dropping realm:Category has highest DF
+# so make this the new reference model and repeat with remaining interactions
+# ------------------------------------------------------------------------------
+
+glm_dropInter4_nes <- update(glm_dropInter3_nes, ~.- className:Realms)
+anova(glm_dropInter4_nes, glm_dropInter3_nes, test = "LRT") # this interaction is not significant
+
+glm_dropInter5_nes <- update(glm_dropInter3_nes, ~.- className:EOO_Category)
+anova(glm_dropInter5_nes, glm_dropInter3_nes, test = "LRT") # this interaction is not significant
+
+#-------------------------------------------------------------------------------
+# Dropping either interaction term had same deviance and p-value effect. Dropping className:Category had higher DF
+# so make this the new reference model and repeat with remaining interaction
+# ------------------------------------------------------------------------------
+
+glm_dropInter6_nes <- update(glm_dropInter5_nes, ~.- className:Realms)
+anova(glm_dropInter6_nes, glm_dropInter5_nes, test = "LRT") # this interaction is not significant
+
+#-------------------------------------------------------------------------------
+# Drop ALL interactions - HOORAY
+# now test significance of individual variables
+# ------------------------------------------------------------------------------
+
+# Test significance of class
+glm_dropClass_nes <- update(glm_dropInter6_nes, ~.- className)
+anova(glm_dropClass_nes, glm_dropInter6_nes, test = "LRT") # class is not significant
+
+# Test significance of realm
+glm_dropRealm_nes <- update(glm_dropInter6_nes, ~.- Realms)
+anova(glm_dropRealm_nes, glm_dropInter6_nes, test = "LRT") # realm is not significant
+
+# Test significance of category
+glm_dropCat_nes <- update(glm_dropInter6_nes, ~.- EOO_Category)
+anova(glm_dropCat_nes, glm_dropInter6_nes, test = "LRT") # category is significant
+
+# Compare AIC as well, for good measure
+AIC(glm_dropInter6_nes,glm_dropClass_nes,glm_dropRealm_nes,glm_dropCat_nes)
+# all quite similar, except for dropping Category which produces a *much* worse model
+```
+
+--> I am not sure if we want to add the plot of model-predicted values? I would guess it is very similar (in that it is not helpful) to the last data set. 
+
+### LM on Difference 
+- try difference / max difference for these models 
+```{r}
+nes_difference <- 
+  eoo_nes_df %>% 
+  filter(
+    # Drop NAs
+    !(is.na(Difference)),
+    # Restrict to species occurring in one Realm only
+    realm_endemic
+  )
+# Make a standard lm
+lm_prop <- lm(difference_prop ~ className, 
+              data = eoo_nes_df)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm_prop)
+summary(lm_prop)
+
+# Make a standard lm
+lm_prop_cat <- lm(difference_prop ~ EOO_Category, 
+                  data = nes_difference)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm_prop_cat)
+summary(lm_prop_cat)
+
+# Make a standard lm
+lm_prop_realm <- lm(difference_prop ~ Realms, 
+                    data = eoo_nes_df)
+
+# Model validation plots
+par(mfrow = c(2,2))
+plot(lm_prop_realm)
+summary(lm_prop_realm)
+
+```
+- much smaller p-value for category (close to 0) than classname (0.06501)
+- very high p-value for realm
+
+```{r nes-proximity}
+# Round negative values to zero (these are the ones that are < 1 km from the threshold)
+nes_difference$proximity[nes_difference$proximity < 0] <- 0
+
+# Plot the distribution of standardised differences
+ggplot(nes_difference, 
+       aes(x = proximity, fill = className)) +
+  geom_histogram() +
+  facet_wrap(~ EOO_Category) + 
+    labs(title = "Proximity to Downlisting by Category and Class")
+
+# GLM with Poisson because relative diff is actually a proportion
+eoo_glm_diff <- glm(proximity ~ className + Realms + AOHkm, 
+                data = nes_difference,
+                family = "binomial") # ignore the non-integer warnings
+
+# Model inference
+summary(eoo_glm_diff)
+anova(eoo_glm_diff, test = "LRT")
+
+# Drop class
+eoo_class_results <- anova(update(eoo_glm_diff, ~.- className), eoo_glm_diff, test = "LRT")
+# Drop realm
+eoo_realm_results <- anova(update(eoo_glm_diff, ~.- Realms), eoo_glm_diff, test = "LRT")
+# Drop AOH
+eoo_aoh_results <- anova(update(eoo_glm_diff, ~.- AOHkm), eoo_glm_diff, test = "LRT")
+
+### Only absolute AOH is a strong predictor or proximity to threshold
+
+#############################
+# Plot model-predicted values
+#############################
+
+# Make up some new data
+newdat <- expand.grid(
+  # All levels of taxonomic class
+  className = unique(eoo_glm_diff$data$className),
+  # All levels of realm
+  Realms = unique(eoo_glm_diff$data$Realms),
+  # Sequence of 100 made up values for AOH, bounded by observed data
+  AOHkm = seq(min(eoo_glm_diff$data$AOHkm),
+              max(eoo_glm_diff$data$AOHkm),
+              length.out = 100))
+
+# Use model to predict distance values
+predvals <- predict(eoo_glm_diff, newdata = newdat, type = "link", se.fit = TRUE)
+
+# Function to calculate inverse logit
+inv.logit <- function(x) exp(x)/(1 + exp(x))
+
+# Function to calculate critical significance value
+ci.critical <- 
+  function(siglevel) qnorm((100 - siglevel) / 100 / 2, lower.tail = FALSE)
+ci_const = ci.critical(95)
+
+# Add vals to newdat dataframe
+newdat <- 
+  newdat %>% 
+  mutate(proximity = predvals$fit,
+         se = predvals$se.fit,
+         CI_lo = proximity - (ci_const * se),
+         CI_hi = proximity + (ci_const * se)) 
+# Back transform
+newdat[,c("proximity", "CI_lo", "CI_hi")] <- 
+  inv.logit(newdat[,c("proximity", "CI_lo", "CI_hi")])
+
+# Plot model-predicted values
+ggplot(newdat, 
+       aes(x = AOHkm, y = proximity)) +
+  # # Add confidence intervals
+  # geom_ribbon(aes(ymin = CI_lo,
+  #                 ymax = CI_hi,
+  #                 fill = realm),
+  #             alpha = 0.3) +
+  # Add fitted line
+  geom_line(aes(colour = Realms)) +
+  # Facet by taxonomic class
+  facet_grid(~ className) +
+  theme_classic()
+
+# Since class and realm aren't relevant, we can also just pick a reference level
+# or average across everything, and plot one line only
+eoo_newdat_avg <- 
+  group_by(newdat, AOHkm) %>% 
+  summarise(proximity = median(proximity),
+            CI_lo = median(CI_lo),
+            CI_hi = median(CI_hi))
+ggplot(eoo_newdat_avg, 
+       aes(x = AOHkm, y = proximity)) +
+  # Add confidence intervals
+  geom_ribbon(aes(ymin = CI_lo,
+                  ymax = CI_hi),
+              alpha = 0.1) +
+  # Add fitted line
+  geom_line() +
+  theme_classic()
+
+# Proximity to threshold increases as absolute AOH increases
+```
+
+### Correlation between className and Category
+```{r class-category-corr}
+ggplot(eoo_nes_df, aes(className, EOO_Category)) + 
+  geom_count()
+
+class_cat <- table(eoo_nes_df$className, eoo_nes_df$EOO_Category) 
+
+chisq <- chisq.test(class_cat)
+chisq
+```
+p-value is very small (< 2.2e-16), therefore there is a strong correlation between Category and class
+
+
+# Spatial Data
+Save data frame for spatial analysis
+
+```{r nes-top25-spatial}
+nes_top25 <- 
+  eoo_all_df %>%
+  rename(scientificName = species) %>%
+  mutate(
+    # Match species name to how it appears in occurrence dataframe
+    scientificName = gsub(" ", "_", scientificName)) 
+```
+
+```{r nes-top25-prop}
+# Summarize NES by realm
+realm_nes <-
+  nes_top25 %>%
+  filter(!(is.na(Realms))) %>% 
+  # Count species in each realm
+  group_by(Realms, className) %>% 
+  summarise(n = n(),
+            n_NES = length(which(EOO_NES)),
+            n_nonNES = length(which(!(EOO_NES))),
+            prop_NES = n_NES / n)
+```
+
+```{r save-data}
+# Inspect the loaded objects - what might we need in the manuscript?
+ls()
+save(eoo_all_df,eoo_nes_df,eoo_realms_long_all,eoo_realms_long_nes,
+     eoo_glm_diff,eoo_class_results,eoo_realm_results,eoo_aoh_results,eoo_newdat_avg,
+     file = "data/HMEI-GDrive/data/sorted/eoo_msdata.Rdata")
+```
+
+
+
+# EDGE species analysis
+load files
+```{r load-edge}
+edge_amph <- read.csv('data/EDGE_data/EDGE_amphibia.csv')
+edge_aves <- read.csv('data/EDGE_data/EDGE_aves.csv')
+edge_mamm <- read.csv('data/EDGE_data/EDGE_mammalia.csv')
+edge_rept <- read.csv('data/EDGE_data/EDGE_reptilia.csv')
+
+# keep only top 100 in each
+edge_amph <- edge_amph %>% filter(EDGE.Rank <= 100)
+edge_aves <- edge_aves %>% filter(EDGE.Rank <= 100)
+edge_mamm <- edge_mamm %>% filter(EDGE.Rank <= 100)
+edge_rept <- edge_rept %>% filter(EDGE.Rank <= 100)
+```
+
+compare edge to nes
+```{r edge-nes-comp}
+amph <- inner_join(eoo_nes_df, edge_amph, by=c('species'='Species'))
+aves <- inner_join(eoo_nes_df, edge_aves, by=c('species'='Species'))
+mamm <- inner_join(eoo_nes_df, edge_mamm, by=c('species'='Species'))
+rept <- inner_join(eoo_nes_df, edge_rept, by=c('species'='Species'))
+```
+
+There are `r nrow(amph)` amphibians, `r nrow(aves)` birds, `r nrow(mamm)` mammals, and `r nrow(rept)` reptile NES by EOO that are also EDGE species. 

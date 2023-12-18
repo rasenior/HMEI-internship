@@ -1,0 +1,702 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup, include=FALSE, eval = TRUE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+```{r other-setup, eval = TRUE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(sf)
+library(cowplot)
+```
+
+# Prep data
+
+```{r data}
+realm_ctry_info <- readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds")
+load("/workdir/sr2352/HMEI-internship/data/HMEI-GDrive/data/sorted/eoo_msdata.Rdata") # eoo objects
+# load("data/HMEI-GDrive/data/sorted/msdata.Rdata") # aoo objects
+
+# Main data
+trait_df <- 
+  eoo_nes_df %>% 
+  mutate(
+    # Match species name to how it appears in occurrence dataframe
+    scientificName = gsub(" ", "_", species)) %>% 
+  filter(!(is.na(EOO_NES)),
+         !(is.na(diff_top25))) %>% 
+  dplyr::select(scientificName, className,
+                redlistCategory, areaAOH, 
+                EOO_Category, Difference, EOO_NES, diff_top25)
+
+# Realm spatial data
+realm_df <- readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_df.Rds") %>% 
+  filter(!(is.na(realm)))
+realm_polys <- read_sf("/workdir/sr2352/HMEI-internship/data/spatial/realms_wgs84/realms_wgs84.shp")
+
+# Country spatial data
+country_df <- 
+  readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/country_df.Rds") %>% 
+  filter(!(is.na(country)), country != "Antarctica")
+country_polys <- 
+  read_sf("/workdir/sr2352/HMEI-internship/data/spatial/gadm36_0/gadm36_0.shp") %>% 
+  filter(NAME_0 != "Antarctica")
+```
+
+```{r prep-occdf-fn}
+# Function to map species richness
+prep_occdf <- function(trait_df, var, occ_df, tax_class, mincells){
+  # Subset trait data to the taxonomic class and species with AOH data
+  spp_df <- 
+    trait_df %>%
+    filter(
+      # Taxonomic class
+      className == tax_class,
+      # Species that appear in the occurrence dataframe
+      scientificName %in% colnames(occ_df))
+  # Coerce variable of interest to numeric (TRUE = 1, FALSE = 0)
+  spp_df[,var] <- as.numeric(spp_df[,var]) 
+  # Species that have value of 1
+  sppTrue <- spp_df[which(spp_df[,var] == 1), "scientificName"]
+  # Species that have value of 0
+  sppFalse <- spp_df[which(spp_df[,var] == 0), "scientificName"]
+  
+  # Return NA if there are no species (i.e. all have NA for variable of interest)
+  if(length(sppTrue) == 0 & length(sppFalse) == 0) return(NULL)
+  
+  # Gather into df
+  occ_df_sum <- 
+    data.frame(
+      # Coordinates
+      lat = occ_df[,2],
+      lon = occ_df[,1],
+      # Number of species with TRUE
+      n_spT = rowSums(occ_df[, which(colnames(occ_df) %in% sppTrue), drop = FALSE], na.rm = TRUE),
+      # Number of species with FALSE
+      n_spF = rowSums(occ_df[, which(colnames(occ_df) %in% sppFalse), drop = FALSE], na.rm = TRUE)
+      ) %>% 
+    mutate(
+      # Total species
+      spN = n_spT + n_spF,
+      # Proportion of species with value of TRUE for variable of interest
+      prop = 100 * (n_spT/spN)) %>% 
+    # Drop cells with zero species
+    filter(spN > 0) %>% 
+    mutate(className = tax_class)
+  occ_df_sum[,"action"] <- var
+  
+  # Return
+  if(nrow(occ_df_sum) < mincells) {
+    return(NULL)
+  }else {return(occ_df_sum)}
+}
+
+# Function to capitalise first letter of the first word of a string
+simpleCap <- function(x) {
+  s <- strsplit(x, " ")[[1]]
+  paste(toupper(substring(s, 1,1)), substring(s, 2),
+      sep="", collapse=" ")
+}
+```
+
+# skipping this because i shouldn't need it
+```{r prep-crs-df}
+# dont need this first section - commenting it out
+
+# aoh_dir <- "/workdir/sr2352/HMEI-internship/data/spatial/occurrence_dfs"
+# crs_df <- 
+#   lapply(unique(trait_df$className), function(tax){
+#     prep_occdf(trait_df = trait_df,
+#                var = "EOO_NES",
+#                occ_df = readRDS(paste(aoh_dir, tax, "_occ.Rds", sep = "")),
+#                tax_class = tax,
+#                mincells = 0) %>% 
+#       mutate(className = simpleCap(tax),
+#              coords = paste(lon, lat, sep = "_")) %>% 
+#       filter(n_spT > 0) %>% 
+#       left_join(select(realm_df, -c(lat, lon)), by = "coords") %>% 
+#       left_join(select(country_df, -c(lat, lon)), by = "coords")
+#   })
+
+# Summarise by realm
+crs_realm_total <-
+  trait_df %>%
+  filter(EOO_NES == 1) %>%
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(realms))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realms, sep = ";") %>% 
+  rename(realm = realms) %>% 
+  # Count species of each class, in each realm
+  group_by(realm, className) %>% 
+  summarise(n = n())
+# Split into list
+crs_realm_total <- split(crs_realm_total, crs_realm_total$className)
+
+# Join to spatial data
+crs_realm_total_polys <-
+  lapply(crs_realm_total, function(i){
+    left_join(realm_polys, i, by = c("Realm" = "realm")) %>%
+      filter(!(is.na(className)))
+  })
+
+# Repeat for country
+crs_country_total <-
+  trait_df %>%
+  filter(EOO_NES == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(countries))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple countries
+  separate_rows(countries, sep = ";") %>% 
+  rename(country = countries) %>% 
+  # Count species of each class, in each country
+  group_by(country, className) %>% 
+  summarise(n = n()) %>% 
+    arrange(-n)
+# Split into list
+crs_country_total <- split(crs_country_total, crs_country_total$className)
+
+# Join to spatial data
+crs_country_total_polys <-
+  lapply(crs_country_total, function(i){
+    left_join(country_polys, i, by = c("NAME_0" = "country")) %>%
+      filter(!(is.na(className)))
+  })
+
+```
+
+Analyze country and realm totals
+```{r}
+realm_total <- trait_df %>%
+  filter(EOO_NES == 1) %>%
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(realms))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realms, sep = ";") %>% 
+  rename(realm = realms) %>% 
+  # Count species of each class, in each realm
+  group_by(realm) %>% 
+  summarise(n = n()) %>% 
+    arrange(-n)
+    
+country_total <- trait_df %>%
+  filter(EOO_NES == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(countries))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple countries
+  separate_rows(countries, sep = ";") %>% 
+  rename(country = countries) %>% 
+  # Count species of each class, in each country
+  group_by(country) %>% 
+  summarise(n = n()) %>% 
+    arrange(-n)
+
+e_country_total <- trait_df %>%
+  filter(diff_top25 == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(countries))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple countries
+  separate_rows(countries, sep = ";") %>% 
+  rename(country = countries) %>% 
+  # Count species of each class, in each country
+  group_by(country) %>% 
+  summarise(n = n()) %>% 
+    arrange(-n)
+    
+    
+
+```
+
+
+```{r prep-top25-df}
+# aoh_dir <- "/scratch/network/rsenior/conservation-actions/aoh/"
+# top25_df <- 
+#   lapply(unique(trait_df$className), function(tax){
+#     prep_occdf(trait_df = trait_df,
+#                var = "diff_top25",
+#                occ_df = readRDS(paste(aoh_dir, tax, "_occ.Rds", sep = "")),
+#                tax_class = tax,
+#                mincells = 0) %>% 
+#       mutate(className = simpleCap(tax),
+#              coords = paste(lon, lat, sep = "_")) %>% 
+#       filter(n_spT > 0) %>% 
+#       left_join(select(realm_df, -c(lat, lon)), by = "coords") %>% 
+#       left_join(select(country_df, -c(lat, lon)), by = "coords")
+#   })
+
+# Summarise by realm
+top25_realm_total <-
+  trait_df %>%
+  filter(diff_top25 == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(realms))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realms, sep = ";") %>% 
+  rename(realm = realms) %>% 
+  # Count species of each class, in each realm
+  group_by(realm, className) %>% 
+  summarise(n = n())
+# Split into list
+top25_realm_total <- split(top25_realm_total, top25_realm_total$className)
+
+# Join to spatial data
+top25_realm_total_polys <-
+  lapply(top25_realm_total, function(i){
+    left_join(realm_polys, i, by = c("Realm" = "realm")) %>%
+      filter(!(is.na(className)))
+  })
+
+# Repeat for country
+top25_country_total <-
+  trait_df %>%
+  filter(diff_top25 == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(countries))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple countries
+  separate_rows(countries, sep = ";") %>% 
+  rename(country = countries) %>% 
+  # Count species of each class, in each country
+  group_by(country, className) %>% 
+  summarise(n = n())
+# Split into list
+top25_country_total <- split(top25_country_total, top25_country_total$className)
+
+# Join to spatial data
+top25_country_total_polys <-
+  lapply(top25_country_total, function(i){
+    left_join(country_polys, i, by = c("NAME_0" = "country")) %>%
+      filter(!(is.na(className)))
+  })
+```
+
+# Combine
+
+```{r realm-combi, eval = FALSE}
+# Sum to combined total
+crs_realm_total_combi <- 
+  trait_df %>%
+  filter(EOO_NES == 1) %>%
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(realms))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realms, sep = ";") %>% 
+  rename(realm = realms) %>% 
+  # Count species in each realm
+  group_by(realm) %>% 
+  summarise(n = n()) %>% 
+  mutate(value = "(a) No Exit Species")
+
+# Join to spatial data
+crs_realm_total_combi <- 
+  left_join(realm_polys, crs_realm_total_combi, by = c("Realm" = "realm"))
+
+# Sum to combined total
+top25_realm_total_combi <- 
+  trait_df %>%
+  filter(diff_top25 == 1) %>%
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(realms))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple realms
+  separate_rows(realms, sep = ";") %>% 
+  rename(realm = realms) %>% 
+  # Count species in each realm
+  group_by(realm) %>% 
+  summarise(n = n()) %>% 
+  mutate(value = "(b) Extreme No Exit Species")
+
+# Join to spatial data
+top25_realm_total_combi <- 
+  left_join(realm_polys, top25_realm_total_combi, by = c("Realm" = "realm"))
+```
+
+```{r ctry-combi, eval = FALSE}
+# Country combined total
+crs_country_total_combi <-
+  trait_df %>%
+  filter(EOO_NES == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(countries))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple countries
+  separate_rows(countries, sep = ";") %>% 
+  rename(country = countries) %>% 
+  # Count species in each country
+  group_by(country) %>% 
+  summarise(n = n()) %>% 
+  mutate(value = "(a) No Exit Species")
+
+# Join to spatial data
+crs_country_total_combi <-
+    left_join(country_polys, crs_country_total_combi, by = c("NAME_0" = "country")) %>% 
+  filter(!(is.na(value)))
+
+# Country combined total
+top25_country_total_combi <-
+  trait_df %>%
+  filter(diff_top25 == 1) %>% 
+  bind_rows() %>% 
+  left_join(readRDS("/workdir/sr2352/HMEI-internship/data/spatial/basemaps/realm_ctry_info.Rds"), 
+            by = "scientificName") %>% 
+  filter(!(is.na(countries))) %>% 
+  # Separate - species occurs in multiple rows if range across multiple countries
+  separate_rows(countries, sep = ";") %>% 
+  rename(country = countries) %>% 
+  # Count species in each country
+  group_by(country) %>% 
+  summarise(n = n()) %>% 
+  mutate(value = "(b) Extreme No Exit Species")
+
+# Join to spatial data
+top25_country_total_combi <-
+    left_join(country_polys, top25_country_total_combi, by = c("NAME_0" = "country")) %>% 
+  filter(!(is.na(value)))
+```
+
+# Map CRS
+
+Skip this map.
+```{r map-CRS-raw, eval = FALSE}
+# # Make maps!
+# map_CRS <-
+#   lapply(crs_df, function(i){
+#     ggplot() +
+#       # Plot background realms
+#       geom_raster(data = realm_df,
+#                   aes(x = lon, y = lat),
+#                   fill = "grey") +
+#       # Plot number of species per grid cell with TRUE (CRS species)
+#       geom_raster(data = i, 
+#                   aes(x = lon, y = lat,
+#                       fill = n_spT)) +
+#       facet_wrap(~ className, ncol = 1) +
+#       theme_void() +
+#       theme(strip.text = element_text(size = 12, hjust = 0, face = "bold"),
+#             legend.position = "bottom") +
+#       scale_fill_viridis_c(na.value = "transparent", 
+#                            name = "No. NES") +
+#       guides(fill = guide_colourbar(barwidth = unit(8, "cm"),
+#                                     barheight = unit(0.3, "cm"),
+#                                     title.position = "top",
+#                                     title.hjust = 0.5))
+#   })
+# # Combine maps for each class into a single figure with panels
+# map_CRS_combi <- plot_grid(plotlist = map_CRS, ncol = 1)
+# 
+# # Save
+# ggsave(plot = map_CRS_combi,
+#        filename = "/scratch/network/rsenior/hmei-internship/crs_map.png",
+#        width = 12, height = 20, units = "cm", dpi = 800)
+```
+
+```{r map-CRS-realm}
+# Define lookup needed to capitalise class names that are used as facet labels
+class_lookup <- sapply(names(crs_realm_total_polys), simpleCap)
+
+map_CRS_realm <-
+  lapply(crs_realm_total_polys, function(taxon){
+      ggplot(taxon) +
+      geom_sf(data = realm_polys, 
+              colour = "transparent", 
+              fill = "grey") +
+      geom_sf(data = taxon,
+              aes(fill = n),
+              colour = "transparent") +
+      facet_wrap(~ className, ncol = 1, 
+                 labeller = labeller(className = class_lookup)) +
+      theme_void() +
+      theme(strip.text = element_text(size = 8, vjust = 1, hjust = 0, face = "bold"),
+            legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key.size = unit(0.4, "cm"),
+            legend.box = "vertical") +
+      scale_fill_gradientn(name = "Total No Exit Species",
+                           na.value = "transparent", 
+                           colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+      guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                    barheight = unit(0.1, "cm"),
+                                    title.position = "bottom",
+                                    title.hjust = 0.5))
+  })
+map_CRS_realm_combi <- cowplot::plot_grid(plotlist = map_CRS_realm, ncol = 1)
+ggsave(plot = map_CRS_realm_combi,
+       filename = "/workdir/sr2352/HMEI-internship/data/figs/nes_map_realm.png",
+       width = 7, height = 20, units = "cm", dpi = 800)
+```
+
+
+```{r map-CRS-country}
+class_lookup <- sapply(names(crs_country_total_polys), simpleCap)
+
+map_CRS_ctry <-
+  lapply(crs_country_total_polys, function(taxon){
+    ggplot(taxon) +
+      geom_sf(data = realm_polys, 
+              colour = "transparent", 
+              fill = "grey") +
+      geom_sf(data = taxon,
+              aes(fill = n),
+              colour = "transparent") +
+      facet_wrap(~ className, ncol = 1, 
+                 labeller = labeller(className = class_lookup)) +
+      theme_void() +
+      theme(strip.text = element_text(size = 8, vjust = 1, hjust = 0, face = "bold"),
+            legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key.size = unit(0.4, "cm"),
+            legend.box = "vertical") +
+      scale_fill_gradientn(name = "Total CRS",
+                           na.value = "transparent", 
+                           colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+      guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                    barheight = unit(0.1, "cm"),
+                                    title.position = "top",
+                                    title.hjust = 0.5))
+  })
+map_CRS_ctry_combi <- cowplot::plot_grid(plotlist = map_CRS_ctry, ncol = 1)
+ggsave(plot = map_CRS_ctry_combi,
+       filename = "/workdir/sr2352/HMEI-internship/data/figs/nes_map_country.png",
+       width = 7, height = 20, units = "cm", dpi = 800)
+```
+
+# Map top 25%
+
+```{r map-top25-raw, eval = FALSE}
+# Make maps!
+# map_top25 <-
+#   lapply(top25_df, function(i){
+#     ggplot() +
+#       # Plot background realms
+#       geom_raster(data = realm_df,
+#                   aes(x = lon, y = lat),
+#                   fill = "grey") +
+#       # Plot number of species per grid cell with TRUE (top25 species)
+#       geom_raster(data = i, 
+#                   aes(x = lon, y = lat,
+#                       fill = n_spT)) +
+#       facet_wrap(~ className, ncol = 1) +
+#       theme_void() +
+#       theme(strip.text = element_text(size = 12, hjust = 0, face = "bold"),
+#             legend.position = "bottom") +
+#       scale_fill_viridis_c(na.value = "transparent", 
+#                            name = "No. top25") +
+#       guides(fill = guide_colourbar(barwidth = unit(8, "cm"),
+#                                     barheight = unit(0.3, "cm"),
+#                                     title.position = "top",
+#                                     title.hjust = 0.5))
+#   })
+# # Combine maps for each class into a single figure with panels
+# map_top25_combi <- plot_grid(plotlist = map_top25, ncol = 1)
+# 
+# # Save
+# ggsave(plot = map_top25_combi,
+#        filename = "/scratch/network/rsenior/hmei-internship/top25_map.png",
+#        width = 12, height = 20, units = "cm", dpi = 800)
+```
+
+```{r map-top25-realm}
+# Define lookup needed to capitalise class names that are used as facet labels
+class_lookup <- sapply(names(top25_realm_total_polys), simpleCap)
+
+map_top25_realm <-
+  # Just for amphibians, birds & mammals (indices 1, 2 and 4)
+  lapply(top25_realm_total_polys, function(taxon){
+    ggplot(taxon) +
+      geom_sf(data = realm_polys, 
+              colour = "transparent", 
+              fill = "grey") +
+      geom_sf(data = taxon,
+              aes(fill = n),
+              colour = "transparent") +
+      facet_wrap(~ className, ncol = 1, 
+                 labeller = labeller(className = class_lookup)) +
+      theme_void() +
+      theme(strip.text = element_text(size = 8, vjust = 1, hjust = 0, face = "bold"),
+            legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key.size = unit(0.4, "cm"),
+            legend.box = "vertical") +
+      scale_fill_gradientn(name = "Total top25",
+                           na.value = "transparent", 
+                           colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+      guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                    barheight = unit(0.1, "cm"),
+                                    title.position = "top",
+                                    title.hjust = 0.5))
+  })
+map_top25_realm_combi <- cowplot::plot_grid(plotlist = map_top25_realm, ncol = 1)
+
+ggsave(plot = map_top25_realm_combi,
+       filename = "/workdir/sr2352/HMEI-internship/data/figs/top25_map_realm.png",
+       width = 7, height = 20, units = "cm", dpi = 800)
+```
+
+```{r map-top25-country}
+class_lookup <- sapply(names(top25_country_total_polys), simpleCap)
+
+map_top25_ctry <-
+  lapply(top25_country_total_polys, function(taxon){
+    ggplot(taxon) +
+      geom_sf(data = realm_polys, 
+              colour = "transparent", 
+              fill = "grey") +
+      geom_sf(data = taxon,
+              aes(fill = n),
+              colour = "transparent") +
+      facet_wrap(~ className, ncol = 1, 
+                 labeller = labeller(className = class_lookup)) +
+      theme_void() +
+      theme(strip.text = element_text(size = 8, vjust = 1, hjust = 0, face = "bold"),
+            legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key.size = unit(0.4, "cm"),
+            legend.box = "vertical") +
+      scale_fill_gradientn(name = "Total top25",
+                           na.value = "transparent", 
+                           colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+      guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                    barheight = unit(0.1, "cm"),
+                                    title.position = "top",
+                                    title.hjust = 0.5))
+  })
+map_top25_ctry_combi <- cowplot::plot_grid(plotlist = map_top25_ctry, ncol = 1)
+ggsave(plot = map_top25_ctry_combi,
+       filename = "/workdir/sr2352/HMEI-internship/data/figs/top25_map_country.png",
+       width = 7, height = 20, units = "cm", dpi = 800)
+```
+
+# Combined plots
+
+```{r map-CRS-realm-combi}
+crs_realm_p <-
+  ggplot() +
+  geom_sf(data = realm_polys, 
+          colour = "transparent", 
+          fill = "grey") +
+  geom_sf(data = crs_realm_total_combi,
+          aes(fill = n),
+          colour = "transparent") +
+  facet_wrap(~ value) +
+  theme_void() +
+  theme(strip.text = element_text(size = 10, hjust = 0, face = "bold"),
+        plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.size = unit(0.4, "cm"),
+        legend.box = "vertical") +
+  scale_fill_gradientn(name = "Total No Exit Species",
+                       na.value = "transparent", 
+                       colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+  guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                barheight = unit(0.2, "cm"),
+                                title.position = "bottom",
+                                title.hjust = 0.5))
+top25_realm_p <-
+  ggplot() +
+  geom_sf(data = realm_polys, 
+          colour = "transparent", 
+          fill = "grey") +
+  geom_sf(data = top25_realm_total_combi,
+          aes(fill = n),
+          colour = "transparent") +
+  facet_wrap(~ value) +
+  theme_void() +
+  theme(strip.text = element_text(size = 10, hjust = 0, face = "bold"),
+        plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.size = unit(0.4, "cm"),
+        legend.box = "vertical") +
+  scale_fill_gradientn(name = "Total No Exit Species",
+                       na.value = "transparent", 
+                       colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+  guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                barheight = unit(0.2, "cm"),
+                                title.position = "bottom",
+                                title.hjust = 0.5))
+
+map_realm_combi <- 
+  cowplot::plot_grid(crs_realm_p,top25_realm_p, ncol = 1)
+ggsave(plot = map_realm_combi,
+       filename = "/workdir/sr2352/HMEI-internship/data/figs/map_realm_combi.png",
+       width = 12, height = 14, units = "cm", dpi = 800)
+```
+
+```{r map-CRS-country-combi}
+crs_country_p <-
+  ggplot() +
+  geom_sf(data = country_polys, 
+          colour = "transparent", 
+          fill = "grey") +
+  geom_sf(data = crs_country_total_combi,
+          aes(fill = n),
+          colour = "transparent") +
+  facet_wrap(~ value) +
+  theme_void() +
+  theme(strip.text = element_text(size = 10, hjust = 0, face = "bold"),
+        plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.size = unit(0.4, "cm"),
+        legend.box = "vertical") +
+  scale_fill_gradientn(name = "Total No Exit Species",
+                       na.value = "transparent", 
+                       colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+  guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                barheight = unit(0.2, "cm"),
+                                title.position = "bottom",
+                                title.hjust = 0.5))
+top25_country_p <-
+  ggplot() +
+  geom_sf(data = country_polys, 
+          colour = "transparent", 
+          fill = "grey") +
+  geom_sf(data = top25_country_total_combi,
+          aes(fill = n),
+          colour = "transparent") +
+  facet_wrap(~ value) +
+  theme_void() +
+  theme(strip.text = element_text(size = 10, hjust = 0, face = "bold"),
+        plot.background = element_rect(fill = "white", colour = "white"),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.size = unit(0.4, "cm"),
+        legend.box = "vertical") +
+  scale_fill_gradientn(name = "Total No Exit Species",
+                       na.value = "transparent", 
+                       colours = RColorBrewer::brewer.pal(9, "YlOrRd")[2:9]) +
+  guides(fill = guide_colourbar(barwidth = unit(5, "cm"),
+                                barheight = unit(0.2, "cm"),
+                                title.position = "bottom",
+                                title.hjust = 0.5))
+
+map_country_combi <- 
+  cowplot::plot_grid(crs_country_p,top25_country_p, ncol = 1)
+ggsave(plot = map_country_combi,
+       filename = "/workdir/sr2352/HMEI-internship/data/figs/map_country_combi.png",
+       width = 12, height = 14, units = "cm", dpi = 800)
+```
+

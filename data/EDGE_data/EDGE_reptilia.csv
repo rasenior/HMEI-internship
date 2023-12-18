@@ -1,0 +1,608 @@
+RL ID,Order,Family,Species,Common Name,ED,RL Status,GE,EDGE,EDGE Rank,Distribution,Median ED
+867,Crocodylia,Alligatoridae,Alligator sinensis,Chinese Alligator,59.07639755,Critically Endangered,4,6.868205767,5,China,16.13449009
+8966,Crocodylia,Gavialidae,Gavialis gangeticus,Gharial,41.05656485,Critically Endangered,4,6.511604217,17,"India,Nepal",16.13449009
+5660,Crocodylia,Crocodylidae ,Mecistops cataphractus,Slender-snouted Crocodile,18.9064621,Critically Endangered,4,5.76363313,45,"Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Gambia,Liberia,Sierra Leone",16.13449009
+21981,Crocodylia,Crocodylidae ,Tomistoma schlegelii,False Gharial,26.97098042,Vulnerable,2,4.71746192,361,"Brunei Darussalam,Indonesia,Malaysia",16.13449009
+15635,Crocodylia,Crocodylidae ,Osteolaemus tetraspis,African Dwarf Crocodile,19.07818591,Vulnerable,2,4.385928309,458,"Angola,Burkina Faso,Benin,Congo, The Democratic Republic of the,Central African Republic,Congo,Côte d'Ivoire,Cameroon,Gabon,Ghana,Gambia,Guinea,Guinea-Bissau,Liberia,Nigeria,Sierra Leone,Senegal,Togo",16.13449009
+172958,Squamata,Xenotyphlopidae,Xenotyphlops grandidieri,Madagascar Blindsnake,67.65863825,Critically Endangered,4,7.001735677,4,Madagascar,11.17837196
+57287221,Squamata,Shinisauridae,Shinisaurus crocodilurus,Chinese Crocodile Lizard,103.4246732,Endangered,3,6.727907523,6,"China,Viet Nam",11.17837196
+194258,Squamata,Sphaerodactylidae,Gonatodes daudini,Union Island Gecko,30.48127685,Critically Endangered,4,6.221981706,22,Saint Vincent and the Grenadines,11.17837196
+66083295,Squamata,Sphaerodactylidae,Gonatodes infernalis,NA,28.65600837,Critically Endangered,4,6.16225347,23,"Venezuela, Bolivarian Republic of",11.17837196
+62251,Squamata,Scincidae,Gongylomorphus bojerii,Bojer's Skink,24.28648509,Critically Endangered,4,6.002858789,24,Mauritius,11.17837196
+99942532,Squamata,Dibamidae,Dibamus tiomanensis,Pulau Tioman Dibamid Lizard,48.30270267,Endangered,3,5.977420442,26,NA,11.17837196
+176174,Squamata,Diplodactylidae,Oedodera marmorata,Marbled Gecko,23.58323544,Critically Endangered,4,5.974653447,27,New Caledonia,11.17837196
+18917702,Squamata,Eublepharidae,Goniurosaurus huuliensis,NA,21.98643697,Critically Endangered,4,5.907493067,33,NA,11.17837196
+18917785,Squamata,Eublepharidae,Goniurosaurus yamashinae,Yamashina's Ground Gecko,21.19869623,Critically Endangered,4,5.872622281,34,Japan,11.17837196
+64370,Squamata,Xenosauridae,Xenosaurus newmanorum,NA,42.12214717,Endangered,3,5.843478262,35,Mexico,11.17837196
+14665363,Squamata,Gekkonidae,Lygodactylus williamsi,Turquoise Dwarf Gecko,20.47067984,Critically Endangered,4,5.839276998,36,"Tanzania, United Republic of",11.17837196
+172898,Squamata,Gekkonidae,Paroedura lohatsara,NA,20.37258411,Critically Endangered,4,5.834697707,37,Madagascar,11.17837196
+75976755,Squamata,Chamaeleonidae,Rhampholeon hattinghi,NA,20.28281964,Critically Endangered,4,5.83048888,38,"Congo, The Democratic Republic of the",11.17837196
+172794,Squamata,Gekkonidae,Lygodactylus mirabilis,NA,20.14472122,Critically Endangered,4,5.823979009,39,Madagascar,11.17837196
+203171,Squamata,Sphaerodactylidae,Aristelliger reyesi,Reyes’ Caribbean Gecko,20.09153139,Critically Endangered,4,5.821460326,40,Cuba,11.17837196
+102664572,Squamata,Carphodactylidae,Phyllurus kabikabi,NA,19.95940738,Critically Endangered,4,5.815176307,41,Australia,11.17837196
+42686901,Squamata,Chamaeleonidae ,Brookesia desperata,NA,19.44407576,Critically Endangered,4,5.790281869,42,Madagascar,11.17837196
+176325,Squamata,Xenodermidae,Achalinus jinggangensis,Zong's Odd-scaled Snake,19.40571553,Critically Endangered,4,5.788403757,43,China,11.17837196
+44579408,Squamata,Sphaerodactylidae,Lepidoblepharis miyatai,NA,19.22515029,Critically Endangered,4,5.779515616,44,Colombia,11.17837196
+172524,Squamata,Chamaeleonidae,Rhampholeon acuminatus,Nguru Spiny Pygmy Chameleon,18.73603376,Critically Endangered,4,5.755034812,46,"Tanzania, United Republic of",11.17837196
+196575,Squamata,Gekkonidae,Lepidodactylus euaensis,'Eua Forest Gecko,18.7014222,Critically Endangered,4,5.753279548,47,Tonga,11.17837196
+172927,Squamata,Gekkonidae,Uroplatus guentheri,NA,38.3794196,Endangered,3,5.752684876,48,Madagascar,11.17837196
+172747,Squamata,Gekkonidae,Uroplatus malahelo,NA,38.13504842,Endangered,3,5.746459986,49,Madagascar,11.17837196
+178246,Squamata,Gekkonidae,Phelsuma pronki,NA,18.52965125,Critically Endangered,4,5.74452261,50,Madagascar,11.17837196
+47755615,Squamata,Gekkonidae,Alsophylax tadjikiensis,Tadjikistan Even-fingered Gecko,18.38492057,Critically Endangered,4,5.737084196,51,Tajikistan,11.17837196
+164598,Squamata,Gekkonidae,Alsophylax laevis,Southern Even-fingered Gecko,18.25227749,Critically Endangered,4,5.730218087,54,"Turkmenistan,Uzbekistan",11.17837196
+172568,Squamata,Chamaeleonidae,Rhampholeon chapmanorum,Chapman's Pygmy Chameleon,18.14211466,Critically Endangered,4,5.724479586,55,Malawi,11.17837196
+61366030,Squamata,Chamaeleonidae,Rhampholeon bruessoworum,Mount Inago Pygmy Chameleon,17.91051817,Critically Endangered,4,5.712307006,56,Mozambique,11.17837196
+75306501,Squamata,Leiocephalidae,Leiocephalus endomychus,Central Haitian Curlytail,17.67243146,Critically Endangered,4,5.699636905,57,Haiti,11.17837196
+61365811,Squamata,Chamaeleonidae,Rhampholeon tilburyi,Mount Namuli Pygmy Chameleon,17.66069979,Critically Endangered,4,5.699008419,58,Mozambique,11.17837196
+178423,Squamata,Scincidae,Paracontias rothschildi,Rothschild's Skink,17.51000601,Critically Endangered,4,5.690900173,64,Madagascar,11.17837196
+75605882,Squamata,Sphaerodactylidae,Sphaerodactylus samanensis,Samana Least Gecko,17.28073687,Critically Endangered,4,5.678436597,65,Dominican Republic,11.17837196
+75605372,Squamata,Sphaerodactylidae,Sphaerodactylus cochranae,Cochran's Least Gecko,17.26968912,Critically Endangered,4,5.677832077,66,Dominican Republic,11.17837196
+75310301,Squamata,Leiocephalidae,Leiocephalus onaneyi,Sierra Curlytail Lizard,17.18692279,Critically Endangered,4,5.67329153,67,Cuba,11.17837196
+172943,Squamata,Gekkonidae,Uroplatus pietschmanni,NA,35.24940203,Endangered,3,5.669864427,68,Madagascar,11.17837196
+75605559,Squamata,Sphaerodactylidae,Sphaerodactylus nycteropus,Morne Dubois Least Gecko,16.94633294,Critically Endangered,4,5.659974523,69,Haiti,11.17837196
+104717581,Squamata,Gekkonidae,Gekko lauhachindai,Lauhachinda’s Cave Gecko,16.91704997,Critically Endangered,4,5.658341494,70,NA,11.17837196
+172827,Squamata,Gekkonidae,Paragehyra gabriellae,NA,34.34445908,Endangered,3,5.644583177,71,Madagascar,11.17837196
+178566,Squamata,Gekkonidae,Cnemaspis anaikattiensis,NA,16.66981575,Critically Endangered,4,5.644446581,72,India,11.17837196
+75317710,Squamata,Leiocephalidae,Leiocephalus rhutidira,Lapierre Curlytail Lizard,16.66830958,Critically Endangered,4,5.644361338,73,Haiti,11.17837196
+75605475,Squamata,Sphaerodactylidae,Sphaerodactylus lazelli,Cap-Haitien Least Gecko,16.49997806,Critically Endangered,4,5.634788349,74,Haiti,11.17837196
+75312135,Squamata,Leiocephalidae,Leiocephalus pratensis,Atalaye Curlytail Lizard,16.1739038,Critically Endangered,4,5.615979733,75,Haiti,11.17837196
+64373,Squamata,Xenosauridae,Xenosaurus platyceps,NA,33.27909506,Endangered,3,5.613977237,76,Mexico,11.17837196
+1319,Squamata,Dactyloidae,Anolis roosevelti,Culebra Giant Anole,16.13525035,Critically Endangered,4,5.613726488,77,"Puerto Rico,Virgin Islands, British,Virgin Islands, U.S.",11.17837196
+75605940,Squamata,Sphaerodactylidae,Sphaerodactylus sommeri,TerreNueve Least Gecko,16.05942311,Critically Endangered,4,5.609291448,78,Haiti,11.17837196
+75605887,Squamata,Sphaerodactylidae,Sphaerodactylus schuberti,Neiba Agave Sphaero,15.99040865,Critically Endangered,4,5.60523771,79,Dominican Republic,11.17837196
+178322,Squamata,Sphaerodactylidae,Sphaerodactylus williamsi,Haitian Striped Sphaero,15.9477117,Critically Endangered,4,5.602721544,80,Haiti,11.17837196
+75605414,Squamata,Sphaerodactylidae,Sphaerodactylus elasmorhynchus,Marche Leon Least Gecko,15.94086289,Critically Endangered,4,5.602317348,81,Haiti,11.17837196
+75600764,Squamata,Leptotyphlopidae,Mitophis asbolepis,NA,15.56319129,Critically Endangered,4,5.579771563,82,Dominican Republic,11.17837196
+61463,Squamata,Lacertidae,Acanthodactylus spinicauda,Doumergue's Fringe-fingered Lizard,15.41539252,Critically Endangered,4,5.570808185,83,Algeria,11.17837196
+75605435,Squamata,Sphaerodactylidae,Sphaerodactylus epiurus,Hispaniolan Tailspot Sphaero,15.39653803,Critically Endangered,4,5.569658939,84,Dominican Republic,11.17837196
+48443321,Squamata,Phyllodactylidae,Phyllodactylus pulcher,Barbados Leaf-toed Gecko,15.1302909,Critically Endangered,4,5.553287649,85,Barbados,11.17837196
+176178,Squamata,Diplodactylidae,Dierogekko poumensis,Poum Striped Gecko,15.11145845,Critically Endangered,4,5.552119446,86,New Caledonia,11.17837196
+61501,Squamata,Lacertidae ,Gallotia auaritae,La Palma Giant Lizard,15.0762954,Critically Endangered,4,5.549934574,87,Spain,11.17837196
+169811,Squamata,Scincidae,Brachymeles cebuensis,Cebu Small Worm Skink,15.06323049,Critically Endangered,4,5.549121562,88,Philippines,11.17837196
+104695227,Squamata,Gekkonidae,Cyrtodactylus nigriocularis,NA,14.99718983,Critically Endangered,4,5.545001793,89,NA,11.17837196
+75976903,Squamata,Chamaeleonidae,Kinyongia mulyai,NA,14.9778645,Critically Endangered,4,5.543793018,90,"Congo, The Democratic Republic of the",11.17837196
+164562,Squamata,Lacertidae,Acanthodactylus harranensis,NA,14.87700399,Critically Endangered,4,5.537460495,91,Turkey,11.17837196
+75601408,Squamata,Leptotyphlopidae,Mitophis leptipileptus,NA,14.74809293,Critically Endangered,4,5.529307996,92,NA,11.17837196
+29409,Squamata,Alopoglossidae,Ptychoglossus danieli,NA,14.73658671,Critically Endangered,4,5.528577087,93,Colombia,11.17837196
+61568,Squamata,Sphaerodactylidae,Saurodactylus fasciatus,Banded Toed Gecko,61.34821555,Vulnerable,2,5.519029413,95,Morocco,11.17837196
+61505,Squamata,Lacertidae ,Gallotia intermedia,Tenerife Speckled Lizard,14.5666458,Critically Endangered,4,5.517719258,96,Spain,11.17837196
+99943609,Squamata,Gekkonidae,Cnemaspis temiah,Temiah Rock Gecko,14.54721931,Critically Endangered,4,5.516470523,97,NA,11.17837196
+172803,Squamata,Gekkonidae,Phelsuma masohoala,NA,14.50845721,Critically Endangered,4,5.513974224,98,Madagascar,11.17837196
+75601065,Squamata,Leptotyphlopidae,Mitophis calypso,Samana Threadsnake,14.50372458,Critically Endangered,4,5.513669013,99,Dominican Republic,11.17837196
+2593,Squamata,Scincidae,Barkudia insularis,Madras Spotted Skink,14.50316438,Critically Endangered,4,5.513632879,100,India,11.17837196
+56234195,Squamata,Phyllodactylidae,Homonota rupicola,NA,14.41801277,Critically Endangered,4,5.508125209,101,Paraguay,11.17837196
+56234213,Squamata,Phyllodactylidae,Homonota taragui,NA,14.41801277,Critically Endangered,4,5.508125209,101,Argentina,11.17837196
+172834,Squamata,Scincidae,Pseudoacontias menamainty,NA,14.32256119,Critically Endangered,4,5.501915052,103,Madagascar,11.17837196
+49981813,Squamata,Teiidae,Holcosus orcesi,Peters' Ameiva,14.31966093,Critically Endangered,4,5.501725754,104,Ecuador,11.17837196
+63658,Squamata,Gekkonidae,Phelsuma antanosy,NA,14.26455249,Critically Endangered,4,5.498122032,105,Madagascar,11.17837196
+61454,Squamata,Lacertidae,Acanthodactylus beershebensis,Be’er Sheva Fringe-fingered Lizard,14.22309877,Critically Endangered,4,5.495402653,106,"Israel,Palestinian Territory, Occupied",11.17837196
+67009871,Squamata,Chamaeleonidae ,Brookesia minima,NA,29.38337091,Endangered,3,5.493336991,107,Madagascar,11.17837196
+193487,Squamata,Scincidae,Paracontias fasika,NA,14.17309445,Critically Endangered,4,5.49211248,108,Madagascar,11.17837196
+177448,Squamata,Lamprophiidae,Prosymna ornatissima,Ornate Shovel-snout,14.16905069,Critically Endangered,4,5.491845935,109,"Tanzania, United Republic of",11.17837196
+104686673,Squamata,Gekkonidae,Cyrtodactylus chanhomeae,NA,14.158024,Critically Endangered,4,5.491118751,110,NA,11.17837196
+176204,Squamata,Diplodactylidae,Eurydactylodes occidentalis,NA,14.15439803,Critically Endangered,4,5.490879511,111,New Caledonia,11.17837196
+193482,Squamata,Chamaeleonidae,Calumma tarzan,NA,14.13554775,Critically Endangered,4,5.489634855,112,Madagascar,11.17837196
+172878,Squamata,Chamaeleonidae ,Brookesia bonsi,Namoroka Leaf Chameleon,14.11976755,Critically Endangered,4,5.488591719,113,Madagascar,11.17837196
+178278,Squamata,Dactyloidae,Anolis juangundlachi,Finca Ceres Anole,14.10116388,Critically Endangered,4,5.487360541,114,Cuba,11.17837196
+203637,Squamata,Leptotyphlopidae,Tetracheilostoma carlae,Barbados Threadsnake,13.95857282,Critically Endangered,4,5.47787329,115,Barbados,11.17837196
+8881,Squamata,Lacertidae ,Gallotia simonyi,El Hierro Giant Lizard,13.91050278,Critically Endangered,4,5.474654571,116,Spain,11.17837196
+172777,Squamata,Chamaeleonidae ,Brookesia ramanantsoai,NA,28.76571285,Endangered,3,5.472798697,117,Madagascar,11.17837196
+164583,Squamata,Lacertidae,Eremias pleskei,Pleske's Racerunner,13.87223579,Critically Endangered,4,5.472084827,118,"Armenia,Azerbaijan,Iran, Islamic Republic of,Turkey",11.17837196
+178429,Squamata,Tropidophiidae,Tropidophis hendersoni,Cuban Khaki Trope ,13.84967173,Critically Endangered,4,5.470566482,119,Cuba,11.17837196
+48442971,Squamata,Phyllodactylidae,Phyllodactylus sentosus,Lima Leaf-toed Gecko,13.68466129,Critically Endangered,4,5.459392222,120,Peru,11.17837196
+61502,Squamata,Lacertidae ,Gallotia bravoana,La Gomera Giant Lizard,13.57533144,Critically Endangered,4,5.451919194,121,Spain,11.17837196
+172750,Squamata,Scincidae,Paracontias minimus,NA,13.57059734,Critically Endangered,4,5.45159434,122,Madagascar,11.17837196
+29416,Squamata,Gekkonidae,Ebenavia maintimainty,NA,28.11944307,Endangered,3,5.450847639,123,Madagascar,11.17837196
+172883,Squamata,Gekkonidae,Paroedura masobe,NA,28.04421183,Endangered,3,5.448260757,124,Madagascar,11.17837196
+102346280,Squamata,Scincidae,Larutia penangensis,Penang Island Larut Skink,13.43754857,Critically Endangered,4,5.442421075,125,NA,11.17837196
+74856459,Squamata,Amphisbaenidae,Amphisbaena leali,Pestel Amphisbaena,13.32969441,Critically Endangered,4,5.434922639,126,Haiti,11.17837196
+172740,Squamata,Chamaeleonidae,Furcifer belalandaensis,Belalanda Chameleon,13.28484666,Critically Endangered,4,5.431788024,127,Madagascar,11.17837196
+61516,Squamata,Lacertidae,Iberolacerta martinezricai,NA,13.23849687,Critically Endangered,4,5.428538066,128,Spain,11.17837196
+172808,Squamata,Chamaeleonidae ,Brookesia dentata,NA,27.46927644,Endangered,3,5.428267028,129,Madagascar,11.17837196
+176295,Squamata,Chamaeleonidae ,Brookesia exarmata,NA,27.36540253,Endangered,3,5.424611723,130,Madagascar,11.17837196
+172748,Squamata,Chamaeleonidae ,Brookesia karchei,NA,27.34811872,Endangered,3,5.424002211,131,Madagascar,11.17837196
+172795,Squamata,Chamaeleonidae ,Brookesia peyrierasi,NA,27.34811872,Endangered,3,5.424002211,131,Madagascar,11.17837196
+39258,Squamata,Diploglossidae,Celestus anelpistus,Giant Hispaniolan Galliwasp,13.1727514,Critically Endangered,4,5.423909928,133,Dominican Republic,11.17837196
+174139,Squamata,Teiidae,Pholidoscelis corvinus,Sombrero Ameiva,13.12676961,Critically Endangered,4,5.420660274,134,Anguilla,11.17837196
+199722,Squamata,Gekkonidae,Hemidactylus dracaenacolus,NA,13.08829981,Critically Endangered,4,5.417933374,135,Yemen,11.17837196
+4094,Squamata,Diploglossidae,Celestus duquesneyi,Blue-tailed Galliwasp,13.08548962,Critically Endangered,4,5.417733885,136,Jamaica,11.17837196
+4096,Squamata,Diploglossidae,Celestus microblepharis,Small-eyed Galliwasp,13.047949,Critically Endangered,4,5.415065129,137,Jamaica,11.17837196
+2965,Squamata,Iguanidae,Brachylophus vitiensis,Fiji Crested Iguana,13.03361074,Critically Endangered,4,5.414043942,138,Fiji,11.17837196
+6638,Squamata,Diploglossidae,Diploglossus montisserrati,Montserrat Galliwasp,12.98607189,Critically Endangered,4,5.410650692,139,Montserrat,11.17837196
+61552,Squamata,Lacertidae,Podarcis raffonei,Aeolian Wall Lizard,12.96628214,Critically Endangered,4,5.409234729,140,Italy,11.17837196
+4097,Squamata,Diploglossidae,Celestus occiduus,Jamaica Giant Galliwasp,12.77181583,Critically Endangered,4,5.395212895,141,Jamaica,11.17837196
+169677,Squamata,Agamidae ,Cophotis dumbara,NA,12.65284446,Critically Endangered,4,5.386536608,142,Sri Lanka,11.17837196
+194100,Squamata,Gekkonidae,Cyrtodactylus jeyporensis,Jeypore Ground Gecko,12.54955436,Critically Endangered,4,5.378942381,143,NA,11.17837196
+63722,Squamata,Anniellidae,Anniella geronimensis,NA,26.06673945,Endangered,3,5.377747189,144,Mexico,11.17837196
+74855383,Squamata,Amphisbaenidae,Amphisbaena cayemite,Cayemite Short-tailed Amphisbaena,12.42982697,Critically Endangered,4,5.370066849,145,Haiti,11.17837196
+203152,Squamata,Leiosauridae ,Pristidactylus casuhatiensis,Casuhatien Anole,12.36326507,Critically Endangered,4,5.365098252,147,Argentina,11.17837196
+8218,Squamata,Scincidae,Plestiodon longirostris,Bermuda Skink,12.31748168,Critically Endangered,4,5.361666306,148,Bermuda,11.17837196
+203840,Squamata,Gekkonidae,Hemidactylus bouvieri,Bouvier's Leaf-toed Gecko,12.27387773,Critically Endangered,4,5.358386745,149,Cape Verde,11.17837196
+178207,Squamata,Scincidae,Scelotes inornatus,Durban Dwarf Burrowing Skink,12.24338422,Critically Endangered,4,5.356086846,150,NA,11.17837196
+172860,Squamata,Lamprophiidae,Pseudoxyrhopus ankafinaensis,NA,12.15866784,Critically Endangered,4,5.349669415,151,Madagascar,11.17837196
+16393650,Squamata,Gekkonidae,Hemidactylus kundaensis,NA,12.1514388,Critically Endangered,4,5.349119889,152,Guinea,11.17837196
+169845,Squamata,Gekkonidae,Luperosaurus joloensis,Jolo Flapped-legged Gecko,25.28611757,Endangered,3,5.348482493,153,Philippines,11.17837196
+47103060,Squamata,Scincidae,Panopa croizati,Horton's Mabuya,12.12101051,Critically Endangered,4,5.346803524,154,"Venezuela, Bolivarian Republic of",11.17837196
+3989,Squamata,Bolyeridae,Casarea dussumieri,Keel-scaled Boa,51.43923582,Vulnerable,2,5.345949447,155,NA,11.17837196
+74855790,Squamata,Amphisbaenidae,Amphisbaena gonavensis,Gonave Worm Lizard,12.07761593,Critically Endangered,4,5.343490783,156,Haiti,11.17837196
+6031,Squamata,Iguanidae,Cyclura pinguis,Anegada Rock Iguana,11.94867986,Critically Endangered,4,5.333582564,158,"Virgin Islands, British",11.17837196
+61425,Squamata,Chamaeleonidae,Archaius tigris,Tiger Chameleon,24.78848795,Endangered,3,5.329369731,159,Seychelles,11.17837196
+178313,Squamata,Dactyloidae,Anolis strahmi,Baoruco Cliff Anole,24.32617716,Endangered,3,5.311280073,161,Dominican Republic,11.17837196
+172934,Squamata,Chamaeleonidae,Furcifer balteatus,Two-banded Chameleon,24.29850606,Endangered,3,5.310186887,162,Madagascar,11.17837196
+176177,Squamata,Diplodactylidae,Dierogekko koniambo,Koniambo Striped Gecko,11.60509158,Critically Endangered,4,5.306689548,163,New Caledonia,11.17837196
+203810,Squamata,Amphisbaenidae,Cynisca kigomensis,NA,11.57499773,Critically Endangered,4,5.304299257,164,Nigeria,11.17837196
+199771,Squamata,Scincidae,Madascincus arenicola,NA,11.44920648,Critically Endangered,4,5.294245606,165,Madagascar,11.17837196
+99941632,Squamata,Agamidae ,Pseudocalotes flavigula,Malaya False Bloodsucker,11.39254252,Critically Endangered,4,5.289683604,167,NA,11.17837196
+172911,Squamata,Lamprophiidae,Compsophis vinckei,NA,11.38103542,Critically Endangered,4,5.288754623,168,Madagascar,11.17837196
+64102,Squamata,Phrynosomatidae,Sceloporus exsul,NA,11.38026438,Critically Endangered,4,5.288692344,169,Mexico,11.17837196
+176154,Squamata,Diplodactylidae,Dierogekko inexpectatus,NA,11.31088286,Critically Endangered,4,5.283072379,170,New Caledonia,11.17837196
+203808,Squamata,Amphisbaenidae,Cynisca gansi,NA,11.31045414,Critically Endangered,4,5.283037554,171,Nigeria,11.17837196
+5861,Squamata,Scincidae,Ctenotus lancelini,Lancelin Island Skink,11.28042936,Critically Endangered,4,5.280595609,172,Australia,11.17837196
+97210381,Squamata,Gekkonidae,Cnemaspis psychedelica,Psychedelic Rock Gecko,23.45230543,Endangered,3,5.276166045,173,Viet Nam,11.17837196
+64005,Squamata,Crotaphytidae,Crotaphytus antiquus,NA,23.03167978,Endangered,3,5.258814492,175,Mexico,11.17837196
+178439,Squamata,Sphaerodactylidae,Gonatodes seigliei,Estados Sucre Gecko,22.9399288,Endangered,3,5.254989268,176,"Venezuela, Bolivarian Republic of",11.17837196
+193262,Squamata,Gekkonidae,Lygodactylus roavolana,NA,22.64100517,Endangered,3,5.242424253,177,Madagascar,11.17837196
+178554,Squamata,Gekkonidae,Gekko badenii,NA,22.3935142,Endangered,3,5.231900355,178,NA,11.17837196
+18917757,Squamata,Eublepharidae,Goniurosaurus orientalis,Spotted Ground Gecko,22.13084644,Endangered,3,5.220608612,181,Japan,11.17837196
+176323,Squamata,Chamaeleonidae,Rhampholeon spinosus,Usambara Spiny Pygmy Chameleon,22.0637971,Endangered,3,5.217705705,185,"Tanzania, United Republic of",11.17837196
+66083824,Squamata,Sphaerodactylidae,Gonatodes purpurogularis,NA,21.90182664,Endangered,3,5.210658215,186,"Venezuela, Bolivarian Republic of",11.17837196
+18917767,Squamata,Eublepharidae,Goniurosaurus splendens,Banded Ground Gecko,21.62609277,Endangered,3,5.198545329,187,Japan,11.17837196
+42760305,Squamata,Chamaeleonidae,Rhampholeon viridis,Pare Pygmy Chameleon,21.48567799,Endangered,3,5.192320115,188,"Tanzania, United Republic of",11.17837196
+172773,Squamata,Chamaeleonidae ,Palleon nasus,Elongate Leaf Chameleon,43.81605479,Vulnerable,2,5.188860802,191,Madagascar,11.17837196
+18917684,Squamata,Eublepharidae,Goniurosaurus catbaensis,Cat Ba Tiger Gecko,21.33132793,Endangered,3,5.185432074,192,Viet Nam,11.17837196
+61524,Squamata,Lacertidae,Phoenicolacerta kulzeri,NA,20.9164103,Endangered,3,5.166677227,193,"Jordan,Lebanon,Syrian Arab Republic",11.17837196
+178592,Squamata,Dactyloidae,Anolis koopmani,Brown Red-bellied Anole ,20.87084241,Endangered,3,5.164595894,194,Haiti,11.17837196
+75605892,Squamata,Sphaerodactylidae,Sphaerodactylus schwartzi,Guantanamo Collared Sphaero,20.79125297,Endangered,3,5.160950191,195,Cuba,11.17837196
+172529,Squamata,Chamaeleonidae,Rhampholeon temporalis,East Usambara Pygmy Chameleon,20.7484087,Endangered,3,5.158982133,196,"Tanzania, United Republic of",11.17837196
+3083,Squamata,Chamaeleonidae ,Brookesia perarmata,Antsingy Leaf Chameleon,20.67648519,Endangered,3,5.155669583,197,Madagascar,11.17837196
+101950282,Squamata,Gekkonidae,Hemiphyllodactylus titiwangsaensis,Titiwangsa Slender Gecko,20.57858071,Endangered,3,5.151142731,198,NA,11.17837196
+178382,Squamata,Carphodactylidae,Orraya occultus,Long-necked Northern Leaf-tailed Gecko,42.06527942,Vulnerable,2,5.149011452,199,Australia,11.17837196
+178272,Squamata,Dactyloidae,Anolis cusuco,NA,20.53214837,Endangered,3,5.148988633,200,Honduras,11.17837196
+172935,Squamata,Gekkonidae,Paroedura tanjaka,NA,20.35078881,Endangered,3,5.140530227,201,Madagascar,11.17837196
+172948,Squamata,Gekkonidae,Phelsuma serraticauda,NA,20.20432041,Endangered,3,5.133646496,202,Madagascar,11.17837196
+172876,Squamata,Gekkonidae,Uroplatus malama,NA,41.38023112,Vulnerable,2,5.132976367,203,Madagascar,11.17837196
+44929503,Squamata,Gerrhosauridae ,Tetradactylus udzungwensis,Udzungwa Long-tailed Seps,19.48396209,Endangered,3,5.099083785,205,"Tanzania, United Republic of",11.17837196
+42687277,Squamata,Chamaeleonidae ,Brookesia tristis,NA,19.43958609,Endangered,3,5.096915057,206,Madagascar,11.17837196
+172959,Squamata,Gekkonidae,Lygodactylus ornatus,NA,19.42904157,Endangered,3,5.096399037,207,Madagascar,11.17837196
+199760,Squamata,Gekkonidae,Paroedura sanctijohannis,Comoro Ground Gecko,19.28602403,Endangered,3,5.089373719,208,"Comoros,Mayotte",11.17837196
+61522,Squamata,Lacertidae,Parvilacerta fraasii,Fraas' Lizard,19.09814114,Endangered,3,5.080068872,210,Lebanon,11.17837196
+172776,Squamata,Gekkonidae,Phelsuma vanheygeni,NA,18.9833009,Endangered,3,5.074338511,211,Madagascar,11.17837196
+178371,Squamata,Carphodactylidae,Phyllurus gulbaru,NA,18.95255835,Endangered,3,5.072798915,212,Australia,11.17837196
+44579339,Squamata,Sphaerodactylidae,Lepidoblepharis conolepis,Salamanquesa de Tandapi,18.75876951,Endangered,3,5.06303896,213,Ecuador,11.17837196
+61561,Squamata,Lacertidae ,Psammodromus microdactylus,Small-fingered Psammodromus,18.67613759,Endangered,3,5.058848154,216,Morocco,11.17837196
+840,Squamata,Lacertidae,Algyroides marchi,Spanish Algyroides,18.62454889,Endangered,3,5.056222819,217,Spain,11.17837196
+178257,Squamata,Dactyloidae,Anolis loveridgei,Loveridge's Anole,18.61295466,Endangered,3,5.055631841,218,Honduras,11.17837196
+178262,Squamata,Sphaerodactylidae,Sphaerodactylus torrei,Cuban Broad-banded Sphaero,18.51248517,Endangered,3,5.050496068,219,Cuba,11.17837196
+172792,Squamata,Gekkonidae,Uroplatus ebenaui,NA,37.99497471,Vulnerable,2,5.049727145,220,Madagascar,11.17837196
+44579445,Squamata,Sphaerodactylidae,Lepidoblepharis williamsi,NA,18.40446587,Endangered,3,5.044944781,221,Colombia,11.17837196
+176214,Squamata,Diplodactylidae,Bavayia ornata,Ornate Bavayia,18.19986656,Endangered,3,5.034344871,222,New Caledonia,11.17837196
+172532,Squamata,Chamaeleonidae,Rhampholeon platyceps,Mount Mulanje Pygmy Chameleon,18.18353319,Endangered,3,5.033493806,223,Malawi,11.17837196
+172706,Squamata,Scincidae,Eurylepis poonaensis,Poona Skink,18.07876533,Endangered,3,5.028017495,224,India,11.17837196
+172810,Squamata,Gekkonidae,Lygodactylus intermedius,NA,17.71474972,Endangered,3,5.00875351,225,Madagascar,11.17837196
+178440,Squamata,Dactyloidae,Anolis haetianus,Tiburon Stout Anole,17.65845878,Endangered,3,5.005741139,226,Haiti,11.17837196
+172981,Squamata,Gekkonidae,Phelsuma klemmeri,NA,17.61976551,Endangered,3,5.00366522,233,Madagascar,11.17837196
+75605470,Squamata,Sphaerodactylidae,Sphaerodactylus ladae,Martin Garcia Least Gecko,17.60215189,Endangered,3,5.002718809,234,Dominican Republic,11.17837196
+203834,Squamata,Gekkonidae,Cnemaspis occidentalis,Western Gecko,17.54021678,Endangered,3,4.999383794,235,"Côte d'Ivoire,Guinea,Liberia,Sierra Leone",11.17837196
+40690,Squamata,Crotaphytidae,Gambelia sila,San Joaquin Leopard Lizard,17.43839743,Endangered,3,4.993876849,236,United States,11.17837196
+199581,Squamata,Phyllodactylidae,Asaccus montanus,NA,35.72634378,Vulnerable,2,4.989788673,237,Oman,11.17837196
+75605387,Squamata,Sphaerodactylidae,Sphaerodactylus cryphius,Bakoruco Least Gecko,17.32028204,Endangered,3,4.987450296,238,Dominican Republic,11.17837196
+99931296,Squamata,Agamidae ,Leiolepis guentherpetersi,Peters’ Butterfly Lizard,17.31272542,Endangered,3,4.987037738,239,NA,11.17837196
+178689,Squamata,Gekkonidae,Phelsuma flavigularis,Yellow-throated Day Gecko,17.09208513,Endangered,3,4.974916098,240,Madagascar,11.17837196
+75605520,Squamata,Sphaerodactylidae,Sphaerodactylus mariguanae,Southern Bahamas Sphaero,17.06949542,Endangered,3,4.973666722,241,Bahamas,11.17837196
+178380,Squamata,Gekkonidae,Gehyra barea,Banda Island Dtella,16.92699637,Endangered,3,4.965749296,243,Indonesia,11.17837196
+178611,Squamata,Sphaerodactylidae,Sphaerodactylus thompsoni,Barahona Limestone Sphaero ,16.87408148,Endangered,3,4.962793243,244,"Dominican Republic,Haiti",11.17837196
+172648,Squamata,Gekkonidae,Cnemaspis wynadensis,Wynad Day Gecko,16.86447777,Endangered,3,4.9622558,245,India,11.17837196
+176294,Squamata,Chamaeleonidae ,Brookesia bekolosy,NA,16.84629542,Endangered,3,4.961237489,246,Madagascar,11.17837196
+172636,Squamata,Gekkonidae,Cnemaspis goaensis,Goan Day Gecko,16.76911757,Endangered,3,4.956903524,247,India,11.17837196
+177833,Squamata,Sphaerodactylidae,Sphaerodactylus storeyae,Los Canarreos Sphaero,16.62842819,Endangered,3,4.948954379,248,Cuba,11.17837196
+64369,Squamata,Xenosauridae,Xenosaurus grandis,NA,34.08347016,Vulnerable,2,4.944024445,250,"Guatemala,Mexico",11.17837196
+172530,Squamata,Chamaeleonidae,Nadzikambia mlanjensis,Mulanje Chameleon,16.5367356,Endangered,3,4.9437394,251,Malawi,11.17837196
+75605636,Squamata,Sphaerodactylidae,Sphaerodactylus phyzacinus,NA,16.52346676,Endangered,3,4.942982482,252,Guadeloupe,11.17837196
+178536,Squamata,Dactyloidae,Anolis marron,Jacmel Gracile Anole,16.45582983,Endangered,3,4.939115222,253,Haiti,11.17837196
+75605392,Squamata,Sphaerodactylidae,Sphaerodactylus dacnicolor,Jamaican Tailspot Sphaero,16.39505023,Endangered,3,4.935627238,254,Jamaica,11.17837196
+75605848,Squamata,Sphaerodactylidae,Sphaerodactylus rhabdotus,Two-striped Sphaero,16.39080089,Endangered,3,4.935382924,255,Dominican Republic,11.17837196
+61437,Squamata,Scincidae,Janetaescincus braueri,Brauer's Burrowing Skink,16.29565426,Endangered,3,4.929896813,256,Seychelles,11.17837196
+61438,Squamata,Scincidae,Janetaescincus veseyfitzgeraldi,Vesey-fitzgerald's Burrowing Skink,16.2939188,Endangered,3,4.929796467,257,Seychelles,11.17837196
+75605631,Squamata,Sphaerodactylidae,Sphaerodactylus perissodactylius,Dominican Least Gecko,16.25248594,Endangered,3,4.927397787,258,Dominican Republic,11.17837196
+75605599,Squamata,Sphaerodactylidae,Sphaerodactylus oxyrhinus,Jamaican Sharpnosed Sphaero,16.21905338,Endangered,3,4.925458067,259,Jamaica,11.17837196
+193488,Squamata,Gekkonidae,Phelsuma roesleri,Rösler’s Day Gecko,16.18163569,Endangered,3,4.923282663,260,Madagascar,11.17837196
+178420,Squamata,Uropeltidae,Platyplectrurus madurensis,Travancore Hills Thorntail Snake,16.17079604,Endangered,3,4.922651578,261,India,11.17837196
+75605604,Squamata,Sphaerodactylidae,Sphaerodactylus parkeri,Southern Jamaica Banded Sphaero,16.10999603,Endangered,3,4.919104398,262,Jamaica,11.17837196
+8766,Squamata,Chamaeleonidae,Furcifer minor,Lesser Chameleon,16.08495439,Endangered,3,4.917639758,263,Madagascar,11.17837196
+172829,Squamata,Gekkonidae,Phelsuma seippi,NA,16.04614495,Endangered,3,4.915365617,264,Madagascar,11.17837196
+75605979,Squamata,Sphaerodactylidae,Sphaerodactylus zygaena,Dame-Marie Least Gecko,16.04259881,Endangered,3,4.915157564,265,Haiti,11.17837196
+75605587,Squamata,Sphaerodactylidae,Sphaerodactylus oliveri,Juventud Least Gecko,16.02172686,Endangered,3,4.91393212,266,Cuba,11.17837196
+178438,Squamata,Dactyloidae,Anolis guafe,Cabo Cruz Banded Anole,15.99827928,Endangered,3,4.912553662,267,Cuba,11.17837196
+75605330,Squamata,Sphaerodactylidae,Sphaerodactylus asterulus,Haitian Least Gecko,15.98569598,Endangered,3,4.911813119,268,Haiti,11.17837196
+172952,Squamata,Gekkonidae,Paragehyra petiti,Angel's Petite Gecko,32.91343995,Vulnerable,2,4.910105756,269,Madagascar,11.17837196
+75605613,Squamata,Sphaerodactylidae,Sphaerodactylus parthenopion,Virgin Gorda Least Gecko,15.91251861,Endangered,3,4.907495636,270,"Virgin Islands, British",11.17837196
+75605838,Squamata,Sphaerodactylidae,Sphaerodactylus randi,Pedernales Least Gecko,15.88826654,Endangered,3,4.906060635,271,Dominican Republic,11.17837196
+75605594,Squamata,Sphaerodactylidae,Sphaerodactylus omoglaux,Fond Parisien Least Gecko,15.85922804,Endangered,3,4.904339707,272,Haiti,11.17837196
+178425,Squamata,Sphaerodactylidae,Sphaerodactylus scapularis,Boulenger's Least Gecko,15.85792331,Endangered,3,4.904262314,273,"Colombia,Ecuador",11.17837196
+75605460,Squamata,Sphaerodactylidae,Sphaerodactylus inaguae,Inagua Sphaero,15.84311849,Endangered,3,4.903383717,274,Bahamas,11.17837196
+75605822,Squamata,Sphaerodactylidae,Sphaerodactylus plummeri,Barahona Big-Scaled Sphaero,15.83798958,Endangered,3,4.90307916,275,Dominican Republic,11.17837196
+61492,Squamata,Gekkonidae,Mediodactylus amictopholis,NA,15.80257731,Endangered,3,4.900973827,276,"Lebanon,Syrian Arab Republic",11.17837196
+172538,Squamata,Chamaeleonidae,Kinyongia magomberae,Magombera Single-horned Chameleon,15.80216784,Endangered,3,4.900949458,277,"Tanzania, United Republic of",11.17837196
+75605406,Squamata,Sphaerodactylidae,Sphaerodactylus dimorphicus,NA,15.78803016,Endangered,3,4.900107684,278,Cuba,11.17837196
+178305,Squamata,Sphaerodactylidae,Sphaerodactylus pimienta,Pepper Sphaero,15.75826323,Endangered,3,4.898333006,279,Cuba,11.17837196
+178309,Squamata,Sphaerodactylidae,Sphaerodactylus armasi,Guantanamo Coastal Gecko,15.66149315,Endangered,3,4.892541799,280,Cuba,11.17837196
+75605860,Squamata,Sphaerodactylidae,Sphaerodactylus richardsonii,NA,15.65924876,Endangered,3,4.892407085,281,NA,11.17837196
+172599,Squamata,Scincidae,Eutropis clivicola,Inger's Mabuya,15.60686813,Endangered,3,4.889257894,282,India,11.17837196
+102675478,Squamata,Diplodactylidae,Lucasium occultum,Alligator River Gecko,15.60449094,Endangered,3,4.889114739,283,Australia,11.17837196
+177903,Squamata,Dactyloidae,Anolis ahli,Ahl's Anole,15.5830434,Endangered,3,4.887822233,284,Cuba,11.17837196
+174471,Squamata,Iguanidae,Brachylophus bulabula,Fiji Banded Iguana,15.57801517,Endangered,3,4.887518972,285,Fiji,11.17837196
+98152257,Squamata,Eublepharidae,Goniurosaurus kuroiwae,Kuroiwa's Ground Gecko,32.11055013,Vulnerable,2,4.886146328,286,Japan,11.17837196
+169908,Squamata,Gekkonidae,Luperosaurus macgregori,Mcgregor's Flapped-legged Gecko,15.5212414,Endangered,3,4.884088452,287,Philippines,11.17837196
+75605897,Squamata,Sphaerodactylidae,Sphaerodactylus semasiops,Cockpit Eyespot Sphaero,15.51516932,Endangered,3,4.883720853,288,Jamaica,11.17837196
+29452,Squamata,Diplodactylidae,Bavayia exsuccida,Sclerophyll Bavayia,15.50170132,Endangered,3,4.882905028,289,New Caledonia,11.17837196
+172772,Squamata,Gerrhosauridae ,Zonosaurus subunicolor,NA,15.48722401,Endangered,3,4.88202732,290,Madagascar,11.17837196
+61455,Squamata,Lacertidae,Acanthodactylus blanci,Blanc's Fringe-toed Lizard,15.45793743,Endangered,3,4.880249421,291,"Algeria,Tunisia",11.17837196
+61542,Squamata,Lacertidae,Philochortus zolii,NA,15.43500146,Endangered,3,4.878854838,292,"Egypt,Libya,Mali,Niger",11.17837196
+178542,Squamata,Dactyloidae,Anolis ruizii,NA,15.4153038,Endangered,3,4.8776556,293,Colombia,11.17837196
+172762,Squamata,Lamprophiidae,Alluaudina mocquardi,NA,15.37065635,Endangered,3,4.874932027,294,Madagascar,11.17837196
+172552,Squamata,Chamaeleonidae,Kinyongia tenuis,Usambara Flap-nosed Chameleon,15.34117773,Endangered,3,4.873129705,295,"Tanzania, United Republic of",11.17837196
+199763,Squamata,Gekkonidae,Phelsuma robertmertensi,Mertens' Day Gecko,15.26825033,Endangered,3,4.868656917,296,Mayotte,11.17837196
+56798923,Squamata,Carphodactylidae,Saltuarius eximius,NA,15.2433241,Endangered,3,4.867123541,297,Australia,11.17837196
+178727,Squamata,Dactyloidae,Anolis proboscis,Proboscis Anole,15.20087074,Endangered,3,4.864506532,298,Ecuador,11.17837196
+75605465,Squamata,Sphaerodactylidae,Sphaerodactylus intermedius,Mantanzas Least Gecko,15.19287071,Endangered,3,4.864012608,299,Cuba,11.17837196
+61452,Squamata,Lacertidae,Acanthodactylus ahmaddisii,NA,15.17079377,Endangered,3,4.862648303,300,Jordan,11.17837196
+169714,Squamata,Liolaemidae,Ctenoblepharys adspersa,Cabezona,31.05069606,Vulnerable,2,4.853613262,301,Peru,11.17837196
+173021,Squamata,Agamidae ,Otocryptis beddomei,NA,15.0170393,Endangered,3,4.853094653,302,NA,11.17837196
+176141,Squamata,Diplodactylidae,Eurydactylodes symmetricus,Large-scaled chameleon gecko,14.98244409,Endangered,3,4.850932417,303,New Caledonia,11.17837196
+75605872,Squamata,Sphaerodactylidae,Sphaerodactylus ruibali,Ruibal's Least Gecko,14.9747815,Endangered,3,4.850452864,304,Cuba,11.17837196
+64197,Squamata,Dactyloidae,Anolis hobartsmithi,NA,14.92723099,Endangered,3,4.847471827,305,Mexico,11.17837196
+194268,Squamata,Typhlopidae ,Amerotyphlops tasymicris,Grenada Bank Blindsnake,14.89619312,Endangered,3,4.845521196,306,Saint Vincent and the Grenadines,11.17837196
+75323721,Squamata,Leiocephalidae,Leiocephalus vinculum,Cochran's Curlytail Lizard,14.88385453,Endangered,3,4.844744697,307,Haiti,11.17837196
+172798,Squamata,Chamaeleonidae,Calumma furcifer,NA,14.84069323,Endangered,3,4.842023692,308,Madagascar,11.17837196
+75605335,Squamata,Sphaerodactylidae,Sphaerodactylus beattyi,Saint Croix's Sphaero,14.81733082,Endangered,3,4.840547768,309,"Virgin Islands, U.S.",11.17837196
+172954,Squamata,Gekkonidae,Matoatoa brevipes,NA,30.54555265,Vulnerable,2,4.837726978,310,Madagascar,11.17837196
+178653,Squamata,Gekkonidae,Uroplatus henkeli,NA,30.45074091,Vulnerable,2,4.834716902,311,Madagascar,11.17837196
+96265980,Squamata,Lacertidae,Takydromus dorsalis,Sakishima Grass Lizard,14.64244523,Endangered,3,4.829429609,312,Japan,11.17837196
+104683709,Squamata,Gekkonidae,Cnemaspis neangthyi,Neang Thy’s Rock Gecko,14.6389552,Endangered,3,4.829206471,313,NA,11.17837196
+61462,Squamata,Lacertidae,Acanthodactylus schreiberi,Schreiber's Fringe-fingered Lizard,14.51638894,Endangered,3,4.821338358,314,"Cyprus,Israel,Lebanon,Turkey",11.17837196
+104683759,Squamata,Gekkonidae,Cnemaspis niyomwanae,Niyomwan’s Rock Gecko,14.50370187,Endangered,3,4.820520367,315,NA,11.17837196
+178646,Squamata,Scincidae,Pseudoacontias angelorum,NA,14.49554438,Endangered,3,4.819994065,316,Madagascar,11.17837196
+109480101,Squamata,Scincidae,Lissolepis coventryi,Eastern Mourning Skink,14.48241237,Endangered,3,4.819146236,317,Australia,11.17837196
+48442737,Squamata,Phyllodactylidae,Phyllodactylus delsolari,NA,14.46445453,Endangered,3,4.817985676,318,Peru,11.17837196
+75601781,Squamata,Leptotyphlopidae,Mitophis pyrites,Thomas' Blind Snake,14.44129741,Endangered,3,4.816487112,319,"Dominican Republic,Haiti",11.17837196
+4178,Squamata,Agamidae ,Ceratophora tennentii,Tennent's Leaf-nosed Lizard,14.32058745,Endangered,3,4.808639051,320,Sri Lanka,11.17837196
+48442719,Squamata,Phyllodactylidae,Phyllodactylus angustidigitus,Narrow Leaf-toed Gecko,14.28353842,Endangered,3,4.806217871,321,Peru,11.17837196
+178363,Squamata,Dactyloidae,Anolis amplisquamosus,NA,14.11842701,Endangered,3,4.795355873,322,Honduras,11.17837196
+61513,Squamata,Lacertidae,Iberolacerta aurelioi,Aurelio's Rock Lizard,14.08076454,Endangered,3,4.792861602,323,"Andorra,Spain,France",11.17837196
+64211,Squamata,Dactyloidae,Anolis pygmaeus,NA,14.08042156,Endangered,3,4.792838859,324,Mexico,11.17837196
+172885,Squamata,Chamaeleonidae ,Brookesia decaryi,Decary's Leaf Chameleon,14.07970535,Endangered,3,4.792791365,325,Madagascar,11.17837196
+177561,Squamata,Cordylidae,Cordylus meculae,Mecula Girdled Lizard,14.07828657,Endangered,3,4.792697275,326,Mozambique,11.17837196
+172909,Squamata,Chamaeleonidae ,Brookesia lineata,Lined Leaf Chameleon,14.05122763,Endangered,3,4.7909011,327,Madagascar,11.17837196
+203636,Squamata,Leptotyphlopidae,Tetracheilostoma breuili,Saint Lucia Threadsnake,14.00899179,Endangered,3,4.788091016,328,Saint Lucia,11.17837196
+61545,Squamata,Lacertidae,Podarcis carbonelli,Lagartija de Carbonell,13.90615883,Endangered,3,4.781216013,329,"Spain,Portugal",11.17837196
+178488,Squamata,Lacertidae,Takydromus toyamai,Miyako Grass Lizard,13.74739782,Endangered,3,4.77050819,330,Japan,11.17837196
+61512,Squamata,Lacertidae,Iberolacerta aranica,Aran Rock Lizard,13.6948883,Endangered,3,4.76694124,331,"Spain,France",11.17837196
+169875,Squamata,Scincidae,Tytthoscincus biparietalis,Sulu Sphenomorphus,13.69401191,Endangered,3,4.766881599,332,Philippines,11.17837196
+8187,Squamata,Scincidae,Eulamprus leuraensis,Blue Mountain Water Skink,13.64211785,Endangered,3,4.763343701,333,Australia,11.17837196
+104775250,Squamata,Scincidae,Sphenomorphus modigliani,NA,13.61325379,Endangered,3,4.761370453,334,NA,11.17837196
+16393900,Squamata,Scincidae,Melanoseps emmrichi,Uluguru Limbless Skink,13.57385308,Endangered,3,4.75867058,335,"Tanzania, United Republic of",11.17837196
+176303,Squamata,Chamaeleonidae,Calumma gallus,NA,13.57137064,Endangered,3,4.75850023,336,Madagascar,11.17837196
+5336,Squamata,Cordylidae,Smaug giganteus,Giant Dragon Lizard,28.14148456,Vulnerable,2,4.758457106,337,NA,11.17837196
+102347300,Squamata,Scincidae,Sphenomorphus cameronicus,Cameron Highlands Forest Skink,13.49938318,Endangered,3,4.753547651,338,NA,11.17837196
+17795,Squamata,Lacertidae,Podarcis lilfordi,Lilford's Wall Lizard,13.4610243,Endangered,3,4.750898592,339,Spain,11.17837196
+192112,Squamata,Colubridae ,Thermophis zhaoermii,Sichuan Hot-Spring Keelback,13.43585091,Endangered,3,4.749156301,340,China,11.17837196
+172756,Squamata,Gekkonidae,Uroplatus giganteus,NA,27.85574604,Vulnerable,2,4.748603504,341,Madagascar,11.17837196
+172681,Squamata,Uropeltidae,Rhinophis travancoricus,Travancore Earth Snake,13.41779227,Endangered,3,4.74790456,342,India,11.17837196
+176201,Squamata,Diplodactylidae,Bavayia goroensis,NA,13.4069646,Endangered,3,4.747153284,343,New Caledonia,11.17837196
+176300,Squamata,Chamaeleonidae ,Brookesia valerieae,NA,13.39803667,Endangered,3,4.746533397,344,Madagascar,11.17837196
+172545,Squamata,Chamaeleonidae,Kinyongia matschiei,Giant East Usambara Blade-horned Chameleon,13.33835207,Endangered,3,4.742379452,345,"Tanzania, United Republic of",11.17837196
+178367,Squamata,Gekkonidae,Cyrtodactylus brevidactylus,NA,13.32319549,Endangered,3,4.741321827,346,NA,11.17837196
+176138,Squamata,Diplodactylidae,Rhacodactylus trachyrhynchus,Rough-snouted Giant Gecko,13.22441143,Endangered,3,4.734401145,347,New Caledonia,11.17837196
+203031,Squamata,Diploglossidae,Celestus hewardi,Red-spotted Galliwasp,13.22317341,Endangered,3,4.734314106,348,Jamaica,11.17837196
+61514,Squamata,Lacertidae,Iberolacerta cyreni,NA,13.22039709,Endangered,3,4.73411889,349,Spain,11.17837196
+172751,Squamata,Lamprophiidae,Heteroliodon fohy,NA,13.17441706,Endangered,3,4.730880266,350,Madagascar,11.17837196
+169873,Squamata,Scincidae,Brachymeles vermis,Limbless Worm Skink,13.1616552,Endangered,3,4.729979516,351,Philippines,11.17837196
+176831,Squamata,Lamprophiidae,Liophidium mayottensis,Peters' Bright Snake,13.13596493,Endangered,3,4.728163796,352,Mayotte,11.17837196
+174138,Squamata,Teiidae,Pholidoscelis corax,Censky's Ameiva,13.12676961,Endangered,3,4.727513093,353,Anguilla,11.17837196
+50009027,Squamata,Teiidae,Pholidoscelis dorsalis,Jamaica Ameiva,13.12676961,Endangered,3,4.727513093,353,Jamaica,11.17837196
+1118,Squamata,Teiidae,Pholidoscelis polops,St. Croix Ameiva,13.12676961,Endangered,3,4.727513093,353,"Virgin Islands, U.S.",11.17837196
+203033,Squamata,Diploglossidae,Celestus macrotus,Thomas' Galliwasp,13.11447443,Endangered,3,4.726642368,356,Haiti,11.17837196
+19243030,Squamata,Iguanidae,Brachylophus fasciatus,Lau Banded Iguana,13.08480967,Endangered,3,4.72453843,357,Fiji,11.17837196
+64365,Squamata,Xantusiidae ,Xantusia gracilis,Sandstone Night Lizard,27.13280346,Vulnerable,2,4.72323064,358,United States,11.17837196
+203023,Squamata,Diploglossidae,Celestus barbouri,NA,13.01331078,Endangered,3,4.719449189,359,Jamaica,11.17837196
+172879,Squamata,Chamaeleonidae,Calumma vencesi,Vences' Chameleon,13.00616798,Endangered,3,4.718939344,360,Madagascar,11.17837196
+74855259,Squamata,Amphisbaenidae,Amphisbaena caudalis,Cayemite Long-tailed Amphisbaena,12.9742214,Endangered,3,4.716655845,362,Haiti,11.17837196
+176317,Squamata,Chamaeleonidae,Trioceros laterispinis,Spiny-sided Chameleon,12.95452691,Endangered,3,4.715245507,363,"Tanzania, United Republic of",11.17837196
+109476597,Squamata,Scincidae,Lerista lineata,Perth Slider,12.94281112,Endangered,3,4.714405585,364,Australia,11.17837196
+61479,Squamata,Scincidae,Chalcides mauritanicus,Two-fingered Skink,12.88451688,Endangered,3,4.710215868,365,"Algeria,Morocco",11.17837196
+48442988,Squamata,Phyllodactylidae,Phyllodactylus thompsoni,NA,12.8826025,Endangered,3,4.710077979,366,Peru,11.17837196
+172732,Squamata,Scincidae,Madascincus macrolepis,Rusty Skink,12.86240064,Endangered,3,4.708621727,367,Madagascar,11.17837196
+64162,Squamata,Phrynosomatidae,Uma exsul,NA,12.84439227,Endangered,3,4.707321802,368,Mexico,11.17837196
+196586,Squamata,Gekkonidae,Perochirus ateles,Micronesia Saw-tailed Gecko,26.6229612,Vulnerable,2,4.704941715,369,"Micronesia, Federated States of ,Japan,Marshall Islands,Northern Mariana Islands",11.17837196
+74855567,Squamata,Amphisbaenidae,Amphisbaena fenestrata,Cope's Worm Lizard,12.80310424,Endangered,3,4.704335054,370,"Virgin Islands, British,Virgin Islands, U.S.",11.17837196
+42689609,Squamata,Chamaeleonidae,Calumma vohibola,NA,12.80160998,Endangered,3,4.704226792,371,Madagascar,11.17837196
+192140,Squamata,Viperidae,Protobothrops mangshanensis,Mangshan Pit Viper,12.77500085,Endangered,3,4.702296959,372,China,11.17837196
+172837,Squamata,Gekkonidae,Lygodactylus bivittis,Tiny Scaled Gecko,26.45228642,Vulnerable,2,4.69874382,373,Madagascar,11.17837196
+172802,Squamata,Lamprophiidae,Phisalixella variabilis,NA,12.65696176,Endangered,3,4.693690953,374,Madagascar,11.17837196
+172629,Squamata,Scincidae,Dasia subcaerulea,Boulenger's Dasia,12.60769123,Endangered,3,4.690076706,375,India,11.17837196
+172574,Squamata,Chamaeleonidae,Kinyongia multituberculata,West Usambara Blade-horned Chameleon,12.53748458,Endangered,3,4.684904015,376,"Tanzania, United Republic of",11.17837196
+203029,Squamata,Diploglossidae,Celestus darlingtoni,Darlington's Galliwasp,12.53693237,Endangered,3,4.684863223,377,Dominican Republic,11.17837196
+75606981,Squamata,Typhlopidae ,Amerotyphlops trinitatus,Trinidad Worm Snake,12.52661743,Endangered,3,4.684100948,378,Trinidad and Tobago,11.17837196
+203070,Squamata,Hoplocercidae,Morunasaurus groi,Dunn's Spinytail Iguana,12.52080409,Endangered,3,4.683671084,379,"Colombia,Panama",11.17837196
+172801,Squamata,Gekkonidae,Paroedura vazimba,NA,25.90609547,Vulnerable,2,4.678647219,380,Madagascar,11.17837196
+176226,Squamata,Amphisbaenidae,Amphisbaena hyporissor,Puerto Rican Dusky Amphisbaena ,12.44391117,Endangered,3,4.677967844,381,"Dominican Republic,Haiti",11.17837196
+178268,Squamata,Scincidae,Lankascincus deignani,Deignan Tree Skink,12.29654599,Endangered,3,4.666945843,382,Sri Lanka,11.17837196
+176290,Squamata,Chamaeleonidae,Bradypodion caffer,Pondo Dwarf Chameleon,12.268816,Endangered,3,4.664858162,383,NA,11.17837196
+203030,Squamata,Diploglossidae,Celestus haetianus,NA,12.26520463,Endangered,3,4.664585955,384,"Dominican Republic,Haiti",11.17837196
+102709908,Squamata,Elapidae,Hemiaspis damelii,Grey Snake,12.20170207,Endangered,3,4.659787307,385,Australia,11.17837196
+50950734,Squamata,Tropiduridae,Stenocercus varius,Keeled Whorltail Iguana,12.19391305,Endangered,3,4.659197132,386,Ecuador,11.17837196
+177502,Squamata,Lamprophiidae,Lycodryas inopinae,NA,12.17615449,Endangered,3,4.65785026,387,Madagascar,11.17837196
+172956,Squamata,Gekkonidae,Lygodactylus madagascariensis,Madagascar Dwarf Gecko,25.30961357,Vulnerable,2,4.656228769,388,Madagascar,11.17837196
+63659,Squamata,Lamprophiidae,Pseudoxyrhopus kely,NA,12.15290013,Endangered,3,4.656083818,389,Madagascar,11.17837196
+21902,Squamata,Scincidae,Tiliqua adelaidensis,Pygmy Blue-tongue Lizard,12.15130874,Endangered,3,4.65596282,390,Australia,11.17837196
+109474872,Squamata,Scincidae,Lerista ameles,Limbless Fine-lined Slider,12.14306678,Endangered,3,4.65533592,391,Australia,11.17837196
+157252,Squamata,Lacertidae,Podarcis cretensis,NA,12.14280484,Endangered,3,4.65531599,392,Greece,11.17837196
+172925,Squamata,Chamaeleonidae,Calumma hilleniusi,NA,12.09981931,Endangered,3,4.652039979,393,Madagascar,11.17837196
+172869,Squamata,Chamaeleonidae,Furcifer nicosiai,NA,12.09890213,Endangered,3,4.651969961,394,Madagascar,11.17837196
+203156,Squamata,Leiosauridae ,Pristidactylus volcanensis,NA,12.07847104,Endangered,3,4.650408988,395,Chile,11.17837196
+176299,Squamata,Chamaeleonidae ,Brookesia tuberculata,Mount d'Ambre Leaf Chameleon,25.09768987,Vulnerable,2,4.648141161,396,Madagascar,11.17837196
+172972,Squamata,Gekkonidae,Blaesodactylus boivini,NA,25.06056894,Vulnerable,2,4.646717765,397,Madagascar,11.17837196
+203828,Squamata,Chamaeleonidae,Trioceros perreti,Perret's Montane Chameleon,11.99596363,Endangered,3,4.644080361,398,Cameroon,11.17837196
+172572,Squamata,Chamaeleonidae,Trioceros pfefferi,Bakossi Two-horned Chameleon,11.99467014,Endangered,3,4.643980826,399,Cameroon,11.17837196
+61427,Squamata,Colubridae,Lycognathophis seychellensis,Seychelles Wolf Snake,11.9292067,Endangered,3,4.638930379,400,Seychelles,11.17837196
+39904,Squamata,Boidae ,Corallus cropanii,Cropan's Boa,11.91018344,Endangered,3,4.637457956,401,Brazil,11.17837196
+176686,Squamata,Homalopsidae,Gyiophis vorisi,NA,11.8982762,Endangered,3,4.636535216,402,NA,11.17837196
+109476376,Squamata,Scincidae,Lerista haroldi,Gnaraloo Mulch-slider,11.84186334,Endangered,3,4.632151949,403,Australia,11.17837196
+64099,Squamata,Phrynosomatidae,Sceloporus cyanostictus,NA,11.81459386,Endangered,3,4.630026208,404,Mexico,11.17837196
+203021,Squamata,Diploglossidae,Celestus agasepsoides,NA,11.79729738,Endangered,3,4.628675548,405,Dominican Republic,11.17837196
+172525,Squamata,Chamaeleonidae,Kinyongia vosseleri,Vosseler's Blade-horned Chameleon,11.77462142,Endangered,3,4.626902043,406,"Tanzania, United Republic of",11.17837196
+178333,Squamata,Gymnophthalmidae ,Bachia bresslaui,Bresslau's Bachia,24.44912328,Vulnerable,2,4.622975655,407,"Brazil,Paraguay",11.17837196
+64340,Squamata,Viperidae,Mixcoatlus melanurus,NA,11.69258575,Endangered,3,4.620459565,408,Mexico,11.17837196
+6315,Squamata,Pygopodidae,Delma impar,Striped Legless Lizard,11.65481628,Endangered,3,4.617479418,409,Australia,11.17837196
+172830,Squamata,Chamaeleonidae,Calumma globifer,NA,11.6501874,Endangered,3,4.617113571,410,Madagascar,11.17837196
+172982,Squamata,Lamprophiidae,Thamnosophis martae,NA,11.57082452,Endangered,3,4.610820157,411,Madagascar,11.17837196
+172551,Squamata,Chamaeleonidae,Bradypodion caeruleogula,Eshowe Dwarf Chameleon,11.56742206,Endangered,3,4.610549457,412,NA,11.17837196
+172850,Squamata,Chamaeleonidae,Calumma andringitraense,NA,11.55640966,Endangered,3,4.609672807,413,Madagascar,11.17837196
+44979569,Squamata,Scincidae,Typhlacontias kataviensis,NA,11.55089859,Endangered,3,4.609233806,414,"Tanzania, United Republic of",11.17837196
+3630,Squamata,Agamidae ,Calotes liocephalus,Spineless Forest Lizard,11.52182537,Endangered,3,4.606914693,415,Sri Lanka,11.17837196
+172822,Squamata,Gekkonidae,Paroedura androyensis,Grandidier's Madagascar Ground Gecko,24.03653083,Vulnerable,2,4.606630353,416,Madagascar,11.17837196
+172791,Squamata,Lamprophiidae,Lycodryas guentheri,NA,11.49011078,Endangered,3,4.604378735,417,Madagascar,11.17837196
+18171,Squamata,Leiosauridae ,Pristidactylus valeriae,NA,11.46637661,Endangered,3,4.602476691,418,Chile,11.17837196
+172872,Squamata,Scincidae,Pygomeles petteri,NA,11.43473535,Endangered,3,4.599935336,419,Madagascar,11.17837196
+172865,Squamata,Gerrhosauridae ,Zonosaurus maximus,NA,23.84305188,Vulnerable,2,4.598872472,420,Madagascar,11.17837196
+109464681,Squamata,Scincidae,Ctenotus stuarti,Stuart's Ctenotus,11.41377674,Endangered,3,4.598248425,421,Australia,11.17837196
+75605564,Squamata,Sphaerodactylidae,Sphaerodactylus ocoae,Peravia Least Gecko,11.39184602,Endangered,3,4.596480219,422,Dominican Republic,11.17837196
+176304,Squamata,Chamaeleonidae,Calumma glawi,NA,11.36965748,Endangered,3,4.594688038,423,Madagascar,11.17837196
+99928409,Squamata,Agamidae ,Acanthosaura titiwangsaensis,Titiwangsa Horned Tree Lizard,11.32887701,Endangered,3,4.591385777,424,NA,11.17837196
+18170,Squamata,Leiosauridae ,Pristidactylus alvaroi,NA,11.30396633,Endangered,3,4.589363218,425,Chile,11.17837196
+83494956,Squamata,Agamidae ,Tympanocryptis condaminensis,Condamine Earless Dragon,11.30026165,Endangered,3,4.589062076,426,Australia,11.17837196
+83495150,Squamata,Agamidae ,Tympanocryptis wilsoni,Roma Earless Dragon,11.30026165,Endangered,3,4.589062076,426,Australia,11.17837196
+104698481,Squamata,Gekkonidae,Cyrtodactylus phuquocensis,Phu Quoc Bent–toed Gecko,11.27789055,Endangered,3,4.58724167,428,NA,11.17837196
+104652314,Squamata,Agamidae ,Pseudocalotes poilani,Laotian False Bloodsucker,11.27122926,Endangered,3,4.58669898,429,NA,11.17837196
+64293,Squamata,Boidae ,Exiliboa placata,NA,23.5401206,Vulnerable,2,4.586603715,430,Mexico,11.17837196
+64305,Squamata,Viperidae,Mixcoatlus barbouri,Barbour's Montane Pit Viper,11.24468958,Endangered,3,4.584533881,431,Mexico,11.17837196
+64167,Squamata,Phrynosomatidae,Urosaurus auriculatus,NA,11.24345595,Endangered,3,4.584433128,432,Mexico,11.17837196
+104692853,Squamata,Gekkonidae,Cyrtodactylus khelangensis,Lampang Bent-toed Gecko,11.1878398,Endangered,3,4.579880259,433,NA,11.17837196
+176321,Squamata,Chamaeleonidae,Rhampholeon marshalli,Marshall's Pygmy Chameleon,23.13644343,Vulnerable,2,4.570017235,434,"Mozambique,Zimbabwe",11.17837196
+66083022,Squamata,Sphaerodactylidae,Gonatodes astralis,NA,23.0330009,Vulnerable,2,4.565722285,435,"Venezuela, Bolivarian Republic of",11.17837196
+178288,Squamata,Polychrotidae,Polychrus peruvianus,NA,22.43927582,Vulnerable,2,4.54070743,436,"Ecuador,Peru",11.17837196
+16947,Squamata,Gekkonidae,Phelsuma standingi,Standing's Day Gecko,22.07311148,Vulnerable,2,4.524962295,437,Madagascar,11.17837196
+61430,Squamata,Gekkonidae,Ailuronyx trachygaster,Giant Bronze Gecko,22.02405081,Vulnerable,2,4.522833718,438,Seychelles,11.17837196
+10335,Squamata,Agamidae ,Hydrosaurus pustulatus,Sailfin Water Lizard,21.42482991,Vulnerable,2,4.496463184,439,Philippines,11.17837196
+44979651,Squamata,Lamprophiidae,Buhoma procterae,Uluguru Forest Snake,21.06131703,Vulnerable,2,4.480120075,440,"Tanzania, United Republic of",11.17837196
+99931318,Squamata,Agamidae ,Leiolepis ngovantrii,Ngo Van Tri’s Lady Butterfly Lizard,20.71205821,Vulnerable,2,4.464162145,441,NA,11.17837196
+172824,Squamata,Gekkonidae,Phelsuma breviceps,NA,20.63404157,Vulnerable,2,4.460562434,442,Madagascar,11.17837196
+178577,Squamata,Gekkonidae,Lygodactylus blanci,Blanc's Dwarf Gecko,20.25858102,Vulnerable,2,4.443054988,443,Madagascar,11.17837196
+203169,Squamata,Sphaerodactylidae,Aristelliger hechti,Caicos Gecko,20.12683393,Vulnerable,2,4.436838344,444,Turks and Caicos Islands,11.17837196
+4801,Squamata,Gekkonidae,Christinus guentheri,Lord Howe Island Southern Gecko,20.05848509,Vulnerable,2,4.433597932,445,"Australia,Norfolk Island",11.17837196
+110160538,Squamata,Cordylidae,Hemicordylus nebulosus,Dwarf Crag Lizard,19.99939299,Vulnerable,2,4.430787893,446,NA,11.17837196
+193486,Squamata,Scincidae,Paracontias kankana,NA,19.97224747,Vulnerable,2,4.429494376,447,Madagascar,11.17837196
+192028,Squamata,Xenodermidae,Achalinus hainanus,Hainan Odd-scaled Snake,19.92056985,Vulnerable,2,4.427027239,448,China,11.17837196
+18917735,Squamata,Eublepharidae,Goniurosaurus lichtenfelderi,Lichtenfelder's Gecko,19.91406238,Vulnerable,2,4.426716135,449,NA,11.17837196
+102702006,Squamata,Diplodactylidae,Strophurus horneri,Arnhem Phasmid Gecko,19.89407924,Vulnerable,2,4.42576019,450,Australia,11.17837196
+172969,Squamata,Gerrhosauridae ,Zonosaurus boettgeri,NA,19.83279836,Vulnerable,2,4.42282295,451,Madagascar,11.17837196
+164729,Squamata,Agamidae ,Uromastyx aegyptia,Egyptian Mastigure,19.58058749,Vulnerable,2,4.410642638,452,"United Arab Emirates,Egypt,Israel,Iraq,Iran, Islamic Republic of,Jordan,Kuwait,Oman,Qatar,Saudi Arabia,Syrian Arab Republic,Yemen",11.17837196
+172844,Squamata,Chamaeleonidae ,Brookesia ebenaui,Northern Leaf Chameleon,19.49864344,Vulnerable,2,4.406653071,453,Madagascar,11.17837196
+199600,Squamata,Agamidae ,Uromastyx thomasi,Omani Spiny-tailed Lizard,19.37651095,Vulnerable,2,4.400677175,454,Oman,11.17837196
+169805,Squamata,Gekkonidae,Pseudogekko brevipes,Orange-spotted Smooth-scaled Gecko,19.1614126,Vulnerable,2,4.390064871,455,Philippines,11.17837196
+172612,Squamata,Uropeltidae,Melanophidium bilineatum,Two-lined Black Earth Snake,19.15402873,Vulnerable,2,4.389698566,456,India,11.17837196
+177588,Squamata,Cordylidae,Platysaurus imperator,Emperor Flat Lizard,19.08695935,Vulnerable,2,4.386365177,457,"Mozambique,Zimbabwe",11.17837196
+178686,Squamata,Scincidae,Madascincus nanus,NA,18.96285982,Vulnerable,2,4.380167899,459,Madagascar,11.17837196
+172549,Squamata,Chamaeleonidae,Rhampholeon beraduccii,Mahenge Pygmy Chameleon,18.9122433,Vulnerable,2,4.377629145,460,"Tanzania, United Republic of",11.17837196
+75605362,Squamata,Sphaerodactylidae,Sphaerodactylus cinereus,Gray Gecko,18.88326527,Vulnerable,2,4.376172798,461,Haiti,11.17837196
+172745,Squamata,Gerrhosauridae ,Tracheloptychus petersi,NA,18.85852625,Vulnerable,2,4.37492781,462,Madagascar,11.17837196
+47755599,Squamata,Gekkonidae,Alsophylax szczerbaki,Szczerbak’s Even-fingered Gecko,18.69533245,Vulnerable,2,4.366676037,463,"Turkmenistan,Uzbekistan",11.17837196
+47755582,Squamata,Gekkonidae,Alsophylax loricatus,Strauch's Even-fingered Gecko,18.68436952,Vulnerable,2,4.366119256,464,"Tajikistan,Uzbekistan",11.17837196
+177907,Squamata,Dactyloidae,Anolis pogus,St Martin Anole,18.65156829,Vulnerable,2,4.364451507,465,"Saint Martin (French part),Sint Maarten (Dutch part)",11.17837196
+44648018,Squamata,Gekkonidae,Cnemaspis elgonensis,Mt Elgon Forest Gecko,18.51700677,Vulnerable,2,4.357580589,466,"Kenya,Uganda",11.17837196
+172836,Squamata,Chamaeleonidae,Calumma cucullatum,NA,18.49437003,Vulnerable,2,4.356420069,467,Madagascar,11.17837196
+44579362,Squamata,Sphaerodactylidae,Lepidoblepharis grandis,NA,18.43081978,Vulnerable,2,4.353154815,468,Ecuador,11.17837196
+61365784,Squamata,Chamaeleonidae,Rhampholeon nebulauctor,Mount Chiperone Pygmy Chameleon,18.39461787,Vulnerable,2,4.351289959,469,Mozambique,11.17837196
+199761,Squamata,Gekkonidae,Phelsuma nigristriata,Island Day Gecko,18.380643,Vulnerable,2,4.350569146,470,Mayotte,11.17837196
+102664547,Squamata,Carphodactylidae,Phyllurus isis,NA,18.37319608,Vulnerable,2,4.350184826,471,Australia,11.17837196
+172569,Squamata,Chamaeleonidae,Kinyongia excubitor,Mount Kenya Sentinel Chameleon,18.36803925,Vulnerable,2,4.349918607,472,Kenya,11.17837196
+196579,Squamata,Gekkonidae,Lepidodactylus manni,Viti Forest Gecko,18.12698589,Vulnerable,2,4.337394573,473,Fiji,11.17837196
+169836,Squamata,Gekkonidae,Gekko ernstkelleri,NA,18.04592192,Vulnerable,2,4.333147367,474,Philippines,11.17837196
+64122,Squamata,Phrynosomatidae,Sceloporus maculosus,NA,17.74913313,Vulnerable,2,4.317441879,475,Mexico,11.17837196
+16926,Squamata,Gekkonidae,Phelsuma guentheri,Round Island Day Gecko,17.72658603,Vulnerable,2,4.316238588,476,NA,11.17837196
+178198,Squamata,Gekkonidae,Lygodactylus gravis,Usambara Dwarf Gecko,17.7061131,Vulnerable,2,4.315144736,477,"Tanzania, United Republic of",11.17837196
+104716910,Squamata,Gekkonidae,Dixonius taoi,NA,17.69568237,Vulnerable,2,4.314586969,478,NA,11.17837196
+10253,Squamata,Diplodactylidae,Toropuku stephensi,Stephen's Island Gecko,17.63911638,Vulnerable,2,4.311556765,479,New Zealand,11.17837196
+172630,Squamata,Gekkonidae,Cnemaspis jerdonii,Jerdon’s Day Gecko,17.63310505,Vulnerable,2,4.311234201,480,India,11.17837196
+109452204,Squamata,Scincidae,Concinnia frerei,Stout Barsided Skink,17.6318411,Vulnerable,2,4.311166365,481,Australia,11.17837196
+194098,Squamata,Gekkonidae,Cnemaspis otai,Vellore Day Gecko,17.56864182,Vulnerable,2,4.307768595,482,India,11.17837196
+102673135,Squamata,Diplodactylidae,Diplodactylus fulleri,Lake Disappointment Ground Gecko,17.50547447,Vulnerable,2,4.304360967,483,Australia,11.17837196
+170383,Squamata,Agamidae ,Ceratophora aspera,Sri-lanka Horned Agama,17.44608543,Vulnerable,2,4.301146537,484,Sri Lanka,11.17837196
+104718065,Squamata,Gekkonidae,Gekko takouensis,Ta Kou Marbled Gecko,17.37277466,Vulnerable,2,4.297164292,485,NA,11.17837196
+178208,Squamata,Gekkonidae,Gekko swinhonis,Peking Gecko,17.22843236,Vulnerable,2,4.289276954,486,China,11.17837196
+96251742,Squamata,Gekkonidae,Gekko shibatai,NA,17.02767054,Vulnerable,2,4.278202191,487,Japan,11.17837196
+172950,Squamata,Chamaeleonidae,Furcifer petteri,Petter's Chameleon,16.9479118,Vulnerable,2,4.273768135,488,Madagascar,11.17837196
+172592,Squamata,Gekkonidae,Cnemaspis indraneildasii,Das's Day Gecko,16.8914867,Vulnerable,2,4.270619358,489,India,11.17837196
+172840,Squamata,Chamaeleonidae,Calumma capuroni,NA,16.84477774,Vulnerable,2,4.268005263,490,Madagascar,11.17837196
+104716938,Squamata,Gekkonidae,Gekko aaronbaueri,Aaron Bauer’s Gecko,16.77534295,Vulnerable,2,4.264106631,491,NA,11.17837196
+104717053,Squamata,Gekkonidae,Gekko boehmei,Boehme’s Gecko,16.77534295,Vulnerable,2,4.264106631,491,NA,11.17837196
+104717067,Squamata,Gekkonidae,Gekko bonkowskii,Bonkowski’s Gecko,16.77534295,Vulnerable,2,4.264106631,491,NA,11.17837196
+104718008,Squamata,Gekkonidae,Gekko sengchanthavongi,Sengchanthavong’s Gecko,16.77534295,Vulnerable,2,4.264106631,491,NA,11.17837196
+104718077,Squamata,Gekkonidae,Gekko thakhekensis,Thakhek Gecko,16.77534295,Vulnerable,2,4.264106631,491,NA,11.17837196
+172680,Squamata,Gekkonidae,Cnemaspis indica,Nilgiri Dwarf Gecko,16.77234003,Vulnerable,2,4.263937679,496,India,11.17837196
+172742,Squamata,Lamprophiidae,Pararhadinaea melanogaster,NA,16.75061533,Vulnerable,2,4.262714543,497,Madagascar,11.17837196
+196577,Squamata,Gekkonidae,Lepidodactylus gardineri,Rotuma Forest Gecko,16.52175198,Vulnerable,2,4.24973744,498,Fiji,11.17837196
+178608,Squamata,Dactyloidae,Anolis maculigula,Rueda's Anole,16.38730199,Vulnerable,2,4.24203453,499,Colombia,11.17837196
+99931118,Squamata,Agamidae ,Leiolepis boehmei,Böhme’s Butterfly Lizard,16.36511504,Vulnerable,2,4.240757672,500,NA,11.17837196
+199698,Squamata,Phyllodactylidae,Tarentola chazaliae,Helmethead Gecko,16.27196961,Vulnerable,2,4.235379295,501,"Western Sahara,Morocco,Mauritania",11.17837196
+199610,Squamata,Lacertidae,Acanthodactylus felicis,NA,16.21437553,Vulnerable,2,4.232039183,502,"Oman,Yemen",11.17837196
+176173,Squamata,Diplodactylidae,Correlophus ciliatus,Crested Gecko,16.1767368,Vulnerable,2,4.229850318,503,New Caledonia,11.17837196
+194266,Squamata,Sphaerodactylidae,Sphaerodactylus kirbyi,Grenadines Sphaero,16.16536211,Vulnerable,2,4.229187884,504,"Grenada,Saint Vincent and the Grenadines",11.17837196
+64186,Squamata,Dactyloidae,Anolis barkeri,NA,16.08690343,Vulnerable,2,4.22460665,505,Mexico,11.17837196
+178200,Squamata,Alopoglossidae,Ptychoglossus bicolor,Werner's Largescale Lizard,16.08439567,Vulnerable,2,4.224459874,506,Colombia,11.17837196
+172873,Squamata,Lamprophiidae,Lycodryas inornatus,NA,16.06005766,Vulnerable,2,4.223034283,507,Madagascar,11.17837196
+61526,Squamata,Lacertidae,Dinarolacerta mosorensis,Mosor Rock Lizard,16.04166319,Vulnerable,2,4.221955483,508,"Bosnia and Herzegovina,Croatia,Montenegro",11.17837196
+75316425,Squamata,Leiocephalidae,Leiocephalus psammodromus,Turks and Caicos Curlytail,15.97185592,Vulnerable,2,4.217850799,509,Turks and Caicos Islands,11.17837196
+176213,Squamata,Diplodactylidae,Correlophus sarasinorum,Sarasin's Giant Gecko,15.84594668,Vulnerable,2,4.210404436,510,New Caledonia,11.17837196
+172929,Squamata,Lamprophiidae,Brygophis coulangesi,NA,15.80426558,Vulnerable,2,4.207927119,511,Madagascar,11.17837196
+104718151,Squamata,Gekkonidae,Gekko vietnamensis,Vietnam Gecko,15.80022835,Vulnerable,2,4.20768684,512,NA,11.17837196
+102673884,Squamata,Diplodactylidae,Diplodactylus polyophthalmus,Spotted Sandplain Gecko,15.55891104,Vulnerable,2,4.19321875,513,Australia,11.17837196
+104717986,Squamata,Gekkonidae,Gekko russelltraini,Russell Train’s Marble Gecko,15.45725151,Vulnerable,2,4.187060563,514,NA,11.17837196
+40795,Squamata,Gekkonidae,Nactus coindemirensis,Lesser Night Gecko,15.40346225,Vulnerable,2,4.183786787,515,Mauritius,11.17837196
+8764,Squamata,Chamaeleonidae,Furcifer campani,NA,15.37753416,Vulnerable,2,4.182204889,516,Madagascar,11.17837196
+178270,Squamata,Sphaerodactylidae,Sphaerodactylus streptophorus,Hispaniolan Small-eared Sphaero ,15.37492994,Vulnerable,2,4.182045864,517,"Dominican Republic,Haiti",11.17837196
+172970,Squamata,Gekkonidae,Phelsuma hielscheri,NA,15.32315355,Vulnerable,2,4.178878924,518,Madagascar,11.17837196
+194834,Squamata,Scincidae,Kaestlea laterimaculata,NA,15.12298265,Vulnerable,2,4.166540109,519,India,11.17837196
+178681,Squamata,Leiocephalidae,Leiocephalus greenwayi,East Plana Curlytail ,14.97843007,Vulnerable,2,4.157534053,520,Bahamas,11.17837196
+44578937,Squamata,Hoplocercidae,Enyalioides oshaughnessyi,Red-eyed Woodlizard,14.88622104,Vulnerable,2,4.151746493,521,"Colombia,Ecuador",11.17837196
+83410198,Squamata,Agamidae ,Ctenophorus nguyarna,NA,14.84146281,Vulnerable,2,4.148925092,522,Australia,11.17837196
+178492,Squamata,Dactyloidae,Anolis pinchoti,Crab Cay Anole,14.80497424,Vulnerable,2,4.146619077,523,Colombia,11.17837196
+17424269,Squamata,Gekkonidae,Nactus serpensinsula,Serpent Island Night Gecko,14.70650355,Vulnerable,2,4.140369227,524,NA,11.17837196
+178564,Squamata,Sphaerodactylidae,Sphaerodactylus callocricus,Rough-banded Sphaero,14.57831113,Vulnerable,2,4.132173996,525,Dominican Republic,11.17837196
+104682593,Squamata,Gekkonidae,Cnemaspis caudanivea,Hon Tre Island Rock Gecko,14.56617901,Vulnerable,2,4.13139491,526,NA,11.17837196
+61460,Squamata,Lacertidae,Acanthodactylus pardalis,Leopard Fringe-fingered Lizard,14.32308181,Vulnerable,2,4.115654668,527,"Egypt,Libya",11.17837196
+169880,Squamata,Gekkonidae,Gekko gigante,Gigante Narrow-disked Gecko,14.30480287,Vulnerable,2,4.114461053,528,Philippines,11.17837196
+178284,Squamata,Dactyloidae,Anolis longiceps,Navassa Anole,14.29922696,Vulnerable,2,4.114096663,529,United States Minor Outlying Islands,11.17837196
+172882,Squamata,Scincidae,Pseudoacontias unicolor,NA,14.17613298,Vulnerable,2,4.106018356,530,Madagascar,11.17837196
+169783,Squamata,Agamidae ,Draco mindanensis,NA,14.07163172,Vulnerable,2,4.099108644,531,Philippines,11.17837196
+176181,Squamata,Diplodactylidae,Mniarogekko chahoua,Bavay's Giant Gecko,14.02696916,Vulnerable,2,4.096140892,532,New Caledonia,11.17837196
+104684134,Squamata,Gekkonidae,Cnemaspis tucdupensis,Tuc Dup Hill Rock Gecko,13.86279328,Vulnerable,2,4.085155356,533,NA,11.17837196
+64124,Squamata,Phrynosomatidae,Sceloporus megalepidurus,NA,13.80919259,Vulnerable,2,4.08154247,534,Mexico,11.17837196
+64205,Squamata,Dactyloidae,Anolis naufragus,NA,13.77740781,Vulnerable,2,4.079393876,535,Mexico,11.17837196
+104683916,Squamata,Gekkonidae,Cnemaspis nuicamensis,Nui Cam Hill Rock Gecko,13.74809441,Vulnerable,2,4.077408243,536,NA,11.17837196
+64012,Squamata,Crotaphytidae,Crotaphytus reticulatus,Reticulate Collared Lizard,13.67145644,Vulnerable,2,4.072198229,537,"Mexico,United States",11.17837196
+203074,Squamata,Phyllodactylidae,Phyllodactylus insularis,Belize Leaf-toed Gecko,13.61516171,Vulnerable,2,4.068353824,538,Belize,11.17837196
+48442832,Squamata,Phyllodactylidae,Phyllodactylus lepidopygus,Western Leaf-toed Gecko,13.60019443,Vulnerable,2,4.067329207,539,Peru,11.17837196
+178478,Squamata,Dactyloidae,Anolis muralla,NA,13.58053892,Vulnerable,2,4.06598205,540,Honduras,11.17837196
+172858,Squamata,Chamaeleonidae ,Brookesia vadoni,NA,13.51009127,Vulnerable,2,4.061138718,541,Madagascar,11.17837196
+194109,Squamata,Gekkonidae,Hemidactylus gujaratensis,NA,13.44185362,Vulnerable,2,4.056424853,542,India,11.17837196
+194111,Squamata,Gekkonidae,Hemidactylus sataraensis,Satara Gecko,13.26863804,Vulnerable,2,4.044358346,543,India,11.17837196
+61448,Squamata,Lacertidae,Iberolacerta monticola,Iberian Rock Lizard,13.23112252,Vulnerable,2,4.041725654,544,"Spain,Portugal",11.17837196
+102346161,Squamata,Scincidae,Larutia larutensis,Black Larut Skink,13.22151392,Vulnerable,2,4.041050244,545,NA,11.17837196
+157290,Squamata,Lacertidae,Podarcis levendis,NA,13.20225328,Vulnerable,2,4.039694995,546,Greece,11.17837196
+203655,Squamata,Typhlopidae ,Amerotyphlops tycherus,NA,13.20208016,Vulnerable,2,4.039682805,547,Honduras,11.17837196
+39260,Squamata,Diploglossidae,Celestus warreni,Giant Hispaniolan Galliwasp,13.19393417,Vulnerable,2,4.039109063,548,"Dominican Republic,Haiti",11.17837196
+64350,Squamata,Xantusiidae ,Lepidophyma gaigeae,Gaige's Tropical Night Lizard,13.14594714,Vulnerable,2,4.035722523,549,Mexico,11.17837196
+50009293,Squamata,Teiidae,Pholidoscelis wetmorei,Puerto Rican Blue-tailed Ameiva,13.12676961,Vulnerable,2,4.034365913,550,Puerto Rico,11.17837196
+194104,Squamata,Gekkonidae,Hemidactylus albofasciatus,White-striped Viper Gecko,13.11881527,Vulnerable,2,4.033802685,551,India,11.17837196
+109475422,Squamata,Scincidae,Lerista christinae,Bold-striped Slider,13.04587145,Vulnerable,2,4.028622867,552,Australia,11.17837196
+99942946,Squamata,Gekkonidae,Cnemaspis karsticola,Karst-dwelling Rock Gecko,13.03449405,Vulnerable,2,4.027812521,553,NA,11.17837196
+64087,Squamata,Phrynosomatidae,Sceloporus arenicolus,Sand Dune Lizard,12.97030493,Vulnerable,2,4.023228362,554,United States,11.17837196
+178211,Squamata,Scincidae,Larutia miodactyla,Single Finger Larut Skink,12.95767003,Vulnerable,2,4.022323541,555,NA,11.17837196
+109481391,Squamata,Scincidae,Techmarscincus jigurru,Bartle Frere Cool-skink,12.93137039,Vulnerable,2,4.020437521,556,Australia,11.17837196
+99942684,Squamata,Gekkonidae,Cnemaspis affinis,Stoliczka's Gecko,12.88719726,Vulnerable,2,4.017261717,557,NA,11.17837196
+48443739,Squamata,Phyllodactylidae,Phyllodactylus leoni,NA,12.88702044,Vulnerable,2,4.017248984,558,Ecuador,11.17837196
+176198,Squamata,Scincidae,Emoia loyaltiensis,Loyalty Islands Emoia,12.84976412,Vulnerable,2,4.014562563,559,New Caledonia,11.17837196
+178408,Squamata,Teiidae,Contomastix vittata,NA,12.84687506,Vulnerable,2,4.014353941,560,"Bolivia, Plurinational States of",11.17837196
+4095,Squamata,Diploglossidae,Celestus fowleri,Bromeliad Galliwasp,12.84596163,Vulnerable,2,4.014287972,561,Jamaica,11.17837196
+203069,Squamata,Hoplocercidae,Morunasaurus annularis,Ringed Spinytail Iguana,12.837486,Vulnerable,2,4.013675648,562,"Colombia,Ecuador",11.17837196
+99942920,Squamata,Gekkonidae,Cnemaspis harimau,Tiger Rock Gecko,12.81621782,Vulnerable,2,4.012137468,563,NA,11.17837196
+172758,Squamata,Chamaeleonidae,Furcifer rhinoceratus,NA,12.80110236,Vulnerable,2,4.011042831,564,Madagascar,11.17837196
+178736,Squamata,Gekkonidae,Cyrtodactylus chrysopylos,NA,12.64499695,Vulnerable,2,3.999667292,565,NA,11.17837196
+74855859,Squamata,Amphisbaenidae,Amphisbaena innocens,Innocent Worm Lizard,12.58346471,Vulnerable,2,3.995147584,566,"Dominican Republic,Haiti",11.17837196
+203654,Squamata,Typhlopidae ,Amerotyphlops stadelmani,Stadelman's Worm Snake,12.58262782,Vulnerable,2,3.995085971,567,Honduras,11.17837196
+64181,Squamata,Phrynosomatidae,Uta tumidarostra,NA,12.559976,Vulnerable,2,3.993416874,568,Mexico,11.17837196
+177531,Squamata,Lamprophiidae,Pseudoxyrhopus sokosoko,NA,12.34232636,Vulnerable,2,3.977235776,569,Madagascar,11.17837196
+104690632,Squamata,Gekkonidae,Cyrtodactylus grismeri,Grismer’s Bent-toed Gecko,12.34153934,Vulnerable,2,3.977176787,570,NA,11.17837196
+64175,Squamata,Phrynosomatidae,Uta encantadae,NA,12.32142327,Vulnerable,2,3.975667873,571,Mexico,11.17837196
+17797,Squamata,Lacertidae,Podarcis milensis,Miles Wall Lizard,12.30051187,Vulnerable,2,3.974096882,572,Greece,11.17837196
+19953,Squamata,Scincidae,Scelotes bourquini,Bourquin's Dwarf Burrowing Skink,12.27778315,Vulnerable,2,3.97238656,573,NA,11.17837196
+176828,Squamata,Lamprophiidae,Liophidium therezieni,NA,12.25791613,Vulnerable,2,3.970889179,574,Madagascar,11.17837196
+169832,Squamata,Scincidae,Parvoscincus sisoni,NA,12.23637279,Vulnerable,2,3.969262915,575,Philippines,11.17837196
+178296,Squamata,Scincidae,Trachylepis tavaratra,NA,12.22292266,Vulnerable,2,3.96824625,576,Madagascar,11.17837196
+64176,Squamata,Phrynosomatidae,Uta lowei,NA,12.20295796,Vulnerable,2,3.966735253,577,Mexico,11.17837196
+203829,Squamata,Chamaeleonidae,Trioceros serratus,NA,12.19098035,Vulnerable,2,3.96582765,578,"Cameroon,Nigeria",11.17837196
+61547,Squamata,Lacertidae,Podarcis gaigeae,Skyros Wall Lizard,12.17793039,Vulnerable,2,3.964837851,579,Greece,11.17837196
+172915,Squamata,Chamaeleonidae,Calumma oshaughnessyi,O'Shaughnessy's Chameleon,12.17598896,Vulnerable,2,3.964690516,580,Madagascar,11.17837196
+64341,Squamata,Viperidae,Ophryacus undulatus,NA,12.17249199,Vulnerable,2,3.964425076,581,Mexico,11.17837196
+14564,Squamata,Scincidae,Plestiodon reynoldsi,Florida Sand Skink,12.12506867,Vulnerable,2,3.960818402,582,United States,11.17837196
+83491786,Squamata,Agamidae ,Diporiphora vescus,Northern Pilbara Tree Dragon,12.09085339,Vulnerable,2,3.958208133,583,Australia,11.17837196
+203816,Squamata,Amphisbaenidae,Cynisca nigeriensis,NA,12.08173368,Vulnerable,2,3.957511243,584,Nigeria,11.17837196
+172847,Squamata,Lamprophiidae,Pseudoxyrhopus oblectator,NA,12.05471753,Vulnerable,2,3.955443926,585,Madagascar,11.17837196
+8217,Squamata,Scincidae,Plestiodon kishinouyei,Japanese Skink,12.00101399,Vulnerable,2,3.951321715,586,Japan,11.17837196
+172996,Squamata,Gerrhosauridae ,Zonosaurus anelanelany,NA,11.99580781,Vulnerable,2,3.95092119,587,Madagascar,11.17837196
+1086,Squamata,Iguanidae,Amblyrhynchus cristatus,Fernandina Marine Iguana,11.98742689,Vulnerable,2,3.950276088,588,Ecuador,11.17837196
+172622,Squamata,Uropeltidae,Uropeltis phipsonii,Phipson's Earth Snake,11.96821953,Vulnerable,2,3.948796074,589,India,11.17837196
+39907,Squamata,Leiosauridae ,Anisolepis undulatus,Wiegmann's Tree Lizard,11.91816142,Vulnerable,2,3.944928544,590,"Argentina,Brazil,Uruguay",11.17837196
+104693954,Squamata,Gekkonidae,Cyrtodactylus lomyenensis,Lomyen Bent-toed Gecko,11.90748592,Vulnerable,2,3.944101808,591,NA,11.17837196
+61476,Squamata,Scincidae,Chalcides guentheri,Günther's Cylindrical Skink,11.8765383,Vulnerable,2,3.94170128,592,"Israel,Jordan,Lebanon,Palestinian Territory, Occupied,Syrian Arab Republic",11.17837196
+64178,Squamata,Phrynosomatidae,Uta palmeri,NA,11.85174758,Vulnerable,2,3.939774162,593,Mexico,11.17837196
+176840,Squamata,Lamprophiidae,Liopholidophis grandidieri,Grandidier's Water Snake,11.77657829,Vulnerable,2,3.933908035,594,Madagascar,11.17837196
+172922,Squamata,Lamprophiidae,Compsophis zeny,NA,11.73982713,Vulnerable,2,3.931027442,595,Madagascar,11.17837196
+177542,Squamata,Lamprophiidae,Lycodryas citrinus,NA,11.72920754,Vulnerable,2,3.93019352,596,Madagascar,11.17837196
+203135,Squamata,Leiosauridae ,Anisolepis longicauda,NA,11.72160336,Vulnerable,2,3.929595961,597,"Argentina,Paraguay",11.17837196
+176841,Squamata,Lamprophiidae,Thamnosophis stumpffi,Yellow-striped Water Snake,11.69861909,Vulnerable,2,3.927787615,598,Madagascar,11.17837196
+192221,Squamata,Elapidae,Bungarus slowinskii,Red River Krait,11.59218476,Vulnerable,2,3.919370726,599,Viet Nam,11.17837196
+99941772,Squamata,Agamidae ,Pseudocalotes larutensis,Bukit Larut False Garden Lizard,11.56650316,Vulnerable,2,3.917329156,600,NA,11.17837196
+199742,Squamata,Scincidae,Plestiodon barbouri,Barbour's blue-tailed Skink,11.31975029,Vulnerable,2,3.89749805,601,Japan,11.17837196
+169806,Squamata,Scincidae,Dasia griffini,Griffin's Keel-scaled Tree Skink,11.30809798,Vulnerable,2,3.896551779,602,Philippines,11.17837196
+203811,Squamata,Amphisbaenidae,Cynisca leonina,Los Archipelago Worm Lizard,11.30520865,Vulnerable,2,3.896317001,603,Guinea,11.17837196
+176305,Squamata,Chamaeleonidae,Calumma peyrierasi,NA,11.29904081,Vulnerable,2,3.895815638,604,Madagascar,11.17837196
+40796,Squamata,Scincidae,Oligosoma lichenigera,Lord Howe and Norfolk Islands Skink,11.27560447,Vulnerable,2,3.893908277,605,"Australia,Norfolk Island",11.17837196
+17450723,Squamata,Agamidae ,Agama montana,Montane Rock Agama,11.26745652,Vulnerable,2,3.893244306,606,"Tanzania, United Republic of",11.17837196
+64169,Squamata,Phrynosomatidae,Urosaurus clarionensis,NA,11.23323153,Vulnerable,2,3.890450506,607,Mexico,11.17837196
+8070,Testudines,Podocnemididae,Erymnochelys madagascariensis,Madagascar Big-headed Turtle,96.7814642,Critically Endangered,4,7.355323754,1,Madagascar,31.25360088
+6493,Testudines,Dermatemydidae,Dermatemys mawii,Central American River Turtle,78.69960055,Critically Endangered,4,7.150853296,2,"Belize,Guatemala,Mexico",31.25360088
+3898,Testudines,Carettochelyidae,Carettochelys insculpta,Pig-nosed Turtle,149.6968609,Endangered,3,7.094711817,3,NA,31.25360088
+4606,Testudines,Chelidae,Chelodina mccordi,Roti Island Snake-necked Turtle,45.3043467,Critically Endangered,4,6.60782456,7,Indonesia,31.25360088
+17080,Testudines,Chelidae,Mesoclemmys dahli,Dahl's Toad-headed Turtle,45.20689918,Critically Endangered,4,6.605717842,8,Colombia,31.25360088
+17081,Testudines,Chelidae,Mesoclemmys hogei,Hoge’s Side-necked Turtle,45.20689918,Critically Endangered,4,6.605717842,8,Brazil,31.25360088
+18457,Testudines,Chelidae,Pseudemydura umbrina,Western Swamp Turtle,45.20689918,Critically Endangered,4,6.605717842,8,Australia,31.25360088
+20824,Testudines,Kinosternidae,Sternotherus depressus,Flattened Musk Turtle,44.53100034,Critically Endangered,4,6.590982142,11,United States,31.25360088
+9014,Testudines,Testudinidae,Astrochelys radiata,Radiated Tortoise,42.86402613,Critically Endangered,4,6.553683256,12,Madagascar,31.25360088
+9016,Testudines,Testudinidae,Astrochelys yniphora,Ploughshare Tortoise,42.86402613,Critically Endangered,4,6.553683256,12,Madagascar,31.25360088
+19035,Testudines,Testudinidae,Pyxis arachnoides,Spider Tortoise,42.86402613,Critically Endangered,4,6.553683256,12,Madagascar,31.25360088
+19036,Testudines,Testudinidae,Pyxis planicauda,Flat-tailed Tortoise,42.86402613,Critically Endangered,4,6.553683256,12,Madagascar,31.25360088
+8005,Testudines,Cheloniidae,Eretmochelys imbricata,Hawksbill Turtle,41.44368293,Critically Endangered,4,6.520766812,16,"United Arab Emirates,Antigua and Barbuda,American Samoa,Australia,Barbados,Bahrain,Bonaire, Sint Eustatius and Saba,Brazil,Bahamas,Belize,China,Colombia,Costa Rica,Cuba,Curaçao,Dominican Republic,Ecuador,Egypt,Eritrea,Fiji,Micronesia, Federated States of ,Grenada,Guadeloupe,Equatorial Guinea,Guam,Honduras,Indonesia,India,British Indian Ocean Territory,Iran, Islamic Republic of,Jamaica,Japan,Kenya,Cambodia,Comoros,Saint Kitts and Nevis,Kuwait,Sri Lanka,Saint Martin (French part),Madagascar,Myanmar,Martinique,Mauritius,Maldives,Mexico,Malaysia,Mozambique,Nicaragua,Oman,Panama,Papua New Guinea,Philippines,Puerto Rico,Palau,Qatar,Saudi Arabia,Solomon Islands,Seychelles,Sudan,Somalia,Sao Tomé and Principe,El Salvador,Sint Maarten (Dutch part),French Southern Territories,Thailand,Trinidad and Tobago,Taiwan, Province of China,Tanzania, United Republic of,United States,Venezuela, Bolivarian Republic of,Virgin Islands, British,Viet Nam,Vanuatu,Samoa,Yemen,Mayotte",31.25360088
+17823,Testudines,Podocnemididae,Podocnemis lewyana,Magdalena River Turtle,39.45163086,Critically Endangered,4,6.472695683,18,Colombia,31.25360088
+17585,Testudines,Platysternidae,Platysternon megacephalum,Big-headed Turtle,74.57756946,Endangered,3,6.404601081,19,"China,Lao People's Democratic Republic,Myanmar,Thailand,Viet Nam",31.25360088
+4695,Testudines,Trionychidae,Chitra chitra,Asian Narrow-headed Softshell Turtle,36.27804586,Critically Endangered,4,6.390993293,20,Thailand,31.25360088
+39621,Testudines,Trionychidae,Rafetus swinhoei,Yangtze Giant Softshell Turtle,36.27804586,Critically Endangered,4,6.390993293,20,China,31.25360088
+4615,Testudines,Cheloniidae,Chelonia mydas,Green Turtle,48.72868293,Endangered,3,5.98602343,25,"United Arab Emirates,Antigua and Barbuda,Anguilla,Angola,American Samoa,Australia,Barbados,Bangladesh,Bahrain,Bonaire, Sint Eustatius and Saba,Brazil,Belize,Cocos (Keeling) Islands,Cook Islands,China,Colombia,Costa Rica,Cuba,Curaçao,Christmas Island,Cyprus,Dominica,Dominican Republic,Ecuador,Egypt,Eritrea,Fiji,Micronesia, Federated States of ,Grenada,French Guiana,Guinea,Equatorial Guinea,Guam,Guinea-Bissau,Guyana,Haiti,Indonesia,India,British Indian Ocean Territory,Iran, Islamic Republic of,Jamaica,Japan,Kenya,Kiribati,Comoros,Saint Kitts and Nevis,Kuwait,Saint Lucia,Sri Lanka,Saint Martin (French part),Madagascar,Marshall Islands,Myanmar,Northern Mariana Islands,Martinique,Mauritania,Maldives,Mexico,Malaysia,Mozambique,New Caledonia,Nicaragua,Niue,New Zealand,Oman,Panama,Peru,French Polynesia,Papua New Guinea,Philippines,Pakistan,Puerto Rico,Palau,Saudi Arabia,Solomon Islands,Seychelles,Saint Helena, Ascension and Tristan da Cunha,Sierra Leone,Senegal,Somalia,Suriname,Sao Tomé and Principe,Sint Maarten (Dutch part),Turks and Caicos Islands,French Southern Territories,Thailand,Tokelau,Timor-Leste,Tonga,Turkey,Trinidad and Tobago,Tuvalu,Tanzania, United Republic of,United States Minor Outlying Islands,United States,Saint Vincent and the Grenadines,Venezuela, Bolivarian Republic of,Virgin Islands, British,Virgin Islands, U.S.,Viet Nam,Vanuatu,Yemen,Mayotte",31.25360088
+16511,Testudines,Podocnemididae,Peltocephalus dumerilianus,Big-headed Amazon River Turtle,96.7814642,Vulnerable,2,5.969029393,28,"Brazil,Colombia,French Guiana,Venezuela, Bolivarian Republic of",31.25360088
+4609,Testudines,Chelidae,Chelodina pritchardi,Pritchard's Snake-necked Turtle,45.3043467,Endangered,3,5.91467738,29,Papua New Guinea,31.25360088
+75,Testudines,Chelidae,Acanthochelys pallidipectoris,Chaco Side-necked Turtle,45.20689918,Endangered,3,5.912570661,30,"Argentina,Bolivia, Plurinational States of,Paraguay",31.25360088
+7664,Testudines,Chelidae,Elusor macrurus,Mary River Turtle,45.20689918,Endangered,3,5.912570661,30,Australia,31.25360088
+40758,Testudines,Chelidae,Myuchelys bellii,NA,45.20689918,Endangered,3,5.912570661,30,NA,31.25360088
+9042,Testudines,Geoemydidae,Geoemyda japonica,Ryukyu Black-breasted Leaf Turtle,37.65689504,Endangered,3,5.734166698,52,Japan,31.25360088
+39552,Testudines,Geoemydidae,Geoemyda spengleri,Black-breasted Leaf Turtle,37.65689504,Endangered,3,5.734166698,52,"China,Viet Nam",31.25360088
+4696,Testudines,Trionychidae,Chitra indica,Indian Narrow-headed Softshell Turtle,36.27804586,Endangered,3,5.697846112,59,"Bangladesh,India,Myanmar,Pakistan",31.25360088
+14765,Testudines,Trionychidae,Nilssonia formosa,Burmese Peacock Softshell,36.27804586,Endangered,3,5.697846112,59,Myanmar,31.25360088
+16502,Testudines,Trionychidae,Pelochelys cantorii,Asian Giant Softshell Turtle,36.27804586,Endangered,3,5.697846112,59,"Bangladesh,China,Indonesia,India,Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Papua New Guinea,Philippines,Thailand,Viet Nam",31.25360088
+19070,Testudines,Trionychidae,Rafetus euphraticus,Euphrates Softshell Turtle,36.27804586,Endangered,3,5.697846112,59,"Iraq,Iran, Islamic Republic of,Syrian Arab Republic,Turkey",31.25360088
+15918,Testudines,Trionychidae,Palea steindachneri,Wattle-necked Softshell Turtle,36.22070022,Endangered,3,5.696306606,63,"China,Viet Nam",31.25360088
+6494,Testudines,Dermochelyidae,Dermochelys coriacea,Leatherback,61.68656626,Vulnerable,2,5.524441532,94,"Antigua and Barbuda,Anguilla,Albania,Angola,Argentina,American Samoa,Australia,Aruba,Bosnia and Herzegovina,Barbados,Bangladesh,Bahrain,Benin,Bermuda,Brunei Darussalam,Bonaire, Sint Eustatius and Saba,Brazil,Bahamas,Belize,Canada,Congo, The Democratic Republic of the,Congo,Côte d'Ivoire,Chile,Cameroon,China,Colombia,Costa Rica,Cuba,Curaçao,Cyprus,Dominica,Dominican Republic,Ecuador,Egypt,Eritrea,Spain,Fiji,Micronesia, Federated States of ,France,Gabon,United Kingdom,Grenada,French Guiana,Ghana,Gambia,Guinea,Guadeloupe,Equatorial Guinea,Greece,Guatemala,Guam,Guinea-Bissau,Guyana,Honduras,Croatia,Haiti,Indonesia,Ireland,India,Italy,Jamaica,Japan,Kenya,Cambodia,Kiribati,Comoros,Saint Kitts and Nevis,Korea, Democratic People's Republic of,Korea, Republic of,Lebanon,Saint Lucia,Sri Lanka,Liberia,Libya,Morocco,Montenegro,Saint Martin (French part),Madagascar,Marshall Islands,Myanmar,Northern Mariana Islands,Martinique,Mauritania,Montserrat,Mauritius,Mexico,Malaysia,Mozambique,Namibia,New Caledonia,Nigeria,Nicaragua,New Zealand,Panama,Peru,French Polynesia,Papua New Guinea,Philippines,Puerto Rico,Portugal,Palau,Russian Federation,Solomon Islands,Seychelles,Saint Helena, Ascension and Tristan da Cunha,Slovenia,Sierra Leone,Senegal,Suriname,Sao Tomé and Principe,El Salvador,Sint Maarten (Dutch part),Syrian Arab Republic,Turks and Caicos Islands,French Southern Territories,Togo,Thailand,Tunisia,Tonga,Trinidad and Tobago,Tuvalu,Taiwan, Province of China,Tanzania, United Republic of,United States,Uruguay,Saint Vincent and the Grenadines,Venezuela, Bolivarian Republic of,Virgin Islands, British,Virgin Islands, U.S.,Samoa,Mayotte,South Africa",31.25360088
+172024,Testudines,Chelidae,Phrynops williamsi,Williams' Side-necked Turtle,52.63478129,Vulnerable,2,5.368492123,146,NA,31.25360088
+12589,Testudines,Chelydridae,Macrochelys temminckii,Alligator Snapping Turtle,50.96878452,Vulnerable,2,5.336937602,157,United States,31.25360088
+62256,Testudines,Trionychidae,Trionyx triunguis,African Softshell Turtle,50.05117886,Vulnerable,2,5.319122998,160,"Angola,Benin,Congo, The Democratic Republic of the,Congo,Côte d'Ivoire,Cameroon,Egypt,Eritrea,Ethiopia,Gabon,Ghana,Gambia,Guinea,Equatorial Guinea,Guinea-Bissau,Israel,Kenya,Liberia,Namibia,Niger,Nigeria,Sudan,Sierra Leone,Senegal,Somalia,South Sudan,Chad,Togo,Turkey,Uganda",31.25360088
+39620,Testudines,Trionychidae,Pelodiscus sinensis,Chinese Softshell Turtle,48.5890488,Vulnerable,2,5.29006438,166,"China,Japan,Taiwan, Province of China,Viet Nam",31.25360088
+39623,Testudines,Chelidae,Elseya branderhorsti,White-bellied Snapping Turtle,47.19202782,Vulnerable,2,5.261487971,174,Indonesia,31.25360088
+63660,Testudines,Chelydridae,Chelydra rossignonii,Central American Snapping Turtle,45.30558624,Vulnerable,2,5.221556968,179,"Belize,Guatemala,Honduras,Mexico",31.25360088
+4608,Testudines,Chelidae,Chelodina parkeri,Parker's Snake-necked Turtle,45.3043467,Vulnerable,2,5.221530199,180,"Indonesia,Papua New Guinea",31.25360088
+10309,Testudines,Chelidae,Hydromedusa maximiliani,Brazilian Snake-necked Turtle,45.20689918,Vulnerable,2,5.219423481,182,Brazil,31.25360088
+17083,Testudines,Chelidae,Mesoclemmys zuliae,Zulia Toad-headed Turtle,45.20689918,Vulnerable,2,5.219423481,182,"Venezuela, Bolivarian Republic of",31.25360088
+19483,Testudines,Chelidae,Rheodytes leukops,Fitzroy River Turtle,45.20689918,Vulnerable,2,5.219423481,182,Australia,31.25360088
+16529,Testudines,Pelomedusidae,Pelusios broadleyi,Turkana Mud Turtle,43.92492913,Vulnerable,2,5.191287216,189,Kenya,31.25360088
+17824,Testudines,Podocnemididae,Podocnemis sextuberculata,Six-tubercled Amazon River Turtle,43.83829753,Vulnerable,2,5.189356991,190,"Brazil,Colombia,Peru",31.25360088
+17825,Testudines,Podocnemididae,Podocnemis unifilis,Yellow-spotted River Turtle,40.95163086,Vulnerable,2,5.12281167,204,"Bolivia, Plurinational States of,Brazil,Colombia,Ecuador,French Guiana,Guyana,Peru,Suriname,Venezuela, Bolivarian Republic of",31.25360088
+17821,Testudines,Podocnemididae,Podocnemis erythrocephala,Red-headed Amazon River Turtle,39.45163086,Vulnerable,2,5.086401322,209,"Brazil,Colombia,Venezuela, Bolivarian Republic of",31.25360088
+11005,Testudines,Kinosternidae,Kinosternon angustipons,Narrow-bridged Mud Turtle,38.4747843,Vulnerable,2,5.061956457,214,"Costa Rica,Nicaragua,Panama",31.25360088
+11008,Testudines,Kinosternidae,Kinosternon dunni,Dunn's Mud Turtle,38.4747843,Vulnerable,2,5.061956457,214,Colombia,31.25360088
+1181,Testudines,Trionychidae,Amyda cartilaginea,Asiatic Softshell Turtle,36.27804586,Vulnerable,2,5.004698932,227,"Brunei Darussalam,Indonesia,Cambodia,Lao People's Democratic Republic,Myanmar,Malaysia,Singapore,Thailand,Viet Nam",31.25360088
+39618,Testudines,Trionychidae,Nilssonia gangetica,Indian Softshell Turtle,36.27804586,Vulnerable,2,5.004698932,227,"Bangladesh,India,Pakistan",31.25360088
+39619,Testudines,Trionychidae,Nilssonia hurum,Indian Peacock Softshell Turtle,36.27804586,Vulnerable,2,5.004698932,227,"Bangladesh,India,Nepal,Pakistan",31.25360088
+2174,Testudines,Trionychidae,Nilssonia leithii,Leith's Softshell Turtle,36.27804586,Vulnerable,2,5.004698932,227,India,31.25360088
+16503,Testudines,Trionychidae,Pelochelys bibroni,Southern New Guinea Giant Softshell Turtle,36.27804586,Vulnerable,2,5.004698932,227,"Indonesia,Papua New Guinea",31.25360088
+170526,Testudines,Trionychidae,Pelochelys signifera,Northern New Guinea Softshell Turtle,36.27804586,Vulnerable,2,5.004698932,227,NA,31.25360088
+13038,Testudines,Geoemydidae,Melanochelys tricarinata,Tricarinate Hill Turtle,35.02489504,Vulnerable,2,4.97050459,242,"Bangladesh,India",31.25360088
+3897,Testudines,Cheloniidae,Caretta caretta,Loggerhead Turtle,34.15701626,Vulnerable,2,4.946118569,249,"United Arab Emirates,Anguilla,Albania,Angola,Argentina,Australia,Aruba,Barbados,Bangladesh,Bahrain,Saint Barthélemy,Bermuda,Bonaire, Sint Eustatius and Saba,Brazil,Bahamas,Belize,Chile,China,Colombia,Costa Rica,Cuba,Cape Verde,Curaçao,Cyprus,Djibouti,Dominican Republic,Algeria,Ecuador,Egypt,Eritrea,Spain,Fiji,France,Grenada,French Guiana,Guadeloupe,Greece,Guatemala,Honduras,Croatia,Haiti,Indonesia,Israel,Iran, Islamic Republic of,Italy,Jamaica,Japan,Kenya,Comoros,Saint Kitts and Nevis,Korea, Republic of,Kuwait,Cayman Islands,Lebanon,Saint Lucia,Sri Lanka,Libya,Morocco,Montenegro,Madagascar,Myanmar,Montserrat,Malta,Mauritius,Mexico,Malaysia,Mozambique,Namibia,New Caledonia,Nicaragua,Niue,New Zealand,Oman,Panama,Peru,French Polynesia,Papua New Guinea,Philippines,Pakistan,Puerto Rico,Portugal,Qatar,Solomon Islands,Slovenia,Sierra Leone,Senegal,Somalia,Suriname,Syrian Arab Republic,Turks and Caicos Islands,Tokelau,Tunisia,Tonga,Turkey,Trinidad and Tobago,Tanzania, United Republic of,United States,Uruguay,Saint Vincent and the Grenadines,Venezuela, Bolivarian Republic of,Virgin Islands, British,Virgin Islands, U.S.,Viet Nam,Yemen,South Africa",31.25360088
