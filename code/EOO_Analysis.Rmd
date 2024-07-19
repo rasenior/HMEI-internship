@@ -69,7 +69,6 @@ capitalise <- function(string) {
 ```
 
 ```{r load-data}
-
 # Load data
 load("data/HMEI-GDrive/data/sorted/eoo_msdata.Rdata") # eoo objects
 load("data/HMEI-GDrive/data/sorted/msdata.Rdata") # aoo objects
@@ -86,46 +85,12 @@ siglevel <- function(pval){
 }
 ```
 
-Analysis To-Do:
-
-X   recreate eoo_nes_df with EOO thresholds (find document where i make
-    that) from eoo_all_df
-X   calculate distance from threshold
-X   add column: those species whose existing AOH are furthest (top 25%)
-    from the nearest downlisting threshold as eoo_nes_df\$diff_top25
-X   calculate percent: signif(100\*(nrow(eoo_nes_df) /
-    nrow(eoo_all_df)),2)
--   find country distribution of EOO thresholds
-X   run glm to test whether relative difference from downlisting
-    threshold varied by taxonomic class, zoogeographic realm and
-    absolute AOH, limited to species that occur in a single realm
-X   find and run class_results, realm_results, aoh_results (i think this
-    is the glm)
-
-Figures:
-
-X   figure 1: eoo_nes_df
-
-X   figure 2: eoo_nes_df, assess whether species are closer downlisting
-    or uplisting
-
-Mapping:
-
--   top countries with nes and extreme nes and by taxonomic class, top
-    realms with nes and enes
--   " " contains the majority of No Exit plants, while No Exit reptiles
-    included in our analyses are largely found in " "
--   create map_country_combi.png with EOO thresholds
 
 | Col1 | Critically Endangered | Endangered | Vulnerable |
 |------|-----------------------|------------|------------|
 | AOO  | 10                    | 500        | 2,000      |
 | EOO  | 100                   | 5,000      | 20,000     |
 
-EDGE Analysis
-
-X   " " amphibian, " " bird, " " mammal, and " " reptile No Exit Species
-    included in the top 100 EDGE species for their taxa
 
 # Running no_exit_iucn.Rmd
 
@@ -179,21 +144,27 @@ aoo_eoo_diff %>%
 
 # look at differences between categorization by class
 ggplot(aoo_eoo_diff, aes(x = className, fill = as.character(aoo_eoo_cat_change))) +
-    geom_bar()
+    geom_bar() + 
+    labs(title = "Number of category changes between AOO and EOO by Class", 
+         fill = "# Category Changes")
 
 # by realm
 ggplot(aoo_eoo_diff, aes(x = Realms, fill = as.character(aoo_eoo_cat_change))) +
-    geom_bar() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+    geom_bar() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
+    labs(title = "Number of category changes between AOO and EOO by Realm", 
+         fill = "# Category Changes")
 
 
 # listings that match AOO but not EOO
 ggplot(aoo_eoo_diff %>% filter(aoo_match == "AOO Match" & same_cat == "Different"), 
-       aes(x = AOO_Category)) +
-    geom_bar() 
+       aes(x = AOO_Category, fill = className)) +
+    geom_bar() +
+    labs(title = "Species where AOO Matches Current Red List Status instead of EOO threshold")
 
 ggplot(aoo_eoo_diff %>% filter(eoo_match == "EOO Match" & same_cat == "Different"), 
-       aes(x = EOO_Category)) +
-    geom_bar()
+       aes(x = EOO_Category, fill = className)) +
+    geom_bar() +
+    labs(title = "Species where EOO Matches Current Red List Status instead of AOO threshold")
 
 
 ```
@@ -205,8 +176,11 @@ How many species red listings match AOO habitat and how many match EOO habitat?
 `r nrow(aoo_eoo_diff %>% filter(eoo_match == "EOO Match"))` species match red list category with EOO. 
 
 Of those that have different AOO/EOO categories? 
-`r nrow(aoo_eoo_diff %>% filter(aoo_match == "AOO Match" & same_cat == "Different"))` species match red list category by AOO of those that do not share the same threshold for EOO and AOO. 
-`r nrow(aoo_eoo_diff %>% filter(eoo_match == "EOO Match" & same_cat == "Different"))` species match red list category by EOO of those that do not share the same threshold for EOO and AOO. 
+`r nrow(aoo_eoo_diff %>% filter(aoo_match == "AOO Match" & same_cat == "Different"))` species match their current red list category using AOO and not EOO.
+
+`r nrow(aoo_eoo_diff %>% filter(eoo_match == "EOO Match" & same_cat == "Different"))` species match their current red list category using AOO and not EOO.
+
+`r nrow(aoo_eoo_diff %>% filter(eoo_match == "EOO Mismatch" & aoo_match == "AOO Mismatch"))` species do not match their current red list category by either EOO or AOO using AOH.
 
 Of the species that have a mismatch between AOO and EOO thresholds, AOO Thresholds only accurately predict redlistings for Endangered and Vulnerable categories as opposed to EOO predicting critically endangered, endandered, and vulnerable. 
 
@@ -220,9 +194,6 @@ aoo_eoo_diff %>%
 ```
 
 
-
-Make map of species that have different AOO/EOO categories? 
-
 I mapped the species that had a different classification between AOO and EOO. Here are the maps: 
 ```{r diff-maps}
 realm_map <- 
@@ -234,22 +205,25 @@ ggplot() +
   scale_y_continuous(expand = c(0,0)) +
   annotation_custom(realm_map,
                     xmin = -Inf, xmax = Inf,
-                    ymin = -Inf, ymax = Inf)
+                    ymin = -Inf, ymax = Inf) + 
+    labs(title = "Distribution of species that are classified differently \nby AOO and EOO using AOH by Realm")
 
 country_map <- 
   readPNG("/workdir/sr2352/HMEI-internship/data/figs/diff/map_country_combi.png") %>% 
   rasterGrob(interpolate = TRUE)
+
 ggplot() +
   theme_void() +
   scale_x_continuous(expand = c(0,0)) +
   scale_y_continuous(expand = c(0,0)) +
   annotation_custom(country_map,
                     xmin = -Inf, xmax = Inf,
-                    ymin = -Inf, ymax = Inf)
+                    ymin = -Inf, ymax = Inf) + 
+    labs(title = "Distribution of species that are classified differently \nby AOO and EOO using AOH by Country")
 
 ```
 
-It looks like NES that are classified differently between AOO and EOO thresholsd are most commonly found in areas around the equator. Follows similar pattern to all NES. 
+It looks like NES that are classified differently between AOO and EOO thresholds are most commonly found in areas around the equator. Follows similar pattern to all NES. 
 
 Top realms: Neotropical, Orential, Panamanian
 Top countries: Colombia, Indonesia, Madagascar
